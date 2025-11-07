@@ -3,64 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LABCCO | Laboratorio Clínico Colombiano de Oriente SAS</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <title>LABCCO | Laboratorio Clínico y Salud Ocupacional</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f8fbff;
+      color: #003366;
+    }
 
+    header {
+      background-color: #004a99;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 50px;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section.hero {
+      background: linear-gradient(to right, #004a99, #0077cc);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    section.hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    section.hero p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    footer {
+      background-color: #002b66;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
 <body>
-  <!-- Encabezado -->
   <header>
-    <img src="images/LABCCO-Photoroom.png" alt="Logo LABCCO" class="logo" />
+    <img src="LABCCO-Photoroom.png" alt="Logo LABCCO">
     <nav>
       <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Nosotros</a>
+      <a href="#nosotros">Quiénes Somos</a>
       <a href="#servicios">Servicios</a>
-      <a href="#ocupacional">Salud Ocupacional</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section id="inicio" class="hero">
+  <section class="hero" id="inicio">
     <h1>LABCCO</h1>
-    <p>Más de 30 años cuidando la salud de las empresas y sus colaboradores.</p>
+    <p>Más de 30 años comprometidos con la salud y la calidad diagnóstica. Laboratorio clínico y servicios de salud ocupacional a su alcance.</p>
   </section>
 
-  <!-- Nosotros -->
   <section id="nosotros">
-    <h2>Nosotros</h2>
-    <p>LABCCO es un laboratorio clínico con más de 30 años de experiencia en el diagnóstico de alta calidad. Brindamos servicios confiables a empresas y pacientes particulares, con un enfoque integral en salud ocupacional y bienestar.</p>
+    <h2>Quiénes Somos</h2>
+    <p>LABCCO es un laboratorio clínico con más de tres décadas de experiencia, especializado en análisis de laboratorio, servicios médicos y salud ocupacional. Nuestro compromiso es brindar resultados confiables con atención humana y tecnología moderna.</p>
   </section>
 
-  <!-- Servicios -->
   <section id="servicios">
     <h2>Servicios</h2>
-    <div class="cards">
-      <div class="card">Laboratorio Clínico</div>
-      <div class="card">Salud Ocupacional</div>
-      <div class="card">Optometría y Visiometría</div>
-      <div class="card">Consultas Médicas</div>
-    </div>
+    <ul>
+      <li>Laboratorio clínico (hematología, química, coprológicos, serología)</li>
+      <li>Salud ocupacional y exámenes médicos de ingreso y retiro</li>
+      <li>Optometría y visiometría</li>
+      <li>Cabina audiométrica</li>
+      <li>Pruebas de colinesterasa eritrocitaria</li>
+    </ul>
   </section>
 
-  <!-- Salud Ocupacional -->
-  <section id="ocupacional">
-    <h2>Salud Ocupacional</h2>
-    <p>Apoyamos a empresas en sus programas de salud ocupacional con pruebas especializadas como colinesterasa eritrocitaria, glicemia, perfil lipídico, espirometrías y más.</p>
-  </section>
-
-  <!-- Contacto -->
   <section id="contacto">
     <h2>Contáctanos</h2>
-    <p>📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia</p>
-    <p>📞 Tel: +57 604 123 4567 | ✉️ contacto@labcco.com</p>
-    <iframe 
-      src="https://www.google.com/maps?q=Carrera+48+%2352-54,+Rionegro,+Antioquia&output=embed"
-      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+    <p><strong>Dirección:</strong> Carrera 48 #52-54, Edificio Santa Bárbara</p>
+    <p><strong>Teléfono:</strong> (fijo o WhatsApp que quieras agregar)</p>
+    <p><strong>Correo:</strong> info@labcco.com.co</p>
+    <iframe
+      src="https://www.google.com/maps?q=Carrera+48+%2352-54+Santa+Bárbara,+Colombia&output=embed">
     </iframe>
   </section>
 
-  <!-- Pie de página -->
   <footer>
     <p>© 2025 LABCCO. Todos los derechos reservados.</p>
   </footer>
