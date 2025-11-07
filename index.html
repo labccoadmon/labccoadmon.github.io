@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LABCCO | Laboratorio Clínico y Salud Ocupacional</title>
   <style>
+    /* === ESTILOS GENERALES === */
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -12,17 +13,32 @@
       color: #003366;
     }
 
+    h1, h2 {
+      color: #004a99;
+    }
+
+    /* === ENCABEZADO Y MENÚ === */
     header {
       background-color: #004a99;
       color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 50px;
+      padding: 10px 50px;
+      flex-wrap: wrap;
     }
 
-    header img {
-      height: 60px;
+    .logo-container img {
+      height: 110px; /* puedes ajustar a 130 si lo quieres más grande */
+      width: auto;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
     }
 
     nav a {
@@ -30,12 +46,14 @@
       text-decoration: none;
       margin-left: 25px;
       font-weight: 500;
+      font-size: 1em;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
+    /* === SECCIÓN PRINCIPAL (HERO) === */
     section.hero {
       background: linear-gradient(to right, #004a99, #0077cc);
       color: white;
@@ -44,8 +62,9 @@
     }
 
     section.hero h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
       margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
     section.hero p {
@@ -54,30 +73,64 @@
       margin: 0 auto;
     }
 
+    /* === SECCIONES GENERALES === */
     section {
       padding: 60px 20px;
       max-width: 1000px;
       margin: 0 auto;
     }
 
-    footer {
-      background-color: #002b66;
-      color: white;
-      text-align: center;
-      padding: 20px;
+    ul {
+      line-height: 1.8em;
     }
 
+    /* === MAPA Y CONTACTO === */
     iframe {
       width: 100%;
       height: 300px;
       border: none;
-      margin-top: 10px;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+
+    /* === PIE DE PÁGINA === */
+    footer {
+      background-color: #002b66;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.95em;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 10px;
+      }
+
+      .logo-container img {
+        height: 90px;
+      }
     }
   </style>
 </head>
+
 <body>
+  <!-- ENCABEZADO -->
   <header>
-    <img src="LABCCO-Photoroom.png" alt="Logo LABCCO">
+    <div class="logo-container">
+      <img src="LABCCO-Photoroom.png" alt="Logo LABCCO">
+    </div>
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#nosotros">Quiénes Somos</a>
@@ -86,37 +139,47 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero" id="inicio">
     <h1>LABCCO</h1>
-    <p>Más de 30 años comprometidos con la salud y la calidad diagnóstica. Laboratorio clínico y servicios de salud ocupacional a su alcance.</p>
+    <p>Más de 30 años comprometidos con la salud y la calidad diagnóstica.<br>
+    Laboratorio clínico y servicios de salud ocupacional a su alcance.</p>
   </section>
 
+  <!-- NOSOTROS -->
   <section id="nosotros">
     <h2>Quiénes Somos</h2>
-    <p>LABCCO es un laboratorio clínico con más de tres décadas de experiencia, especializado en análisis de laboratorio, servicios médicos y salud ocupacional. Nuestro compromiso es brindar resultados confiables con atención humana y tecnología moderna.</p>
+    <p>
+      LABCCO es un laboratorio clínico con más de tres décadas de experiencia, especializado en análisis clínicos, salud ocupacional y servicios médicos integrales.
+      Nuestro compromiso es brindar resultados confiables con atención humana, tecnología moderna y cumplimiento normativo.
+    </p>
   </section>
 
+  <!-- SERVICIOS -->
   <section id="servicios">
     <h2>Servicios</h2>
     <ul>
-      <li>Laboratorio clínico (hematología, química, coprológicos, serología)</li>
-      <li>Salud ocupacional y exámenes médicos de ingreso y retiro</li>
+      <li>Laboratorio clínico (hematología, química, coprológicos, serología, TSH, HbA1c, entre otros)</li>
+      <li>Exámenes médicos ocupacionales (ingreso, retiro, periódicos y específicos)</li>
       <li>Optometría y visiometría</li>
       <li>Cabina audiométrica</li>
-      <li>Pruebas de colinesterasa eritrocitaria</li>
+      <li>Pruebas de colinesterasa eritrocitaria (especializadas para sectores agrícolas)</li>
     </ul>
   </section>
 
+  <!-- CONTACTO -->
   <section id="contacto">
     <h2>Contáctanos</h2>
     <p><strong>Dirección:</strong> Carrera 48 #52-54, Edificio Santa Bárbara</p>
-    <p><strong>Teléfono:</strong> (fijo o WhatsApp que quieras agregar)</p>
+    <p><strong>Teléfono:</strong> (agregar número fijo o WhatsApp)</p>
     <p><strong>Correo:</strong> info@labcco.com.co</p>
+
     <iframe
       src="https://www.google.com/maps?q=Carrera+48+%2352-54+Santa+Bárbara,+Colombia&output=embed">
     </iframe>
   </section>
 
+  <!-- PIE DE PÁGINA -->
   <footer>
     <p>© 2025 LABCCO. Todos los derechos reservados.</p>
   </footer>
