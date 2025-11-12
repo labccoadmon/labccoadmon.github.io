@@ -38,14 +38,22 @@
       color: #99ccff;
     }
 
-    /* ==== ENCABEZADO ==== */
+    /* ==== ENCABEZADO CON ANIMACIÓN ==== */
     header {
       text-align: center;
-      background: linear-gradient(180deg, #004080 0%, #0066cc 100%);
       color: white;
       padding-top: 140px;
       padding-bottom: 80px;
       min-height: 80vh;
+      background: linear-gradient(-45deg, #004080, #0059b3, #0073e6, #3399ff);
+      background-size: 400% 400%;
+      animation: moverFondo 12s ease infinite;
+    }
+
+    @keyframes moverFondo {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .logo {
