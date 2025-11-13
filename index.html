@@ -49,7 +49,7 @@
       justify-content: space-between;
       gap: 20px;
       padding: 0 36px;
-      height: 76px; /* ajustada para la nueva escala del logo y distintivo */
+      height: 76px;
       box-shadow: 0 1px 6px rgba(16,50,74,0.06);
       z-index: 1350;
     }
@@ -61,32 +61,34 @@
       position: relative;
     }
 
-    /* LOGO principal (agrandado) */
+    /* LOGO principal */
     .brand img#siteLogo {
-      height: 72px; /* antes 64px -> ahora 72px */
+      height: 72px;
       width: auto;
       display: block;
       max-width: 100%;
     }
 
-    /* DISTINTIVO PNG (agrandado) */
+    /* DISTINTIVO PNG (ahora igual de grande al logo) */
     .brand img#distintivo {
-      height: 42px;      /* antes 36px -> ahora 42px */
+      height: 72px;        /* antes 42px → ahora igual al logo */
       width: auto;
       display: block;
-      margin-left: 10px;
-      border-radius: 6px; /* ligero redondeo si tu PNG tiene fondo */
-      border: 2px solid #ffffff; /* separación con el logo */
+      margin-left: 14px;   /* separación más amplia para equilibrio */
+      border-radius: 6px;
+      border: 2px solid #ffffff;
       box-shadow: 0 6px 14px rgba(16,50,74,0.12);
       pointer-events: none;
     }
 
+    /* === MENÚ DE NAVEGACIÓN === */
     .nav-links {
       display: flex;
       gap: 32px;
       align-items: center;
       justify-content: center;
-      margin-right: 40px;
+      margin-right: 0; /* movido a la izquierda (antes 40px) */
+      transform: translateX(-30px); /* corrimiento fino visual */
     }
 
     .nav-links a {
@@ -101,7 +103,7 @@
     /* === HERO / BANNER === */
     .hero {
       position: relative;
-      min-height: 80vh; /* mantenido más amplio para presencia visual */
+      min-height: 80vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -179,10 +181,10 @@
 
     /* === RESPONSIVE === */
     @media (max-width: 900px) {
-      .brand img#siteLogo { height: 64px; }    /* proporcional */
-      .brand img#distintivo { height: 36px; } /* proporcional */
+      .brand img#siteLogo,
+      .brand img#distintivo { height: 64px; }
       .navbar { height: 68px; }
-      .nav-links { gap: 18px; margin-right: 16px; }
+      .nav-links { gap: 18px; transform: translateX(-10px); }
       .hero h1 { font-size: 28px; }
     }
 
@@ -190,9 +192,9 @@
       .top-bar { flex-direction: column; gap: 8px; font-size:13px; padding:10px; }
       .navbar { flex-direction: column; padding: 8px 16px; height: auto; align-items: center; gap: 8px; }
       .brand { flex-direction: column; }
-      .brand img#siteLogo { height: 58px; }
-      .brand img#distintivo { height: 44px; margin-left: 0; margin-top: 6px; border-radius: 6px; }
-      .nav-links { justify-content: center; flex-wrap: wrap; gap: 12px; margin-right: 0; }
+      .brand img#siteLogo,
+      .brand img#distintivo { height: 60px; margin: 0; }
+      .nav-links { justify-content: center; flex-wrap: wrap; gap: 12px; margin-right: 0; transform: none; }
     }
   </style>
 </head>
@@ -210,7 +212,6 @@
   <header class="navbar" role="banner">
     <div class="brand">
       <img src="LABCCO-Photoroom.png" alt="Logo LABCCO" id="siteLogo" />
-      <!-- Distintivo PNG en la misma carpeta que index.html -->
       <img src="distintivo30.png" alt="Distintivo +30 años" id="distintivo" />
     </div>
 
@@ -263,24 +264,18 @@
   </footer>
 
   <script>
-    // Ajuste dinámico del espaciador: reducimos la franja blanca del banner en ~0.5 cm (~20 px adicional)
     function actualizarEspaciador() {
       const topBar = document.querySelector('.top-bar');
       const navbar = document.querySelector('.navbar');
       const spacer = document.getElementById('spacer-dynamic');
       if (!topBar || !navbar || !spacer) return;
-
       const alturaTop = topBar.getBoundingClientRect().height;
       const alturaNav = navbar.getBoundingClientRect().height;
-
-      // offsetPull aumentado a 100px para quitar ~0.5 cm extra
       const offsetPull = 100;
-
       let altura = alturaTop + alturaNav - offsetPull;
       if (altura < 0) altura = 0;
       spacer.style.height = Math.round(altura) + 'px';
     }
-
     window.addEventListener('load', actualizarEspaciador);
     window.addEventListener('resize', actualizarEspaciador);
     document.getElementById('siteLogo')?.addEventListener('load', actualizarEspaciador);
