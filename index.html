@@ -1,329 +1,222 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LABCCO — Laboratorio Clínico Colombia Oriente</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LABCCO | Laboratorio Clínico Colombia Oriente</title>
   <style>
-    /* --------- Reset / Base --------- */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
+    /* --- RESET Y FUENTE --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     body {
-      font-family: 'Outfit', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      color: #10324a;
-      background: #fff;
-      line-height: 1.5;
+      background-color: #f8f9fa;
+      color: #333;
     }
-    a { color: inherit; text-decoration: none; }
 
-    /* ========= TOP BAR ========= */
-    .top-bar {
-      background: #33ccff;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      align-items: center;
-      padding: 10px 16px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1400;
-      font-weight: 700;
-      font-size: 15px;
-    }
-    .top-bar a { color: #fff; display:inline-flex; gap:8px; align-items:center; }
-    .top-bar .horario { text-transform: lowercase; }
-
-    .spacer-top { height: 46px; } /* offset para top-bar */
-
-    /* ========= NAVBAR ========= */
-    .navbar {
-      position: sticky;
-      top: 46px; /* coincide con top-bar */
-      background: #fff;
+    /* --- HEADER --- */
+    header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      background-color: #ffffff;
       padding: 6px 40px;
-      height: 76px;
-      box-shadow: 0 1px 6px rgba(16,50,74,0.06);
-      z-index: 1350;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .brand {
-      display:flex;
-      align-items:center;
-      gap: 14px;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
-    /* logo y distintivo */
-    #siteLogo {
-      height: 72px;
+    .logo img {
+      height: 70px;
       width: auto;
-      display: block;
     }
-    #distintivo {
-      height: 72px;
+
+    .distintivo {
+      height: 70px;
       width: auto;
-      display: block;
-      margin-left: 14px;
-      border-radius: 6px;
-      border: 2px solid #ffffff;
-      box-shadow: 0 6px 14px rgba(16,50,74,0.12);
-      pointer-events: none;
     }
 
-    .nav-links {
-      display:flex;
-      gap:28px;
-      align-items:center;
-      justify-content:center;
-      margin-right: 0;
-      transform: translateX(-24px); /* corrimiento fino para centrar visualmente */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
     }
-    .nav-links a {
-      font-weight:500;
-      color: #10324a;
-      font-size: 18px;
-      padding: 6px 4px;
-    }
-    .nav-links a:hover { color: #0077cc; }
 
-    /* ========= HERO / SLIDER ========= */
+    nav ul li a {
+      text-decoration: none;
+      color: #0b3954;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #1d70a2;
+    }
+
+    /* --- HERO BANNER ROTATIVO --- */
     .hero {
       position: relative;
-      min-height: 78vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color: #fff;
-      overflow:hidden;
-      padding: 18px;
+      width: 100%;
+      height: 90vh;
+      overflow: hidden;
     }
 
-    /* cada slide: ocupa todo el hero */
-    .hero-slide {
-      position:absolute;
-      inset:0;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1.6s ease-in-out;
-      will-change: opacity;
-    }
-    .hero-slide.active { opacity: 1; }
-
-    /* overlay para mejorar legibilidad del texto (sutil, la caja blanca también ayudará) */
-    .hero::before {
-      content: "";
+    .hero img {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12));
-      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
 
-    .hero .container {
-      position: relative;
-      z-index: 2;
-      max-width: 980px; /* controlamos ancho del texto para que no llene todo el banner */
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .hero img.active {
+      opacity: 1;
     }
 
-    /* ======= TEXTO AZUL sobre caja blanca semitransparente (ahora más transparente) ======= */
     .hero .text-box {
-      background: rgba(255,255,255,0.55); /* ajustado: más transparente */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: rgba(255, 255, 255, 0.5); /* Más transparente que antes */
       padding: 14px 20px;
       border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(16,50,74,0.08);
-      display: inline-block;
-      text-align: center;
-      backdrop-filter: blur(2px); /* sutil */
+      box-shadow: 0 8px 20px rgba(16, 50, 74, 0.08);
+      width: 70%;
+      max-width: 800px;
     }
 
-    .hero .text-box h1 {
-      color: rgba(0,51,102,0.95); /* azul corporativo */
-      font-size: 30px;
-      line-height: 1.25;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .hero .text-box p {
-      color: rgba(0,51,102,0.9);
-      font-size: 16.5px;
+    .hero h2 {
+      font-size: 1.8rem;
+      color: rgba(0, 51, 102, 0.9);
       margin-bottom: 12px;
     }
 
-    .cta {
-      display:inline-block;
-      background:#0077cc; /* botón azul para contraste con la caja blanca */
-      color:#fff;
-      padding:10px 18px;
-      border-radius:10px;
-      font-weight:700;
-      box-shadow: 0 8px 20px rgba(16,50,74,0.12);
+    .hero p {
+      color: rgba(0, 51, 102, 0.9);
+      margin-bottom: 22px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .hero a {
+      display: inline-block;
+      padding: 10px 22px;
+      background-color: #0b3954;
+      color: #fff;
+      border-radius: 5px;
       text-decoration: none;
+      transition: background-color 0.3s;
+      font-weight: 600;
     }
 
-    /* ========= MAIN CONTENT (secciones) ========= */
-    main { max-width: 1100px; margin: 36px auto; padding: 0 18px 60px; }
-    section { margin-bottom: 34px; }
-    h2 { color: #004a99; margin-bottom: 12px; }
-    p { color: #334b5b; }
+    .hero a:hover {
+      background-color: #1d70a2;
+    }
 
-    .map-wrap { max-width:1100px; margin: 12px auto; border-radius:8px; overflow:hidden; }
+    /* --- SECCIONES GENERALES --- */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
 
+    section h2 {
+      color: #0b3954;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    section p {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* --- FOOTER --- */
     footer {
-      background:#10324a;
-      color:#fff;
-      text-align:center;
-      padding:18px;
-      margin-top: 16px;
-    }
-
-    /* ========= RESPONSIVE ========= */
-    @media (max-width: 900px) {
-      #siteLogo, #distintivo { height: 64px; }
-      .navbar { height: 68px; padding: 6px 24px; }
-      .hero h1 { font-size: 26px; }
-      .nav-links { gap: 18px; transform: translateX(-12px); }
-      .hero .text-box h1 { font-size: 26px; }
-    }
-    @media (max-width: 520px) {
-      .top-bar { flex-direction: column; gap: 8px; font-size:13px; padding:10px; }
-      .spacer-top { height: 46px; }
-      .navbar { flex-direction: column; padding: 10px 16px; height: auto; align-items: center; gap: 8px; }
-      .brand { flex-direction: column; gap: 6px; }
-      #siteLogo, #distintivo { height: 56px; }
-      .nav-links { transform: none; justify-content:center; flex-wrap:wrap; gap:12px; margin-right: 0; }
-      .hero { min-height: 60vh; padding: 12px; }
-      .hero .text-box { padding: 12px 14px; }
-      .hero .text-box h1 { font-size: 20px; }
-      .hero .text-box p { font-size: 15px; }
+      background-color: #0b3954;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <!-- TOP BAR -->
-  <div class="top-bar">
-    <a href="mailto:calidad@labccosas.com">✉ calidad@labccosas.com</a>
-    <a href="https://wa.me/573128274796" target="_blank" rel="noopener">📱 312 827 4796</a>
-    <span class="horario">🕒 lun - vie 7am - 12m / 2pm - 5pm | sáb 8am - 11am</span>
-  </div>
 
-  <div class="spacer-top"></div>
-
-  <!-- NAVBAR -->
-  <header class="navbar" role="banner">
-    <div class="brand">
-      <img src="LABCCO-Photoroom.png" alt="Logo LABCCO" id="siteLogo" />
-      <img src="distintivo30.png" alt="Distintivo +30 años" id="distintivo" />
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="logo_labcco.png" alt="Logo LABCCO">
+      <img src="distintivo30.png" alt="Distintivo 30 años" class="distintivo">
     </div>
-
-    <nav class="nav-links" role="navigation" aria-label="Menú principal">
-      <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
   </header>
 
-  <div id="spacer-dynamic"></div>
+  <!-- HERO ROTATIVO -->
+  <section class="hero">
+    <img src="https://images.pexels.com/photos/8442110/pexels-photo-8442110.jpeg" class="active" alt="Laboratorio 1">
+    <img src="https://images.pexels.com/photos/8442105/pexels-photo-8442105.jpeg" alt="Laboratorio 2">
+    <img src="https://images.pexels.com/photos/8533143/pexels-photo-8533143.jpeg" alt="Laboratorio 3">
 
-  <!-- HERO con slider -->
-  <section class="hero" id="inicio">
-    <!-- slides (dos originales + la nueva de muestras de sangre) -->
-    <div class="hero-slide active" style="background-image: url('https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg');" aria-hidden="false"></div>
-    <div class="hero-slide" style="background-image: url('https://images.pexels.com/photos/8442110/pexels-photo-8442110.jpeg');" aria-hidden="true"></div>
-    <div class="hero-slide" style="background-image: url('https://images.pexels.com/photos/9574325/pexels-photo-9574325.jpeg');" aria-hidden="true"></div>
-
-    <div class="container">
-      <!-- Caja blanca semitransparente (ahora 0.55 opacidad) con texto azul -->
-      <div class="text-box" role="heading" aria-level="1">
-        <h1>Más de 30 años comprometidos con el bienestar laboral, ofreciendo confianza y servicio humano a las empresas que construyen nuestro país.</h1>
-        <p>Laboratorio clínico y servicios de salud ocupacional — resultados confiables para su empresa.</p>
-        <a class="cta" href="#contacto">Contáctanos</a>
-      </div>
+    <div class="text-box">
+      <h2>Más de 30 años comprometidos con el bienestar laboral</h2>
+      <p>Ofreciendo confianza y servicio humano a las empresas que construyen nuestro país.</p>
+      <a href="#contacto">Contáctanos</a>
     </div>
   </section>
 
-  <!-- MAIN -->
-  <main>
-    <section id="nosotros">
-      <h2>Nosotros</h2>
-      <p>LABCCO cuenta con amplia trayectoria en diagnóstico clínico y salud ocupacional. Brindamos soluciones técnicas y atención especializada a empresas del Oriente Antioqueño, con énfasis en calidad y cumplimiento normativo.</p>
-    </section>
+  <!-- SECCIONES DE CONTENIDO -->
+  <section id="nosotros">
+    <h2>Nosotros</h2>
+    <p>En LABCCO contamos con más de 30 años de experiencia ofreciendo servicios confiables de laboratorio clínico y salud ocupacional. Nuestro compromiso es con la calidad, la ética y la salud de nuestros pacientes y aliados empresariales.</p>
+  </section>
 
-    <section id="servicios">
-      <h2>Servicios</h2>
-      <p>Hematología, química clínica, serología, colinesterasa eritrocitaria, optometría, audiometría, exámenes ocupacionales y soluciones integrales B2B.</p>
-    </section>
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <p>Realizamos pruebas de laboratorio clínico, exámenes ocupacionales, evaluaciones médicas y asesorías en salud empresarial. Contamos con tecnología avanzada y personal altamente capacitado.</p>
+  </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
-      📞 <a href="https://wa.me/573128274796" target="_blank" rel="noopener">312 827 4796</a><br>
-      ✉ <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></p>
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Puedes comunicarte con nosotros al teléfono (XXX) XXX-XXXX o escribirnos a contacto@labcco.com.co.  
+       También puedes visitarnos en nuestra sede principal para recibir atención personalizada.</p>
+  </section>
 
-      <div class="map-wrap">
-        <iframe src="https://www.google.com/maps?q=Carrera+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-    </section>
-  </main>
-
+  <!-- FOOTER -->
   <footer>
-    © 2025 LABCCO — Laboratorio Clínico Colombia Oriente
+    <p>© 2025 LABCCO - Laboratorio Clínico Colombia Oriente. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- ========== SCRIPTS ========== -->
+  <!-- SCRIPT DEL SLIDER -->
   <script>
-    /* 1) Espaciador dinámico para compensar top-bar + navbar (evita franja blanca)
-       Ajusta offsetPull si quieres "tirar" más del banner hacia arriba.
-    */
-    function actualizarEspaciador() {
-      const topBar = document.querySelector('.top-bar');
-      const navbar = document.querySelector('.navbar');
-      const spacer = document.getElementById('spacer-dynamic');
-      if (!topBar || !navbar || !spacer) return;
+    const images = document.querySelectorAll(".hero img");
+    let current = 0;
 
-      const alturaTop = topBar.getBoundingClientRect().height;
-      const alturaNav = navbar.getBoundingClientRect().height;
-
-      const offsetPull = 100; // ajusta si quieres quitar menos/mas de la franja
-      let altura = alturaTop + alturaNav - offsetPull;
-      if (altura < 0) altura = 0;
-      spacer.style.height = Math.round(altura) + 'px';
-    }
-    window.addEventListener('load', actualizarEspaciador);
-    window.addEventListener('resize', actualizarEspaciador);
-    document.getElementById('siteLogo')?.addEventListener('load', actualizarEspaciador);
-
-    /* 2) Slider automático (fade) */
-    (function() {
-      const slides = document.querySelectorAll('.hero-slide');
-      if (!slides || slides.length === 0) return;
-      let current = 0;
-      const total = slides.length;
-      const interval = 5000; // ms
-      function next() {
-        slides[current].classList.remove('active');
-        slides[current].setAttribute('aria-hidden', 'true');
-        current = (current + 1) % total;
-        slides[current].classList.add('active');
-        slides[current].setAttribute('aria-hidden', 'false');
-      }
-      setInterval(next, interval);
-    })();
+    setInterval(() => {
+      images[current].classList.remove("active");
+      current = (current + 1) % images.length;
+      images[current].classList.add("active");
+    }, 5000);
   </script>
+
 </body>
 </html>
