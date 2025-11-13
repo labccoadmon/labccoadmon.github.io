@@ -36,58 +36,72 @@
     }
     .top-bar a { color: #fff; display:inline-flex; gap:8px; align-items:center; }
     .top-bar .horario { text-transform: lowercase; }
-    .spacer-top { height: 46px; } /* se mantiene para la sticky navbar (top:46px) */
+
+    /* spacer-top sólo para el offset inicial del top-bar */
+    .spacer-top { height: 46px; }
 
     /* ========== NAVBAR ========== */
+    /* Ajusta la altura del navbar exactamente al alto del logo (64px) */
     .navbar {
       position: sticky;
-      top: 46px;
+      top: 46px; /* coincide con la altura fija de la top-bar */
       background: #fff;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      padding: 6px 40px; /* reducida para compactar la franja blanca */
+      padding: 0 40px; /* sin padding vertical para mantener la altura exacta */
+      height: 64px; /* altura fija = altura del logo */
       box-shadow: 0 1px 6px rgba(16,50,74,0.06);
       z-index: 1350;
     }
 
-    .brand { display:flex; align-items:center; gap: 16px; }
+    .brand { display:flex; align-items:center; gap: 12px; }
+
+    /* wrapper relativo para poder posicionar el distintivo sin tapar el logo */
     .logo-wrap {
       position: relative;
       display: inline-block;
       line-height: 1;
+      padding-right: 8px; /* espacio derecho para que el badge no "chocque" con el nav */
     }
 
+    /* tamaño del logo: coincide con la altura del navbar (64px) */
     .brand img {
-      height: 70px; /* reducido de 100px a 70px */
+      height: 64px;
       width: auto;
       display: block;
       max-width: 100%;
     }
 
-    /* distintivo +30 años */
+    /* ========== BADGE CIRCULAR +30 AÑOS (estilo distintivo) ========== */
     .badge-30 {
       position: absolute;
-      top: 4px;
-      right: 2px;
-      background: #0077cc;
-      color: #fff;
+      top: -8px;
+      right: -8px; /* posición ligeramente fuera del logo para que no lo cubra */
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #ffcc00; /* color distintivo tipo medalla; cambiar si prefieres otro */
+      color: #10324a;
       font-size: 11px;
-      font-weight: 700;
-      padding: 3px 7px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #fff; /* borde blanco para separación visual con el logo */
+      box-shadow: 0 4px 10px rgba(16,50,74,0.12);
+      transform: none;
       white-space: nowrap;
-      transform: translate(12%, -8%); /* pequeño ajuste fino */
+      line-height: 1;
     }
 
     .nav-links {
       display: flex;
-      gap: 32px; /* un poco más espacio entre enlaces */
+      gap: 32px;
       align-items: center;
       justify-content: center;
-      margin-right: 40px; /* empuja la lista ligeramente hacia el centro visual */
+      margin-right: 40px; /* empuja ligeramente hacia el centro visual */
     }
 
     .nav-links a {
@@ -177,19 +191,23 @@
       margin-top: 16px;
     }
 
+    /* ========== RESPONSIVE ========== */
     @media (max-width: 900px) {
-      .brand img { height: 60px; }
-      .nav-links { gap: 16px; margin-right: 0; }
+      .brand img { height: 56px; }
+      .navbar { height: 56px; }
+      .nav-links { gap: 18px; margin-right: 16px; }
       .hero h1 { font-size: 28px; }
-      .badge-30 { top: 6px; right: 2px; font-size: 10px; padding: 2px 6px; }
+      .badge-30 { width: 24px; height: 24px; top: -6px; right: -6px; font-size: 10px; border-width: 2px; }
+      .spacer-top { height: 46px; }
     }
     @media (max-width: 520px) {
       .top-bar { flex-direction: column; gap: 8px; font-size:13px; padding:10px; }
-      .navbar { flex-direction: column; padding: 10px 16px; align-items: center; gap: 8px; }
-      .brand img { height: 54px; margin-bottom: 0; }
-      .logo-wrap { margin-bottom: 6px; }
+      .navbar { flex-direction: column; padding: 8px 16px; height: auto; align-items: center; gap: 8px; }
+      .brand img { height: 54px; }
+      .logo-wrap { margin-bottom: 4px; padding-right: 0; }
       .nav-links { justify-content: center; flex-wrap: wrap; gap: 12px; margin-right: 0; }
-      .badge-30 { top: 4px; right: -2px; transform: none; }
+      .badge-30 { position: absolute; top: -6px; right: -6px; width: 22px; height: 22px; font-size: 9px; border-width: 2px; }
+      .spacer-top { height: 46px; }
     }
   </style>
 </head>
@@ -204,11 +222,11 @@
   <div class="spacer-top"></div>
 
   <!-- NAVBAR -->
-  <header class="navbar">
+  <header class="navbar" role="banner">
     <div class="brand">
       <div class="logo-wrap" aria-hidden="false" aria-label="Logo LABCCO">
         <img src="LABCCO-Photoroom.png" alt="Logo LABCCO" id="siteLogo" />
-        <div class="badge-30" aria-hidden="true">+30 años</div>
+        <div class="badge-30" aria-hidden="true" title="+30 años">+30</div>
       </div>
     </div>
 
@@ -261,6 +279,7 @@
   </footer>
 
   <script>
+    /* ajusta el espaciador dinámicamente según las alturas reales del top-bar y navbar */
     function actualizarEspaciador() {
       const topBar = document.querySelector('.top-bar');
       const navbar = document.querySelector('.navbar');
