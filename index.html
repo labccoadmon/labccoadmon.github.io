@@ -154,10 +154,19 @@
       margin-bottom: 10px;
     }
 
-    .hero p {
-      color: rgba(0,51,102,0.9);
-      font-size: 16.5px;
+    /* Clase nueva: compromiso en negrita y un poco más grande */
+    .commitment {
+      color: rgba(0,51,102,0.95);
+      font-size: 18.5px; /* un poquito más grande */
+      font-weight: 700;  /* negrita */
       margin-bottom: 12px;
+    }
+
+    /* Tagline que estaba antes del botón (más discreta) */
+    .tagline {
+      color: rgba(0,51,102,0.88);
+      font-size: 16px;
+      margin-bottom: 14px;
     }
 
     .cta {
@@ -194,6 +203,7 @@
       #siteLogo, #distintivo { height: 64px; }
       .navbar { height: 68px; padding: 6px 24px; }
       .hero h1 { font-size: 26px; }
+      .commitment { font-size: 17px; }
       .nav-links { gap: 18px; transform: translateX(-12px); }
       .hero .micro-title { font-size: 12px; }
     }
@@ -207,7 +217,8 @@
       .hero { min-height: 60vh; padding: 12px; }
       .hero .text-box { padding: 12px 14px; width: 95%; }
       .hero h1 { font-size: 20px; }
-      .hero p { font-size: 15px; }
+      .commitment { font-size: 16px; }
+      .tagline { font-size: 15px; }
       .hero .micro-title { font-size: 11px; letter-spacing: 0.6px; }
     }
   </style>
@@ -255,7 +266,12 @@
         <!-- nuevo texto pedido (primera línea en minúsculas, tal cual pediste) -->
         <h1>mas de 30 años creciendo junto a ustedes.</h1>
 
-        <p>Seguimos comprometidos con el bienestar laboral, ofreciendo un servicio humano, preciso y confiable para las empresas que construyen nuestro país.</p>
+        <!-- segunda línea: ahora en negrita y un poco más grande -->
+        <p class="commitment">Seguimos comprometidos con el bienestar laboral, ofreciendo un servicio humano, preciso y confiable para las empresas que construyen nuestro país.</p>
+
+        <!-- linea/restauracion que iba antes del boton de contacto -->
+        <p class="tagline">Laboratorio clínico y servicios de salud ocupacional — resultados confiables para su empresa.</p>
+
         <a class="cta" href="#contacto">Contáctanos</a>
       </div>
     </div>
