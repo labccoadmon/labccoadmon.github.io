@@ -41,12 +41,12 @@
     .top-bar a { color: #fff; display:inline-flex; gap:8px; align-items:center; }
     .top-bar .horario { text-transform: lowercase; }
 
-    .spacer-top { height: 46px; } /* espacio para top-bar */
+    .spacer-top { height: 46px; }
 
     /* ===== NAVBAR ===== */
     .navbar {
       position: sticky;
-      top: 46px; /* justo debajo de la top-bar */
+      top: 46px;
       background: #fff;
       display: flex;
       align-items: center;
@@ -77,7 +77,7 @@
       align-items:center;
       justify-content:center;
       margin-right: 0;
-      transform: translateX(-24px); 
+      transform: translateX(-24px);
     }
     .nav-links a { font-weight:500; color: #10324a; font-size: 18px; padding: 6px 4px; }
     .nav-links a:hover { color: #0077cc; }
@@ -132,41 +132,32 @@
       text-align: center;
       backdrop-filter: blur(2px);
       width: 92%;
-      max-width: 820px;
+      max-width: 900px;
     }
 
-    .hero .micro-title {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 400;
-      color: rgba(0,51,102,0.9);
-      margin-bottom: 10px;
-      opacity: 0.95;
-    }
-
-    /* Texto principal dorado */
+    /* Texto principal dorado, en una sola línea */
     .hero h1 {
       color: #B8860B;
-      font-size: 32px;
+      font-size: 34px;
       line-height: 1.2;
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      white-space: nowrap;
     }
 
-    /* Texto secundario distribuido en 3 líneas, centrado, sin negrilla */
+    /* Texto secundario en tres líneas, sin negrilla */
     .commitment {
       color: rgba(0,51,102,0.95);
       font-size: 19px;
       font-weight: 400;
       line-height: 1.6;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
-    /* Empresa al final del banner */
+    /* Empresa al final, más pequeño que antes */
     .tagline {
       color: rgba(0,51,102,0.88);
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 500;
       margin-bottom: 14px;
     }
@@ -204,10 +195,9 @@
     @media (max-width: 900px) {
       #siteLogo, #distintivo { height: 64px; }
       .navbar { height: 68px; padding: 6px 24px; }
-      .hero h1 { font-size: 28px; }
+      .hero h1 { font-size: 28px; white-space: normal; }
       .commitment { font-size: 17px; }
       .nav-links { gap: 18px; transform: translateX(-12px); }
-      .hero .micro-title { font-size: 12px; }
     }
     @media (max-width: 520px) {
       .top-bar { flex-direction: column; gap: 8px; font-size:13px; padding:10px; text-align:center; }
@@ -220,8 +210,7 @@
       .hero .text-box { padding: 14px 16px; width: 95%; }
       .hero h1 { font-size: 22px; }
       .commitment { font-size: 16px; line-height:1.55; }
-      .tagline { font-size: 15px; }
-      .hero .micro-title { font-size: 11px; letter-spacing: 0.6px; }
+      .tagline { font-size: 13px; }
     }
   </style>
 </head>
@@ -263,7 +252,6 @@
 
     <div class="container">
       <div class="text-box" role="heading" aria-level="1">
-        <div class="micro-title">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE SAS</div>
 
         <h1>30 años de experiencia y compromiso</h1>
 
@@ -280,7 +268,7 @@
     </div>
   </section>
 
-  <!-- MAIN -->
+  <!-- MAIN CONTENT -->
   <main>
     <section id="nosotros">
       <h2>Nosotros</h2>
@@ -321,7 +309,6 @@
 
       const alturaTop = topBar.getBoundingClientRect().height;
       const alturaNav = navbar.getBoundingClientRect().height;
-
       const offsetPull = 100; 
       let altura = alturaTop + alturaNav - offsetPull;
       if (altura < 0) altura = 0;
