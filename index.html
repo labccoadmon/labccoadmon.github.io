@@ -50,13 +50,12 @@
       font-size: 15px;
       color: #ffffff;
     }
-
-    /* Separadores verticales blancos entre items de la barra */
+    /* Separadores verticales blancos */
     .top-bar .left, .top-bar .right > div {
       position: relative;
       padding: 0 10px;
     }
-    .top-bar .left:not(:last-child):after, 
+    .top-bar .left:not(:last-child):after,
     .top-bar .right > div:not(:last-child):after {
       content: "";
       position: absolute;
@@ -85,7 +84,7 @@
       white-space: nowrap;
     }
 
-    .spacer-top { height: 46px; } /* espacio para top-bar */
+    .spacer-top { height: 46px; }
 
     /* ===== NAVBAR ===== */
     .navbar {
@@ -180,7 +179,7 @@
     .hero .container {
       position: relative;
       z-index: 2;
-      max-width: 1250px; /* aumenté un poco para el texto largo */
+      max-width: 1250px;
       padding: 14px;
       display:flex;
       flex-direction: column;
@@ -192,7 +191,7 @@
 
     .hero .text-box {
       background: rgba(255,255,255,0.55);
-      padding: 16px 40px; /* ampliado para el texto largo */
+      padding: 16px 40px;
       border-radius: 10px;
       box-shadow: 0 8px 24px rgba(16,50,74,0.09);
       display: inline-block;
@@ -200,7 +199,6 @@
       max-width: 1100px;
     }
 
-    /* Texto principal: azul medio #2a5d8f, centrado, una sola línea */
     .hero h1 {
       color: #2a5d8f;
       font-size: 34px;
@@ -213,7 +211,6 @@
       text-align: center;
     }
 
-    /* Texto secundario: azul oscuro #003366, negrilla, tamaño aumentado */
     .commitment {
       color: #003366;
       font-size: 22px;
@@ -227,7 +224,6 @@
       white-space: normal;
     }
 
-    /* Texto servicios modificado, azul oscuro, pequeño y en línea */
     .final-text {
       color: #003366;
       font-size: 15px;
@@ -250,7 +246,6 @@
       margin: 0 auto;
     }
 
-    /* ===== MAIN CONTENT ===== */
     main { max-width: 1100px; margin: 36px auto; padding: 0 18px 60px; }
     section { margin-bottom: 34px; }
     h2 { color: #004a99; margin-bottom: 12px; }
@@ -258,7 +253,6 @@
 
     .map-wrap { max-width:1100px; margin: 12px auto; border-radius:8px; overflow:hidden; }
 
-    /* ===== FOOTER ===== */
     footer {
       background:#10324a;
       color:#fff;
@@ -268,7 +262,6 @@
       font-size: 15px;
     }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 1250px) {
       .hero .container { max-width: 1150px; }
       .hero .text-box { max-width: 1020px; padding: 16px 36px; }
@@ -288,12 +281,10 @@
     }
     @media (max-width: 520px) {
       .top-bar { flex-direction: column; gap: 8px; font-size:13px; padding:10px; text-align:center; }
-
       .top-bar .left:not(:last-child):after,
       .top-bar .right > div:not(:last-child):after {
         display: none;
       }
-
       .spacer-top { height: 46px; }
       .navbar { flex-direction: column; padding: 10px 16px; height: auto; align-items: center; gap: 8px; }
       .brand { flex-direction: column; gap: 6px; }
@@ -310,9 +301,8 @@
   </style>
 </head>
 <body>
-  <!-- TOP BAR -->
-  <div class="top-bar" role="banner" aria-label="Información de contacto">
-    <div class="left horario">Horario: Lun - Vie 7am - 12m / 2pm - 5pm | Sáb 8am - 11am</div>
+  <div class="top-bar" role="banner" aria-label="[translate:Información de contacto]">
+    <div class="left horario">[translate:Horario:] Lun - Vie 7am - 12m / 2pm - 5pm | Sáb 8am - 11am</div>
     <div class="right">
       <div>📞 <strong>531 13 54</strong></div>
       <div>📱 <a href="https://wa.me/573128274796" target="_blank" rel="noopener">312 827 4796</a></div>
@@ -322,65 +312,60 @@
 
   <div class="spacer-top" aria-hidden="true"></div>
 
-  <!-- NAVBAR -->
-  <header class="navbar" role="navigation" aria-label="Barra principal">
+  <header class="navbar" role="navigation" aria-label="[translate:Barra principal]">
     <div class="brand" aria-hidden="false">
-      <img src="LABCCO-Photoroom.png" alt="Logo LABCCO" id="siteLogo" />
+      <img src="LABCCO-Photoroom.png" alt="[translate:Logo LABCCO]" id="siteLogo" />
       <div class="distintivo-container">
-        <img src="distintivo30.png" alt="Distintivo +30 años" id="distintivo" />
-        <div class="brand-extra">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div>
+        <img src="distintivo30.png" alt="[translate:Distintivo +30 años]" id="distintivo" />
+        <div class="brand-extra">[translate:IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S]</div>
       </div>
     </div>
 
-    <nav class="nav-links" role="navigation" aria-label="Menú principal">
-      <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
+    <nav class="nav-links" role="navigation" aria-label="[translate:Menú principal]">
+      <a href="#inicio">[translate:Inicio]</a>
+      <a href="#nosotros">[translate:Nosotros]</a>
+      <a href="#servicios">[translate:Servicios]</a>
+      <a href="#contacto">[translate:Contacto]</a>
     </nav>
   </header>
 
   <div id="spacer-dynamic" aria-hidden="true"></div>
 
-  <!-- HERO / SLIDER -->
-  <section class="hero" id="inicio" role="region" aria-label="Banner principal">
+  <section class="hero" id="inicio" role="region" aria-label="[translate:Banner principal]">
     <div class="hero-slide active" style="background-image: url('https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg');" aria-hidden="false"></div>
     <div class="hero-slide" style="background-image: url('https://images.pexels.com/photos/8442110/pexels-photo-8442110.jpeg');" aria-hidden="true"></div>
     <div class="hero-slide" style="background-image: url('https://images.pexels.com/photos/8533143/pexels-photo-8533143.jpeg');" aria-hidden="true"></div>
 
     <div class="container">
       <div class="text-box" role="heading" aria-level="1">
-        <h1>Más de 30 años creciendo junto a ustedes</h1>
+        <h1>[translate:Más de 30 años creciendo junto a ustedes]</h1>
         <p class="commitment">
-          Gracias a su preferencia seguimos creciendo juntos,<br>
-          enfocados en ofrecer un servicio humano, preciso y confiable<br>
-          para las empresas que construyen nuestro país.
+          [translate:Con gratitud seguimos enfocados en ofrecer un servicio humano, preciso y confiable para las empresas que construyen nuestro país.]
         </p>
-        <p class="final-text">Medicina particular - Salud ocupacional - Laboratorio - Visiometria - Audiometria</p>
+        <p class="final-text">[translate:Medicina particular - Salud ocupacional - Laboratorio - Visiometria - Audiometria]</p>
         <p style="color: #003366; font-size: 15px; font-weight: 500; margin-top: -12px; margin-bottom: 22px; cursor: pointer;">
-          <a href="#contacto" style="color: #003366; text-decoration: underline;">Contáctanos para más información</a>
+          <a href="#contacto" style="color: #003366; text-decoration: underline;">[translate:Contáctanos para más información]</a>
         </p>
-        <a class="cta" href="#contacto">Contáctanos</a>
+        <a class="cta" href="#contacto">[translate:Contáctanos]</a>
       </div>
     </div>
   </section>
 
-  <!-- MAIN -->
   <main>
     <section id="nosotros">
-      <h2>Nosotros</h2>
-      <p>LABCCO cuenta con amplia trayectoria en diagnóstico clínico y salud ocupacional. Brindamos soluciones técnicas y atención especializada a empresas del Oriente Antioqueño, con énfasis en calidad y cumplimiento normativo.</p>
+      <h2>[translate:Nosotros]</h2>
+      <p>[translate:LABCCO cuenta con amplia trayectoria en diagnóstico clínico y salud ocupacional. Brindamos soluciones técnicas y atención especializada a empresas del Oriente Antioqueño, con énfasis en calidad y cumplimiento normativo.]</p>
     </section>
 
     <section id="servicios">
-      <h2>Servicios</h2>
-      <p>Hematología, química clínica, serología, colinesterasa eritrocitaria, optometría, audiometría, exámenes ocupacionales y soluciones integrales B2B.</p>
+      <h2>[translate:Servicios]</h2>
+      <p>[translate:Hematología, química clínica, serología, colinesterasa eritrocitaria, optometría, audiometría, exámenes ocupacionales y soluciones integrales B2B.]</p>
     </section>
 
     <section id="contacto">
-      <h2>Contacto</h2>
-      <p>📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
-      📞 Teléfono fijo: <strong>531 13 54</strong><br>
+      <h2>[translate:Contacto]</h2>
+      <p>📍 [translate:Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia]<br>
+      📞 [translate:Teléfono fijo:] <strong>531 13 54</strong><br>
       📱 WhatsApp: <a href="https://wa.me/573128274796" target="_blank" rel="noopener">312 827 4796</a><br>
       ✉ Correo: <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></p>
 
@@ -390,15 +375,12 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    © 2025 LABCCO — Laboratorio Clínico Colombiano de Oriente SAS<br>
-    Todos los derechos reservados.
+    © 2025 LABCCO — [translate:Laboratorio Clínico Colombiano de Oriente SAS]<br>
+    [translate:Todos los derechos reservados.]
   </footer>
 
-  <!-- SCRIPTS -->
   <script>
-    /* Espaciador dinámico para compensar top-bar + navbar */
     function actualizarEspaciador() {
       const topBar = document.querySelector('.top-bar');
       const navbar = document.querySelector('.navbar');
@@ -417,7 +399,6 @@
     window.addEventListener('resize', actualizarEspaciador);
     document.getElementById('siteLogo')?.addEventListener('load', actualizarEspaciador);
 
-    /* Slider automático (fade) */
     (function() {
       document.addEventListener('DOMContentLoaded', function() {
         const slides = document.querySelectorAll('.hero-slide');
