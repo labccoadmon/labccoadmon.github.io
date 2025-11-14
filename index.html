@@ -85,13 +85,13 @@
     /* ===== HERO / SLIDER ===== */
     .hero {
       position: relative;
-      min-height: 78vh;
+      min-height: 72vh; /* un poco menos alto para sensación más alargada */
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
       overflow:hidden;
-      padding: 18px 10px;
+      padding: 12px 10px;
     }
 
     .hero-slide {
@@ -109,15 +109,15 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.08));
+      background: linear-gradient(rgba(0,0,0,0.06), rgba(0,0,0,0.06));
       z-index: 1;
     }
 
     .hero .container {
       position: relative;
       z-index: 2;
-      max-width: 980px;
-      padding: 24px;
+      max-width: 1200px; /* más ancho para alargar visualmente */
+      padding: 14px;
       display:flex;
       flex-direction: column;
       align-items: center;
@@ -126,17 +126,16 @@
     /* caja blanca semitransparente detrás del texto (opacidad 0.55) */
     .hero .text-box {
       background: rgba(255,255,255,0.55); /* opacidad que mantenemos */
-      padding: 18px 24px;
+      padding: 16px 28px;
       border-radius: 10px;
       box-shadow: 0 8px 24px rgba(16,50,74,0.09);
       display: inline-block;
       text-align: center;
       backdrop-filter: blur(2px);
-      width: 92%;
-      max-width: 900px;
+      width: 96%;
+      max-width: 1080px; /* caja más ancha para aspecto alargado */
     }
 
-    /* micro-title (elimínala si prefieres no mostrarla arriba) */
     .hero .micro-title {
       font-size: 13px;
       text-transform: uppercase;
@@ -151,25 +150,25 @@
     .hero h1 {
       color: #B78A28;
       font-size: 34px;
-      line-height: 1.2;
+      line-height: 1.12;
       font-weight: 700;
-      margin-bottom: 16px;
-      /* si en pantallas pequeñas queremos que se rompa, hay media queries abajo */
+      margin-bottom: 12px;
+      white-space: nowrap; /* asegurar una sola línea en pantallas anchas */
     }
 
-    /* Texto secundario: un poco más grande que antes pero sin quitar protagonismo */
+    /* Texto secundario: ahora en negrilla, un poco más grande y alargado */
     .commitment {
       color: rgba(0,51,102,0.95);
       font-size: 20px; /* ligeramente más grande */
-      font-weight: 400; /* sin negrilla */
-      line-height: 1.6;
+      font-weight: 700; /* EN NEGRILLA segun tu pedido */
+      line-height: 1.6;  /* más separación para alargado */
       margin-bottom: 14px;
-      max-width: 820px;
+      max-width: 980px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    /* Empresa al final, más pequeña que el h1, mismo estilo */
+    /* Empresa al final, más pequeña que el h1, manteniendo estilo */
     .tagline {
       color: rgba(0,51,102,0.88);
       font-size: 15px;
@@ -207,14 +206,18 @@
     }
 
     /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px) {
+      .hero .container { max-width: 920px; }
+      .hero .text-box { max-width: 880px; padding: 14px 20px; }
+    }
+
     @media (max-width: 900px) {
       #siteLogo, #distintivo { height: 64px; }
       .navbar { height: 68px; padding: 6px 24px; }
-      .hero h1 { font-size: 30px; }
+      .hero h1 { font-size: 30px; white-space: normal; } /* permitir wrap en pantallas más pequeñas */
       .commitment { font-size: 18px; }
       .nav-links { gap: 18px; transform: translateX(-12px); }
       .hero .micro-title { font-size: 12px; }
-      .hero .text-box { padding: 16px 18px; }
     }
     @media (max-width: 520px) {
       .top-bar { flex-direction: column; gap: 8px; font-size:13px; padding:10px; text-align:center; }
@@ -226,7 +229,7 @@
       .hero { min-height: 60vh; padding: 12px; }
       .hero .text-box { padding: 12px 14px; width: 95%; }
       .hero h1 { font-size: 22px; }
-      .commitment { font-size: 16px; line-height:1.55; }
+      .commitment { font-size: 16px; line-height:1.5; }
       .tagline { font-size: 13px; }
       .hero .micro-title { font-size: 11px; letter-spacing: 0.6px; }
     }
@@ -270,19 +273,20 @@
 
     <div class="container">
       <div class="text-box" role="heading" aria-level="1">
-        <!-- Nota: eliminamos micro-title superior aquí para dejar solo el final como solicitaste. -->
+        <!-- Restaurada: micro-title superior -->
+        <div class="micro-title">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div>
 
-        <!-- Texto principal en dorado oscuro y sin punto al final -->
+        <!-- Texto principal en dorado oscuro y en una sola línea en pantallas anchas -->
         <h1>mas de 30 años creciendo junto a ustedes</h1>
 
-        <!-- Texto secundario distribuido en 3 líneas, un poco más grande pero sin negrilla -->
+        <!-- Texto secundario: en negrilla, ligeramente más grande y alargado -->
         <p class="commitment">
           Gracias a su preferencia seguimos creciendo juntos,<br>
           enfocados en ofrecer un servicio humano, preciso y confiable<br>
           para las empresas que construyen nuestro país.
         </p>
 
-        <!-- Empresa al final, con puntos (S.A.S) y más pequeña -->
+        <!-- Empresa al final, más pequeña -->
         <p class="tagline">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</p>
 
         <a class="cta" href="#contacto">Contáctanos</a>
