@@ -41,6 +41,17 @@
     .top-bar a { color: #fff; display:inline-flex; gap:8px; align-items:center; }
     .top-bar .horario { text-transform: lowercase; }
 
+    .top-bar .brand-extra {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-left: 10px;
+      font-size: 13px;
+      font-weight: 400;
+      color: #e6ecf1;
+      white-space: nowrap;
+    }
+
     .spacer-top { height: 46px; } /* espacio para top-bar */
 
     /* ===== NAVBAR ===== */
@@ -58,17 +69,37 @@
       z-index: 1500;
     }
 
-    .brand { display:flex; align-items:center; gap: 14px; }
-    #siteLogo { height: 72px; width: auto; display:block; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+    }
+    #siteLogo { height: 72px; width: auto; display: block; }
     #distintivo {
       height: 72px;
       width: auto;
-      display:block;
-      margin-left: 14px;
+      display: block;
       border-radius: 6px;
       border: 2px solid #ffffff;
       box-shadow: 0 6px 14px rgba(16,50,74,0.12);
       pointer-events: none;
+      position: relative;
+    }
+
+    /* Contenedor para distintivo + texto extra */
+    .distintivo-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+    }
+
+    .brand-extra {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(16,50,74,0.6);
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -135,15 +166,7 @@
       max-width: 1080px;
     }
 
-    .hero .micro-title {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 400;
-      color: rgba(0,51,102,0.9);
-      margin-bottom: 10px;
-      opacity: 0.95;
-    }
+    /* Eliminado micro-title del banner */
 
     /* Texto principal: azul claro #3a90ee, destacado y en una línea */
     .hero h1 {
@@ -221,7 +244,6 @@
       .hero h1 { font-size: 30px; white-space: normal; } 
       .commitment { font-size: 20px; }
       .nav-links { gap: 18px; transform: translateX(-12px); }
-      .hero .micro-title { font-size: 12px; }
       .final-text { font-size: 15px; }
     }
     @media (max-width: 520px) {
@@ -237,6 +259,7 @@
       .commitment { font-size: 18px; line-height:1.5; }
       .final-text { font-size: 15px; margin-bottom: 16px; }
       .cta { padding: 10px 16px; font-size: 14px; }
+      .top-bar .brand-extra { font-size: 11px; margin-left: 6px;}
     }
   </style>
 </head>
@@ -257,7 +280,10 @@
   <header class="navbar" role="navigation" aria-label="Barra principal">
     <div class="brand" aria-hidden="false">
       <img src="LABCCO-Photoroom.png" alt="Logo LABCCO" id="siteLogo" />
-      <img src="distintivo30.png" alt="Distintivo +30 años" id="distintivo" />
+      <div class="distintivo-container">
+        <img src="distintivo30.png" alt="Distintivo +30 años" id="distintivo" />
+        <div class="brand-extra">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div>
+      </div>
     </div>
 
     <nav class="nav-links" role="navigation" aria-label="Menú principal">
@@ -278,23 +304,23 @@
 
     <div class="container">
       <div class="text-box" role="heading" aria-level="1">
-        <!-- Restaurada: micro-title superior -->
-        <div class="micro-title">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div>
 
-        <!-- Texto principal azul claro -->
         <h1>Más de 30 años creciendo junto a ustedes</h1>
 
-        <!-- Texto secundario azul oscuro aumentado -->
         <p class="commitment">
           Gracias a su preferencia seguimos creciendo juntos,<br>
           enfocados en ofrecer un servicio humano, preciso y confiable<br>
           para las empresas que construyen nuestro país.
         </p>
 
-        <!-- Texto final azul oscuro y formato original -->
         <p class="final-text">salud particular - salud ocupacional - laboratorio</p>
 
+        <p style="color: #003366; font-size: 15px; font-weight: 500; margin-top: -12px; margin-bottom: 22px; cursor: pointer;">
+          <a href="#contacto" style="color: #003366; text-decoration: underline;">Contáctanos para más información</a>
+        </p>
+
         <a class="cta" href="#contacto">Contáctanos</a>
+
       </div>
     </div>
   </section>
