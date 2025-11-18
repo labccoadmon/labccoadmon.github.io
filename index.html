@@ -4,65 +4,42 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- SEO / OG básico -->
+  <!-- SEO -->
   <title>LABCCO — Laboratorio Clínico Colombia Oriente</title>
   <meta name="description" content="Laboratorio clínico en Rionegro con 30 años de experiencia. Resultados en 24 h, muestra a domicilio, exámenes ocupacionales y más de 200 empresas nos respaldan.">
   <link rel="canonical" href="https://labccoadmon.github.io/">
   <meta name="robots" content="index, follow">
 
-  <!-- Preconnect externos (TAREA 4) -->
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://www.google.com">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Favicon / PWA (rutas actualizadas) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#10324a">
 
   <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS compacto -->
+  <!-- CSS -->
   <style>
-    :root{
-      --azul:#10324a;
-      --azul-b:#004a99;
-      --celeste:#0099cc;
-      --blanco:#fff;
-      --sombra:rgba(16,50,74,.09);
-    }
+    :root{--azul:#10324a; --azul-b:#004a99; --celeste:#0099cc; --blanco:#fff; --sombra:rgba(16,50,74,.09);}
     *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-      color:var(--azul);
-      background:var(--blanco);
-      -webkit-font-smoothing:antialiased;
-      line-height:1.5;
-    }
+    body{font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--azul);background:var(--blanco);-webkit-font-smoothing:antialiased;line-height:1.5}
     a{color:inherit;text-decoration:none}
 
     /* Top-bar */
-    .top-bar{
-      position:fixed;inset:0 0 auto;
-      display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 36px;
-      padding:10px 16px;
-      background:var(--celeste);color:var(--blanco);
-      font-weight:700;font-size:15px;z-index:1600;
-    }
+    .top-bar{position:fixed;inset:0 0 auto;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 36px;padding:10px 16px;background:var(--celeste);color:var(--blanco);font-weight:700;font-size:15px;z-index:1600}
     .top-bar a{display:inline-flex;align-items:center;gap:8px}
     .horario::before{content:"⏰";font-size:15px}
     .top-bar>div{display:flex;gap:18px;align-items:center}
     .top-bar .brand-extra{font-size:13px;font-weight:400;color:#1a4d7a;margin-left:20px;white-space:nowrap}
 
     /* Nav */
-    .navbar{
-      position:sticky;top:46px;
-      display:flex;align-items:center;justify-content:space-between;gap:20px;
-      padding:6px 40px;height:76px;
-      background:var(--blanco);box-shadow:0 1px 6px var(--sombra);z-index:1500;
-    }
+    .navbar{position:sticky;top:46px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:6px 40px;height:76px;background:var(--blanco);box-shadow:0 1px 6px var(--sombra);z-index:1500}
     .brand{display:flex;align-items:center;gap:14px}
     #siteLogo,#distintivo{height:72px;border-radius:6px}
     #distintivo{border:2px solid var(--blanco);box-shadow:0 6px 14px var(--sombra)}
@@ -72,11 +49,7 @@
 
     /* Hero */
     .hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;padding:12px 10px}
-    /* TAREA 1 – Imágenes WebP (ya convertidas) */
-    .hero-slide{
-      position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s;
-      width:100%;height:72vh;
-    }
+    .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s;width:100%;height:72vh}
     .hero-slide.active{opacity:1}
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.06);z-index:1}
     .hero .container{position:relative;z-index:2;max-width:1250px;padding:14px;text-align:center}
@@ -86,6 +59,10 @@
     .final-text{color:#003366;font-size:15px;margin-bottom:22px;letter-spacing:.5px}
     .cta{display:inline-block;background:#0077cc;color:var(--blanco);padding:10px 18px;border-radius:10px;font-weight:700;box-shadow:0 8px 20px rgba(16,50,74,.12)}
 
+    /* Botones slider accesible */
+    .hero-controls{margin-top:12px;text-align:center}
+    .hero-controls button{background:var(--celeste);color:var(--blanco);border:none;padding:6px 12px;border-radius:4px;font-size:14px;cursor:pointer}
+
     /* Main & Footer */
     main{max-width:1100px;margin:36px auto;padding:0 18px 60px}
     section{margin-bottom:34px}
@@ -94,13 +71,8 @@
     .map-wrap{max-width:1100px;margin:12px auto;border-radius:8px;overflow:hidden}
     footer{background:var(--azul);color:var(--blanco);text-align:center;padding:18px;font-size:15px}
 
-    /* Botón WhatsApp flotante (TAREA 2) */
-    .btn-wpp{
-      position:fixed;bottom:20px;right:20px;
-      background:#25d366;color:#fff;border-radius:50%;
-      width:60px;height:60px;display:flex;align-items:center;justify-content:center;
-      box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:2000;transition:transform .2s;
-    }
+    /* Botón WhatsApp flotante */
+    .btn-wpp{position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:2000;transition:transform .2s}
     .btn-wpp:hover{transform:scale(1.1)}
     @media(max-width:520px){.btn-wpp{width:55px;height:55px}}
 
@@ -124,7 +96,7 @@
     }
   </style>
 
-  <!-- Schema.org LocalBusiness + MedicalOrganization (TAREA 3) -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -178,18 +150,11 @@
     </nav>
   </header>
 
-  <!-- Hero / Slider con imágenes WebP (TAREA 1) -->
-  <section class="hero" id="inicio">
-    <!-- Ejemplo de URLs WebP ya convertidas -->
-    <div class="hero-slide active"
-         style="background-image:url('https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"
-         role="img" aria-label="Laboratorio moderno"></div>
-    <div class="hero-slide"
-         style="background-image:url('https://images.pexels.com/photos/8442110/pexels-photo-8442110.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"
-         role="img" aria-label="Personal tomando muestra"></div>
-    <div class="hero-slide"
-         style="background-image:url('https://images.pexels.com/photos/8533143/pexels-photo-8533143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"
-         role="img" aria-label="Equipos de alta precisión"></div>
+  <!-- Hero / Slider accesible -->
+  <section class="hero" id="inicio" aria-label="Banner principal">
+    <div class="hero-slide active" style="background-image:url('https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg');" role="img" aria-label="Laboratorio moderno"></div>
+    <div class="hero-slide" style="background-image:url('https://images.pexels.com/photos/8442110/pexels-photo-8442110.jpeg');" role="img" aria-label="Personal tomando muestra"></div>
+    <div class="hero-slide" style="background-image:url('https://images.pexels.com/photos/8533143/pexels-photo-8533143.jpeg');" role="img" aria-label="Equipos de alta precisión"></div>
 
     <div class="container">
       <div class="text-box">
@@ -199,6 +164,11 @@
         <p><a href="#contacto" style="color:#003366;text-decoration:underline">Contáctanos para más información</a></p>
         <a class="cta" href="#contacto">Contáctanos</a>
       </div>
+    </div>
+
+    <!-- Botones accesibles -->
+    <div class="hero-controls">
+      <button id="btnPausa" class="cta">⏸ Pausar</button>
     </div>
   </section>
 
@@ -214,7 +184,7 @@
       <p>Hematología, química clínica, serología, colinesterasa eritrocitaria, optometría, audiometría, exámenes ocupacionales y soluciones integrales B2B.</p>
     </section>
 
-    <!-- Formulario sin backend (TAREA 5) -->
+    <!-- Formulario + mapa -->
     <section id="contacto">
       <h2>Agenda tu cita</h2>
       <form action="https://formsubmit.co/calidad@labccosas.com" method="POST">
@@ -228,12 +198,10 @@
           <option>Optometría</option>
         </select>
         <button type="submit" class="cta">Quiero mi cita</button>
-        <!-- Redirección y sin captcha -->
-        <input type="hidden" name="_next" value="https://labccoadmon.github.io/gracias.html">
+        <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
         <input type="hidden" name="_captcha" value="false">
       </form>
 
-      <!-- Datos de contacto y mapa -->
       <p style="margin-top:32px">📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
       📞 Teléfono fijo: <strong>531 13 54</strong><br>
       📱 WhatsApp: <a href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen.%20¿Me%20pueden%20ayudar%3F" target="_blank" rel="noopener">312 827 4796</a><br>
@@ -251,7 +219,7 @@
     Todos los derechos reservados.
   </footer>
 
-  <!-- Botón WhatsApp flotante (TAREA 2) -->
+  <!-- WhatsApp flotante -->
   <a href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen.%20¿Me%20pueden%20ayudar%3F"
      target="_blank" rel="noopener" class="btn-wpp" aria-label="Abrir WhatsApp">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="28" height="28">
@@ -259,14 +227,24 @@
 
   <!-- Scripts -->
   <script>
-    /* Slider simple */
-    const slides=document.querySelectorAll('.hero-slide');
-    let current=0;
-    setInterval(()=>{
+    /* Slider accesible con pausa */
+    const slides = document.querySelectorAll('.hero-slide');
+    const btnPausa = document.getElementById('btnPausa');
+    let current = 0;
+    let intervalo = setInterval(siguiente, 5000);
+
+    function siguiente() {
       slides[current].classList.remove('active');
-      current=(current+1)%slides.length;
+      current = (current + 1) % slides.length;
       slides[current].classList.add('active');
-    },5000);
+    }
+
+    btnPausa.addEventListener('click', () => {
+      clearInterval(intervalo);
+      btnPausa.textContent = '▶ Reanudar';
+      btnPausa.removeEventListener('click', arguments.callee);
+      btnPausa.addEventListener('click', () => location.reload());
+    });
   </script>
 </body>
 </html>
