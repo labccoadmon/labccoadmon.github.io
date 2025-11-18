@@ -84,6 +84,14 @@
     /* ---------- SECCIONES CENTRADAS (con fondo blanco y sombra) ---------- */
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
 
+    /* ---------- NOSOTROS MINIMAL (poco texto, imagen decorativa) ---------- */
+    .nos-minimal{display:flex;flex-wrap:wrap;align-items:center;gap:40px}
+    .nos-text{flex:1;min-width:280px}
+    .nos-text h2{margin-bottom:10px;font-size:28px}
+    .nos-text p{font-size:16px;color:#445569;line-height:1.6}
+    .nos-img{flex:0 0 320px;text-align:center}
+    .nos-img img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px var(--sombra)}
+
     /* ---------- MAIN (solo espaciado vertical) ---------- */
     main{width:100%;max-width:1200px;margin:36px auto;padding:0 0 60px}
     section{margin-bottom:30px}
@@ -107,6 +115,22 @@
     footer{background:var(--celeste);color:var(--blanco);text-align:center;padding:26px 0;font-size:15px}
     .footer-grid{max-width:1200px;margin:0 auto;display:flex;gap:18px;justify-content:space-between;align-items:flex-start;padding:0 var(--margen)}
     .footer-col{flex:1;text-align:left}
+
+    /* BOTONES DE DESCARGA (VISIBLES, AZUL OSCURO, NEGRITA) */
+    .btn-down{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--azul);
+      color:var(--blanco);
+      padding:12px 24px;
+      border-radius:8px;
+      font-weight:700;
+      font-size:16px;
+      box-shadow:0 4px 12px var(--sombra);
+      transition:transform .2s;
+    }
+    .btn-down:hover{transform:scale(1.05)}
 
     /* WHATSAPP */
     .btn-wpp{position:fixed;bottom:20px;right:20px;background:var(--wpp);color:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-size:34px;box-shadow:0 6px 18px rgba(0,0,0,.18);z-index:2000}
@@ -182,11 +206,18 @@
     </div>
   </section>
 
-  <!-- NOSOTROS + DISTINTIVOS (misma caja, sin salto) -->
+  <!-- NOSOTROS MINIMAL (poco texto, imagen decorativa) -->
   <div class="section-box">
     <section id="nosotros">
-      <h2>Nosotros</h2>
-      <p>LABCCO cuenta con amplia trayectoria en diagnóstico clínico y salud ocupacional. Brindamos soluciones técnicas y atención especializada a empresas del Oriente Antioqueño, con énfasis en calidad y cumplimiento normativo.</p>
+      <div class="nos-minimal">
+        <div class="nos-text">
+          <h2>Nosotros</h2>
+          <p>Más de 30 años creciendo junto a ustedes. Servicio humano, preciso y confiable para las empresas que construyen el país.</p>
+        </div>
+        <div class="nos-img">
+          <img src="lab-modern.webp" alt="Laboratorio LABCCO" loading="lazy">
+        </div>
+      </div>
 
       <!-- Distintivo + habilitaciones (fluido dentro de la misma sección) -->
       <div style="margin-top:30px;display:flex;align-items:flex-start;gap:30px;flex-wrap:wrap;">
@@ -224,13 +255,13 @@
         <article class="card"><h3>Toma de muestra a domicilio</h3><p>Programación para empresas y particulares con trazabilidad completa.</p></article>
       </div>
 
-      <!-- BOTONES DE DESCARGA (dentro de la misma sección) -->
+      <!-- BOTONES DE DESCARGA (VISIBLES, AZUL OSCURO, NEGRITA) -->
       <div style="margin-top:30px;text-align:center;display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
         <a href="Portafolio empresas .pdf" class="btn-down" download>
-          <span style="margin-right:6px;">📄</span> Descargar portafolio empresas
+          <span style="margin-right:8px;font-size:20px;">📄</span> Descargar portafolio empresas
         </a>
         <a href="Portafolio particulares .pdf" class="btn-down" download>
-          <span style="margin-right:6px;">📄</span> Descargar portafolio particulares
+          <span style="margin-right:8px;font-size:20px;">📄</span> Descargar portafolio particulares
         </a>
       </div>
     </section>
@@ -279,7 +310,7 @@
           </select>
         </label>
         <label>Mensaje (opcional)<input type="text" name="mensaje"></label>
-        <input type="hidden" name="_next" value="https://labccoadmon.github.io/gracias.html">
+        <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
         <input type="hidden" name="_captcha" value="false">
         <button class="btn">Quiero mi cita</button>
       </form>
