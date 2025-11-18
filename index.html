@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://labccosas.com/" />
   <meta name="robots" content="index, follow" />
 
-  <!-- ========== OpenGraph & Twitter Cards ========== -->
+  <!-- ========== OpenGraph & Twitter Cards (mejora CTR en compartidos) ========== -->
   <meta property="og:site_name" content="LABCCO" />
   <meta property="og:title" content="LABCCO — Laboratorio Clínico Colombia Oriente" />
   <meta property="og:description" content="30 años en Rionegro. Resultados en 24 h, salud ocupacional y pruebas especializadas para empresas." />
@@ -21,24 +21,25 @@
   <meta name="twitter:description" content="Resultados confiables y rápidos. Servicios en salud ocupacional, química clínica y pruebas especiales." />
   <meta name="twitter:image" content="https://labccosas.com/LABCCO-Photoroom.png" />
 
-  <!-- ========== Favicons / PWA ========== -->
+  <!-- ========== PWA / Favicons ========== -->
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <meta name="theme-color" content="#10324a" />
 
-  <!-- ========== Performance ========== -->
+  <!-- ========== Performance hints ========== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="/hero1.webp" />
-  <link rel="preload" as="image" href="/hero2.webp" />
-  <link rel="preload" as="image" href="/hero3.webp" />
+  <!-- Preload critical hero images (helps LCP) -->
+  <link rel="preload" as="image" href="/hero1.webp" imagesrcset="/hero1.webp" />
+  <link rel="preload" as="image" href="/hero2.webp" imagesrcset="/hero2.webp" />
+  <link rel="preload" as="image" href="/hero3.webp" imagesrcset="/hero3.webp" />
 
-  <!-- ========== Web Font ========== -->
+  <!-- ========== Web Font (non-blocking) ========== -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- ========== Inline Critical CSS ========== -->
+  <!-- ========== Inline Critical CSS (keeps file compact, non-blocking) ========== -->
   <style>
     /* Variables y reset */
     :root {
@@ -48,37 +49,80 @@
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--azul);background:var(--blanco);-webkit-font-smoothing:antialiased;line-height:1.5;font-size:16px}
-    a{text-decoration:none;color:inherit}
+    a{color:inherit;text-decoration:none}
     .container{max-width:var(--maxw);margin:0 auto;padding:0 18px}
 
-    /* Top bar */
-    .top-bar{position:fixed;top:0;left:0;right:0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 28px;padding:8px 16px;background:var(--celeste);color:var(--blanco);font-weight:700;font-size:14px;z-index:1600}
+    /* Top bar (fixed) */
+    .top-bar{position:fixed;inset:0 0 auto;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 28px;padding:8px 16px;background:var(--celeste);color:var(--blanco);font-weight:700;font-size:14px;z-index:1600}
+    .top-bar a{display:inline-flex;align-items:center;gap:8px;color:inherit}
+    .top-bar .brand-extra{font-size:13px;font-weight:400;color:#e6f2fb;margin-left:12px}
 
     /* Navbar */
-    header.navbar{position:sticky;top:46px;background:white;box-shadow:0 1px 6px var(--sombra);padding:8px 20px;z-index:1500}
+    header.navbar{position:sticky;top:46px;display:flex;align-items:center;justify-content:space-between;padding:8px 20px;height:76px;background:var(--blanco);box-shadow:0 1px 6px var(--sombra);z-index:1500}
     .brand{display:flex;align-items:center;gap:14px}
-    .brand img{height:72px;border-radius:6px}
-    .nav-links{display:flex;gap:20px}
-    
+    .brand img{height:72px;border-radius:6px;display:block}
+    .nav-links{display:flex;gap:20px;align-items:center}
+    .nav-links a{font-weight:500;font-size:17px;padding:6px 4px}
+    .nav-links a:focus{outline:3px solid rgba(0,119,204,.12);outline-offset:4px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
     /* Hero */
-    .hero{position:relative;min-height:68vh;display:flex;align-items:center;justify-content:center}
+    .hero{position:relative;min-height:68vh;display:flex;align-items:center;justify-content:center;padding:12px 10px;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.45), rgba(255,255,255,.2));z-index:1;pointer-events:none}
     .hero-media{position:absolute;inset:0;z-index:0}
-    .hero-media img{width:100%;height:100%;object-fit:cover}
-    .hero-inner{position:relative;z-index:2}
-    .text-box{background:rgba(255,255,255,.65);padding:16px 36px;border-radius:10px;box-shadow:0 8px 24px var(--sombra);max-width:1100px;margin:auto}
-    .hero-controls{margin-top:12px;display:flex;justify-content:center;gap:8px}
-    .cta{background:#0077cc;color:#fff;padding:10px 18px;border-radius:10px;font-weight:700}
+    .hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-inner{position:relative;z-index:2;max-width:1250px;padding:14px;text-align:center;width:100%}
+    .text-box{background:rgba(255,255,255,.65);padding:16px 36px;border-radius:var(--radius);box-shadow:0 8px 24px var(--sombra);width:96%;max-width:1100px;margin:auto}
+    .hero h1{color:#2a5d8f;font-size:34px;font-weight:700;margin:0 0 8px}
+    .commitment{color:#003366;font-size:20px;font-weight:700;margin:8px 0}
+    .final-text{color:#003366;font-size:15px;margin:8px 0 18px}
+    .cta{display:inline-block;background:#0077cc;color:var(--blanco);padding:10px 18px;border-radius:10px;font-weight:700;box-shadow:0 8px 20px rgba(16,50,74,.12)}
 
-    /* Formularios */
+    /* Hero controls */
+    .hero-controls{margin-top:12px;text-align:center;display:flex;justify-content:center;gap:8px}
+    .hero-controls button{background:var(--celeste);color:var(--blanco);border:none;padding:8px 12px;border-radius:6px;font-size:14px;cursor:pointer}
+
+    /* Main content */
+    main{max-width:var(--maxw);margin:36px auto;padding:0 18px 60px}
+    section{margin-bottom:34px}
+    h2{color:var(--azul-b);margin-bottom:12px;font-size:22px}
+    p{color:#334b5b}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .card{background:#fff;border-radius:10px;padding:18px;box-shadow:0 6px 18px var(--sombra);border:1px solid rgba(16,50,74,.04)}
+
+    /* Form */
     form{display:flex;flex-direction:column;gap:12px;max-width:520px}
-    input,select{padding:10px;border-radius:8px;border:1px solid #d7e8f2}
+    label{font-size:14px;color:#234b60}
+    input[type="text"], input[type="tel"], select, textarea{padding:10px;border-radius:8px;border:1px solid #d7e8f2;font-size:15px;background:#fff}
+    button[type="submit"]{width:max-content;padding:10px 16px;border-radius:10px;background:#0077cc;color:#fff;border:none;cursor:pointer;font-weight:700}
 
-    /* WhatsApp */
-    .btn-wpp{position:fixed;bottom:20px;right:20px;background:#25d366;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.18);z-index:2000}
+    /* Map */
+    .map-wrap{max-width:1100px;margin:12px auto;border-radius:8px;overflow:hidden;border:1px solid rgba(16,50,74,.04)}
 
+    /* Footer */
+    footer{background:var(--azul);color:var(--blanco);text-align:center;padding:18px;font-size:15px}
+
+    /* WhatsApp floating */
+    .btn-wpp{position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.18);z-index:2000;transition:transform .18s}
+    .btn-wpp img{width:28px;height:28px}
+
+    /* Responsive */
+    @media (max-width:900px){ .grid-3{grid-template-columns:repeat(2,1fr)} .hero h1{font-size:30px} .nav-links{display:none} }
+    @media (max-width:520px){
+      .top-bar{flex-direction:column;text-align:center;padding:10px 12px}
+      header.navbar{flex-direction:column;height:auto;padding:10px 16px}
+      .brand img{height:56px}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .hero{min-height:55vh}
+      .hero h1{font-size:22px}
+      .commitment{font-size:18px}
+      form{width:100%}
+    }
   </style>
 
-  <!-- ========== Structured Data ========== -->
+  <!-- ========== Structured Data (JSON-LD) - optimized for lab + opening hours ========== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -90,7 +134,8 @@
     "contactPoint": [{
       "@type": "ContactPoint",
       "telephone": "+57-312-827-4796",
-      "contactType": "customer support"
+      "contactType": "customer support",
+      "availableLanguage": ["Spanish"]
     }],
     "email": "calidad@labccosas.com",
     "address": {
@@ -100,28 +145,39 @@
       "addressRegion": "Antioquia",
       "postalCode": "054040",
       "addressCountry": "CO"
-    }
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "12:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "14:00", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "11:00" }
+    ]
   }
   </script>
+
 </head>
-
 <body>
-
-  <!-- Top Bar -->
-  <div class="top-bar">
-    ⏰ Lun-Vie 7-12 / 14-17 · Sáb 8-11  
-    📞 531 13 54  
-    <a href="https://wa.me/573128274796">📱 WhatsApp</a>
+  <!-- ========== Top bar (contacto rápido) ========== -->
+  <div class="top-bar" role="banner" aria-label="Información de contacto">
+    <div class="horario" aria-hidden="false">⏰ Horario: Lun - Vie 7:00 - 12:00 / 14:00 - 17:00 | Sáb 8:00 - 11:00</div>
+    <div>
+      <span aria-hidden="true">📞</span> <strong>531 13 54</strong>
+      <a href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">📱 312 827 4796</a>
+      <a href="mailto:calidad@labccosas.com" aria-label="Enviar correo">✉ calidad@labccosas.com</a>
+    </div>
+    <div class="brand-extra" aria-hidden="true">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div>
   </div>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
-      <div class="brand">
-        <a href="/"><img src="/LABCCO-Photoroom.png" alt="Logo LABCCO"></a>
-        <img src="/distintivo30.png" width="72">
+  <!-- ========== Navbar ========== -->
+  <header class="navbar" role="navigation" aria-label="Menú principal">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:18px">
+      <div class="brand" style="align-items:center">
+        <a href="/" aria-label="Ir al inicio">
+          <img src="/LABCCO-Photoroom.png" alt="Logo LABCCO" id="siteLogo" width="200" height="72" decoding="async">
+        </a>
+        <img src="/distintivo30.png" alt="Distintivo 30 años" id="distintivo" width="72" height="72" style="border-radius:8px">
       </div>
-      <nav class="nav-links">
+
+      <nav class="nav-links" aria-label="Enlaces principales">
         <a href="#inicio">Inicio</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#servicios">Servicios</a>
@@ -130,77 +186,106 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <main id="inicio">
-    <section class="hero">
-      <div class="hero-media">
-        <img id="heroImg" src="/hero1.webp" alt="Laboratorio moderno">
+  <!-- ========== Hero (accessible slider using picture + JS swap) ========== -->
+  <main id="inicio" tabindex="-1">
+    <section class="hero" role="region" aria-label="Banner principal">
+      <!-- Hero media: single picture element whose src is replaced by JS (true lazy + accessible alt) -->
+      <div class="hero-media" aria-hidden="true">
+        <picture id="heroPicture">
+          <source id="heroSource" type="image/webp" srcset="/hero1.webp">
+          <!-- Provide a JPG fallback for older browsers -->
+          <img id="heroImg" src="/hero1.jpg" alt="Laboratorio moderno con equipo y personal" loading="eager" decoding="async" width="1600" height="900">
+        </picture>
       </div>
 
       <div class="hero-inner container">
-        <div class="text-box">
-          <h1>Más de 30 años creciendo junto a ustedes</h1>
-          <p class="commitment">Servicio humano, preciso y confiable.</p>
-          <p class="final-text">Medicina particular · Laboratorio · Salud ocupacional</p>
-
+        <div class="text-box" role="region" aria-labelledby="heroTitle">
+          <h1 id="heroTitle">Más de 30 años creciendo junto a ustedes</h1>
+          <p class="commitment">Servicio humano, preciso y confiable para empresas y pacientes del Oriente Antioqueño.</p>
+          <p class="final-text">Medicina particular · Salud ocupacional · Laboratorio · Visiometría · Audiometría</p>
+          <p><a href="#contacto" style="color:#003366;text-decoration:underline">Contáctanos para más información</a></p>
           <a class="cta" href="#contacto">Contáctanos</a>
 
-          <div class="hero-controls">
-            <button id="btnPrev">◀</button>
-            <button id="btnPausa" aria-pressed="false">⏸ Pausar</button>
-            <button id="btnNext">▶</button>
+          <div class="hero-controls" role="group" aria-label="Controles del carrusel">
+            <button id="btnPrev" aria-label="Imagen anterior" class="cta">◀</button>
+            <button id="btnPausa" aria-label="Pausar reproducción automática" class="cta" aria-pressed="false">⏸ Pausar</button>
+            <button id="btnNext" aria-label="Imagen siguiente" class="cta">▶</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Nosotros -->
-    <section id="nosotros" class="section">
+    <!-- ========== Nosotros ========== -->
+    <section id="nosotros" class="section" aria-labelledby="nosotrosTitle">
       <div class="container">
-        <h2>Nosotros</h2>
-        <p>LABCCO cuenta con amplia trayectoria en diagnóstico clínico y salud ocupacional.</p>
+        <h2 id="nosotrosTitle">Nosotros</h2>
+        <p>LABCCO cuenta con amplia trayectoria en diagnóstico clínico y salud ocupacional. Brindamos soluciones técnicas y atención especializada a empresas del Oriente Antioqueño, con énfasis en calidad y cumplimiento normativo.</p>
       </div>
     </section>
 
-    <!-- Servicios -->
-    <section id="servicios" class="section">
+    <!-- ========== Servicios ========== -->
+    <section id="servicios" class="section section-alt" aria-labelledby="serviciosTitle">
       <div class="container">
-        <h2>Servicios</h2>
-        <div class="grid-3">
-          <div class="card"><h3>Química Clínica</h3><p>Glucosa, creatinina, perfil lipídico, TSH…</p></div>
-          <div class="card"><h3>Hematología</h3><p>Hemograma tipo IV.</p></div>
-          <div class="card"><h3>Serología</h3><p>VDRL, VIH, citoquímicos, KOH…</p></div>
+        <h2 id="serviciosTitle">Servicios</h2>
+        <div class="grid-3" role="list">
+          <article class="card" role="listitem" aria-labelledby="s1">
+            <h3 id="s1">Química Clínica</h3>
+            <p>Glucosa, creatinina, perfil lipídico, TSH, HbA1c — equipo Mindray BS-120 con control de calidad.</p>
+          </article>
+
+          <article class="card" role="listitem" aria-labelledby="s2">
+            <h3 id="s2">Hematología</h3>
+            <p>Hemograma tipo IV con validación de resultados y control interno.</p>
+          </article>
+
+          <article class="card" role="listitem" aria-labelledby="s3">
+            <h3 id="s3">Serología y pruebas manuales</h3>
+            <p>VDRL, VIH, coprológicos, coloraciones especiales y KOH.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Especiales -->
-    <section id="especiales" class="section">
+    <!-- ========== Pruebas especiales ========== -->
+    <section id="especiales" class="section" aria-labelledby="especialesTitle">
       <div class="container">
-        <h2>Pruebas Especiales</h2>
+        <h2 id="especialesTitle">Pruebas Especiales</h2>
         <div class="grid-2">
-          <div class="card"><h3>Colinesterasa Eritrocitaria</h3><p>Prueba diferencial ocupacional.</p></div>
-          <div class="card"><h3>Visiometría y Audiometría</h3><p>Cabina audiométrica y evaluación visual.</p></div>
+          <div class="card">
+            <h3>Colinesterasa Eritrocitaria</h3>
+            <p>Prueba diferencial para empresas agrícolas y de fumigación — informe técnico y recomendación médica.</p>
+          </div>
+          <div class="card">
+            <h3>Visiometría y Audiometría</h3>
+            <p>Cabina audiométrica y evaluación optométrica para exámenes ocupacionales.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="section">
+    <!-- ========== Contacto + Formulario ========== -->
+    <section id="contacto" class="section" aria-labelledby="contactoTitle">
       <div class="container">
-        <h2>Agenda tu cita</h2>
+        <h2 id="contactoTitle">Agenda tu cita</h2>
+        <p>Completa el formulario y nos contactamos para confirmar fecha y hora.</p>
 
-        <form action="https://formsubmit.co/calidad@labccosas.com" method="POST">
-          <input name="nombre" type="text" placeholder="Nombre completo" required>
-          <input name="whatsapp" type="tel" placeholder="+57 3XX XXX XXXX" required>
-          <select name="servicio" required>
-            <option value="">Selecciona un servicio</option>
+        <form action="https://formsubmit.co/calidad@labccosas.com" method="POST" aria-label="Formulario de agendamiento">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+
+          <label for="whatsapp">WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" placeholder="+57 3XX XXX XXXX" required pattern="^\+?\d{7,15}$" inputmode="tel">
+
+          <label for="servicio">Servicio</label>
+          <select id="servicio" name="servicio" required>
+            <option value="">Selecciona servicio</option>
             <option>Examen de sangre</option>
             <option>Examen pre-empleo</option>
             <option>Audiometría</option>
             <option>Optometría</option>
           </select>
 
+          <!-- IMPORTANT: relative _next so it works en GitHub Pages y en dominio real -->
           <input type="hidden" name="_next" value="/gracias.html">
           <input type="hidden" name="_captcha" value="false">
 
@@ -208,54 +293,130 @@
         </form>
 
         <p style="margin-top:24px">
-          📍 Carrera 48 #52-54, Rionegro, Antioquia<br>
-          📞 531 13 54 · 📱 312 827 4796<br>
-          ✉ calidad@labccosas.com
+          📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
+          📞 Teléfono fijo: <strong>531 13 54</strong><br>
+          📱 WhatsApp: <a href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen." target="_blank" rel="noopener noreferrer">312 827 4796</a><br>
+          ✉ Correo: <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a>
         </p>
 
-        <div class="map-wrap">
-          <iframe src="https://www.google.com/maps?q=Carrera+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" style="border:0"></iframe>
+        <div class="map-wrap" aria-hidden="false" style="margin-top:18px">
+          <iframe src="https://www.google.com/maps?q=Carrera+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" loading="lazy" title="Mapa - LABCCO" style="border:0"></iframe>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
+  <!-- ========== Footer ========== -->
+  <footer role="contentinfo">
     <div class="container">
-      <p>© 2025 LABCCO — Laboratorio Clínico Colombiano de Oriente S.A.S</p>
-      <p><a href="/privacidad.html" style="color:white">Política de privacidad</a></p>
+      <p style="margin:6px 0">© 2025 LABCCO — Laboratorio Clínico Colombiano de Oriente S.A.S</p>
+      <p style="font-size:13px;margin:0">Todos los derechos reservados · <a href="/privacidad.html" style="color:rgba(255,255,255,.95)">Política de privacidad</a></p>
     </div>
   </footer>
 
-  <!-- WhatsApp -->
-  <a class="btn-wpp" href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20una%20cita" target="_blank">
-    <img src="/wpp.svg" width="28" alt="WhatsApp">
+  <!-- ========== WhatsApp flotante ========== -->
+  <a class="btn-wpp" href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen." target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
   </a>
 
-  <!-- Slider Script -->
-  <script>
-    const images = ["/hero1.webp","/hero2.webp","/hero3.webp"];
-    let index = 0;
-    let auto = true;
-    const img = document.getElementById("heroImg");
+  <!-- Noscript fallback -->
+  <noscript>
+    <div style="padding:12px;background:#fff4;position:fixed;bottom:88px;right:20px;border-radius:8px;z-index:2100">
+      ⚠️ Para una mejor experiencia habilita JavaScript en tu navegador.
+    </div>
+  </noscript>
 
-    function show(n){
-      index = (n + images.length) % images.length;
-      img.src = images[index];
+  <!-- ========== Scripts (defered behavior implemented inline non-blocking) ========== -->
+  <script>
+  (function(){
+    'use strict';
+
+    /* ========= Slider data =========
+       - Uses picture element above.
+       - True lazy behavior: first image is eager (preloaded), next images swap on demand.
+       - Respects prefers-reduced-motion.
+    */
+    const slides = [
+      { webp: '/hero1.webp', jpg: '/hero1.jpg', alt: 'Laboratorio moderno con equipo' },
+      { webp: '/hero2.webp', jpg: '/hero2.jpg', alt: 'Personal tomando muestra' },
+      { webp: '/hero3.webp', jpg: '/hero3.jpg', alt: 'Equipos de alta precisión' }
+    ];
+
+    const picture = document.getElementById('heroPicture');
+    const heroSource = document.getElementById('heroSource');
+    const heroImg = document.getElementById('heroImg');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    const btnPausa = document.getElementById('btnPausa');
+
+    let current = 0;
+    let intervalId = null;
+    const INTERVAL = 5000;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function setSlide(i){
+      const s = slides[i];
+      // update sources — browser chooses
+      heroSource.srcset = s.webp;
+      heroImg.src = s.jpg;
+      heroImg.alt = s.alt || '';
+      // update aria states
+      // (we keep aria-pressed on the pause button only)
     }
 
-    document.getElementById("btnPrev").onclick = () => show(index - 1);
-    document.getElementById("btnNext").onclick = () => show(index + 1);
+    function next(){
+      current = (current + 1) % slides.length;
+      setSlide(current);
+    }
+    function prev(){
+      current = (current - 1 + slides.length) % slides.length;
+      setSlide(current);
+    }
 
-    document.getElementById("btnPausa").onclick = (e) => {
-      auto = !auto;
-      e.target.innerText = auto ? "⏸ Pausar" : "▶ Reanudar";
-      e.target.setAttribute("aria-pressed", !auto);
-    };
+    function startAuto(){
+      if (reduced) return;
+      stopAuto();
+      intervalId = setInterval(next, INTERVAL);
+      btnPausa.textContent = '⏸ Pausar';
+      btnPausa.setAttribute('aria-pressed','false');
+    }
+    function stopAuto(){
+      if (intervalId) { clearInterval(intervalId); intervalId = null; }
+      btnPausa.textContent = '▶ Reanudar';
+      btnPausa.setAttribute('aria-pressed','true');
+    }
 
-    setInterval(() => { if(auto) show(index + 1); }, 5000);
+    // Controls
+    btnNext.addEventListener('click', () => { next(); stopAuto(); });
+    btnPrev.addEventListener('click', () => { prev(); stopAuto(); });
+    btnPausa.addEventListener('click', () => {
+      if (intervalId) stopAuto(); else startAuto();
+    });
+
+    // Keyboard accessibility: arrow keys
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { next(); stopAuto(); }
+      if (e.key === 'ArrowLeft') { prev(); stopAuto(); }
+    });
+
+    // Init
+    setSlide(current);
+    // Preload non-critical images (low priority using Image() -- doesn't block)
+    slides.forEach((s, idx) => {
+      if (idx === 0) return;
+      const i = new Image();
+      i.src = s.webp;
+      // also preload jpg fallback
+      const j = new Image();
+      j.src = s.jpg;
+    });
+
+    if (!reduced) startAuto();
+
+    // Improve LCP stability: reserve space already with width/height on img (set in markup)
+  })();
   </script>
 
+  <!-- ========== End body ========== -->
 </body>
 </html>
