@@ -1,253 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- SEO -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LABCCO — Laboratorio Clínico Colombia Oriente</title>
-  <meta name="description" content="Laboratorio clínico en Rionegro con 30 años de experiencia. Resultados en 24 h, muestra a domicilio, exámenes ocupacionales y más de 200 empresas nos respaldan.">
-  <link rel="canonical" href="https://labccoadmon.github.io/">
-  <meta name="robots" content="index, follow">
+  <meta name="description" content="Laboratorio clínico con 30 años de experiencia en salud ocupacional, química clínica, hematología y pruebas especializadas en el Oriente de Colombia." />
 
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Favicon / PWA (sin "/" inicial) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#10324a">
+  <!-- SEO básico -->
+  <link rel="canonical" href="https://labcco.com/" />
 
   <!-- Fuente -->
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- CSS -->
-  <style>
-    :root{--azul:#10324a; --azul-b:#004a99; --celeste:#0099cc; --blanco:#fff; --sombra:rgba(16,50,74,.09);}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--azul);background:var(--blanco);-webkit-font-smoothing:antialiased;line-height:1.5}
-    a{color:inherit;text-decoration:none}
-
-    /* Top-bar */
-    .top-bar{position:fixed;inset:0 0 auto;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 36px;padding:10px 16px;background:var(--celeste);color:var(--blanco);font-weight:700;font-size:15px;z-index:1600}
-    .top-bar a{display:inline-flex;align-items:center;gap:8px}
-    .horario::before{content:"⏰";font-size:15px}
-    .top-bar>div{display:flex;gap:18px;align-items:center}
-    .top-bar .brand-extra{font-size:13px;font-weight:400;color:#1a4d7a;margin-left:20px;white-space:nowrap}
-
-    /* Nav */
-    .navbar{position:sticky;top:46px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:6px 40px;height:76px;background:var(--blanco);box-shadow:0 1px 6px var(--sombra);z-index:1500}
-    .brand{display:flex;align-items:center;gap:14px}
-    #siteLogo,#distintivo{height:72px;border-radius:6px}
-    #distintivo{border:2px solid var(--blanco);box-shadow:0 6px 14px var(--sombra)}
-    .nav-links{display:flex;gap:28px;transform:translateX(-24px)}
-    .nav-links a{font-weight:500;font-size:18px;padding:6px 4px}
-    .nav-links a:hover{color:#0077cc}
-
-    /* Hero (sin tocar layout visual) */
-    .hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;padding:12px 10px}
-    /* ✅ WebP + lazy, pero SIN romper layout */
-    .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s}
-    .hero-slide.active{opacity:1}
-    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.06);z-index:1}
-    .hero .container{position:relative;z-index:2;max-width:1250px;padding:14px;text-align:center}
-    .text-box{background:rgba(255,255,255,.55);padding:16px 40px;border-radius:10px;box-shadow:0 8px 24px var(--sombra);width:96%;max-width:1100px;margin:auto}
-    .hero h1{color:#2a5d8f;font-size:34px;font-weight:700;margin-bottom:12px}
-    .commitment{color:#003366;font-size:22px;font-weight:700;margin-bottom:14px}
-    .final-text{color:#003366;font-size:15px;margin-bottom:22px;letter-spacing:.5px}
-    .cta{display:inline-block;background:#0077cc;color:var(--blanco);padding:10px 18px;border-radius:10px;font-weight:700;box-shadow:0 8px 20px rgba(16,50,74,.12)}
-
-    /* Botones slider accesible */
-    .hero-controls{margin-top:12px;text-align:center}
-    .hero-controls button{background:var(--celeste);color:var(--blanco);border:none;padding:6px 12px;border-radius:4px;font-size:14px;cursor:pointer}
-
-    /* Main & Footer */
-    main{max-width:1100px;margin:36px auto;padding:0 18px 60px}
-    section{margin-bottom:34px}
-    h2{color:var(--azul-b);margin-bottom:12px}
-    p{color:#334b5b}
-    .map-wrap{max-width:1100px;margin:12px auto;border-radius:8px;overflow:hidden}
-    footer{background:var(--azul);color:var(--blanco);text-align:center;padding:18px;font-size:15px}
-
-    /* Botón WhatsApp flotante */
-    .btn-wpp{position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:2000;transition:transform .2s}
-    .btn-wpp:hover{transform:scale(1.1)}
-    @media(max-width:520px){.btn-wpp{width:55px;height:55px}}
-
-    /* Responsive */
-    @media(max-width:900px){
-      #siteLogo,#distintivo{height:64px}
-      .navbar{height:68px;padding:6px 24px}
-      .hero h1{font-size:30px;white-space:normal}
-      .commitment{font-size:20px}
-      .nav-links{gap:18px;transform:translateX(-12px)}
-    }
-    @media(max-width:520px){
-      .top-bar{flex-direction:column;text-align:center}
-      .navbar{flex-direction:column;height:auto;padding:10px 16px}
-      .brand{flex-direction:column}
-      #siteLogo,#distintivo{height:56px}
-      .nav-links{transform:none;flex-wrap:wrap;gap:12px}
-      .hero{min-height:60vh}
-      .hero h1{font-size:22px}
-      .commitment{font-size:18px}
-    }
-  </style>
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MedicalOrganization",
-    "name": "LABCCO - Laboratorio Clínico Colombiano de Oriente",
-    "image": "https://labccoadmon.github.io/LABCCO-Photoroom.png",
-    "url": "https://labccoadmon.github.io/",
-    "telephone": "+57-4-5311354",
-    "whatsapp": "+573128274796",
-    "email": "calidad@labccosas.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Carrera 48 #52-54, Edificio Santa Bárbara",
-      "addressLocality": "Rionegro",
-      "addressRegion": "Antioquia",
-      "postalCode": "054040",
-      "addressCountry": "CO"
-    },
-    "openingHoursSpecification": [
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Mo","Tu","We","Th","Fr"],"opens":"07:00","closes":"12:00"},
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Mo","Tu","We","Th","Fr"],"opens":"14:00","closes":"17:00"},
-      {"@type":"OpeningHoursSpecification","dayOfWeek":"Sa","opens":"08:00","closes":"11:00"}
-    ]
-  }
-  </script>
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <!-- Top-bar -->
-  <div class="top-bar" role="banner">
-    <div class="horario">Horario: Lun - Vie 7am - 12m / 2pm - 5pm | Sáb 8am - 11am</div>
-    <div>
-      <span>📞 <strong>531 13 54</strong></span>
-      <a href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen.%20¿Me%20pueden%20ayudar%3F" target="_blank" rel="noopener">📱 312 827 4796</a>
-      <a href="mailto:calidad@labccosas.com">✉ calidad@labccosas.com</a>
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">LABCCO</a>
+      <nav class="nav">
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#especiales">Pruebas Especiales</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="brand-extra">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div>
-  </div>
-
-  <!-- Nav -->
-  <header class="navbar">
-    <div class="brand">
-      <img src="LABCCO-Photoroom.png" alt="Logo LABCCO" id="siteLogo">
-      <img src="distintivo30.png" alt="Distintivo +30 años" id="distintivo">
-    </div>
-    <nav class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
   </header>
 
-  <!-- Hero (igual que antes, pero con WebP y lazy) -->
-  <section class="hero" id="inicio" aria-label="Banner principal">
-    <!-- ✅ WebP + lazy, SIN tocar layout visual -->
-    <div class="hero-slide active" style="background-image:url('hero1.webp')" role="img" aria-label="Laboratorio moderno" loading="lazy"></div>
-    <div class="hero-slide" style="background-image:url('hero2.webp')" role="img" aria-label="Personal tomando muestra" loading="lazy"></div>
-    <div class="hero-slide" style="background-image:url('hero3.webp')" role="img" aria-label="Equipos de alta precisión" loading="lazy"></div>
-
-    <div class="container">
-      <div class="text-box">
-        <h1>Más de 30 años creciendo junto a ustedes</h1>
-        <p class="commitment">Con gratitud seguimos enfocados en ofrecer un servicio humano, preciso y confiable para las empresas que construyen nuestro país.</p>
-        <p class="final-text">Medicina particular - Salud ocupacional - Laboratorio - Visiometría - Audiometría</p>
-        <p><a href="#contacto" style="color:#003366;text-decoration:underline">Contáctanos para más información</a></p>
-        <a class="cta" href="#contacto">Contáctanos</a>
-      </div>
-    </div>
-
-    <!-- Botones accesibles -->
-    <div class="hero-controls">
-      <button id="btnPausa" class="cta">⏸ Pausar</button>
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Laboratorio Clínico Colombia Oriente</h1>
+      <p>Resultados confiables, rápidos y con tecnología certificada. Especialistas en salud ocupacional y pruebas clínicas avanzadas.</p>
+      <a href="#contacto" class="btn-primary">Agenda tu cita</a>
     </div>
   </section>
 
-  <!-- Main -->
-  <main>
-    <section id="nosotros">
-      <h2>Nosotros</h2>
-      <p>LABCCO cuenta con amplia trayectoria en diagnóstico clínico y salud ocupacional. Brindamos soluciones técnicas y atención especializada a empresas del Oriente Antioqueño, con énfasis en calidad y cumplimiento normativo.</p>
-    </section>
-
-    <section id="servicios">
-      <h2>Servicios</h2>
-      <p>Hematología, química clínica, serología, colinesterasa eritrocitaria, optometría, audiometría, exámenes ocupacionales y soluciones integrales B2B.</p>
-    </section>
-
-    <!-- Formulario + mapa -->
-    <section id="contacto">
-      <h2>Agenda tu cita</h2>
-      <form action="https://formsubmit.co/calidad@labccosas.com" method="POST">
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
-        <select name="servicio" required>
-          <option value="">Selecciona servicio</option>
-          <option>Examen de sangre</option>
-          <option>Examen pre-empleo</option>
-          <option>Audiometría</option>
-          <option>Optometría</option>
-        </select>
-        <button type="submit" class="cta">Quiero mi cita</button>
-        <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
-        <input type="hidden" name="_captcha" value="false">
-      </form>
-
-      <p style="margin-top:32px">📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
-      📞 Teléfono fijo: <strong>531 13 54</strong><br>
-      📱 WhatsApp: <a href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen.%20¿Me%20pueden%20ayudar%3F" target="_blank" rel="noopener">312 827 4796</a><br>
-      ✉ Correo: <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></p>
-
-      <div class="map-wrap">
-        <iframe src="https://www.google.com/maps?q=Carrera+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" style="border:0" loading="lazy"></iframe>
+  <section id="servicios" class="section">
+    <div class="container">
+      <h2>Servicios Principales</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Química Clínica</h3>
+          <p>Glucosa, creatinina, perfil lipídico, TSH, HbA1c y más en nuestro equipo Mindray BS-120.</p>
+        </div>
+        <div class="card">
+          <h3>Hematología</h3>
+          <p>Hemograma tipo IV con precisión profesional.</p>
+        </div>
+        <div class="card">
+          <h3>Serologías y Pruebas Manuales</h3>
+          <p>VDRL, VIH, KOH, citoquímicos, coprológicos y coloraciones especiales.</p>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 LABCCO — Laboratorio Clínico Colombiano de Oriente SAS<br>
-    Todos los derechos reservados.
+  <section id="especiales" class="section section-alt">
+    <div class="container">
+      <h2>Pruebas Especiales</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Colinesterasa Eritrocitaria</h3>
+          <p>Prueba altamente demandada para empresas agrícolas, fumigación y plantaciones. Resultado confiable y rápido.</p>
+        </div>
+        <div class="card">
+          <h3>Visiometría y Optometría</h3>
+          <p>Evaluaciones completas con cabina audiométrica. Ideal para salud ocupacional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipo" class="section">
+    <div class="container">
+      <h2>Equipos y Tecnología</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Mindray BS-120</h3>
+          <p>Equipo de química clínica confiable para pruebas esenciales y avanzadas.</p>
+        </div>
+        <div class="card">
+          <h3>Hematología Automatizada</h3>
+          <p>Hemograma tipo IV con precisión y control de calidad permanente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section section-alt">
+    <div class="container">
+      <h2>Contacto</h2>
+      <p>Programación de citas, resultados y atención al cliente.</p>
+      <div class="contact-box">
+        <p><strong>Teléfono:</strong> 300 000 0000</p>
+        <p><strong>Correo:</strong> info@labcco.com</p>
+        <p><strong>Dirección:</strong> Centro, Oriente de Colombia</p>
+        <a href="https://wa.me/573000000000" class="btn-primary">Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 LABCCO — Laboratorio Clínico Colombia Oriente. Todos los derechos reservados.</p>
+    </div>
   </footer>
-
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen.%20¿Me%20pueden%20ayudar%3F"
-     target="_blank" rel="noopener" class="btn-wpp" aria-label="Abrir WhatsApp">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="28" height="28">
-  </a>
-
-  <!-- Scripts -->
-  <script>
-    /* Slider accesible con pausa */
-    const slides = document.querySelectorAll('.hero-slide');
-    const btnPausa = document.getElementById('btnPausa');
-    let current = 0;
-    let intervalo = setInterval(siguiente, 5000);
-
-    function siguiente() {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }
-
-    btnPausa.addEventListener('click', () => {
-      clearInterval(intervalo);
-      btnPausa.textContent = '▶ Reanudar';
-      btnPausa.removeEventListener('click', arguments.callee);
-      btnPausa.addEventListener('click', () => location.reload());
-    });
-  </script>
 </body>
 </html>
