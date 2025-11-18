@@ -35,7 +35,7 @@
       --sombra:rgba(16,50,74,.09);
       --wpp:#25d366;
       --overlay:rgba(16,50,74,.55);
-      --margen:24px;   /* 1.5 cm aprox */
+      --margen:42px; /* ↑ AUMENTADO: margen estándar clínico */
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
@@ -120,16 +120,6 @@
       .services{grid-template-columns:1fr}
       .hero h1{font-size:22px}
       .footer-grid{flex-direction:column;text-align:center}
-    }
-
-    /* ---------- FUERZA MARGEN 24 PX (por si acaso) ---------- */
-    .top-bar,
-    .navbar,
-    .hero,
-    main,
-    footer{
-      padding-left:24px !important;
-      padding-right:24px !important;
     }
   </style>
 </head>
@@ -235,7 +225,7 @@
         </select>
       </label>
       <label>Mensaje (opcional)<input type="text" name="mensaje"></label>
-      <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
+      <input type="hidden" name="_next" value="https://labccoadmon.github.io/gracias.html">
       <input type="hidden" name="_captcha" value="false">
       <button class="btn">Quiero mi cita</button>
     </form>
