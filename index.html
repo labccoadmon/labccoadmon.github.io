@@ -211,7 +211,7 @@
     </section>
   </div>
 
-  <!-- SERVICIOS (fondo blanco centrado) -->
+  <!-- SERVICIOS + BOTONES DE DESCARGA (misma caja, fluido) -->
   <div class="section-box">
     <section id="servicios">
       <h2>Servicios</h2>
@@ -223,10 +223,20 @@
         <article class="card"><h3>Optometría</h3><p>Visiometría y optometría con consultorio profesional.</p></article>
         <article class="card"><h3>Toma de muestra a domicilio</h3><p>Programación para empresas y particulares con trazabilidad completa.</p></article>
       </div>
+
+      <!-- BOTONES DE DESCARGA (dentro de la misma sección) -->
+      <div style="margin-top:30px;text-align:center;display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+        <a href="Portafolio empresas .pdf" class="btn-down" download>
+          <span style="margin-right:6px;">📄</span> Descargar portafolio empresas
+        </a>
+        <a href="Portafolio particulares .pdf" class="btn-down" download>
+          <span style="margin-right:6px;">📄</span> Descargar portafolio particulares
+        </a>
+      </div>
     </section>
   </div>
 
-  <!-- CERTIFICACIÓN (fondo blanco centrado) -->
+  <!-- CERTIFICACIÓN + TESTIMONIOS (misma caja, fluido) -->
   <div class="section-box">
     <section>
       <h2>Certificación y confianza</h2>
@@ -238,6 +248,19 @@
           <span class="stat"><strong>200+</strong> empresas</span>
           <span class="stat"><strong>Resultados</strong> 24 h*</span>
         </div>
+      </div>
+
+      <!-- TESTIMONIOS (dentro de la misma sección) -->
+      <div style="margin-top:30px;">
+        <h3 style="font-size:17px;color:var(--azul-b);margin-bottom:10px;">Testimonios</h3>
+        <blockquote style="border-left:4px solid var(--celeste);padding-left:12px;margin:0;font-size:14px;color:#445569;">
+          “Resultados el mismo día, excelente servicio.”<br>
+          <cite style="font-size:13px;color:var(--azul-b);">— Dra. García, Clínica Oriente</cite>
+        </blockquote>
+        <blockquote style="border-left:4px solid var(--celeste);padding-left:12px;margin:10px 0 0 0;font-size:14px;color:#445569;">
+          “Muestra a domicilio sin complicaciones.”<br>
+          <cite style="font-size:13px;color:var(--azul-b);">— Carlos M., ingeniero</cite>
+        </blockquote>
       </div>
     </section>
   </div>
@@ -256,7 +279,7 @@
           </select>
         </label>
         <label>Mensaje (opcional)<input type="text" name="mensaje"></label>
-        <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
+        <input type="hidden" name="_next" value="https://labccoadmon.github.io/gracias.html">
         <input type="hidden" name="_captcha" value="false">
         <button class="btn">Quiero mi cita</button>
       </form>
