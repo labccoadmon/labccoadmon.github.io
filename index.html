@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- ========== Meta básico / SEO ========== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LABCCO — Laboratorio Clínico Colombia Oriente | 30 años de experiencia</title>
@@ -9,7 +8,7 @@
   <link rel="canonical" href="https://labccosas.com/" />
   <meta name="robots" content="index, follow" />
 
-  <!-- ========== OpenGraph & Twitter Cards (mejora CTR en compartidos) ========== -->
+  <!-- OpenGraph & Twitter -->
   <meta property="og:site_name" content="LABCCO" />
   <meta property="og:title" content="LABCCO — Laboratorio Clínico Colombia Oriente" />
   <meta property="og:description" content="30 años en Rionegro. Resultados en 24 h, salud ocupacional y pruebas especializadas para empresas." />
@@ -21,28 +20,27 @@
   <meta name="twitter:description" content="Resultados confiables y rápidos. Servicios en salud ocupacional, química clínica y pruebas especiales." />
   <meta name="twitter:image" content="https://labccosas.com/LABCCO-Photoroom.png" />
 
-  <!-- ========== PWA / Favicons ========== -->
+  <!-- PWA / Favicons -->
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <meta name="theme-color" content="#10324a" />
 
-  <!-- ========== Performance hints ========== -->
+  <!-- Performance hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Preload critical hero images (helps LCP) -->
+  <!-- Preload hero images (helps LCP) -->
   <link rel="preload" as="image" href="/hero1.webp" imagesrcset="/hero1.webp" />
   <link rel="preload" as="image" href="/hero2.webp" imagesrcset="/hero2.webp" />
   <link rel="preload" as="image" href="/hero3.webp" imagesrcset="/hero3.webp" />
 
-  <!-- ========== Web Font (non-blocking) ========== -->
+  <!-- Fonts (non-blocking) -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- ========== Inline Critical CSS (keeps file compact, non-blocking) ========== -->
+  <!-- Critical inline CSS (keep small, move to styles.css later if desired) -->
   <style>
-    /* Variables y reset */
-    :root {
+    :root{
       --azul:#10324a; --azul-b:#004a99; --celeste:#0099cc; --blanco:#ffffff;
       --sombra:rgba(16,50,74,.09); --maxw:1100px; --radius:10px;
     }
@@ -52,77 +50,109 @@
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--maxw);margin:0 auto;padding:0 18px}
 
-    /* Top bar (fixed) */
-    .top-bar{position:fixed;inset:0 0 auto;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 28px;padding:8px 16px;background:var(--celeste);color:var(--blanco);font-weight:700;font-size:14px;z-index:1600}
-    .top-bar a{display:inline-flex;align-items:center;gap:8px;color:inherit}
-    .top-bar .brand-extra{font-size:13px;font-weight:400;color:#e6f2fb;margin-left:12px}
+    /* ========== TOP BAR: 3-column symmetric layout ========== */
+    .top-bar{
+      position:fixed;
+      left:0; right:0; top:0;
+      display:flex;
+      justify-content:center;
+      z-index:1700;
+      background:var(--celeste);
+      color:var(--blanco);
+      font-weight:700;
+      font-size:14px;
+      padding:8px 0;
+    }
+    /* inner wrapper so content is aligned with main container */
+    .top-bar .inner{
+      width:100%;
+      max-width:var(--maxw);
+      display:flex;
+      align-items:center;
+      justify-content:space-between; /* left - center - right */
+      gap:12px;
+      padding:0 18px;
+    }
+    .top-left,.top-center,.top-right{display:flex;align-items:center;gap:10px}
+    .top-left{justify-content:flex-start;}
+    .top-center{justify-content:center; font-weight:600}
+    .top-right{justify-content:flex-end;font-size:13px;color:rgba(255,255,255,.95);font-weight:600}
 
-    /* Navbar */
-    header.navbar{position:sticky;top:46px;display:flex;align-items:center;justify-content:space-between;padding:8px 20px;height:76px;background:var(--blanco);box-shadow:0 1px 6px var(--sombra);z-index:1500}
+    /* small visual tweaks */
+    .top-left .horario::before{content:"⏰ ";margin-right:6px}
+    .top-center a{margin:0 8px;color:inherit;font-weight:700}
+    .top-center span{margin:0 8px}
+    .brand-extra{white-space:nowrap}
+
+    /* ========== NAVBAR ========== */
+    header.navbar{
+      margin-top:46px; /* pushes navbar below top-bar */
+      position:sticky;
+      top:46px;
+      display:block;
+      background:var(--blanco);
+      box-shadow:0 1px 6px var(--sombra);
+      z-index:1500;
+    }
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:8px 18px;
+      gap:12px;
+    }
+    /* Brand (logo) aligned left and slightly larger than before */
     .brand{display:flex;align-items:center;gap:14px}
-    .brand img{height:72px;border-radius:6px;display:block}
-    .nav-links{display:flex;gap:20px;align-items:center}
-    .nav-links a{font-weight:500;font-size:17px;padding:6px 4px}
-    .nav-links a:focus{outline:3px solid rgba(0,119,204,.12);outline-offset:4px}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .brand img#siteLogo{height:86px; width:auto; border-radius:6px; display:block} /* larger */
+    .brand img#distintivo{height:64px;width:auto;border-radius:6px}
+    /* Nav links to the right, spaced */
+    nav.nav-links{display:flex;gap:24px;align-items:center}
+    nav.nav-links a{font-weight:500;font-size:18px;padding:6px 4px}
+    nav.nav-links a:focus{outline:3px solid rgba(0,119,204,.12);outline-offset:4px;border-radius:6px}
 
-    /* Hero */
-    .hero{position:relative;min-height:68vh;display:flex;align-items:center;justify-content:center;padding:12px 10px;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.45), rgba(255,255,255,.2));z-index:1;pointer-events:none}
-    .hero-media{position:absolute;inset:0;z-index:0}
-    .hero-media img{width:100%;height:100%;object-fit:cover;display:block}
-    .hero-inner{position:relative;z-index:2;max-width:1250px;padding:14px;text-align:center;width:100%}
-    .text-box{background:rgba(255,255,255,.65);padding:16px 36px;border-radius:var(--radius);box-shadow:0 8px 24px var(--sombra);width:96%;max-width:1100px;margin:auto}
-    .hero h1{color:#2a5d8f;font-size:34px;font-weight:700;margin:0 0 8px}
-    .commitment{color:#003366;font-size:20px;font-weight:700;margin:8px 0}
-    .final-text{color:#003366;font-size:15px;margin:8px 0 18px}
+    /* ========== HERO: fullscreen background slides restored ========== */
+    .hero{position:relative;min-height:100vh;width:100%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0;transition:opacity 1.4s ease}
+    .hero-slide.active{opacity:1}
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.06);z-index:1;pointer-events:none}
+    .hero .container{position:relative;z-index:2;max-width:1250px;padding:14px;text-align:center}
+    .text-box{background:rgba(255,255,255,.55);padding:16px 40px;border-radius:10px;box-shadow:0 8px 24px var(--sombra);width:96%;max-width:1100px;margin:auto}
+    .hero h1{color:#2a5d8f;font-size:34px;font-weight:700;margin-bottom:12px}
+    .commitment{color:#003366;font-size:22px;font-weight:700;margin-bottom:14px}
+    .final-text{color:#003366;font-size:15px;margin-bottom:22px;letter-spacing:.5px}
     .cta{display:inline-block;background:#0077cc;color:var(--blanco);padding:10px 18px;border-radius:10px;font-weight:700;box-shadow:0 8px 20px rgba(16,50,74,.12)}
 
-    /* Hero controls */
-    .hero-controls{margin-top:12px;text-align:center;display:flex;justify-content:center;gap:8px}
-    .hero-controls button{background:var(--celeste);color:var(--blanco);border:none;padding:8px 12px;border-radius:6px;font-size:14px;cursor:pointer}
-
-    /* Main content */
+    /* Main and footer */
     main{max-width:var(--maxw);margin:36px auto;padding:0 18px 60px}
     section{margin-bottom:34px}
-    h2{color:var(--azul-b);margin-bottom:12px;font-size:22px}
+    h2{color:var(--azul-b);margin-bottom:12px}
     p{color:#334b5b}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .card{background:#fff;border-radius:10px;padding:18px;box-shadow:0 6px 18px var(--sombra);border:1px solid rgba(16,50,74,.04)}
-
-    /* Form */
-    form{display:flex;flex-direction:column;gap:12px;max-width:520px}
-    label{font-size:14px;color:#234b60}
-    input[type="text"], input[type="tel"], select, textarea{padding:10px;border-radius:8px;border:1px solid #d7e8f2;font-size:15px;background:#fff}
-    button[type="submit"]{width:max-content;padding:10px 16px;border-radius:10px;background:#0077cc;color:#fff;border:none;cursor:pointer;font-weight:700}
-
-    /* Map */
-    .map-wrap{max-width:1100px;margin:12px auto;border-radius:8px;overflow:hidden;border:1px solid rgba(16,50,74,.04)}
-
-    /* Footer */
+    .map-wrap{max-width:1100px;margin:12px auto;border-radius:8px;overflow:hidden}
     footer{background:var(--azul);color:var(--blanco);text-align:center;padding:18px;font-size:15px}
 
     /* WhatsApp floating */
-    .btn-wpp{position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.18);z-index:2000;transition:transform .18s}
+    .btn-wpp{position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:2000;transition:transform .2s}
+    .btn-wpp:hover{transform:scale(1.08)}
     .btn-wpp img{width:28px;height:28px}
 
-    /* Responsive */
-    @media (max-width:900px){ .grid-3{grid-template-columns:repeat(2,1fr)} .hero h1{font-size:30px} .nav-links{display:none} }
+    /* Responsive adjustments */
+    @media (max-width:900px){
+      nav.nav-links{display:none} /* keep prior behavior for mobile */
+      .brand img#siteLogo{height:72px}
+    }
     @media (max-width:520px){
-      .top-bar{flex-direction:column;text-align:center;padding:10px 12px}
-      header.navbar{flex-direction:column;height:auto;padding:10px 16px}
-      .brand img{height:56px}
-      .grid-3{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-      .hero{min-height:55vh}
+      .top-bar .inner{padding:0 12px;flex-direction:column;gap:6px}
+      header.navbar{margin-top:90px} /* ensure navbar not overlap */
+      .brand img#siteLogo{height:56px}
+      .text-box{padding:12px;max-width:92%}
       .hero h1{font-size:22px}
       .commitment{font-size:18px}
-      form{width:100%}
     }
   </style>
 
-  <!-- ========== Structured Data (JSON-LD) - optimized for lab + opening hours ========== -->
+  <!-- JSON-LD structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -153,28 +183,34 @@
     ]
   }
   </script>
-
 </head>
 <body>
-  <!-- ========== Top bar (contacto rápido) ========== -->
-  <div class="top-bar" role="banner" aria-label="Información de contacto">
-    <div class="horario" aria-hidden="false">⏰ Horario: Lun - Vie 7:00 - 12:00 / 14:00 - 17:00 | Sáb 8:00 - 11:00</div>
-    <div>
-      <span aria-hidden="true">📞</span> <strong>531 13 54</strong>
-      <a href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">📱 312 827 4796</a>
-      <a href="mailto:calidad@labccosas.com" aria-label="Enviar correo">✉ calidad@labccosas.com</a>
+
+  <!-- TOP BAR (3 columns: left - center - right) -->
+  <div class="top-bar" role="banner" aria-label="Barra superior de contacto y horario">
+    <div class="inner">
+      <div class="top-left">
+        <div class="horario" aria-hidden="false">Horario: Lun - Vie 7:00 - 12:00 / 14:00 - 17:00 | Sáb 8:00 - 11:00</div>
+      </div>
+
+      <div class="top-center" aria-label="Contactos rápidos">
+        <span>📞 <strong>531 13 54</strong></span>
+        <a href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen." target="_blank" rel="noopener noreferrer">📱 312 827 4796</a>
+        <a href="mailto:calidad@labccosas.com">✉ calidad@labccosas.com</a>
+      </div>
+
+      <div class="top-right brand-extra" aria-hidden="true">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div>
     </div>
-    <div class="brand-extra" aria-hidden="true">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div>
   </div>
 
-  <!-- ========== Navbar ========== -->
-  <header class="navbar" role="navigation" aria-label="Menú principal">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:18px">
-      <div class="brand" style="align-items:center">
+  <!-- NAVBAR -->
+  <header class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="nav-inner container">
+      <div class="brand">
         <a href="/" aria-label="Ir al inicio">
-          <img src="/LABCCO-Photoroom.png" alt="Logo LABCCO" id="siteLogo" width="200" height="72" decoding="async">
+          <img src="/LABCCO-Photoroom.png" alt="Logo LABCCO" id="siteLogo" width="320" height="86" decoding="async">
         </a>
-        <img src="/distintivo30.png" alt="Distintivo 30 años" id="distintivo" width="72" height="72" style="border-radius:8px">
+        <img src="/distintivo30.png" alt="Distintivo 30 años" id="distintivo" width="72" height="72">
       </div>
 
       <nav class="nav-links" aria-label="Enlaces principales">
@@ -186,36 +222,26 @@
     </div>
   </header>
 
-  <!-- ========== Hero (accessible slider using picture + JS swap) ========== -->
+  <!-- HERO: full-screen slideshow (no visible controls) -->
   <main id="inicio" tabindex="-1">
     <section class="hero" role="region" aria-label="Banner principal">
-      <!-- Hero media: single picture element whose src is replaced by JS (true lazy + accessible alt) -->
-      <div class="hero-media" aria-hidden="true">
-        <picture id="heroPicture">
-          <source id="heroSource" type="image/webp" srcset="/hero1.webp">
-          <!-- Provide a JPG fallback for older browsers -->
-          <img id="heroImg" src="/hero1.jpg" alt="Laboratorio moderno con equipo y personal" loading="eager" decoding="async" width="1600" height="900">
-        </picture>
-      </div>
+      <!-- background slides (absolute) -->
+      <div class="hero-slide active" style="background-image:url('/hero1.webp')" role="img" aria-label="Laboratorio moderno"></div>
+      <div class="hero-slide" style="background-image:url('/hero2.webp')" role="img" aria-label="Personal tomando muestra"></div>
+      <div class="hero-slide" style="background-image:url('/hero3.webp')" role="img" aria-label="Equipos de alta precisión"></div>
 
-      <div class="hero-inner container">
+      <div class="container">
         <div class="text-box" role="region" aria-labelledby="heroTitle">
           <h1 id="heroTitle">Más de 30 años creciendo junto a ustedes</h1>
-          <p class="commitment">Servicio humano, preciso y confiable para empresas y pacientes del Oriente Antioqueño.</p>
+          <p class="commitment">Con gratitud seguimos enfocados en ofrecer un servicio humano, preciso y confiable para las empresas que construyen nuestro país.</p>
           <p class="final-text">Medicina particular · Salud ocupacional · Laboratorio · Visiometría · Audiometría</p>
           <p><a href="#contacto" style="color:#003366;text-decoration:underline">Contáctanos para más información</a></p>
           <a class="cta" href="#contacto">Contáctanos</a>
-
-          <div class="hero-controls" role="group" aria-label="Controles del carrusel">
-            <button id="btnPrev" aria-label="Imagen anterior" class="cta">◀</button>
-            <button id="btnPausa" aria-label="Pausar reproducción automática" class="cta" aria-pressed="false">⏸ Pausar</button>
-            <button id="btnNext" aria-label="Imagen siguiente" class="cta">▶</button>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== Nosotros ========== -->
+    <!-- NOSOTROS -->
     <section id="nosotros" class="section" aria-labelledby="nosotrosTitle">
       <div class="container">
         <h2 id="nosotrosTitle">Nosotros</h2>
@@ -223,7 +249,7 @@
       </div>
     </section>
 
-    <!-- ========== Servicios ========== -->
+    <!-- SERVICIOS -->
     <section id="servicios" class="section section-alt" aria-labelledby="serviciosTitle">
       <div class="container">
         <h2 id="serviciosTitle">Servicios</h2>
@@ -232,12 +258,10 @@
             <h3 id="s1">Química Clínica</h3>
             <p>Glucosa, creatinina, perfil lipídico, TSH, HbA1c — equipo Mindray BS-120 con control de calidad.</p>
           </article>
-
           <article class="card" role="listitem" aria-labelledby="s2">
             <h3 id="s2">Hematología</h3>
             <p>Hemograma tipo IV con validación de resultados y control interno.</p>
           </article>
-
           <article class="card" role="listitem" aria-labelledby="s3">
             <h3 id="s3">Serología y pruebas manuales</h3>
             <p>VDRL, VIH, coprológicos, coloraciones especiales y KOH.</p>
@@ -246,7 +270,7 @@
       </div>
     </section>
 
-    <!-- ========== Pruebas especiales ========== -->
+    <!-- PRUEBAS ESPECIALES -->
     <section id="especiales" class="section" aria-labelledby="especialesTitle">
       <div class="container">
         <h2 id="especialesTitle">Pruebas Especiales</h2>
@@ -263,12 +287,10 @@
       </div>
     </section>
 
-    <!-- ========== Contacto + Formulario ========== -->
+    <!-- CONTACTO -->
     <section id="contacto" class="section" aria-labelledby="contactoTitle">
       <div class="container">
         <h2 id="contactoTitle">Agenda tu cita</h2>
-        <p>Completa el formulario y nos contactamos para confirmar fecha y hora.</p>
-
         <form action="https://formsubmit.co/calidad@labccosas.com" method="POST" aria-label="Formulario de agendamiento">
           <label for="nombre">Nombre completo</label>
           <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
@@ -285,7 +307,6 @@
             <option>Optometría</option>
           </select>
 
-          <!-- IMPORTANT: relative _next so it works en GitHub Pages y en dominio real -->
           <input type="hidden" name="_next" value="/gracias.html">
           <input type="hidden" name="_captcha" value="false">
 
@@ -299,14 +320,14 @@
           ✉ Correo: <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a>
         </p>
 
-        <div class="map-wrap" aria-hidden="false" style="margin-top:18px">
+        <div class="map-wrap" style="margin-top:18px">
           <iframe src="https://www.google.com/maps?q=Carrera+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" loading="lazy" title="Mapa - LABCCO" style="border:0"></iframe>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ========== Footer ========== -->
+  <!-- FOOTER -->
   <footer role="contentinfo">
     <div class="container">
       <p style="margin:6px 0">© 2025 LABCCO — Laboratorio Clínico Colombiano de Oriente S.A.S</p>
@@ -314,7 +335,7 @@
     </div>
   </footer>
 
-  <!-- ========== WhatsApp flotante ========== -->
+  <!-- WhatsApp floating -->
   <a class="btn-wpp" href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen." target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
   </a>
@@ -326,97 +347,44 @@
     </div>
   </noscript>
 
-  <!-- ========== Scripts (defered behavior implemented inline non-blocking) ========== -->
+  <!-- SLIDER SCRIPT: automatic background swap, no visible controls -->
   <script>
-  (function(){
-    'use strict';
+    (function(){
+      'use strict';
+      const slides = document.querySelectorAll('.hero-slide');
+      let current = 0;
+      const INTERVAL = 5000;
+      // Respect prefers-reduced-motion
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let intervalId = null;
 
-    /* ========= Slider data =========
-       - Uses picture element above.
-       - True lazy behavior: first image is eager (preloaded), next images swap on demand.
-       - Respects prefers-reduced-motion.
-    */
-    const slides = [
-      { webp: '/hero1.webp', jpg: '/hero1.jpg', alt: 'Laboratorio moderno con equipo' },
-      { webp: '/hero2.webp', jpg: '/hero2.jpg', alt: 'Personal tomando muestra' },
-      { webp: '/hero3.webp', jpg: '/hero3.jpg', alt: 'Equipos de alta precisión' }
-    ];
+      function show(index){
+        slides.forEach((s,i)=> s.classList.toggle('active', i===index));
+      }
 
-    const picture = document.getElementById('heroPicture');
-    const heroSource = document.getElementById('heroSource');
-    const heroImg = document.getElementById('heroImg');
-    const btnPrev = document.getElementById('btnPrev');
-    const btnNext = document.getElementById('btnNext');
-    const btnPausa = document.getElementById('btnPausa');
+      function next(){
+        current = (current + 1) % slides.length;
+        show(current);
+      }
 
-    let current = 0;
-    let intervalId = null;
-    const INTERVAL = 5000;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      // Preload images proactively (non-blocking)
+      slides.forEach(s=>{
+        const url = s.style.backgroundImage.replace(/url\(["']?(.+?)["']?\)/,'$1');
+        const img = new Image();
+        img.src = url;
+      });
 
-    function setSlide(i){
-      const s = slides[i];
-      // update sources — browser chooses
-      heroSource.srcset = s.webp;
-      heroImg.src = s.jpg;
-      heroImg.alt = s.alt || '';
-      // update aria states
-      // (we keep aria-pressed on the pause button only)
-    }
+      // init
+      show(current);
+      if (!reduced) intervalId = setInterval(next, INTERVAL);
 
-    function next(){
-      current = (current + 1) % slides.length;
-      setSlide(current);
-    }
-    function prev(){
-      current = (current - 1 + slides.length) % slides.length;
-      setSlide(current);
-    }
+      // pause on visibility hidden to save CPU
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) { if (intervalId) { clearInterval(intervalId); intervalId = null; } }
+        else { if (!intervalId && !reduced) { intervalId = setInterval(next, INTERVAL); } }
+      });
 
-    function startAuto(){
-      if (reduced) return;
-      stopAuto();
-      intervalId = setInterval(next, INTERVAL);
-      btnPausa.textContent = '⏸ Pausar';
-      btnPausa.setAttribute('aria-pressed','false');
-    }
-    function stopAuto(){
-      if (intervalId) { clearInterval(intervalId); intervalId = null; }
-      btnPausa.textContent = '▶ Reanudar';
-      btnPausa.setAttribute('aria-pressed','true');
-    }
-
-    // Controls
-    btnNext.addEventListener('click', () => { next(); stopAuto(); });
-    btnPrev.addEventListener('click', () => { prev(); stopAuto(); });
-    btnPausa.addEventListener('click', () => {
-      if (intervalId) stopAuto(); else startAuto();
-    });
-
-    // Keyboard accessibility: arrow keys
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') { next(); stopAuto(); }
-      if (e.key === 'ArrowLeft') { prev(); stopAuto(); }
-    });
-
-    // Init
-    setSlide(current);
-    // Preload non-critical images (low priority using Image() -- doesn't block)
-    slides.forEach((s, idx) => {
-      if (idx === 0) return;
-      const i = new Image();
-      i.src = s.webp;
-      // also preload jpg fallback
-      const j = new Image();
-      j.src = s.jpg;
-    });
-
-    if (!reduced) startAuto();
-
-    // Improve LCP stability: reserve space already with width/height on img (set in markup)
-  })();
+    })();
   </script>
-
-  <!-- ========== End body ========== -->
 </body>
 </html>
