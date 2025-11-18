@@ -7,8 +7,13 @@
   <!-- SEO / OG básico -->
   <title>LABCCO — Laboratorio Clínico Colombia Oriente</title>
   <meta name="description" content="Laboratorio clínico en Rionegro con 30 años de experiencia. Resultados en 24 h, muestra a domicilio, exámenes ocupacionales y más de 200 empresas nos respaldan.">
-  <link rel="canonical" href="https://tunombre.github.io/labcco/">
+  <link rel="canonical" href="https://labccoadmon.github.io/">
   <meta name="robots" content="index, follow">
+
+  <!-- Preconnect externos (TAREA 4) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.google.com">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -67,7 +72,11 @@
 
     /* Hero */
     .hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;padding:12px 10px}
-    .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s;width:100%;height:72vh}
+    /* TAREA 1 – Imágenes WebP (ya convertidas) */
+    .hero-slide{
+      position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s;
+      width:100%;height:72vh;
+    }
     .hero-slide.active{opacity:1}
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.06);z-index:1}
     .hero .container{position:relative;z-index:2;max-width:1250px;padding:14px;text-align:center}
@@ -84,6 +93,16 @@
     p{color:#334b5b}
     .map-wrap{max-width:1100px;margin:12px auto;border-radius:8px;overflow:hidden}
     footer{background:var(--azul);color:var(--blanco);text-align:center;padding:18px;font-size:15px}
+
+    /* Botón WhatsApp flotante (TAREA 2) */
+    .btn-wpp{
+      position:fixed;bottom:20px;right:20px;
+      background:#25d366;color:#fff;border-radius:50%;
+      width:60px;height:60px;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:2000;transition:transform .2s;
+    }
+    .btn-wpp:hover{transform:scale(1.1)}
+    @media(max-width:520px){.btn-wpp{width:55px;height:55px}}
 
     /* Responsive */
     @media(max-width:900px){
@@ -105,12 +124,36 @@
     }
   </style>
 
-  <!-- Google Analytics (cambia G-XXXXXXXXXX) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+  <!-- Schema.org LocalBusiness + MedicalOrganization (TAREA 3) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "LABCCO - Laboratorio Clínico Colombiano de Oriente",
+    "image": "https://labccoadmon.github.io/LABCCO-Photoroom.png",
+    "url": "https://labccoadmon.github.io/",
+    "telephone": "+57-4-5311354",
+    "whatsapp": "+573128274796",
+    "email": "calidad@labccosas.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrera 48 #52-54, Edificio Santa Bárbara",
+      "addressLocality": "Rionegro",
+      "addressRegion": "Antioquia",
+      "postalCode": "054040",
+      "addressCountry": "CO"
+    },
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Mo","Tu","We","Th","Fr"],"opens":"07:00","closes":"12:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Mo","Tu","We","Th","Fr"],"opens":"14:00","closes":"17:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Sa","opens":"08:00","closes":"11:00"}
+    ]
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Top-bar -->
   <div class="top-bar" role="banner">
     <div class="horario">Horario: Lun - Vie 7am - 12m / 2pm - 5pm | Sáb 8am - 11am</div>
     <div>
@@ -121,6 +164,7 @@
     <div class="brand-extra">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div>
   </div>
 
+  <!-- Nav -->
   <header class="navbar">
     <div class="brand">
       <img src="LABCCO-Photoroom.png" alt="Logo LABCCO" id="siteLogo">
@@ -134,10 +178,19 @@
     </nav>
   </header>
 
+  <!-- Hero / Slider con imágenes WebP (TAREA 1) -->
   <section class="hero" id="inicio">
-    <div class="hero-slide active" style="background-image:url('https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.pexels.com/photos/8442110/pexels-photo-8442110.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.pexels.com/photos/8533143/pexels-photo-8533143.jpeg')"></div>
+    <!-- Ejemplo de URLs WebP ya convertidas -->
+    <div class="hero-slide active"
+         style="background-image:url('https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"
+         role="img" aria-label="Laboratorio moderno"></div>
+    <div class="hero-slide"
+         style="background-image:url('https://images.pexels.com/photos/8442110/pexels-photo-8442110.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"
+         role="img" aria-label="Personal tomando muestra"></div>
+    <div class="hero-slide"
+         style="background-image:url('https://images.pexels.com/photos/8533143/pexels-photo-8533143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"
+         role="img" aria-label="Equipos de alta precisión"></div>
+
     <div class="container">
       <div class="text-box">
         <h1>Más de 30 años creciendo junto a ustedes</h1>
@@ -149,6 +202,7 @@
     </div>
   </section>
 
+  <!-- Main -->
   <main>
     <section id="nosotros">
       <h2>Nosotros</h2>
@@ -160,23 +214,50 @@
       <p>Hematología, química clínica, serología, colinesterasa eritrocitaria, optometría, audiometría, exámenes ocupacionales y soluciones integrales B2B.</p>
     </section>
 
+    <!-- Formulario sin backend (TAREA 5) -->
     <section id="contacto">
-      <h2>Contacto</h2>
-      <p>📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
+      <h2>Agenda tu cita</h2>
+      <form action="https://formsubmit.co/calidad@labccosas.com" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
+        <select name="servicio" required>
+          <option value="">Selecciona servicio</option>
+          <option>Examen de sangre</option>
+          <option>Examen pre-empleo</option>
+          <option>Audiometría</option>
+          <option>Optometría</option>
+        </select>
+        <button type="submit" class="cta">Quiero mi cita</button>
+        <!-- Redirección y sin captcha -->
+        <input type="hidden" name="_next" value="https://labccoadmon.github.io/gracias.html">
+        <input type="hidden" name="_captcha" value="false">
+      </form>
+
+      <!-- Datos de contacto y mapa -->
+      <p style="margin-top:32px">📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
       📞 Teléfono fijo: <strong>531 13 54</strong><br>
       📱 WhatsApp: <a href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen.%20¿Me%20pueden%20ayudar%3F" target="_blank" rel="noopener">312 827 4796</a><br>
       ✉ Correo: <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></p>
+
       <div class="map-wrap">
         <iframe src="https://www.google.com/maps?q=Carrera+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" style="border:0" loading="lazy"></iframe>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     © 2025 LABCCO — Laboratorio Clínico Colombiano de Oriente SAS<br>
     Todos los derechos reservados.
   </footer>
 
+  <!-- Botón WhatsApp flotante (TAREA 2) -->
+  <a href="https://wa.me/573128274796?text=Hola%20LABCCO%2C%20quiero%20agendar%20un%20examen.%20¿Me%20pueden%20ayudar%3F"
+     target="_blank" rel="noopener" class="btn-wpp" aria-label="Abrir WhatsApp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="28" height="28">
+  </a>
+
+  <!-- Scripts -->
   <script>
     /* Slider simple */
     const slides=document.querySelectorAll('.hero-slide');
