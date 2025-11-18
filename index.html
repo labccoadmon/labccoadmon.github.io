@@ -128,7 +128,12 @@
     .cta{ display: inline-block; background: var(--celeste-2); color: var(--blanco); padding: 12px 20px; border-radius: 10px; font-weight: 700; box-shadow: 0 10px 24px rgba(16,50,74,.12); }
 
     /* ---------- MAIN ---------- */
-    main{ max-width: 1100px; margin: 36px auto; padding: 0 18px 60px; }
+    main{
+      width: 100%;
+      max-width: 1400px;   /* ← más ancho */
+      margin: 36px auto;
+      padding: 0 18px 60px;
+    }
     section{ margin-bottom: 34px; }
     h2{ color: var(--azul-b); margin-bottom: 12px; }
     p{ color: #334b5b; }
@@ -200,8 +205,8 @@
     "@context":"https://schema.org",
     "@type":"MedicalOrganization",
     "name":"LABCCO - Laboratorio Clínico Colombiano de Oriente",
-    "image":"https://labccoadmon.github.io/LABCCO-Photoroom.png",
-    "url":"https://labccoadmon.github.io/",
+    "image":"https://labccoadmin.github.io/LABCCO-Photoroom.png",
+    "url":"https://labccoadmin.github.io/",
     "telephone":"+57-4-5311354",
     "email":"calidad@labccosas.com",
     "address":{
@@ -361,7 +366,7 @@
           <input id="mensaje" name="mensaje" type="text" placeholder="Información adicional">
         </div>
 
-        <input type="hidden" name="_next" value="https://labccoadmon.github.io/gracias.html">
+        <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
         <input type="hidden" name="_captcha" value="false">
 
         <button type="submit">Quiero mi cita</button>
