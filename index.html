@@ -35,7 +35,7 @@
       --sombra:rgba(16,50,74,.09);
       --wpp:#25d366;
       --overlay:rgba(16,50,74,.55);
-      --margen:24px; /* 1.5 cm aprox */
+      --margen:24px;   /* 1.5 cm aprox */
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
@@ -56,7 +56,7 @@
     .contact-small{display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,.08);padding:3px 8px;border-radius:16px;font-weight:500;white-space:nowrap;font-size:13px}
     .brand-extra{font-weight:600;font-size:12px;color:rgba(0,50,80,0.95);white-space:nowrap}
 
-    /* ---------- NAVBAR ---------- */
+    /* ---------- NAVBAR (con margen lateral) ---------- */
     .navbar{position:sticky;top:34px;display:flex;align-items:center;justify-content:space-between;padding:6px var(--margen);height:80px;background:var(--blanco);box-shadow:0 1px 6px var(--sombra);z-index:1500}
     .brand{display:flex;align-items:center;gap:14px}
     #siteLogo{height:72px;width:auto;border-radius:6px}
@@ -65,7 +65,7 @@
     .nav-links a{font-weight:500;font-size:18px;padding:6px 4px}
     .nav-links a:hover{color:var(--celeste-2)}
 
-    /* ---------- HERO (slider + badges) ---------- */
+    /* ---------- HERO (con margen lateral) ---------- */
     .hero{position:relative;min-height:66vh;display:flex;align-items:center;justify-content:center;padding:20px var(--margen);background:#f7fbff;overflow:hidden}
     .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s}
     .hero-slide.active{opacity:1}
@@ -99,13 +99,6 @@
     input,select{width:100%;padding:10px;border:1px solid #d7e3ea;border-radius:8px;font-size:15px}
     button[type="submit"]{background:var(--celeste-2);color:#fff;padding:12px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
     .map-wrap{max-width:1100px;margin:12px auto;border-radius:8px;overflow:hidden}
-
-    /* ---------- SOCIAL PROOF (comentada para cuando tengas logos) ---------- */
-    /*
-    .clients{background:var(--blanco);padding:20px 0;text-align:center}
-    .clients-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center;opacity:.6}
-    .clients img{height:32px;filter:grayscale(100%)}
-    */
 
     /* ---------- FOOTER (con margen lateral) ---------- */
     footer{background:var(--celeste);color:var(--blanco);text-align:center;padding:26px var(--margen);font-size:15px}
@@ -185,18 +178,6 @@
       </div>
     </div>
   </section>
-
-  <!-- SOCIAL PROOF (comentada para cuando tengas logos) -->
-  <!--
-  <section class="clients" aria-label="Empresas que confían en nosotros">
-    <div class="clients-inner">
-      <img src="cliente1.webp" alt="Cliente 1" loading="lazy" decoding="async">
-      <img src="cliente2.webp" alt="Cliente 2" loading="lazy" decoding="async">
-      <img src="cliente3.webp" alt="Cliente 3" loading="lazy" decoding="async">
-      <img src="cliente4.webp" alt="Cliente 4" loading="lazy" decoding="async">
-    </div>
-  </section>
-  -->
 
   <!-- NOSOTROS -->
   <section id="nosotros">
