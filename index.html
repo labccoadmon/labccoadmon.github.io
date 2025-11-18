@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Favicon / PWA (rutas sin "/" inicial) -->
+  <!-- Favicon / PWA (sin "/" inicial) -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
@@ -50,6 +50,7 @@
 
     /* Hero */
     .hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;padding:12px 10px}
+    /* ✅ NUEVO: WebP + width/height + lazy -->
     .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s;width:100%;height:72vh}
     .hero-slide.active{opacity:1}
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.06);z-index:1}
@@ -151,11 +152,12 @@
     </nav>
   </header>
 
-  <!-- Hero / Slider accesible -->
+  <!-- Hero / Slider con WebP + width/height + lazy -->
   <section class="hero" id="inicio" aria-label="Banner principal">
-    <div class="hero-slide active" style="background-image:url('https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg');" role="img" aria-label="Laboratorio moderno"></div>
-    <div class="hero-slide" style="background-image:url('https://images.pexels.com/photos/8442110/pexels-photo-8442110.jpeg');" role="img" aria-label="Personal tomando muestra"></div>
-    <div class="hero-slide" style="background-image:url('https://images.pexels.com/photos/8533143/pexels-photo-8533143.jpeg');" role="img" aria-label="Equipos de alta precisión"></div>
+    <!-- ✅ NUEVO: WebP, width/height, lazy loading -->
+    <div class="hero-slide active" style="background-image:url('hero1.webp'); width:100%; height:72vh;" role="img" aria-label="Laboratorio moderno" loading="lazy"></div>
+    <div class="hero-slide" style="background-image:url('hero2.webp'); width:100%; height:72vh;" role="img" aria-label="Personal tomando muestra" loading="lazy"></div>
+    <div class="hero-slide" style="background-image:url('hero3.webp'); width:100%; height:72vh;" role="img" aria-label="Equipos de alta precisión" loading="lazy"></div>
 
     <div class="container">
       <div class="text-box">
