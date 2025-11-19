@@ -6,7 +6,7 @@
 
   <!-- SEO -->
   <title>LABCCO — Laboratorio Clínico Colombia Oriente</title>
-  <meta name="description" content="Laboratorio clínico en Rionegro con 33 años de experiencia. Resultados el mismo día, muestra a domicilio, exámenes ocupacionales y más de 200 empresas nos respaldan.">
+  <meta name="description" content="Laboratorio clínico en Rionegro con 33 años de experiencia. Resultados el mismo día, descuentos por volumen para empresas, muestra a domicilio.">
   <link rel="canonical" href="https://labccoadmon.github.io/">
   <meta name="robots" content="index, follow">
   <link rel="preload" as="image" href="hero1.webp">
@@ -34,6 +34,7 @@
       --blanco:#ffffff;
       --sombra:rgba(16,50,74,.09);
       --wpp:#25d366;
+      --naranja:#ff6b35;
       --overlay:rgba(16,50,74,.55);
       --margen:60px;
     }
@@ -74,10 +75,11 @@
 
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
 
-    /*--- NOSOTROS V.3 (nuevo) ---*/
+    /*--- NOSOTROS V.3 (nueva imagen) ---*/
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
-    .nos-texto h3{font-size:22px;color:var(--azul-b);margin-bottom:12px}
+    .nos-texto h2{font-size:32px;color:var(--azul);font-weight:700;margin-bottom:8px}
+    .nos-texto h3{font-size:22px;color:var(--azul-b);margin-bottom:16px}
     .nos-texto p{font-size:17px;line-height:1.7;margin-bottom:20px}
     .cta-inline{display:inline-block;background:var(--celeste-2);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap}
     .nos-fig{flex:0 0 360px;text-align:center}
@@ -97,6 +99,14 @@
     .certs-hab .hab-list ul{list-style:none;padding:0;margin:0;font-size:15px;line-height:1.8}
     .certs-hab .hab-list li{position:relative;padding-left:20px}
     .certs-hab .hab-list li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
+
+    /*--- PROGRAMA EMPRESAS (nueva sección) ---*/
+    .prog-emp{background:var(--azul);color:var(--blanco);border-radius:12px;padding:40px var(--margen);margin:40px 0;text-align:center}
+    .prog-emp h3{font-size:24px;font-weight:700;margin-bottom:12px}
+    .prog-emp p{font-size:17px;line-height:1.6;margin-bottom:20px;max-width:700px;margin-left:auto;margin-right:auto}
+    .prog-emp img{width:180px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.25);margin-bottom:20px}
+    .cta-naranja{display:inline-flex;align-items:center;gap:8px;background:var(--naranja);color:#fff;padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 4px 12px rgba(0,0,0,.2);transition:transform .2s}
+    .cta-naranja:hover{transform:scale(1.05)}
 
     @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.certs-hab{flex-direction:column;align-items:center}}
 
@@ -165,7 +175,7 @@
         <p class="final-text">Medicina particular · Salud ocupacional · Laboratorio · Visiometría · Audiometría</p>
         <div class="badges">
           <span class="badge">+30 años de experiencia</span>
-          <span class="badge">Resultados en 24 h</span>
+          <span class="badge">Resultados el mismo día</span>
           <span class="badge">200+ empresas atendidas</span>
           <span class="badge">Muestra a domicilio</span>
         </div>
@@ -176,19 +186,18 @@
 
   <!-- NOSOTROS V.3 -->
   <section id="nosotros" class="section-box">
-    <h2 style="color:var(--azul);font-weight:700;font-size:32px;margin-bottom:8px">NOSOTROS</h2>
-    <h3 style="font-size:22px;color:var(--azul-b);margin-bottom:20px">Laboratorio habilitado por el Ministerio de Salud</h3>
-
     <div class="nos-hero">
       <div class="nos-texto">
+        <h2>NOSOTROS</h2>
+        <h3>Laboratorio habilitado por el Ministerio de Salud</h3>
         <p>Desde 1992 trabajamos por la salud y el bienestar de Colombia.<br>
         Somos un laboratorio clínico con tecnología de última generación y personal certificado que garantiza resultados precisos y oportunos.<br>
         En LABCCO unimos rigor científico, procesos estandarizados y un servicio humano para acompañar a empresas y pacientes en cada decisión de salud clínica y ocupacional.</p>
         <a href="#contacto" class="cta-inline">Solicita una visita empresarial o una cita particular</a>
       </div>
       <figure class="nos-fig">
-        <img src="lab-modern.webp" alt="Laboratorio LABCCO: cabina audiométrica, área de hematología y recepción" loading="lazy" width="640" height="360">
-        <figcaption>Nuestras instalaciones en Rionegro, Antioquia</figcaption>
+        <img src="nosotrosimg.webp" alt="Equipo LABCCO en laboratorio" loading="lazy" width="640" height="360">
+        <figcaption>Nuestro equipo en Rionegro, Antioquia</figcaption>
       </figure>
     </div>
 
@@ -240,6 +249,43 @@
     </section>
   </div>
 
+  <!-- PROGRAMA EMPRESAS (nueva sección) -->
+  <div class="section-box" style="padding:0;margin-bottom:30px">
+    <section class="prog-emp" id="empresas">
+      <img src="cerrandonegocio.webp" alt="Cerrando negocio" loading="lazy">
+      <h3>Programa empresas</h3>
+      <p>Si eres empresa mediana o grande, accede a descuentos por volumen y condiciones preferenciales. Estamos abiertos a negociaciones.</p>
+      <a href="#contacto" class="cta-naranja" onclick="document.getElementById('asunto').value='Programa empresas'">Solicita tu cotización personalizada</a>
+    </section>
+  </div>
+
+  <!-- CERTIFICACIONES -->
+  <div class="section-box">
+    <section>
+      <h2>Certificación y confianza</h2>
+      <div class="trust">
+        <div><p><strong>33 años</strong> de experiencia · <strong>+200</strong> empresas atendidas</p>
+        <p>Equipos: Mindray BS-120 · Cabina audiométrica · Control de calidad interno</p></div>
+        <div class="stats">
+          <span class="stat"><strong>33</strong> años</span>
+          <span class="stat"><strong>+200</strong> empresas</span>
+          <span class="stat"><strong>3</strong> IPS aliadas</span>
+        </div>
+      </div>
+      <div style="margin-top:30px;">
+        <h3 style="font-size:17px;color:var(--azul-b);margin-bottom:10px;">Testimonios</h3>
+        <blockquote style="border-left:4px solid var(--celeste);padding-left:12px;margin:0;font-size:14px;color:#445569;">
+          “Resultados el mismo día, excelente servicio.”<br>
+          <cite style="font-size:13px;color:var(--azul-b);">— Dra. García, Clínica Oriente</cite>
+        </blockquote>
+        <blockquote style="border-left:4px solid var(--celeste);padding-left:12px;margin:10px 0 0 0;font-size:14px;color:#445569;">
+          “Muestra a domicilio sin complicaciones.”<br>
+          <cite style="font-size:13px;color:var(--azul-b);">— Carlos M., ingeniero</cite>
+        </blockquote>
+      </div>
+    </section>
+  </div>
+
   <!-- CONTACTO -->
   <div class="section-box">
     <section id="contacto">
@@ -253,7 +299,7 @@
             <option>Examen de sangre</option><option>Examen pre-empleo</option><option>Audiometría</option><option>Optometría</option><option>Toma de muestra a domicilio</option>
           </select>
         </label>
-        <label>Mensaje (opcional)<input type="text" name="mensaje"></label>
+        <label>Mensaje (opcional)<input type="text" name="mensaje" id="asunto"></label>
         <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
         <input type="hidden" name="_captcha" value="false">
         <button class="btn">Quiero mi cita</button>
