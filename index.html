@@ -34,7 +34,7 @@
       --blanco:#ffffff;
       --sombra:rgba(16,50,74,.09);
       --wpp:#25d366;
-      --naranja-pastel:#ffb380;   /* más suave */
+      --naranja-medio:#ff8c52;   /* intermedio: llamativo sin chillón */
       --overlay:rgba(16,50,74,.55);
       --margen:60px;
     }
@@ -68,20 +68,20 @@
     .hero h1{color:#1f4f76;font-size:38px;font-weight:700;margin:0 0 12px}
     .commitment{color:var(--azul);font-size:21px;font-weight:600;margin-bottom:10px}
     .final-text{color:var(--azul);font-size:16px;margin-bottom:18px}
-    .badges{display:none}   /* eliminados */
+    .badges{display:none}
     .cta{display:inline-block;background:var(--celeste-2);color:var(--blanco);padding:14px 28px;border-radius:10px;font-weight:700;box-shadow:0 10px 24px var(--sombra);transition:transform .2s;font-size:17px}
     .cta:hover{transform:scale(1.05)}
 
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
 
-    /*--- NOSOTROS V.7 (imagen más ancha + solo 4 logros) ---*/
+    /*--- NOSOTROS V.8 (título más pequeño) ---*/
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
-    .nos-texto h2{font-size:32px;color:var(--azul);font-weight:700;margin-bottom:8px}
+    .nos-texto h2{font-size:28px;color:var(--azul);font-weight:700;margin-bottom:8px}   /* ligeramente más pequeño */
     .nos-texto h3{font-size:22px;color:var(--azul-b);margin-bottom:16px}
     .nos-texto p{font-size:17px;line-height:1.7;margin-bottom:20px}
     .cta-inline{display:inline-block;background:var(--celeste-2);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap}
-    .nos-fig{flex:0 0 560px;text-align:center}   /* ampliado aún más */
+    .nos-fig{flex:0 0 560px;text-align:center}
     .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sombra);width:100%}
 
     .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin:40px 0;text-align:center}
@@ -89,24 +89,29 @@
     .stat-item span{display:block;font-size:36px;font-weight:700;color:var(--azul-b)}
     .stat-item small{color:#445569;font-size:14px}
 
-    .subtitulo{font-size:20px;color:var(--azul-b);margin:40px 0 16px}
-    /* 3 columnas centradas: PROGRAMA EMPRESAS (izq, grande) | distintivo | códigos (der) */
-    .certs-3col-v3{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start;justify-content:center;text-align:center}
-    .certs-3col-v3 .col1{flex:0 0 380px;background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:40px;box-shadow:0 6px 18px var(--sombra)}
-    .certs-3col-v3 .col1 img{width:160px;margin:0 auto 20px;border-radius:8px}
-    .certs-3col-v3 .col1 h4{font-size:24px;color:var(--azul);font-weight:700;margin-bottom:12px}
-    .certs-3col-v3 .col1 p{font-size:16px;color:#445569;margin-bottom:20px;font-weight:600}   /* negrilla */
-    .cta-naranja-pastel{display:inline-block;background:var(--naranja-pastel);color:var(--azul);padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
-    .certs-3col-v3 .col2{flex:0 0 240px;text-align:center}
-    .certs-3col-v3 .col2 img{width:100%;max-width:200px;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}
-    .certs-3col-v3 .col3{flex:0 0 280px}
-    .certs-3col-v3 .col3 ul{list-style:none;padding:0;margin:0;font-size:17px;line-height:1.8;font-weight:600}   /* letras más grandes */
-    .certs-3col-v3 .col3 li{position:relative;padding-left:20px}
-    .certs-3col-v3 .col3 li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
+    .subtitulo-centrado{font-size:22px;color:var(--azul-b);margin:50px 0 20px;text-align:center;font-weight:700}   /* centrado */
 
-    @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.certs-3col-v3{flex-direction:column;align-items:center}.certs-3col-v3 .col1,.certs-3col-v3 .col2{margin-bottom:20px}}
+    /* 3 columnas centradas y simétricas: PROGRAMA EMPRESAS (izq, grande) | distintivo (centro, más grande) | códigos (der, letras grandes) */
+    .certs-3col-v4{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start;justify-content:center;text-align:center}
+    /* columna 1: programa empresas */
+    .certs-3col-v4 .col1{flex:0 0 400px;background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:40px;box-shadow:0 6px 18px var(--sombra)}
+    .certs-3col-v4 .col1 img{width:180px;margin:0 auto 20px;border-radius:8px}
+    .certs-3col-v4 .col1 h4{font-size:26px;color:var(--azul);font-weight:700;margin-bottom:12px}   /* azul empresa */
+    .certs-3col-v4 .col1 p{font-size:16px;color:#445569;margin-bottom:16px;font-weight:600}
+    .cta-naranja-medio{display:inline-block;background:var(--naranja-medio);color:var(--blanco);padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 4px 12px rgba(0,0,0,.25);transition:transform .2s;border:2px solid var(--naranja-medio)}   /* margen delgado mismo color */
+    .cta-naranja-medio:hover{transform:scale(1.05)}
+    /* columna 2: distintivo (más grande y centrado verticalmente) */
+    .certs-3col-v4 .col2{flex:0 0 260px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+    .certs-3col-v4 .col2 img{width:100%;max-width:220px;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}
+    /* columna 3: códigos (letras grandes) */
+    .certs-3col-v4 .col3{flex:0 0 300px}
+    .certs-3col-v4 .col3 ul{list-style:none;padding:0;margin:0;font-size:18px;line-height:1.8;font-weight:600}   /* más grandes */
+    .certs-3col-v4 .col3 li{position:relative;padding-left:20px}
+    .certs-3col-v4 .col3 li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
 
-    /*--- SERVICIOS V.3 (con espirometría) ---*/
+    @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.certs-3col-v4{flex-direction:column;align-items:center}.certs-3col-v4 .col1,.certs-3col-v4 .col2{margin-bottom:20px}}
+
+    /*--- SERVICIOS ---*/
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 22px var(--sombra);text-align:left}
     .card h3{margin:6px 0 8px;font-size:18px;color:var(--azul-b)}
@@ -121,7 +126,7 @@
     .form-corto input,.form-corto select{width:100%;padding:12px;border:1px solid #d7e3ea;border-radius:8px;font-size:15px}
     .btn-form{background:var(--celeste-2);color:#fff;padding:14px;border-radius:8px;border:none;font-weight:700;cursor:pointer;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
     .btn-form:hover{transform:scale(1.03)}
-    .info-final{margin-top:50px;text-align:center}   /* separación grande */
+    .info-final{margin-top:60px;text-align:center}   /* separación grande */
 
     /*--- FOOTER / WPP ---*/
     footer{background:var(--celeste);color:var(--blanco);text-align:center;padding:26px 0;font-size:15px}
@@ -182,11 +187,11 @@
     </div>
   </section>
 
-  <!-- NOSOTROS V.7 -->
+  <!-- NOSOTROS V.8 -->
   <section id="nosotros" class="section-box">
     <div class="nos-hero">
       <div class="nos-texto">
-        <h2>NOSOTROS</h2>
+        <h2 style="font-size:28px">NOSOTROS</h2>   <!-- más pequeño -->
         <h3>Laboratorio habilitado por el Ministerio de Salud</h3>
         <p>Desde 1992 trabajamos por la salud y el bienestar de Colombia.<br>
         Somos un laboratorio clínico con tecnología de última generación y personal certificado que garantiza resultados precisos y oportunos.<br>
@@ -206,17 +211,19 @@
       <div class="stat-item"><span>✔</span><small>resultados el mismo día</small></div>
     </div>
 
-    <!-- CERTIFICADOS AMPLIADOS Y CENTRADOS -->
-    <h4 class="subtitulo">Certificados y beneficios</h4>
-    <div class="certs-3col-v3">
-      <!-- Columna 1: PROGRAMA EMPRESAS (más grande, texto negrita, naranja pastel) -->
+    <!-- TÍTULO CENTRADO -->
+    <h4 class="subtitulo-centrado">Certificados y beneficios</h4>
+
+    <!-- 3 columnas centradas y simétricas -->
+    <div class="certs-3col-v4">
+      <!-- Columna 1: PROGRAMA EMPRESAS (más grande, imagen más grande, título azul empresa) -->
       <div class="col1">
         <img src="cerrandonegocio.webp" alt="Cerrando negocio">
-        <h4>Programa empresas</h4>
+        <h4>Programa empresas</h4>   <!-- azul empresa -->
         <p>Si eres empresa mediana o grande, accede a descuentos por volumen y condiciones preferenciales. Estamos abiertos a negociaciones.</p>
-        <a href="#contacto" class="cta-naranja-pastel" onclick="document.getElementById('asunto').value='Programa empresas'">Solicita tu cotización personalizada</a>
+        <a href="#contacto" class="cta-naranja-medio" onclick="document.getElementById('asunto').value='Programa empresas'">Solicita tu cotización personalizada</a>
       </div>
-      <!-- Columna 2: distintivo (más grande) -->
+      <!-- Columna 2: distintivo (más grande y centrado verticalmente) -->
       <div class="col2">
         <img src="habilitacion.png" alt="Habilitación Ministerio de Salud">
       </div>
