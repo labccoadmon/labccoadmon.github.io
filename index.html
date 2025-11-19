@@ -6,7 +6,7 @@
 
   <!-- SEO -->
   <title>LABCCO — Laboratorio Clínico Colombia Oriente</title>
-  <meta name="description" content="Laboratorio clínico en Rionegro con 33 años de experiencia. Pruebas de embarazo, paternidad con convenio UdeA, medicina ocupacional, resultados el mismo día.">
+  <meta name="description" content="Laboratorio clínico en Rionegro con 33 años de experiencia. Espirometría, pruebas de embarazo, paternidad con convenio UdeA, descuentos por volumen.">
   <link rel="canonical" href="https://labccoadmon.github.io/">
   <meta name="robots" content="index, follow">
   <link rel="preload" as="image" href="hero1.webp">
@@ -34,7 +34,7 @@
       --blanco:#ffffff;
       --sombra:rgba(16,50,74,.09);
       --wpp:#25d366;
-      --naranja:#ff6b35;
+      --naranja-pastel:#ffb380;   /* más suave */
       --overlay:rgba(16,50,74,.55);
       --margen:60px;
     }
@@ -68,21 +68,20 @@
     .hero h1{color:#1f4f76;font-size:38px;font-weight:700;margin:0 0 12px}
     .commitment{color:var(--azul);font-size:21px;font-weight:600;margin-bottom:10px}
     .final-text{color:var(--azul);font-size:16px;margin-bottom:18px}
-    /* badges ELIMINADOS */
-    .badges{display:none}
+    .badges{display:none}   /* eliminados */
     .cta{display:inline-block;background:var(--celeste-2);color:var(--blanco);padding:14px 28px;border-radius:10px;font-weight:700;box-shadow:0 10px 24px var(--sombra);transition:transform .2s;font-size:17px}
     .cta:hover{transform:scale(1.05)}
 
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
 
-    /*--- NOSOTROS V.6 (imagen ampliada + nuevos logros) ---*/
+    /*--- NOSOTROS V.7 (imagen más ancha + solo 4 logros) ---*/
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
     .nos-texto h2{font-size:32px;color:var(--azul);font-weight:700;margin-bottom:8px}
     .nos-texto h3{font-size:22px;color:var(--azul-b);margin-bottom:16px}
     .nos-texto p{font-size:17px;line-height:1.7;margin-bottom:20px}
     .cta-inline{display:inline-block;background:var(--celeste-2);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap}
-    .nos-fig{flex:0 0 460px;text-align:center}   /* ampliado */
+    .nos-fig{flex:0 0 560px;text-align:center}   /* ampliado aún más */
     .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sombra);width:100%}
 
     .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin:40px 0;text-align:center}
@@ -91,23 +90,23 @@
     .stat-item small{color:#445569;font-size:14px}
 
     .subtitulo{font-size:20px;color:var(--azul-b);margin:40px 0 16px}
-    /* 3 columnas: programa empresas (izq) | distintivo | códigos (der) */
-    .certs-3col-v2{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start}
-    .certs-3col-v2 .col1{flex:0 0 320px;background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:30px;text-align:center;box-shadow:0 6px 18px var(--sombra)}
-    .certs-3col-v2 .col1 img{width:140px;margin:0 auto 16px;border-radius:6px}
-    .certs-3col-v2 .col1 h4{font-size:20px;color:var(--azul);margin-bottom:12px}
-    .certs-3col-v2 .col1 p{font-size:15px;color:#445569;margin-bottom:16px}
-    .cta-naranja{display:inline-block;background:var(--naranja);color:#fff;padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 4px 12px rgba(0,0,0,.25);transition:transform .2s}
-    .certs-3col-v2 .col2{flex:0 0 200px;text-align:center}
-    .certs-3col-v2 .col2 img{width:100%;max-width:180px;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}
-    .certs-3col-v2 .col3{flex:1;min-width:250px}
-    .certs-3col-v2 .col3 ul{list-style:none;padding:0;margin:0;font-size:15px;line-height:1.8}
-    .certs-3col-v2 .col3 li{position:relative;padding-left:20px}
-    .certs-3col-v2 .col3 li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
+    /* 3 columnas centradas: PROGRAMA EMPRESAS (izq, grande) | distintivo | códigos (der) */
+    .certs-3col-v3{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start;justify-content:center;text-align:center}
+    .certs-3col-v3 .col1{flex:0 0 380px;background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:40px;box-shadow:0 6px 18px var(--sombra)}
+    .certs-3col-v3 .col1 img{width:160px;margin:0 auto 20px;border-radius:8px}
+    .certs-3col-v3 .col1 h4{font-size:24px;color:var(--azul);font-weight:700;margin-bottom:12px}
+    .certs-3col-v3 .col1 p{font-size:16px;color:#445569;margin-bottom:20px;font-weight:600}   /* negrilla */
+    .cta-naranja-pastel{display:inline-block;background:var(--naranja-pastel);color:var(--azul);padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
+    .certs-3col-v3 .col2{flex:0 0 240px;text-align:center}
+    .certs-3col-v3 .col2 img{width:100%;max-width:200px;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}
+    .certs-3col-v3 .col3{flex:0 0 280px}
+    .certs-3col-v3 .col3 ul{list-style:none;padding:0;margin:0;font-size:17px;line-height:1.8;font-weight:600}   /* letras más grandes */
+    .certs-3col-v3 .col3 li{position:relative;padding-left:20px}
+    .certs-3col-v3 .col3 li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
 
-    @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.certs-3col-v2{flex-direction:column;align-items:center}.certs-3col-v2 .col1,.certs-3col-v2 .col2{margin-bottom:20px}}
+    @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.certs-3col-v3{flex-direction:column;align-items:center}.certs-3col-v3 .col1,.certs-3col-v3 .col2{margin-bottom:20px}}
 
-    /*--- SERVICIOS (nuevos) ---*/
+    /*--- SERVICIOS V.3 (con espirometría) ---*/
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 22px var(--sombra);text-align:left}
     .card h3{margin:6px 0 8px;font-size:18px;color:var(--azul-b)}
@@ -116,12 +115,13 @@
     .btn-down:hover{transform:scale(1.05);background-color:var(--celeste-2)}
     .btn-down svg{flex-shrink:0;margin-right:8px;vertical-align:middle}
 
-    /*--- FORMULARIO CORTO (nuevo) ---*/
+    /*--- FORMULARIO CORTO + SEPARACIÓN ---*/
     .form-corto{display:grid;gap:14px;max-width:520px;margin:0 auto}
     .form-corto label{font-size:15px;color:var(--azul);font-weight:600}
     .form-corto input,.form-corto select{width:100%;padding:12px;border:1px solid #d7e3ea;border-radius:8px;font-size:15px}
     .btn-form{background:var(--celeste-2);color:#fff;padding:14px;border-radius:8px;border:none;font-weight:700;cursor:pointer;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
     .btn-form:hover{transform:scale(1.03)}
+    .info-final{margin-top:50px;text-align:center}   /* separación grande */
 
     /*--- FOOTER / WPP ---*/
     footer{background:var(--celeste);color:var(--blanco);text-align:center;padding:26px 0;font-size:15px}
@@ -182,7 +182,7 @@
     </div>
   </section>
 
-  <!-- NOSOTROS V.6 -->
+  <!-- NOSOTROS V.7 -->
   <section id="nosotros" class="section-box">
     <div class="nos-hero">
       <div class="nos-texto">
@@ -198,31 +198,29 @@
       </figure>
     </div>
 
-    <!-- Logros ampliados -->
+    <!-- Solo 4 logros -->
     <div class="stats-grid">
       <div class="stat-item"><span>33</span><small>años</small></div>
       <div class="stat-item"><span>+200</span><small>empresas</small></div>
       <div class="stat-item"><span>3</span><small>IPS aliadas</small></div>
       <div class="stat-item"><span>✔</span><small>resultados el mismo día</small></div>
-      <div class="stat-item"><span>ISO</span><small>9001:2015</small></div>
-      <div class="stat-item"><span>14</span><small>profesionales</small></div>
     </div>
 
-    <!-- PROGRAMA EMPRESAS (izq) + CERTIFICADOS (der) -->
+    <!-- CERTIFICADOS AMPLIADOS Y CENTRADOS -->
     <h4 class="subtitulo">Certificados y beneficios</h4>
-    <div class="certs-3col-v2">
-      <!-- Columna 1: PROGRAMA EMPRESAS (más grande) -->
+    <div class="certs-3col-v3">
+      <!-- Columna 1: PROGRAMA EMPRESAS (más grande, texto negrita, naranja pastel) -->
       <div class="col1">
         <img src="cerrandonegocio.webp" alt="Cerrando negocio">
         <h4>Programa empresas</h4>
         <p>Si eres empresa mediana o grande, accede a descuentos por volumen y condiciones preferenciales. Estamos abiertos a negociaciones.</p>
-        <a href="#contacto" class="cta-naranja" onclick="document.getElementById('asunto').value='Programa empresas'">Solicita tu cotización personalizada</a>
+        <a href="#contacto" class="cta-naranja-pastel" onclick="document.getElementById('asunto').value='Programa empresas'">Solicita tu cotización personalizada</a>
       </div>
-      <!-- Columna 2: distintivo -->
+      <!-- Columna 2: distintivo (más grande) -->
       <div class="col2">
         <img src="habilitacion.png" alt="Habilitación Ministerio de Salud">
       </div>
-      <!-- Columna 3: códigos -->
+      <!-- Columna 3: códigos (letras grandes) -->
       <div class="col3">
         <ul>
           <li>407 Medicina del trabajo y medicina laboral</li>
@@ -236,7 +234,7 @@
     </div>
   </section>
 
-  <!-- SERVICIOS V.2 (nuevos) -->
+  <!-- SERVICIOS V.4 (con espirometría) -->
   <div class="section-box">
     <section id="servicios">
       <h2>Servicios</h2>
@@ -246,6 +244,7 @@
         <article class="card"><h3>Colinesterasa eritrocitaria</h3><p>Prueba diferencial especializada para empresas de fumigación y plantaciones.</p></article>
         <article class="card"><h3>Audiometría</h3><p>Cabina audiométrica certificada para exámenes ocupacionales.</p></article>
         <article class="card"><h3>Optometría</h3><p>Visiometría y optometría con consultorio profesional.</p></article>
+        <article class="card"><h3>Espirometría</h3><p>Evaluación funcional respiratoria para diagnóstico y seguimiento.</p></article>
         <article class="card"><h3>Pruebas de embarazo</h3><p>Cualitativas y cuantitativas que indican en qué semana de embarazo se encuentra.</p></article>
         <article class="card"><h3>Pruebas de paternidad</h3><p>En convenio con la Universidad de Antioquia. Máxima fiabilidad.</p></article>
         <article class="card"><h3>Medicina ocupacional</h3><p>Exámenes pre-empleo, periódicos y de retiro. Evaluaciones integrales.</p></article>
@@ -261,14 +260,13 @@
     </section>
   </div>
 
-  <!-- CONTACTO V.2 (formulario corto + doble envío) -->
+  <!-- CONTACTO V.3 (más separado) -->
   <div class="section-box">
     <section id="contacto">
       <h2>Contáctanos</h2>
       <form class="form-corto" action="https://formsubmit.co/calidad@labccosas.com" method="POST" novalidate>
         <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
         <input type="hidden" name="_captcha" value="false">
-        <!-- Campos simplificados -->
         <label>Nombre completo<input type="text" name="nombre" required placeholder="Tu nombre"></label>
         <label>Tipo de cliente
           <select name="tipo" required>
@@ -282,12 +280,15 @@
         <input type="hidden" name="mensaje" id="asunto">
         <button type="submit" class="btn-form">Enviar solicitud</button>
       </form>
-      <p class="mt">📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
-      📞 Fijo: <strong>531 13 54</strong><br>
-      📱 WhatsApp: <a href="https://wa.me/573128274796" target="_blank" rel="noopener">312 827 4796</a><br>
-      ✉ Correo: <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></p>
-      <div class="map-wrap">
-        <iframe src="https://www.google.com/maps?q=Carrera+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" loading="lazy"></iframe>
+      <!-- Info final separada 60 px -->
+      <div class="info-final">
+        <p>📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
+        📞 Fijo: <strong>531 13 54</strong><br>
+        📱 WhatsApp: <a href="https://wa.me/573128274796" target="_blank" rel="noopener">312 827 4796</a><br>
+        ✉ Correo: <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></p>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Carrera+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" loading="lazy"></iframe>
+        </div>
       </div>
     </section>
   </div>
