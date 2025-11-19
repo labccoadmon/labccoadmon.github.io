@@ -6,7 +6,7 @@
 
   <!-- SEO -->
   <title>LABCCO — Laboratorio Clínico Colombia Oriente</title>
-  <meta name="description" content="Laboratorio clínico en Rionegro con 30 años de experiencia. Resultados en 24 h, muestra a domicilio, exámenes ocupacionales y más de 200 empresas nos respaldan.">
+  <meta name="description" content="Laboratorio clínico en Rionegro con 33 años de experiencia. Resultados el mismo día, muestra a domicilio, exámenes ocupacionales y más de 200 empresas nos respaldan.">
   <link rel="canonical" href="https://labccoadmon.github.io/">
   <meta name="robots" content="index, follow">
   <link rel="preload" as="image" href="hero1.webp">
@@ -74,12 +74,12 @@
 
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
 
-    /*--- NOSOTROS V.2 ---*/
+    /*--- NOSOTROS V.3 (nuevo) ---*/
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
-    .nos-texto h3{font-size:26px;color:var(--azul-b);margin-bottom:12px}
+    .nos-texto h3{font-size:22px;color:var(--azul-b);margin-bottom:12px}
     .nos-texto p{font-size:17px;line-height:1.7;margin-bottom:20px}
-    .cta-inline{background:var(--celeste-2);color:#fff;padding:10px 24px;border-radius:8px;font-weight:600;box-shadow:0 4px 12px var(--sombra)}
+    .cta-inline{display:inline-block;background:var(--celeste-2);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap}
     .nos-fig{flex:0 0 360px;text-align:center}
     .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sombra)}
     .nos-fig figcaption{margin-top:8px;font-size:13px;color:#445569}
@@ -90,26 +90,15 @@
     .stat-item small{color:#445569;font-size:14px}
 
     .subtitulo{font-size:20px;color:var(--azul-b);margin:40px 0 16px}
-    .timeline{list-style:none;padding:0;position:relative;border-left:3px solid var(--celeste);margin-left:20px}
-    .timeline li{margin-bottom:24px;position:relative;padding-left:24px}
-    .timeline time{font-weight:700;color:var(--celeste-2);display:block;margin-bottom:4px}
-    .timeline p{margin:0;font-size:15px;color:#334b5b}
-    .timeline li::before{content:"";position:absolute;left:-9px;top:4px;width:16px;height:16px;background:var(--celeste);border-radius:50%}
+    .certs-hab{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start}
+    .certs-hab .distinto{flex:0 0 220px;text-align:center}
+    .certs-hab .distinto img{width:100%;max-width:200px;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}
+    .certs-hab .hab-list{flex:1;min-width:250px}
+    .certs-hab .hab-list ul{list-style:none;padding:0;margin:0;font-size:15px;line-height:1.8}
+    .certs-hab .hab-list li{position:relative;padding-left:20px}
+    .certs-hab .hab-list li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
 
-    .certs-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-bottom:40px}
-    .certs-grid img{height:80px;width:auto;filter:drop-shadow(0 2px 4px var(--sombra));transition:transform .2s}
-    .certs-grid img:hover{transform:scale(1.05)}
-
-    .testi-carousel{max-width:720px;margin:0 auto;position:relative;height:110px;overflow:hidden}
-    .testi-carousel blockquote{position:absolute;inset:0;margin:0;padding:20px;background:#fff;border-radius:10px;box-shadow:0 4px 14px var(--sombra);opacity:0;transition:opacity .6s;text-align:center}
-    .testi-carousel blockquote:first-child{opacity:1}
-    .testi-carousel p{margin:0 0 8px;font-size:15px;color:#334b5b}
-    .testi-carousel cite{font-size:13px;color:var(--azul-b)}
-
-    @keyframes count-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-    .stat-item span{animation:count-up .6s ease forwards}
-
-    @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.certs-grid img{height:60px}}
+    @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.certs-hab{flex-direction:column;align-items:center}}
 
     /*--- SERVICIOS (igual que antes) ---*/
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -185,14 +174,17 @@
     </div>
   </section>
 
-  <!-- NOSOTROS V.2 -->
+  <!-- NOSOTROS V.3 -->
   <section id="nosotros" class="section-box">
-    <h2>Nosotros</h2>
+    <h2 style="color:var(--azul);font-weight:700;font-size:32px;margin-bottom:8px">NOSOTROS</h2>
+    <h3 style="font-size:22px;color:var(--azul-b);margin-bottom:20px">Laboratorio habilitado por el Ministerio de Salud</h3>
+
     <div class="nos-hero">
       <div class="nos-texto">
-        <h3>Laboratorio habilitado por el Ministerio de Salud</h3>
-        <p>Más de <strong>30 años</strong> midiendo la salud de los que construyen Antioquia. Equipos de última generación, personal certificado y <strong>resultados en 24 h</strong> o te devolvemos tu dinero.</p>
-        <a href="#contacto" class="cta-inline">Solicita una visita guiada</a>
+        <p>Desde 1992 trabajamos por la salud y el bienestar de Colombia.<br>
+        Somos un laboratorio clínico con tecnología de última generación y personal certificado que garantiza resultados precisos y oportunos.<br>
+        En LABCCO unimos rigor científico, procesos estandarizados y un servicio humano para acompañar a empresas y pacientes en cada decisión de salud clínica y ocupacional.</p>
+        <a href="#contacto" class="cta-inline">Solicita una visita empresarial o una cita particular</a>
       </div>
       <figure class="nos-fig">
         <img src="lab-modern.webp" alt="Laboratorio LABCCO: cabina audiométrica, área de hematología y recepción" loading="lazy" width="640" height="360">
@@ -201,37 +193,27 @@
     </div>
 
     <div class="stats-grid">
-      <div class="stat-item"><span data-count="30">0</span><small>años</small></div>
-      <div class="stat-item"><span data-count="14">0</span><small>profesionales</small></div>
-      <div class="stat-item"><span data-count="200">0</span><small>empresas</small></div>
-      <div class="stat-item"><span data-count="24">0</span><small>horas</small></div>
+      <div class="stat-item"><span>33</span><small>años</small></div>
+      <div class="stat-item"><span>+200</span><small>empresas</small></div>
+      <div class="stat-item"><span>3</span><small>IPS aliadas</small></div>
+      <div class="stat-item"><span>✔</span><small>resultados el mismo día</small></div>
     </div>
 
-    <h4 class="subtitulo">Nuestra historia</h4>
-    <ul class="timeline">
-      <li><time>1994</time><p>Apertura del primer laboratorio en Rionegro</p></li>
-      <li><time>2008</time><p>Primera cabina audiométrica homologada del oriente antioqueño</p></li>
-      <li><time>2016</time><p>Renovación total de equipos con tecnología Mindray BS-120</p></li>
-      <li><time>2023</time><p>Cumplimos 30 años y 200 empresas cliente</p></li>
-    </ul>
-
-    <h4 class="subtitulo">Certificaciones y habilitaciones</h4>
-    <div class="certs-grid">
-      <img src="habilitacion.png" alt="Habilitación Ministerio de Salud 407-706-712" loading="lazy">
-      <img src="logo-mindray.png" alt="Equipo Mindray BS-120 certificado" loading="lazy">
-      <img src="cabin-cert.png" alt="Certificación cabina audiométrica" loading="lazy">
-    </div>
-
-    <h4 class="subtitulo">Lo que dicen de nosotros</h4>
-    <div class="testi-carousel">
-      <blockquote>
-        <p>“Resultados el mismo día, excelente servicio.”</p>
-        <cite>Dra. García – Clínica Oriente</cite>
-      </blockquote>
-      <blockquote>
-        <p>“Muestra a domicilio sin complicaciones.”</p>
-        <cite>Carlos M. – Ingeniero de obra</cite>
-      </blockquote>
+    <h4 class="subtitulo">Certificados y habilitaciones</h4>
+    <div class="certs-hab">
+      <div class="distinto">
+        <img src="habilitacion.png" alt="Habilitación Ministerio de Salud">
+      </div>
+      <div class="hab-list">
+        <ul>
+          <li>407 Medicina del trabajo y medicina laboral</li>
+          <li>706 Laboratorio clínico</li>
+          <li>712 Toma de muestras de laboratorio clínico</li>
+          <li>740 Fonoaudiología y terapia del lenguaje</li>
+          <li>328 Medicina general</li>
+          <li>741 Tamización del cáncer de cuello uterino</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -308,28 +290,6 @@
       slides[current].classList.remove('active');
       current=(current+1)%slides.length;
       slides[current].classList.add('active');
-    },5000);
-
-    /* Stats counter + testi carousel (NOSOTROS V.2) */
-    const counters=document.querySelectorAll('.stat-item span');
-    const observer=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          const target=+entry.target.dataset.count;
-          const step=()=>{let count=+entry.target.innerText;if(count<target){entry.target.innerText=Math.ceil(count+target/60);requestAnimationFrame(step)}else entry.target.innerText=target};
-          step(); observer.unobserve(entry.target);
-        }
-      });
-    },{threshold:.5});
-    counters.forEach(c=>observer.observe(c));
-
-    /* Testimonios carousel */
-    const quotes=document.querySelectorAll('.testi-carousel blockquote');
-    let qIndex=0;
-    setInterval(()=>{
-      quotes[qIndex].style.opacity=0;
-      qIndex=(qIndex+1)%quotes.length;
-      quotes[qIndex].style.opacity=1;
     },5000);
   </script>
 </body>
