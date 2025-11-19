@@ -44,7 +44,7 @@
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%;height:auto}
 
-    /*--- HEADER & HERO (igual que antes) ---*/
+    /*--- HEADER & HERO ---*/
     .top-bar{position:fixed;inset:0 0 auto 0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px var(--margen);height:34px;background:var(--celeste);color:var(--blanco);font-size:14px;z-index:1600}
     .top-col{display:flex;gap:8px;align-items:center}
     .top-left{flex:1;justify-content:flex-end}.top-center{flex:1.5;justify-content:center;gap:12px}.top-right{flex:1;justify-content:flex-start}
@@ -68,14 +68,14 @@
     .hero h1{color:#1f4f76;font-size:38px;font-weight:700;margin:0 0 12px}
     .commitment{color:var(--azul);font-size:21px;font-weight:600;margin-bottom:10px}
     .final-text{color:var(--azul);font-size:16px;margin-bottom:18px}
-    .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:18px}
-    .badge{background:var(--blanco);color:var(--azul-b);padding:6px 14px;border-radius:24px;font-size:14px;font-weight:600;box-shadow:0 2px 6px var(--sombra)}
+    /* badges ELIMINADOS */
+    .badges{display:none}   /* <-- ya no existen */
     .cta{display:inline-block;background:var(--celeste-2);color:var(--blanco);padding:14px 28px;border-radius:10px;font-weight:700;box-shadow:0 10px 24px var(--sombra);transition:transform .2s;font-size:17px}
     .cta:hover{transform:scale(1.05)}
 
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
 
-    /*--- NOSOTROS V.3 (nueva imagen) ---*/
+    /*--- NOSOTROS V.5 (sin caption) ---*/
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
     .nos-texto h2{font-size:32px;color:var(--azul);font-weight:700;margin-bottom:8px}
@@ -84,7 +84,6 @@
     .cta-inline{display:inline-block;background:var(--celeste-2);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap}
     .nos-fig{flex:0 0 360px;text-align:center}
     .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sombra)}
-    .nos-fig figcaption{margin-top:8px;font-size:13px;color:#445569}
 
     .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin:40px 0;text-align:center}
     .stat-item{background:#f6fbff;padding:20px;border-radius:10px}
@@ -92,25 +91,24 @@
     .stat-item small{color:#445569;font-size:14px}
 
     .subtitulo{font-size:20px;color:var(--azul-b);margin:40px 0 16px}
-    .certs-hab{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start}
-    .certs-hab .distinto{flex:0 0 220px;text-align:center}
-    .certs-hab .distinto img{width:100%;max-width:200px;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}
-    .certs-hab .hab-list{flex:1;min-width:250px}
-    .certs-hab .hab-list ul{list-style:none;padding:0;margin:0;font-size:15px;line-height:1.8}
-    .certs-hab .hab-list li{position:relative;padding-left:20px}
-    .certs-hab .hab-list li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
-
-    /*--- PROGRAMA EMPRESAS (nueva sección) ---*/
-    .prog-emp{background:var(--azul);color:var(--blanco);border-radius:12px;padding:40px var(--margen);margin:40px 0;text-align:center}
-    .prog-emp h3{font-size:24px;font-weight:700;margin-bottom:12px}
-    .prog-emp p{font-size:17px;line-height:1.6;margin-bottom:20px;max-width:700px;margin-left:auto;margin-right:auto}
-    .prog-emp img{width:180px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.25);margin-bottom:20px}
-    .cta-naranja{display:inline-flex;align-items:center;gap:8px;background:var(--naranja);color:#fff;padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 4px 12px rgba(0,0,0,.2);transition:transform .2s}
+    /* 3 columnas: distintivo | códigos | programa empresas */
+    .certs-3col{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start}
+    .certs-3col .col1{flex:0 0 200px;text-align:center}
+    .certs-3col .col1 img{width:100%;max-width:180px;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}
+    .certs-3col .col2{flex:1;min-width:250px}
+    .certs-3col .col2 ul{list-style:none;padding:0;margin:0;font-size:15px;line-height:1.8}
+    .certs-3col .col2 li{position:relative;padding-left:20px}
+    .certs-3col .col2 li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
+    .certs-3col .col3{flex:0 0 240px;background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:20px;text-align:center;box-shadow:0 4px 14px var(--sombra)}
+    .certs-3col .col3 img{width:100px;margin:0 auto 12px;border-radius:6px}
+    .certs-3col .col3 h4{font-size:17px;color:var(--azul);margin-bottom:8px}
+    .certs-3col .col3 p{font-size:14px;color:#445569;margin-bottom:12px}
+    .cta-naranja{display:inline-block;background:var(--naranja);color:#fff;padding:10px 18px;border-radius:6px;font-weight:600;font-size:14px;box-shadow:0 4px 10px rgba(0,0,0,.15);transition:transform .2s}
     .cta-naranja:hover{transform:scale(1.05)}
 
-    @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.certs-hab{flex-direction:column;align-items:center}}
+    @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.certs-3col{flex-direction:column;align-items:center}.certs-3col .col1,.certs-3col .col3{margin-bottom:20px}}
 
-    /*--- SERVICIOS (igual que antes) ---*/
+    /*--- SERVICIOS ---*/
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 22px var(--sombra);text-align:left}
     .card h3{margin:6px 0 8px;font-size:18px;color:var(--azul-b)}
@@ -171,20 +169,15 @@
     <div class="hero-inner">
       <div class="text-box">
         <h1>Más de 30 años creciendo junto a ustedes</h1>
-        <p class="commitment">Con gratitud seguimos enfocados en ofrecer un servicio humano, preciso y confiable para las empresas que construyen nuestro país.</p>
+        <p class="commitment">Con profundo agradecimiento, continuamos comprometidos con un servicio humano, preciso y confiable para los pacientes que nos eligen y para las empresas que construyen nuestro país.</p>
         <p class="final-text">Medicina particular · Salud ocupacional · Laboratorio · Visiometría · Audiometría</p>
-        <div class="badges">
-          <span class="badge">+30 años de experiencia</span>
-          <span class="badge">Resultados el mismo día</span>
-          <span class="badge">200+ empresas atendidas</span>
-          <span class="badge">Muestra a domicilio</span>
-        </div>
+        <!-- badges ELIMINADOS -->
         <a class="cta" href="#contacto">Contáctanos</a>
       </div>
     </div>
   </section>
 
-  <!-- NOSOTROS V.3 -->
+  <!-- NOSOTROS V.5 -->
   <section id="nosotros" class="section-box">
     <div class="nos-hero">
       <div class="nos-texto">
@@ -197,7 +190,6 @@
       </div>
       <figure class="nos-fig">
         <img src="nosotrosimg.webp" alt="Equipo LABCCO en laboratorio" loading="lazy" width="640" height="360">
-        <figcaption>Nuestro equipo en Rionegro, Antioquia</figcaption>
       </figure>
     </div>
 
@@ -209,11 +201,11 @@
     </div>
 
     <h4 class="subtitulo">Certificados y habilitaciones</h4>
-    <div class="certs-hab">
-      <div class="distinto">
+    <div class="certs-3col">
+      <div class="col1">
         <img src="habilitacion.png" alt="Habilitación Ministerio de Salud">
       </div>
-      <div class="hab-list">
+      <div class="col2">
         <ul>
           <li>407 Medicina del trabajo y medicina laboral</li>
           <li>706 Laboratorio clínico</li>
@@ -222,6 +214,12 @@
           <li>328 Medicina general</li>
           <li>741 Tamización del cáncer de cuello uterino</li>
         </ul>
+      </div>
+      <div class="col3">
+        <img src="cerrandonegocio.webp" alt="Cerrando negocio">
+        <h4>Programa empresas</h4>
+        <p>Si eres empresa mediana o grande, accede a descuentos por volumen y condiciones preferenciales. Estamos abiertos a negociaciones.</p>
+        <a href="#contacto" class="cta-naranja" onclick="document.getElementById('asunto').value='Programa empresas'">Solicita tu cotización personalizada</a>
       </div>
     </div>
   </section>
@@ -245,43 +243,6 @@
           </svg>
           Descargue aquí nuestro portafolio de servicios
         </a>
-      </div>
-    </section>
-  </div>
-
-  <!-- PROGRAMA EMPRESAS (nueva sección) -->
-  <div class="section-box" style="padding:0;margin-bottom:30px">
-    <section class="prog-emp" id="empresas">
-      <img src="cerrandonegocio.webp" alt="Cerrando negocio" loading="lazy">
-      <h3>Programa empresas</h3>
-      <p>Si eres empresa mediana o grande, accede a descuentos por volumen y condiciones preferenciales. Estamos abiertos a negociaciones.</p>
-      <a href="#contacto" class="cta-naranja" onclick="document.getElementById('asunto').value='Programa empresas'">Solicita tu cotización personalizada</a>
-    </section>
-  </div>
-
-  <!-- CERTIFICACIONES -->
-  <div class="section-box">
-    <section>
-      <h2>Certificación y confianza</h2>
-      <div class="trust">
-        <div><p><strong>33 años</strong> de experiencia · <strong>+200</strong> empresas atendidas</p>
-        <p>Equipos: Mindray BS-120 · Cabina audiométrica · Control de calidad interno</p></div>
-        <div class="stats">
-          <span class="stat"><strong>33</strong> años</span>
-          <span class="stat"><strong>+200</strong> empresas</span>
-          <span class="stat"><strong>3</strong> IPS aliadas</span>
-        </div>
-      </div>
-      <div style="margin-top:30px;">
-        <h3 style="font-size:17px;color:var(--azul-b);margin-bottom:10px;">Testimonios</h3>
-        <blockquote style="border-left:4px solid var(--celeste);padding-left:12px;margin:0;font-size:14px;color:#445569;">
-          “Resultados el mismo día, excelente servicio.”<br>
-          <cite style="font-size:13px;color:var(--azul-b);">— Dra. García, Clínica Oriente</cite>
-        </blockquote>
-        <blockquote style="border-left:4px solid var(--celeste);padding-left:12px;margin:10px 0 0 0;font-size:14px;color:#445569;">
-          “Muestra a domicilio sin complicaciones.”<br>
-          <cite style="font-size:13px;color:var(--azul-b);">— Carlos M., ingeniero</cite>
-        </blockquote>
       </div>
     </section>
   </div>
