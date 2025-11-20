@@ -74,7 +74,7 @@
 
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
 
-    /*--- NOSOTROS V.11 (título más pequeño) ---*/
+    /*--- NOSOTROS V.12 (título más pequeño) ---*/
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
     .nos-texto h2{font-size:28px;color:var(--azul);font-weight:700;margin-bottom:8px}
@@ -84,32 +84,31 @@
     .nos-fig{flex:0 0 560px;text-align:center}
     .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sombra);width:100%}
 
-    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin:40px 0;text-align:center}
-    .stat-item{background:#f6fbff;padding:20px;border-radius:10px}
-    .stat-item span{display:block;font-size:36px;font-weight:700;color:var(--azul-b)}
-    .stat-item small{color:#445569;font-size:14px}
-
-    /* BENEFICIOS Y CONVENIOS (3 cajas iguales, botones azul-hero) */
+    /* BENEFICIOS Y CONVENIOS + LOGROS (3 cajas + stats originales) */
     .beneficios-3col{display:flex;flex-wrap:wrap;gap:30px;align-items:stretch;justify-content:center;text-align:center}
     .beneficios-3col .caja{flex:1;min-width:280px;background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:40px;box-shadow:0 6px 18px var(--sombra);display:flex;flex-direction:column;align-items:center}
     .beneficios-3col .caja img{width:100%;max-width:200px;margin-bottom:16px;border-radius:8px}
     .beneficios-3col .caja h4{font-size:20px;color:var(--azul);font-weight:700;margin-bottom:12px}
     .beneficios-3col .caja p{font-size:15px;color:#445569;margin-bottom:16px;font-weight:600;flex-grow:1}
+    /* TEXTO Y BOTÓN PROGRAMA EMPRESAS (nuevo copy y botón) */
+    .beneficios-3col .caja.programa p{content:"LABCCO ofrece soluciones integrales en laboratorio clínico y salud ocupacional con condiciones preferenciales por volumen, protocolos estandarizados y soporte permanente. Abrimos negociaciones para crear alianzas estables y de alto valor para tu empresa."}
     .cta-azul-hero{display:inline-block;background:var(--azul-hero);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
     .cta-azul-hero:hover{transform:scale(1.05)}
+    /* Stats originales justo después de beneficios */
+    .stats-beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin:50px 0;text-align:center}   /* separado 50px arriba */
+    .stat-item-benef{background:#f6fbff;padding:20px;border-radius:10px}
+    .stat-item-benef span{display:block;font-size:36px;font-weight:700;color:var(--azul-b)}
+    .stat-item-benef small{color:#445569;font-size:14px}
 
     @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.beneficios-3col{flex-direction:column;align-items:center}}
 
-    /*--- SERVICIOS V.7 (con iconos visuales y separación superior) ---*/
+    /*--- SERVICIOS V.9 (con iconos visuales y separación superior) ---*/
     .servicios-titulo{margin-top:50px}   /* separación superior */
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 22px var(--sombra);text-align:center}   /* centrado para iconos */
     .card .icono{font-size:40px;margin-bottom:8px}   /* icono grande */
     .card h3{margin:6px 0 8px;font-size:18px;color:var(--azul-b)}
     .card p{font-size:14px;color:#445569}
-    .btn-down{display:inline-flex;align-items:center;gap:8px;background:var(--azul-b);color:var(--blanco)!important;padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 4px 12px var(--sombra);transition:transform .2s,background-color .3s;border:none}
-    .btn-down:hover{transform:scale(1.05);background-color:var(--celeste-2)}
-    .btn-down svg{flex-shrink:0;margin-right:8px;vertical-align:middle}
 
     /*--- CERTIFICADOS (solo códigos + logo, centrado y simétrico) ---*/
     .certificados-centrado{display:flex;flex-wrap:wrap;gap:40px;align-items:center;justify-content:center;text-align:center;margin-top:60px}
@@ -189,7 +188,7 @@
     </div>
   </section>
 
-  <!-- NOSOTROS V.11 -->
+  <!-- NOSOTROS V.12 -->
   <section id="nosotros" class="section-box">
     <div class="nos-hero">
       <div class="nos-texto">
@@ -204,26 +203,18 @@
         <img src="nosotrosimg.webp" alt="Equipo LABCCO en laboratorio" loading="lazy" width="640" height="360">
       </figure>
     </div>
-
-    <!-- Solo 4 logros -->
-    <div class="stats-grid">
-      <div class="stat-item"><span>33</span><small>años</small></div>
-      <div class="stat-item"><span>+200</span><small>empresas</small></div>
-      <div class="stat-item"><span>3</span><small>IPS aliadas</small></div>
-      <div class="stat-item"><span>✔</span><small>resultados el mismo día</small></div>
-    </div>
   </section>
 
-  <!-- BENEFICIOS Y CONVENIOS (3 cajas iguales, botones azul-hero) -->
+  <!-- BENEFICIOS Y CONVENIOS + LOGROS (3 cajas + stats originales) -->
   <div class="section-box">
     <h2 style="text-align:center;margin-bottom:30px">Beneficios y convenios</h2>
     <div class="beneficios-3col">
-      <!-- Caja 1: Programa empresas -->
-      <div class="caja">
+      <!-- Caja 1: Programa empresas (nuevo copy y botón) -->
+      <div class="caja programa">
         <img src="cerrandonegocio.webp" alt="Cerrando negocio">
         <h4>Programa empresas</h4>
-        <p>Si eres empresa mediana o grande, accede a descuentos por volumen y condiciones preferenciales. Estamos abiertos a negociaciones.</p>
-        <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Solicita tu cotización personalizada</a>
+        <p>LABCCO ofrece soluciones integrales en laboratorio clínico y salud ocupacional con condiciones preferenciales por volumen, protocolos estandarizados y soporte permanente. Abrimos negociaciones para crear alianzas estables y de alto valor para tu empresa.</p>
+        <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Quiero una cotización empresarial</a>
       </div>
       <!-- Caja 2: Convenio Comfenalco (texto acortado) -->
       <div class="caja">
@@ -240,9 +231,16 @@
         <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
       </div>
     </div>
+    <!-- Stats originales justo después de beneficios -->
+    <div class="stats-beneficios">
+      <div class="stat-item-benef"><span>33</span><small>años</small></div>
+      <div class="stat-item-benef"><span>+200</span><small>empresas</small></div>
+      <div class="stat-item-benef"><span>3</span><small>IPS aliadas</small></div>
+      <div class="stat-item-benef"><span>✔</span><small>resultados el mismo día</small></div>
+    </div>
   </div>
 
-  <!-- SERVICIOS V.8 (con iconos visuales, separación superior, botones azul-hero) -->
+  <!-- SERVICIOS V.10 (con iconos visuales, separación superior, botones azul-hero) -->
   <div class="section-box">
     <h2 class="servicios-titulo">Servicios</h2>
     <div class="services">
@@ -291,7 +289,7 @@
     <section id="contacto">
       <h2>Contáctanos</h2>
       <form class="form-corto" action="https://formsubmit.co/calidad@labccosas.com" method="POST" novalidate>
-        <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
+        <input type="hidden" name="_next" value="https://labccoadmon.github.io/gracias.html">
         <input type="hidden" name="_captcha" value="false">
         <label>Nombre completo<input type="text" name="nombre" required placeholder="Tu nombre"></label>
         <label>Tipo de cliente
