@@ -74,7 +74,7 @@
 
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
 
-    /*--- NOSOTROS V.12 (título más pequeño) ---*/
+    /*--- NOSOTROS V.13 (título más pequeño) ---*/
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
     .nos-texto h2{font-size:28px;color:var(--azul);font-weight:700;margin-bottom:8px}
@@ -83,6 +83,9 @@
     .cta-inline{display:inline-block;background:var(--celeste-2);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap}
     .nos-fig{flex:0 0 560px;text-align:center}
     .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sombra);width:100%}
+
+    /* TEXTO DEL BANNER (más transparente) */
+    .text-box{background:rgba(255,255,255,.75)}   /* 0.75 → más transparente */
 
     /* BENEFICIOS Y CONVENIOS + LOGROS (3 cajas + stats originales) */
     .beneficios-3col{display:flex;flex-wrap:wrap;gap:30px;align-items:stretch;justify-content:center;text-align:center}
@@ -94,15 +97,15 @@
     .beneficios-3col .caja.programa p{content:"LABCCO ofrece soluciones integrales en laboratorio clínico y salud ocupacional con condiciones preferenciales por volumen, protocolos estandarizados y soporte permanente. Abrimos negociaciones para crear alianzas estables y de alto valor para tu empresa."}
     .cta-azul-hero{display:inline-block;background:var(--azul-hero);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
     .cta-azul-hero:hover{transform:scale(1.05)}
-    /* Stats originales justo después de beneficios */
-    .stats-beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin:50px 0;text-align:center}   /* separado 50px arriba */
-    .stat-item-benef{background:#f6fbff;padding:20px;border-radius:10px}
+    /* Stats originales justo después de beneficios (mismo formato) */
+    .stats-beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin:50px 0;text-align:center}   /* mismo formato */
+    .stat-item-benef{background:#e9f1f9;padding:20px;border-radius:10px}   /* azul más intenso */
     .stat-item-benef span{display:block;font-size:36px;font-weight:700;color:var(--azul-b)}
     .stat-item-benef small{color:#445569;font-size:14px}
 
     @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.beneficios-3col{flex-direction:column;align-items:center}}
 
-    /*--- SERVICIOS V.9 (con iconos visuales y separación superior) ---*/
+    /*--- SERVICIOS V.11 (con iconos visuales y separación superior) ---*/
     .servicios-titulo{margin-top:50px}   /* separación superior */
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 22px var(--sombra);text-align:center}   /* centrado para iconos */
@@ -188,7 +191,7 @@
     </div>
   </section>
 
-  <!-- NOSOTROS V.12 -->
+  <!-- NOSOTROS V.14 -->
   <section id="nosotros" class="section-box">
     <div class="nos-hero">
       <div class="nos-texto">
@@ -205,7 +208,42 @@
     </div>
   </section>
 
-  <!-- BENEFICIOS Y CONVENIOS + LOGROS (3 cajas + stats originales) -->
+  <!-- LOGROS (mismo formato, debajo de NOSOTROS, antes de Servicios) -->
+  <div class="section-box">
+    <h2 style="text-align:center;margin-bottom:30px">Logros</h2>
+    <div class="stats-beneficios">
+      <div class="stat-item-benef"><span>33</span><small>años</small></div>
+      <div class="stat-item-benef"><span>+200</span><small>empresas</small></div>
+      <div class="stat-item-benef"><span>3</span><small>IPS aliadas</small></div>
+      <div class="stat-item-benef"><span>✔</span><small>resultados el mismo día</small></div>
+    </div>
+  </div>
+
+  <!-- SERVICIOS V.12 (con iconos visuales y separación superior) -->
+  <div class="section-box">
+    <h2 class="servicios-titulo">Servicios</h2>
+    <div class="services">
+      <article class="card"><div class="icono">🩸</div><h3>Hematología</h3><p>Hemograma completo (tipo IV) y análisis rápidos con control de calidad interno.</p></article>
+      <article class="card"><div class="icono">🧪</div><h3>Química clínica</h3><p>Glicemia, perfil lipídico, creatinina, TSH y HbA1c con equipos de última generación.</p></article>
+      <article class="card"><div class="icono">🌾</div><h3>Colinesterasa eritrocitaria</h3><p>Prueba diferencial especializada para empresas de fumigación y plantaciones.</p></article>
+      <article class="card"><div class="icono">👂</div><h3>Audiometría</h3><p>Cabina audiométrica certificada para exámenes ocupacionales.</p></article>
+      <article class="card"><div class="icono">👁️</div><h3>Optometría</h3><p>Visiometría y optometría con consultorio profesional.</p></article>
+      <article class="card"><div class="icono">💨</div><h3>Espirometría</h3><p>Evaluación funcional respiratoria para diagnóstico y seguimiento.</p></article>
+      <article class="card"><div class="icono">🤰</div><h3>Pruebas de embarazo</h3><p>Cualitativas y cuantitativas que indican en qué semana de embarazo se encuentra.</p></article>
+      <article class="card"><div class="icono">🧬</div><h3>Pruebas de paternidad</h3><p>En convenio con la Universidad de Antioquia. Máxima fiabilidad.</p></article>
+      <article class="card"><div class="icono">🏢</div><h3>Medicina ocupacional</h3><p>Exámenes pre-empleo, periódicos y de retiro. Evaluaciones integrales.</p></article>
+    </div>
+    <div style="margin-top:30px;text-align:center;">
+      <a href="portafolio sin precio.pdf" class="btn-down" download>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="margin-right:8px;">
+          <path d="M19 9h-4V3H9v6H5l7 8 7-8h-3zm-7-4V3h2v2h-2zm-9 12v2c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-2c0-.77-.41-1.47-1.06-1.82l-6.94-7.73-6.94 7.73A1.989 1.989 0 0 0 3 17zm2 2v-2h16v2H5z"/>
+        </svg>
+        Descargue aquí nuestro portafolio de servicios
+      </a>
+    </div>
+  </div>
+
+  <!-- BENEFICIOS Y CONVENIOS (3 cajas iguales, botones azul-hero) -->
   <div class="section-box">
     <h2 style="text-align:center;margin-bottom:30px">Beneficios y convenios</h2>
     <div class="beneficios-3col">
@@ -230,37 +268,6 @@
         <p>Grupo Plenitud; empresa pionera en ofrecer innovadores servicios en el sector funerario y brindar bienestar y calidad de vida a las familias. Gracias al convenio que Plenitud tiene con LABCCO 10% de descuento en laboratorio clínico, procedimientos médicos, espirometría, visiometría, audiometría y vacunación.</p>
         <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
       </div>
-    </div>
-    <!-- Stats originales justo después de beneficios -->
-    <div class="stats-beneficios">
-      <div class="stat-item-benef"><span>33</span><small>años</small></div>
-      <div class="stat-item-benef"><span>+200</span><small>empresas</small></div>
-      <div class="stat-item-benef"><span>3</span><small>IPS aliadas</small></div>
-      <div class="stat-item-benef"><span>✔</span><small>resultados el mismo día</small></div>
-    </div>
-  </div>
-
-  <!-- SERVICIOS V.10 (con iconos visuales, separación superior, botones azul-hero) -->
-  <div class="section-box">
-    <h2 class="servicios-titulo">Servicios</h2>
-    <div class="services">
-      <article class="card"><div class="icono">🩸</div><h3>Hematología</h3><p>Hemograma completo (tipo IV) y análisis rápidos con control de calidad interno.</p></article>
-      <article class="card"><div class="icono">🧪</div><h3>Química clínica</h3><p>Glicemia, perfil lipídico, creatinina, TSH y HbA1c con equipos de última generación.</p></article>
-      <article class="card"><div class="icono">🌾</div><h3>Colinesterasa eritrocitaria</h3><p>Prueba diferencial especializada para empresas de fumigación y plantaciones.</p></article>
-      <article class="card"><div class="icono">👂</div><h3>Audiometría</h3><p>Cabina audiométrica certificada para exámenes ocupacionales.</p></article>
-      <article class="card"><div class="icono">👁️</div><h3>Optometría</h3><p>Visiometría y optometría con consultorio profesional.</p></article>
-      <article class="card"><div class="icono">💨</div><h3>Espirometría</h3><p>Evaluación funcional respiratoria para diagnóstico y seguimiento.</p></article>
-      <article class="card"><div class="icono">🤰</div><h3>Pruebas de embarazo</h3><p>Cualitativas y cuantitativas que indican en qué semana de embarazo se encuentra.</p></article>
-      <article class="card"><div class="icono">🧬</div><h3>Pruebas de paternidad</h3><p>En convenio con la Universidad de Antioquia. Máxima fiabilidad.</p></article>
-      <article class="card"><div class="icono">🏢</div><h3>Medicina ocupacional</h3><p>Exámenes pre-empleo, periódicos y de retiro. Evaluaciones integrales.</p></article>
-    </div>
-    <div style="margin-top:30px;text-align:center;">
-      <a href="portafolio sin precio.pdf" class="btn-down" download>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="margin-right:8px;">
-          <path d="M19 9h-4V3H9v6H5l7 8 7-8h-3zm-7-4V3h2v2h-2zm-9 12v2c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-2c0-.77-.41-1.47-1.06-1.82l-6.94-7.73-6.94 7.73A1.989 1.989 0 0 0 3 17zm2 2v-2h16v2H5z"/>
-        </svg>
-        Descargue aquí nuestro portafolio de servicios
-      </a>
     </div>
   </div>
 
@@ -289,7 +296,7 @@
     <section id="contacto">
       <h2>Contáctanos</h2>
       <form class="form-corto" action="https://formsubmit.co/calidad@labccosas.com" method="POST" novalidate>
-        <input type="hidden" name="_next" value="https://labccoadmon.github.io/gracias.html">
+        <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
         <input type="hidden" name="_captcha" value="false">
         <label>Nombre completo<input type="text" name="nombre" required placeholder="Tu nombre"></label>
         <label>Tipo de cliente
