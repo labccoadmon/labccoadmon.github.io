@@ -34,7 +34,7 @@
       --blanco:#ffffff;
       --sombra:rgba(16,50,74,.09);
       --wpp:#25d366;
-      --naranja-medio:#ff8c52;   /* intermedio: llamativo sin chillón */
+      --azul-hero:#0099cc;   /* azul claro de la franja */
       --overlay:rgba(16,50,74,.55);
       --margen:60px;
     }
@@ -74,7 +74,7 @@
 
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
 
-    /*--- NOSOTROS V.10 (título más pequeño) ---*/
+    /*--- NOSOTROS V.11 (título más pequeño) ---*/
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
     .nos-texto h2{font-size:28px;color:var(--azul);font-weight:700;margin-bottom:8px}
@@ -89,18 +89,18 @@
     .stat-item span{display:block;font-size:36px;font-weight:700;color:var(--azul-b)}
     .stat-item small{color:#445569;font-size:14px}
 
-    /* BENEFICIOS Y CONVENIOS (3 cajas iguales) */
+    /* BENEFICIOS Y CONVENIOS (3 cajas iguales, botones azul-hero) */
     .beneficios-3col{display:flex;flex-wrap:wrap;gap:30px;align-items:stretch;justify-content:center;text-align:center}
     .beneficios-3col .caja{flex:1;min-width:280px;background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:40px;box-shadow:0 6px 18px var(--sombra);display:flex;flex-direction:column;align-items:center}
     .beneficios-3col .caja img{width:100%;max-width:200px;margin-bottom:16px;border-radius:8px}
     .beneficios-3col .caja h4{font-size:20px;color:var(--azul);font-weight:700;margin-bottom:12px}
     .beneficios-3col .caja p{font-size:15px;color:#445569;margin-bottom:16px;font-weight:600;flex-grow:1}
-    .cta-naranja-medio{display:inline-block;background:var(--naranja-medio);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.25);transition:transform .2s;border:2px solid var(--naranja-medio)}   /* margen delgado mismo color */
-    .cta-naranja-medio:hover{transform:scale(1.05)}
+    .cta-azul-hero{display:inline-block;background:var(--azul-hero);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
+    .cta-azul-hero:hover{transform:scale(1.05)}
 
     @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.beneficios-3col{flex-direction:column;align-items:center}}
 
-    /*--- SERVICIOS V.6 (con iconos visuales y separación superior) ---*/
+    /*--- SERVICIOS V.7 (con iconos visuales y separación superior) ---*/
     .servicios-titulo{margin-top:50px}   /* separación superior */
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 22px var(--sombra);text-align:center}   /* centrado para iconos */
@@ -116,7 +116,7 @@
     .certificados-centrado .logo-hab{flex:0 0 260px}
     .certificados-centrado .logo-hab img{width:100%;max-width:220px;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}
     .certificados-centrado .codigos{flex:0 0 320px}
-    .certificados-centrado .codigos ul{list-style:none;padding:0;margin:0;font-size:18px;line-height:1.8;font-weight:600}   /* letras grandes */
+    .certificados-centrado .codigos ul{list-style:none;padding:0;margin:0;font-size:18px;line-height:1.8;font-weight:600}   /* más grandes */
     .certificados-centrado .codigos li{position:relative;padding-left:20px}
     .certificados-centrado .codigos li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
 
@@ -189,7 +189,7 @@
     </div>
   </section>
 
-  <!-- NOSOTROS V.10 -->
+  <!-- NOSOTROS V.11 -->
   <section id="nosotros" class="section-box">
     <div class="nos-hero">
       <div class="nos-texto">
@@ -214,7 +214,7 @@
     </div>
   </section>
 
-  <!-- BENEFICIOS Y CONVENIOS (3 cajas iguales) -->
+  <!-- BENEFICIOS Y CONVENIOS (3 cajas iguales, botones azul-hero) -->
   <div class="section-box">
     <h2 style="text-align:center;margin-bottom:30px">Beneficios y convenios</h2>
     <div class="beneficios-3col">
@@ -223,26 +223,26 @@
         <img src="cerrandonegocio.webp" alt="Cerrando negocio">
         <h4>Programa empresas</h4>
         <p>Si eres empresa mediana o grande, accede a descuentos por volumen y condiciones preferenciales. Estamos abiertos a negociaciones.</p>
-        <a href="#contacto" class="cta-naranja-medio" onclick="mostrarContacto(); return false;">Solicita tu cotización personalizada</a>
+        <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Solicita tu cotización personalizada</a>
       </div>
-      <!-- Caja 2: Convenio Comfenalco -->
+      <!-- Caja 2: Convenio Comfenalco (texto acortado) -->
       <div class="caja">
         <img src="comfenalco.webp" alt="Convenio Comfenalco">
         <h4>Convenio Comfenalco</h4>
-        <p>Esta sede cuenta con la infraestructura necesaria para que consultes y hagas uso de todos sus servicios. La atención es prestada por nuestro aliado LABCCO, en sus instalaciones y con su equipamiento. Por ser afiliado a nuestra Caja, en Comfenalco Antioquia te invitamos a que disfrutes de ellos y de los descuentos que tenemos para ti. Conoce y accede a sus espacios y servicios: valoraciones médicas, consulta de medicina ocupacional, consulta de audiometría, consulta de optometría, consulta de terapia respiratoria, laboratorio de toma de muestras, exámenes para manipuladores de alimentos, exámenes para personal de trabajos en altura.</p>
-        <a href="#contacto" class="cta-naranja-medio" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
+        <p>Gracias al convenio que Comfenalco Antioquia tiene con LABCCO, los afiliados pueden acceder a todos nuestros servicios. Como beneficiarios del convenio, puedes disfrutar de descuentos especiales en: valoraciones médicas, medicina ocupacional, audiometría, optometría, terapia respiratoria, toma de muestras de laboratorio, exámenes para manipuladores de alimentos y evaluaciones para trabajo en alturas.</p>
+        <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
       </div>
-      <!-- Caja 3: Convenio Plenitud -->
+      <!-- Caja 3: Convenio Plenitud (texto acortado) -->
       <div class="caja">
         <img src="plenitud.webp" alt="Convenio Plenitud">
         <h4>Convenio Plenitud</h4>
-        <p>Somos Grupo Plenitud, una empresa pionera en ofrecer innovadores servicios en el sector funerario, así como desarrollar ofertas encaminadas en brindar bienestar y calidad de vida a las familias. 10% de descuento en laboratorio clínico, procedimientos médicos, espirometría, visiometría, audiometría y vacunación.</p>
-        <a href="#contacto" class="cta-naranja-medio" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
+        <p>Grupo Plenitud; empresa pionera en ofrecer innovadores servicios en el sector funerario y brindar bienestar y calidad de vida a las familias. Gracias al convenio que Plenitud tiene con LABCCO 10% de descuento en laboratorio clínico, procedimientos médicos, espirometría, visiometría, audiometría y vacunación.</p>
+        <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
       </div>
     </div>
   </div>
 
-  <!-- SERVICIOS V.6 (con iconos visuales y separación superior) -->
+  <!-- SERVICIOS V.8 (con iconos visuales, separación superior, botones azul-hero) -->
   <div class="section-box">
     <h2 class="servicios-titulo">Servicios</h2>
     <div class="services">
@@ -251,7 +251,7 @@
       <article class="card"><div class="icono">🌾</div><h3>Colinesterasa eritrocitaria</h3><p>Prueba diferencial especializada para empresas de fumigación y plantaciones.</p></article>
       <article class="card"><div class="icono">👂</div><h3>Audiometría</h3><p>Cabina audiométrica certificada para exámenes ocupacionales.</p></article>
       <article class="card"><div class="icono">👁️</div><h3>Optometría</h3><p>Visiometría y optometría con consultorio profesional.</p></article>
-      <article class="card"><div class="icono">🫁</div><h3>Espirometría</h3><p>Evaluación funcional respiratoria para diagnóstico y seguimiento.</p></article>
+      <article class="card"><div class="icono">💨</div><h3>Espirometría</h3><p>Evaluación funcional respiratoria para diagnóstico y seguimiento.</p></article>
       <article class="card"><div class="icono">🤰</div><h3>Pruebas de embarazo</h3><p>Cualitativas y cuantitativas que indican en qué semana de embarazo se encuentra.</p></article>
       <article class="card"><div class="icono">🧬</div><h3>Pruebas de paternidad</h3><p>En convenio con la Universidad de Antioquia. Máxima fiabilidad.</p></article>
       <article class="card"><div class="icono">🏢</div><h3>Medicina ocupacional</h3><p>Exámenes pre-empleo, periódicos y de retiro. Evaluaciones integrales.</p></article>
@@ -284,6 +284,38 @@
         </ul>
       </div>
     </div>
+  </div>
+
+  <!-- CONTACTO OCULTO (se muestra solo al clickear «Contacto») -->
+  <div class="section-box" id="seccion-contacto" style="display:none;">
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <form class="form-corto" action="https://formsubmit.co/calidad@labccosas.com" method="POST" novalidate>
+        <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
+        <input type="hidden" name="_captcha" value="false">
+        <label>Nombre completo<input type="text" name="nombre" required placeholder="Tu nombre"></label>
+        <label>Tipo de cliente
+          <select name="tipo" required>
+            <option value="">Selecciona</option>
+            <option>Particular</option>
+            <option>Empresa</option>
+          </select>
+        </label>
+        <label>Teléfono (WhatsApp)<input type="tel" name="whatsapp" required placeholder="+57 3xx xxx xxxx" pattern="^\+?\d{7,15}$"></label>
+        <label>Correo electrónico<input type="email" name="email" required placeholder="tucorreo@ejemplo.com"></label>
+        <input type="hidden" name="mensaje" id="asunto">
+        <button type="submit" class="btn-form">Enviar solicitud</button>
+      </form>
+      <div class="info-final">
+        <p>📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
+        📞 Fijo: <strong>531 13 54</strong><br>
+        📱 WhatsApp: <a href="https://wa.me/573128274796" target="_blank" rel="noopener">312 827 4796</a><br>
+        ✉ Correo: <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></p>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Carrera+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- FOOTER -->
