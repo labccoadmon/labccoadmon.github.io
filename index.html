@@ -83,7 +83,7 @@
     .nos-fig{flex:0 0 560px;text-align:center}
     .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sombra);width:100%}
 
-    /* STATS (sin título, 1 fila) */
+    /* STATS */
     .stats-beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin:20px 0 0 0;text-align:center}
     .stat-item-benef{background:#e9f1f9;padding:20px;border-radius:10px}
     .stat-item-benef span{display:block;font-size:36px;font-weight:700;color:var(--azul-b)}
@@ -91,7 +91,7 @@
 
     @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.beneficios-3col{flex-direction:column;align-items:center}}
 
-    /*--- SERVICIOS (espacio superior reducido, debajo aumentado) ---*/
+    /*--- SERVICIOS ---*/
     .servicios-titulo{margin-top:0}                       /* encima mínimo */
     .servicios-titulo h2{margin-bottom:20px}            /* debajo más espacio */
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -107,7 +107,7 @@
     .beneficios-3col .caja h4{font-size:20px;color:var(--azul);font-weight:700;margin-bottom:12px}
     .beneficios-3col .caja p{font-size:15px;color:#445569;margin-bottom:16px;font-weight:600;flex-grow:1}
     /* BOTONES CONVENIOS */
-    .cta-azul-hero{display:inline-block;background:var(--azul-hero);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
+    .cta-azul-hero{display:inline-block;background:var(--azul-b);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
     .cta-azul-hero:hover{transform:scale(1.05)}
     .cta-naranja{display:inline-block;background:var(--naranja);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
     .cta-naranja:hover{transform:scale(1.05)}
@@ -140,12 +140,6 @@
     .btn-form{background:var(--celeste-2);color:#fff;padding:14px;border-radius:8px;border:none;font-weight:700;cursor:pointer;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
     .btn-form:hover{transform:scale(1.03)}
     .info-final{margin-top:60px;text-align:center}
-
-    /*--- FOOTER / WPP ---*/
-    footer{background:var(--celeste);color:var(--blanco);text-align:center;padding:26px 0;font-size:15px}
-    .footer-grid{max-width:1200px;margin:0 auto;display:flex;gap:18px;justify-content:space-between;align-items:flex-start;padding:0 var(--margen)}
-    .footer-col{flex:1;text-align:left}
-    .btn-wpp{position:fixed;bottom:20px;right:20px;background:var(--wpp);color:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-size:34px;box-shadow:0 6px 18px rgba(0,0,0,.18);z-index:2000}
 
     /*--- BOTÓN PORTAFOLIO (restaurado) ---*/
     .btn-down{display:inline-flex;align-items:center;background:var(--azul-b);color:var(--blanco);padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
@@ -213,7 +207,6 @@
         <p>Desde 1992 trabajamos por la salud y el bienestar de Colombia.<br>
         Somos un laboratorio clínico con tecnología de última generación y personal certificado que garantiza resultados precisos y oportunos.<br>
         En LABCCO unimos rigor científico, procesos estandarizados y un servicio humano para acompañar a empresas y pacientes en cada decisión de salud clínica y ocupacional.</p>
-        <!-- nuevo texto botón -->
         <a href="#contacto" class="cta-inline" onclick="mostrarContacto(); return false;">Solicita una cotización empresarial o particular</a>
       </div>
       <figure class="nos-fig">
@@ -231,7 +224,6 @@
 
   <!-- SERVICIOS -->
   <div class="section-box">
-    <!-- espacio encima mínimo y debajo aumentado -->
     <div class="servicios-titulo"><h2>Servicios</h2></div>
     <div class="services">
       <article class="card"><div class="icono">🩸</div><h3>Hematología</h3><p>Hemograma completo (tipo IV) y análisis rápidos con control de calidad interno.</p></article>
@@ -263,21 +255,18 @@
         <img src="cerrandonegocio.webp" alt="Cerrando negocio">
         <h4>Programa empresas</h4>
         <p>LABCCO ofrece soluciones integrales en laboratorio clínico y salud ocupacional con condiciones preferenciales por volumen, protocolos estandarizados y soporte permanente. Abrimos negociaciones para crear alianzas estables y de alto valor para tu empresa.</p>
-        <!-- único botón naranja -->
         <a href="#contacto" class="cta-naranja" onclick="mostrarContacto(); return false;">Quiero una cotización empresarial</a>
       </div>
       <div class="caja">
         <img src="comfenalco.webp" alt="Convenio Comfenalco">
         <h4>Convenio Comfenalco</h4>
         <p>Gracias al convenio que Comfenalco Antioquia tiene con LABCCO, los afiliados pueden acceder a todos nuestros servicios. Como beneficiarios del convenio, puedes disfrutar de descuentos especiales en: valoraciones médicas, medicina ocupacional, audiometría, optometría, terapia respiratoria, toma de muestras de laboratorio, exámenes para manipuladores de alimentos y evaluaciones para trabajo en alturas.</p>
-        <!-- botón azul institucional -->
         <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
       </div>
       <div class="caja">
         <img src="plenitud.webp" alt="Convenio Plenitud">
         <h4>Convenio Plenitud</h4>
         <p>Grupo Plenitud; empresa pionera en ofrecer innovadores servicios en el sector funerario y brindar bienestar y calidad de vida a las familias. Gracias al convenio que Plenitud tiene con LABCCO 10% de descuento en laboratorio clínico, procedimientos médicos, espirometría, visiometría, audiometría y vacunación.</p>
-        <!-- botón azul institucional -->
         <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
       </div>
     </div>
