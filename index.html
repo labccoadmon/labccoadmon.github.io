@@ -50,7 +50,7 @@
     .top-left{flex:1;justify-content:flex-end}.top-center{flex:1.5;justify-content:center;gap:12px}.top-right{flex:1;justify-content:flex-start}
     .horario{display:flex;align-items:center;gap:5px;font-weight:600;white-space:nowrap}
     .contact-small{display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,.08);padding:3px 8px;border-radius:16px;font-weight:500;font-size:13px}
-    .brand-extra{font-weight:600;font-size:12px;color:rgba(0,50,80,0.95);white-space:nowrap}
+    .brand-extra{font-weight:600;font-size:12px;color:var(--blanco);white-space:nowrap}   /* blanco */
     .navbar{position:sticky;top:34px;display:flex;align-items:center;justify-content:space-between;padding:6px var(--margen);height:80px;background:var(--blanco);box-shadow:0 1px 6px var(--sombra);z-index:1500}
     .brand{display:flex;align-items:center;gap:14px}
     #siteLogo{height:72px;width:auto;border-radius:6px}
@@ -74,10 +74,10 @@
 
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
 
-    /*--- NOSOTROS V.9 (título más pequeño) ---*/
+    /*--- NOSOTROS V.10 (título más pequeño) ---*/
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
-    .nos-texto h2{font-size:28px;color:var(--azul);font-weight:700;margin-bottom:8px}   /* más pequeño */
+    .nos-texto h2{font-size:28px;color:var(--azul);font-weight:700;margin-bottom:8px}
     .nos-texto h3{font-size:22px;color:var(--azul-b);margin-bottom:16px}
     .nos-texto p{font-size:17px;line-height:1.7;margin-bottom:20px}
     .cta-inline{display:inline-block;background:var(--celeste-2);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap}
@@ -89,29 +89,19 @@
     .stat-item span{display:block;font-size:36px;font-weight:700;color:var(--azul-b)}
     .stat-item small{color:#445569;font-size:14px}
 
-    .subtitulo-centrado{font-size:22px;color:var(--azul-b);margin:50px 0 20px;text-align:center;font-weight:700}   /* centrado */
-
-    /* 3 columnas centradas y simétricas: PROGRAMA EMPRESAS (izq, máximo tamaño) | distintivo (centro, más grande) | códigos (der, letras grandes) */
-    .certs-3col-v5{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start;justify-content:center;text-align:center}
-    /* columna 1: programa empresas (máximo tamaño) */
-    .certs-3col-v5 .col1{flex:0 0 420px;background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:40px;box-shadow:0 6px 18px var(--sombra)}
-    .certs-3col-v5 .col1 img{width:100%;max-width:260px;margin:0 auto 20px;border-radius:8px}   /* máximo tamaño permitido */
-    .certs-3col-v5 .col1 h4{font-size:26px;color:var(--azul);font-weight:700;margin-bottom:12px}   /* azul empresa */
-    .certs-3col-v5 .col1 p{font-size:16px;color:#445569;margin-bottom:16px;font-weight:600}
-    .cta-naranja-medio{display:inline-block;background:var(--naranja-medio);color:var(--blanco);padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 4px 12px rgba(0,0,0,.25);transition:transform .2s;border:2px solid var(--naranja-medio)}   /* margen delgado mismo color */
+    /* BENEFICIOS Y CONVENIOS (3 cajas iguales) */
+    .beneficios-3col{display:flex;flex-wrap:wrap;gap:30px;align-items:stretch;justify-content:center;text-align:center}
+    .beneficios-3col .caja{flex:1;min-width:280px;background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:40px;box-shadow:0 6px 18px var(--sombra);display:flex;flex-direction:column;align-items:center}
+    .beneficios-3col .caja img{width:100%;max-width:200px;margin-bottom:16px;border-radius:8px}
+    .beneficios-3col .caja h4{font-size:20px;color:var(--azul);font-weight:700;margin-bottom:12px}
+    .beneficios-3col .caja p{font-size:15px;color:#445569;margin-bottom:16px;font-weight:600;flex-grow:1}
+    .cta-naranja-medio{display:inline-block;background:var(--naranja-medio);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.25);transition:transform .2s;border:2px solid var(--naranja-medio)}   /* margen delgado mismo color */
     .cta-naranja-medio:hover{transform:scale(1.05)}
-    /* columna 2: distintivo (más grande y centrado verticalmente) */
-    .certs-3col-v5 .col2{flex:0 0 280px;display:flex;flex-direction:column;justify-content:center;align-items:center}
-    .certs-3col-v5 .col2 img{width:100%;max-width:240px;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}   /* más grande */
-    /* columna 3: códigos (letras grandes) */
-    .certs-3col-v5 .col3{flex:0 0 320px}
-    .certs-3col-v5 .col3 ul{list-style:none;padding:0;margin:0;font-size:18px;line-height:1.8;font-weight:600}   /* más grandes */
-    .certs-3col-v5 .col3 li{position:relative;padding-left:20px}
-    .certs-3col-v5 .col3 li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
 
-    @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.certs-3col-v5{flex-direction:column;align-items:center}.certs-3col-v5 .col1,.certs-3col-v5 .col2{margin-bottom:20px}}
+    @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.beneficios-3col{flex-direction:column;align-items:center}}
 
-    /*--- SERVICIOS V.5 (con iconos visuales) ---*/
+    /*--- SERVICIOS V.6 (con iconos visuales y separación superior) ---*/
+    .servicios-titulo{margin-top:50px}   /* separación superior */
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 22px var(--sombra);text-align:center}   /* centrado para iconos */
     .card .icono{font-size:40px;margin-bottom:8px}   /* icono grande */
@@ -120,6 +110,17 @@
     .btn-down{display:inline-flex;align-items:center;gap:8px;background:var(--azul-b);color:var(--blanco)!important;padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 4px 12px var(--sombra);transition:transform .2s,background-color .3s;border:none}
     .btn-down:hover{transform:scale(1.05);background-color:var(--celeste-2)}
     .btn-down svg{flex-shrink:0;margin-right:8px;vertical-align:middle}
+
+    /*--- CERTIFICADOS (solo códigos + logo, centrado y simétrico) ---*/
+    .certificados-centrado{display:flex;flex-wrap:wrap;gap:40px;align-items:center;justify-content:center;text-align:center;margin-top:60px}
+    .certificados-centrado .logo-hab{flex:0 0 260px}
+    .certificados-centrado .logo-hab img{width:100%;max-width:220px;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}
+    .certificados-centrado .codigos{flex:0 0 320px}
+    .certificados-centrado .codigos ul{list-style:none;padding:0;margin:0;font-size:18px;line-height:1.8;font-weight:600}   /* letras grandes */
+    .certificados-centrado .codigos li{position:relative;padding-left:20px}
+    .certificados-centrado .codigos li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
+
+    @media(max-width:720px){.certificados-centrado{flex-direction:column;align-items:center}}
 
     /*--- FORMULARIO CORTO + SEPARACIÓN ---*/
     .form-corto{display:grid;gap:14px;max-width:520px;margin:0 auto}
@@ -156,7 +157,7 @@
       <a href="https://wa.me/573128274796" class="contact-small" target="_blank" rel="noopener">📱 312 827 4796</a>
       <a href="mailto:calidad@labccosas.com" class="contact-small">✉ calidad@labccosas.com</a>
     </div>
-    <div class="top-col top-right"><div class="brand-extra">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div></div>
+    <div class="top-col top-right"><div class="brand-extra" style="color:var(--blanco)">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div></div>   <!-- blanco -->
   </div>
 
   <!-- NAVBAR -->
@@ -188,7 +189,7 @@
     </div>
   </section>
 
-  <!-- NOSOTROS V.9 -->
+  <!-- NOSOTROS V.10 -->
   <section id="nosotros" class="section-box">
     <div class="nos-hero">
       <div class="nos-texto">
@@ -211,25 +212,68 @@
       <div class="stat-item"><span>3</span><small>IPS aliadas</small></div>
       <div class="stat-item"><span>✔</span><small>resultados el mismo día</small></div>
     </div>
+  </section>
 
-    <!-- TÍTULO CENTRADO -->
-    <h4 class="subtitulo-centrado">Certificados y beneficios</h4>
-
-    <!-- 3 columnas centradas y simétricas: PROGRAMA EMPRESAS (izq, máximo tamaño) | distintivo (centro, más grande) | códigos (der, letras grandes) -->
-    <div class="certs-3col-v5">
-      <!-- Columna 1: programa empresas (máximo tamaño) -->
-      <div class="col1">
+  <!-- BENEFICIOS Y CONVENIOS (3 cajas iguales) -->
+  <div class="section-box">
+    <h2 style="text-align:center;margin-bottom:30px">Beneficios y convenios</h2>
+    <div class="beneficios-3col">
+      <!-- Caja 1: Programa empresas -->
+      <div class="caja">
         <img src="cerrandonegocio.webp" alt="Cerrando negocio">
-        <h4>Programa empresas</h4>   <!-- azul empresa -->
+        <h4>Programa empresas</h4>
         <p>Si eres empresa mediana o grande, accede a descuentos por volumen y condiciones preferenciales. Estamos abiertos a negociaciones.</p>
         <a href="#contacto" class="cta-naranja-medio" onclick="mostrarContacto(); return false;">Solicita tu cotización personalizada</a>
       </div>
-      <!-- Columna 2: distintivo (más grande y centrado verticalmente) -->
-      <div class="col2">
+      <!-- Caja 2: Convenio Comfenalco -->
+      <div class="caja">
+        <img src="comfenalco.webp" alt="Convenio Comfenalco">
+        <h4>Convenio Comfenalco</h4>
+        <p>Esta sede cuenta con la infraestructura necesaria para que consultes y hagas uso de todos sus servicios. La atención es prestada por nuestro aliado LABCCO, en sus instalaciones y con su equipamiento. Por ser afiliado a nuestra Caja, en Comfenalco Antioquia te invitamos a que disfrutes de ellos y de los descuentos que tenemos para ti. Conoce y accede a sus espacios y servicios: valoraciones médicas, consulta de medicina ocupacional, consulta de audiometría, consulta de optometría, consulta de terapia respiratoria, laboratorio de toma de muestras, exámenes para manipuladores de alimentos, exámenes para personal de trabajos en altura.</p>
+        <a href="#contacto" class="cta-naranja-medio" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
+      </div>
+      <!-- Caja 3: Convenio Plenitud -->
+      <div class="caja">
+        <img src="plenitud.webp" alt="Convenio Plenitud">
+        <h4>Convenio Plenitud</h4>
+        <p>Somos Grupo Plenitud, una empresa pionera en ofrecer innovadores servicios en el sector funerario, así como desarrollar ofertas encaminadas en brindar bienestar y calidad de vida a las familias. 10% de descuento en laboratorio clínico, procedimientos médicos, espirometría, visiometría, audiometría y vacunación.</p>
+        <a href="#contacto" class="cta-naranja-medio" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICIOS V.6 (con iconos visuales y separación superior) -->
+  <div class="section-box">
+    <h2 class="servicios-titulo">Servicios</h2>
+    <div class="services">
+      <article class="card"><div class="icono">🩸</div><h3>Hematología</h3><p>Hemograma completo (tipo IV) y análisis rápidos con control de calidad interno.</p></article>
+      <article class="card"><div class="icono">🧪</div><h3>Química clínica</h3><p>Glicemia, perfil lipídico, creatinina, TSH y HbA1c con equipos de última generación.</p></article>
+      <article class="card"><div class="icono">🌾</div><h3>Colinesterasa eritrocitaria</h3><p>Prueba diferencial especializada para empresas de fumigación y plantaciones.</p></article>
+      <article class="card"><div class="icono">👂</div><h3>Audiometría</h3><p>Cabina audiométrica certificada para exámenes ocupacionales.</p></article>
+      <article class="card"><div class="icono">👁️</div><h3>Optometría</h3><p>Visiometría y optometría con consultorio profesional.</p></article>
+      <article class="card"><div class="icono">🫁</div><h3>Espirometría</h3><p>Evaluación funcional respiratoria para diagnóstico y seguimiento.</p></article>
+      <article class="card"><div class="icono">🤰</div><h3>Pruebas de embarazo</h3><p>Cualitativas y cuantitativas que indican en qué semana de embarazo se encuentra.</p></article>
+      <article class="card"><div class="icono">🧬</div><h3>Pruebas de paternidad</h3><p>En convenio con la Universidad de Antioquia. Máxima fiabilidad.</p></article>
+      <article class="card"><div class="icono">🏢</div><h3>Medicina ocupacional</h3><p>Exámenes pre-empleo, periódicos y de retiro. Evaluaciones integrales.</p></article>
+    </div>
+    <div style="margin-top:30px;text-align:center;">
+      <a href="portafolio sin precio.pdf" class="btn-down" download>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="margin-right:8px;">
+          <path d="M19 9h-4V3H9v6H5l7 8 7-8h-3zm-7-4V3h2v2h-2zm-9 12v2c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-2c0-.77-.41-1.47-1.06-1.82l-6.94-7.73-6.94 7.73A1.989 1.989 0 0 0 3 17zm2 2v-2h16v2H5z"/>
+        </svg>
+        Descargue aquí nuestro portafolio de servicios
+      </a>
+    </div>
+  </div>
+
+  <!-- CERTIFICADOS (solo códigos + logo, centrado y simétrico) -->
+  <div class="section-box">
+    <h2 style="text-align:center;margin-bottom:30px">Certificados</h2>
+    <div class="certificados-centrado">
+      <div class="logo-hab">
         <img src="habilitacion.png" alt="Habilitación Ministerio de Salud">
       </div>
-      <!-- Columna 3: códigos (letras grandes) -->
-      <div class="col3">
+      <div class="codigos">
         <ul>
           <li>407 Medicina del trabajo y medicina laboral</li>
           <li>706 Laboratorio clínico</li>
@@ -240,64 +284,6 @@
         </ul>
       </div>
     </div>
-  </section>
-
-  <!-- SERVICIOS V.5 (con iconos visuales) -->
-  <div class="section-box">
-    <section id="servicios">
-      <h2>Servicios</h2>
-      <div class="services">
-        <article class="card"><div class="icono">🩸</div><h3>Hematología</h3><p>Hemograma completo (tipo IV) y análisis rápidos con control de calidad interno.</p></article>
-        <article class="card"><div class="icono">🧪</div><h3>Química clínica</h3><p>Glicemia, perfil lipídico, creatinina, TSH y HbA1c con equipos de última generación.</p></article>
-        <article class="card"><div class="icono">🌾</div><h3>Colinesterasa eritrocitaria</h3><p>Prueba diferencial especializada para empresas de fumigación y plantaciones.</p></article>
-        <article class="card"><div class="icono">👂</div><h3>Audiometría</h3><p>Cabina audiométrica certificada para exámenes ocupacionales.</p></article>
-        <article class="card"><div class="icono">👁️</div><h3>Optometría</h3><p>Visiometría y optometría con consultorio profesional.</p></article>
-        <article class="card"><div class="icono">🫁</div><h3>Espirometría</h3><p>Evaluación funcional respiratoria para diagnóstico y seguimiento.</p></article>
-        <article class="card"><div class="icono">🤰</div><h3>Pruebas de embarazo</h3><p>Cualitativas y cuantitativas que indican en qué semana de embarazo se encuentra.</p></article>
-        <article class="card"><div class="icono">🧬</div><h3>Pruebas de paternidad</h3><p>En convenio con la Universidad de Antioquia. Máxima fiabilidad.</p></article>
-        <article class="card"><div class="icono">🏢</div><h3>Medicina ocupacional</h3><p>Exámenes pre-empleo, periódicos y de retiro. Evaluaciones integrales.</p></article>
-      </div>
-      <div style="margin-top:30px;text-align:center;">
-        <a href="portafolio sin precio.pdf" class="btn-down" download>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="margin-right:8px;">
-            <path d="M19 9h-4V3H9v6H5l7 8 7-8h-3zm-7-4V3h2v2h-2zm-9 12v2c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-2c0-.77-.41-1.47-1.06-1.82l-6.94-7.73-6.94 7.73A1.989 1.989 0 0 0 3 17zm2 2v-2h16v2H5z"/>
-          </svg>
-          Descargue aquí nuestro portafolio de servicios
-        </a>
-      </div>
-    </section>
-  </div>
-
-  <!-- CONTACTO OCULTO (se muestra solo al clickear «Contacto») -->
-  <div class="section-box" id="seccion-contacto" style="display:none;">
-    <section id="contacto">
-      <h2>Contáctanos</h2>
-      <form class="form-corto" action="https://formsubmit.co/calidad@labccosas.com" method="POST" novalidate>
-        <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
-        <input type="hidden" name="_captcha" value="false">
-        <label>Nombre completo<input type="text" name="nombre" required placeholder="Tu nombre"></label>
-        <label>Tipo de cliente
-          <select name="tipo" required>
-            <option value="">Selecciona</option>
-            <option>Particular</option>
-            <option>Empresa</option>
-          </select>
-        </label>
-        <label>Teléfono (WhatsApp)<input type="tel" name="whatsapp" required placeholder="+57 3xx xxx xxxx" pattern="^\+?\d{7,15}$"></label>
-        <label>Correo electrónico<input type="email" name="email" required placeholder="tucorreo@ejemplo.com"></label>
-        <input type="hidden" name="mensaje" id="asunto">
-        <button type="submit" class="btn-form">Enviar solicitud</button>
-      </form>
-      <div class="info-final">
-        <p>📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
-        📞 Fijo: <strong>531 13 54</strong><br>
-        📱 WhatsApp: <a href="https://wa.me/573128274796" target="_blank" rel="noopener">312 827 4796</a><br>
-        ✉ Correo: <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></p>
-        <div class="map-wrap">
-          <iframe src="https://www.google.com/maps?q=Carrera+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" loading="lazy"></iframe>
-        </div>
-      </div>
-    </section>
   </div>
 
   <!-- FOOTER -->
