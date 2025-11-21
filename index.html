@@ -100,13 +100,19 @@
     .card h3{margin:6px 0 8px;font-size:18px;color:var(--azul-b)}
     .card p{font-size:14px;color:#000} /* ← letras negras */
 
-    /* BENEFICIOS Y CONVENIOS (carrussel) */
+    /* BENEFICIOS Y CONVENIOS (colores originales) */
     .beneficios-wrapper{position:relative;max-width:1200px;margin:0 auto;padding:0 50px}
     .beneficios-carousel{display:flex;gap:30px;transition:transform .4s ease}
     .beneficios-carousel .caja{min-width:calc(33.333% - 20px);background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:40px;box-shadow:0 6px 18px var(--sombra);display:flex;flex-direction:column;align-items:center}
     .beneficios-carousel .caja img{width:100%;max-width:200px;margin-bottom:16px;border-radius:8px}
     .beneficios-carousel .caja h4{font-size:20px;color:var(--azul);font-weight:700;margin-bottom:12px}
     .beneficios-carousel .caja p{font-size:15px;color:#000;margin-bottom:16px;font-weight:600;flex-grow:1}
+    /* BOTONES CON COLORES ORIGINALES */
+    .cta-azul-hero{display:inline-block;background:var(--azul-b);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
+    .cta-azul-hero:hover{transform:scale(1.05)}
+    .cta-naranja{display:inline-block;background:var(--naranja);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
+    .cta-naranja:hover{transform:scale(1.05)}
+    /* FLECHAS */
     .carousel-btns{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;pointer-events:none}
     .carousel-btn{background:var(--celeste-2);color:var(--blanco);border:none;font-size:24px;width:40px;height:40px;border-radius:50%;cursor:pointer;pointer-events:auto;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.15)}
     .carousel-btn:hover{transform:scale(1.1)}
@@ -262,7 +268,7 @@
     </div>
   </div>
 
-  <!-- BENEFICIOS Y CONVENIOS (carrussel) -->
+  <!-- BENEFICIOS Y CONVENIOS (colores originales + texto UdeA) -->
   <div class="section-box">
     <h2 style="text-align:center;margin-bottom:30px">Beneficios y convenios</h2>
 
@@ -284,12 +290,12 @@
           <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
         </div>
 
-        <!-- 3 NUEVO -->
+        <!-- 3 UdeA → texto y color originales -->
         <div class="caja">
           <img src="udea.webp" alt="Convenio UdeA">
           <h4>Convenio UdeA pruebas de paternidad</h4>
           <p>Las pruebas de paternidad más confiables del país. También realizamos otras pruebas especializadas en convenio con la Universidad de Antioquia.</p>
-          <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
+          <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Cotiza la prueba de paternidad</a>
         </div>
 
         <!-- 4 OCULTO (Plenitud) -->
