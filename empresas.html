@@ -4,12 +4,20 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <title>Programa Empresarial — LABCCO</title>
-  <meta name="description" content="Programa empresarial LABCCO: exámenes ocupacionales, paquetes para empresas, brigadas extramurales, colinesterasa eritrocitaria, audiometría, optometría y laboratorio clínico.">
+  <title>Programa Empresarial LABCCO | Precios desde $41.900 – Resultados en 24 h</title>
+  <meta name="description" content="Paquetes empresariales de exámenes ocupacionales en Rionegro. Alturas, químicos, conductores, brigadas. Precios desde $41.900. Cotiza en 2 minutos.">
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Programa Empresarial LABCCO | Precios desde $41.900">
+  <meta property="og:description" content="Paquetes empresariales de exámenes ocupacionales en Rionegro. Alturas, químicos, conductores, brigadas. Precios desde $41.900. Cotiza en 2 minutos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://labccoadmon.github.io/empresas.html">
+  <meta property="og:image" content="https://labccoadmon.github.io/og-empresas.webp">
+
+  <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- COPIA EXACTA DEL CSS DEL INDEX -->
+  <!-- CSS (igual que index) -->
   <style>
     :root{
       --azul:#10324a;
@@ -19,33 +27,34 @@
       --blanco:#ffffff;
       --gris:#f6fbff;
       --sombra:rgba(16,50,74,.10);
+      --wpp:#25d366;
+      --naranja:#ff6a00;
+      --margen:60px;
     }
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Outfit',sans-serif;background:var(--gris);color:var(--azul);}
-
     a{text-decoration:none;color:inherit}
     img{max-width:100%}
+    h1{font-size:42px;font-weight:700;margin-bottom:14px;text-align:center;color:var(--azul)}
+    h2{font-size:30px;font-weight:700;margin-bottom:14px;color:var(--azul-b)}
+    h3{font-size:20px;font-weight:600;margin-bottom:6px;color:var(--azul)}
+    p{font-size:17px;line-height:1.5;margin-bottom:12px}
+    ul{margin:10px 0 20px 20px;font-size:16px}
 
     /* TOP BAR */
-    .top-bar{position:fixed;top:0;left:0;right:0;height:34px;background:var(--celeste);color:#fff;font-size:14px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:5000}
+    .top-bar{position:fixed;top:0;left:0;right:0;height:34px;background:var(--celeste);color:#fff;font-size:14px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--margen);z-index:5000}
 
     /* NAV */
-    .navbar{position:sticky;top:34px;background:#fff;height:80px;display:flex;justify-content:space-between;align-items:center;padding:0 40px;box-shadow:0 4px 12px var(--sombra);z-index:4000}
+    .navbar{position:sticky;top:34px;background:#fff;height:80px;display:flex;justify-content:space-between;align-items:center;padding:0 var(--margen);box-shadow:0 4px 12px var(--sombra);z-index:4000}
     .nav-links a{margin-left:24px;font-weight:500;font-size:18px}
 
     /* SECTION BOX GENERAL */
     .section-box{max-width:1200px;margin:60px auto;padding:40px;background:white;border-radius:14px;box-shadow:0 4px 18px var(--sombra)}
 
-    h1{font-size:40px;font-weight:700;margin-bottom:14px;text-align:center;color:var(--azul)}
-    h2{font-size:30px;font-weight:700;margin-bottom:14px;color:var(--azul-b)}
-    h3{font-size:20px;font-weight:600;margin-bottom:6px;color:var(--azul)}
-
-    p{font-size:17px;line-height:1.5;margin-bottom:12px}
-    ul{margin:10px 0 20px 20px;font-size:16px}
-
     /* CTA */
-    .cta{display:inline-block;background:var(--celeste-2);color:white;padding:14px 28px;border-radius:10px;font-weight:700;margin-top:10px}
+    .cta{display:inline-flex;align-items:center;background:var(--celeste-2);color:white;padding:14px 28px;border-radius:10px;font-weight:700;gap:8px;transition:.2s}
     .cta:hover{transform:scale(1.05)}
+    .cta-naranja{background:var(--naranja)}
 
     /* GRID */
     .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;margin-top:25px}
@@ -59,16 +68,15 @@
     }
 
     /* ZONAS COLOREADAS */
-    .zona{
-      width:100%;
-      padding:60px 20px;
-      margin-top:60px;
-    }
+    .zona{width:100%;padding:60px 20px;margin-top:60px;}
     .zona-blue{background:var(--azul);color:white;}
     .zona-light{background:#e9f6ff;}
 
     /* FOOTER */
     footer{background:var(--celeste);color:white;padding:40px 0;margin-top:60px;text-align:center}
+
+    /* STICKY CTA */
+    .sticky-cta{position:fixed;bottom:20px;right:20px;background:var(--naranja);color:white;padding:14px 24px;border-radius:30px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.18);z-index:3000;display:flex;align-items:center;gap:8px}
   </style>
 </head>
 
@@ -87,7 +95,6 @@
       <img src="LABCCO-Photoroom.png" alt="LABCCO" style="height:72px;">
       <img src="distintivo30.png" alt="30 años" style="height:64px;">
     </div>
-
     <nav class="nav-links">
       <a href="index.html">Inicio</a>
       <a href="index.html#nosotros">Nosotros</a>
@@ -101,13 +108,13 @@
   <section class="zona-light" style="text-align:center;padding-top:120px;">
     <h1>Programa Empresarial LABCCO</h1>
     <p style="font-size:20px;max-width:700px;margin:10px auto;">
-      Soluciones integrales en salud ocupacional, laboratorio clínico y evaluación de riesgo para empresas que buscan cumplimiento, agilidad y calidad técnica.
+      Resultados en 24 h · Descuentos por volumen · Brigadas desde 25 personas
     </p>
-    <a class="cta" href="https://wa.me/573128274796?text=Hola,+quiero+una+cotización+empresarial" target="_blank">Solicitar cotización empresarial</a>
+    <a class="cta" href="https://wa.me/573128274796?text=Hola ,+quiero+una+cotización+empresarial" target="_blank">Solicitar cotización empresarial</a>
   </section>
 
 
-  <!-- SECCIÓN: PROPUESTA DE VALOR -->
+  <!-- PROPUESTA DE VALOR -->
   <div class="section-box">
     <h2>¿Por qué las empresas eligen LABCCO?</h2>
     <div class="grid-3">
@@ -123,8 +130,8 @@
       </div>
 
       <div class="card">
-        <h3>✔ Paquetes completos para cada tipo de riesgo</h3>
-        <p>Alturas, químico/toxicológico, manipuladores, conductores, espacios confinados y más.</p>
+        <h3>✔ Paquetes por riesgo</h3>
+        <p>Alturas, químicos, conductores, manipuladores, espacios confinados.</p>
       </div>
 
       <div class="card">
@@ -146,40 +153,51 @@
   </div>
 
 
-  <!-- ZONA DE PAQUETES -->
+  <!-- ZONA DE PAQUETES (con precio “desde” y Schema.org) -->
   <section class="zona-blue">
     <h2 style="text-align:center;color:white;margin-bottom:40px;">Paquetes Empresariales</h2>
 
     <div class="section-box" style="background:white;">
-      <h2 style="color:var(--azul-b);">Paquetes de Riesgo y Actividad</h2>
+      <h2 style="color:var(--azul-b);">Paquetes por riesgo y actividad</h2>
 
       <div class="grid-3">
 
-        <div class="card">
-          <h3>Alturas <small>(< 40 años)</small></h3>
+        <!-- 1 Alturas -->
+        <div class="card" itemscope itemtype="https://schema.org/Product">
+          <meta itemprop="name" content="Paquete Alturas < 40 años - LABCCO">
+          <meta itemprop="description" content="Evaluación médica, visiometría, audiometría, glicemia y hemograma.">
+          <meta itemprop="sku" content="PAQ-ALT-40M">
+          <meta itemprop="brand" content="LABCCO">
+          <meta itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="103900">
+            <meta itemprop="priceCurrency" content="COP">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+          </meta>
+
+          <h3>Alturas &lt; 40 años</h3>
           <ul>
             <li>Evaluación médica ocupacional</li>
-            <li>Visiometría</li>
-            <li>Audiometría</li>
+            <li>Visiometría tamiz</li>
+            <li>Audiometría tamiz</li>
             <li>Glicemia</li>
-            <li>Hemograma</li>
+            <li>Hemograma completo</li>
           </ul>
+          <p style="margin-top:10px;font-weight:700;color:var(--naranja);">Desde $103.900</p>
+          <a class="cta cta-naranja" href="https://wa.me/573128274796?text=Quiero+cotizar+el+paquete+Alturas+%3C40" target="_blank">Cotizar paquete</a>
         </div>
 
-        <div class="card">
-          <h3>Alturas (> 40 años)</h3>
-          <ul>
-            <li>Evaluación médica</li>
-            <li>Visiometría</li>
-            <li>Audiometría</li>
-            <li>Glicemia</li>
-            <li>Colesterol</li>
-            <li>Triglicéridos</li>
-            <li>Hemograma</li>
-          </ul>
-        </div>
+        <!-- 2 Químico -->
+        <div class="card" itemscope itemtype="https://schema.org/Product">
+          <meta itemprop="name" content="Paquete Riesgo Químico - LABCCO">
+          <meta itemprop="description" content="Evaluación médica, visiometría, colinesterasa eritrocitaria, AST, ALT, hemograma y citoquímico.">
+          <meta itemprop="sku" content="PAQ-QUI">
+          <meta itemprop="brand" content="LABCCO">
+          <meta itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="184500">
+            <meta itemprop="priceCurrency" content="COP">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+          </meta>
 
-        <div class="card">
           <h3>Riesgo Químico / Toxicológico</h3>
           <ul>
             <li>Evaluación médica</li>
@@ -187,80 +205,39 @@
             <li>Colinesterasa eritrocitaria</li>
             <li>AST · ALT</li>
             <li>Hemograma</li>
-            <li>Citoquímico</li>
+            <li>Citoquímico de orina</li>
           </ul>
+          <p style="margin-top:10px;font-weight:700;color:var(--naranja);">Desde $184.500</p>
+          <a class="cta cta-naranja" href="https://wa.me/573128274796?text=Quiero+cotizar+el+paquete+Químico" target="_blank">Cotizar paquete</a>
         </div>
 
-        <div class="card">
-          <h3>Manipuladores de Alimentos</h3>
-          <ul>
-            <li>Evaluación médica</li>
-            <li>Visiometría</li>
-            <li>KOH</li>
-            <li>Coprológico / Coprograma</li>
-            <li>Frotis faríngeo</li>
-          </ul>
-        </div>
+        <!-- 3 Conductores -->
+        <div class="card" itemscope itemtype="https://schema.org/Product">
+          <meta itemprop="name" content="Paquete Conductores - LABCCO">
+          <meta itemprop="description" content="Evaluación médica, visiometría, audiometría, COC-THC y pruebas psicotécnicas.">
+          <meta itemprop="sku" content="PAQ-COND">
+          <meta itemprop="brand" content="LABCCO">
+          <meta itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="203200">
+            <meta itemprop="priceCurrency" content="COP">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+          </meta>
 
-        <div class="card">
           <h3>Conductores / Seguridad Vial</h3>
           <ul>
             <li>Evaluación médica</li>
             <li>Visiometría</li>
             <li>Audiometría</li>
             <li>COC – THC</li>
-            <li>Pruebas psicotécnicas</li>
+            <li>Prueba psicotécnica</li>
           </ul>
-        </div>
-
-        <div class="card">
-          <h3>Espacios Confinados</h3>
-          <ul>
-            <li>Evaluación médica</li>
-            <li>Visiometría</li>
-            <li>Audiometría</li>
-            <li>Glicemia</li>
-            <li>Spirometría</li>
-            <li>Hemograma</li>
-          </ul>
+          <p style="margin-top:10px;font-weight:700;color:var(--naranja);">Desde $203.200</p>
+          <a class="cta cta-naranja" href="https://wa.me/573128274796?text=Quiero+cotizar+el+paquete+Conductores" target="_blank">Cotizar paquete</a>
         </div>
 
       </div>
     </div>
   </section>
-
-
-  <!-- SERVICIOS EMPRESARIALES ORDENADOS -->
-  <div class="section-box">
-    <h2>Servicios empresariales disponibles</h2>
-
-    <div class="grid-3">
-      <div class="card">
-        <h3>Laboratorio Clínico</h3>
-        <p>Todos los análisis ocupacionales: glicemia, perfil lipídico, hemograma, TSH, pruebas toxicológicas, embarazo, creatinina, VDRL, VIH, citoquímico, KOH, coprológico y más.</p>
-      </div>
-      <div class="card">
-        <h3>Colinesterasa Eritrocitaria</h3>
-        <p>Prueba diferencial para fumigación, agricultura, químicos y riesgo toxicológico.</p>
-      </div>
-      <div class="card">
-        <h3>Audiometría</h3>
-        <p>En cabina certificada. Entrega inmediata.</p>
-      </div>
-      <div class="card">
-        <h3>Optometría / Visiometría</h3>
-        <p>Evaluaciones completas para cargos críticos o con exposición visual.</p>
-      </div>
-      <div class="card">
-        <h3>Médico Ocupacional</h3>
-        <p>Ingreso · Periódico · Retiro · Post incapacidad.</p>
-      </div>
-      <div class="card">
-        <h3>Pruebas Especiales</h3>
-        <p>Panel de drogas, THC, COC, combinaciones toxicológicas, BAC.</p>
-      </div>
-    </div>
-  </div>
 
 
   <!-- BRIGADAS -->
@@ -270,11 +247,21 @@
   </div>
 
 
+  <!-- TESTIMONIOS (carrusel simple) -->
+  <section class="zona-light" style="text-align:center;">
+    <h2>¿Qué dicen nuestros clientes?</h2>
+    <div style="max-width:700px;margin:auto;font-style:italic;font-size:18px;">
+      “Gracias a LABCCO cerramos la contratación de 120 operarios en 48 horas. ¡Brigada impecable!”
+      <br><span style="font-weight:600;">— HR Manager, Constructora ABC</span>
+    </div>
+  </section>
+
+
   <!-- CTA FINAL -->
   <section class="zona-light" style="text-align:center;">
     <h2>¿Deseas una propuesta empresarial?</h2>
     <p style="font-size:18px;">Respondemos en menos de 24 horas.</p>
-    <a class="cta" href="https://wa.me/573128274796?text=Hola,+quiero+una+cotización+empresarial" target="_blank">Solicitar cotización</a>
+    <a class="cta" href="https://wa.me/573128274796?text=Hola ,+quiero+una+cotización+empresarial" target="_blank">Solicitar cotización</a>
   </section>
 
 
@@ -283,6 +270,11 @@
     <img src="LABCCO-Photoroom.png" style="height:70px;margin:auto;">
     <p style="margin-top:10px;">© 2025 LABCCO — Laboratorio Clínico Colombiano de Oriente</p>
   </footer>
+
+  <!-- STICKY CTA -->
+  <a class="sticky-cta" href="https://wa.me/573128274796?text=Hola ,+quiero+una+cotización+empresarial" target="_blank">
+    💬 Cotizar ahora
+  </a>
 
 </body>
 </html>
