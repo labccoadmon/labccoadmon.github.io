@@ -91,26 +91,29 @@
 
     @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}.beneficios-3col{flex-direction:column;align-items:center}}
 
-    /*--- SERVICIOS ---*/
-    .servicios-titulo{margin-top:0}                       /* encima mínimo */
-    .servicios-titulo h2{margin-bottom:20px}            /* debajo más espacio */
+    /*--- SERVICIOS (letras negras) ---*/
+    .servicios-titulo{margin-top:0}
+    .servicios-titulo h2{margin-bottom:20px}
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 22px var(--sombra);text-align:center}
     .card .icono{font-size:40px;margin-bottom:8px}
     .card h3{margin:6px 0 8px;font-size:18px;color:var(--azul-b)}
-    .card p{font-size:14px;color:#445569}
+    .card p{font-size:14px;color:#000} /* ← letras negras */
 
-    /* BENEFICIOS Y CONVENIOS */
-    .beneficios-3col{display:flex;flex-wrap:wrap;gap:30px;align-items:stretch;justify-content:center;text-align:center}
-    .beneficios-3col .caja{flex:1;min-width:280px;background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:40px;box-shadow:0 6px 18px var(--sombra);display:flex;flex-direction:column;align-items:center}
-    .beneficios-3col .caja img{width:100%;max-width:200px;margin-bottom:16px;border-radius:8px}
-    .beneficios-3col .caja h4{font-size:20px;color:var(--azul);font-weight:700;margin-bottom:12px}
-    .beneficios-3col .caja p{font-size:15px;color:#445569;margin-bottom:16px;font-weight:600;flex-grow:1}
-    /* BOTONES CONVENIOS */
-    .cta-azul-hero{display:inline-block;background:var(--azul-b);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
-    .cta-azul-hero:hover{transform:scale(1.05)}
-    .cta-naranja{display:inline-block;background:var(--naranja);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
-    .cta-naranja:hover{transform:scale(1.05)}
+    /* BENEFICIOS Y CONVENIOS (carrussel) */
+    .beneficios-wrapper{position:relative;max-width:1200px;margin:0 auto;padding:0 50px}
+    .beneficios-carousel{display:flex;gap:30px;transition:transform .4s ease}
+    .beneficios-carousel .caja{min-width:calc(33.333% - 20px);background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:40px;box-shadow:0 6px 18px var(--sombra);display:flex;flex-direction:column;align-items:center}
+    .beneficios-carousel .caja img{width:100%;max-width:200px;margin-bottom:16px;border-radius:8px}
+    .beneficios-carousel .caja h4{font-size:20px;color:var(--azul);font-weight:700;margin-bottom:12px}
+    .beneficios-carousel .caja p{font-size:15px;color:#000;margin-bottom:16px;font-weight:600;flex-grow:1}
+    .carousel-btns{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;pointer-events:none}
+    .carousel-btn{background:var(--celeste-2);color:var(--blanco);border:none;font-size:24px;width:40px;height:40px;border-radius:50%;cursor:pointer;pointer-events:auto;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+    .carousel-btn:hover{transform:scale(1.1)}
+    @media(max-width:720px){
+      .beneficios-carousel .caja{min-width:100%}
+      .carousel-btn{font-size:20px;width:36px;height:36px}
+    }
 
     /*--- CERTIFICADOS ---*/
     .certificados-centrado{display:flex;flex-wrap:wrap;gap:40px;align-items:center;justify-content:center;text-align:center;margin-top:60px}
@@ -145,15 +148,13 @@
     .btn-down{display:inline-flex;align-items:center;background:var(--azul-b);color:var(--blanco);padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
     .btn-down:hover{transform:scale(1.05)}
 
-    /*===== FOOTER SIMÉTRICO =====*/
-    footer{background:var(--celeste);color:var(--blanco);padding:40px 0}
-    .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:center;padding:0 var(--margen)}
-    .footer-col{text-align:center}
-    .footer-col.logo img{height:48px;margin-bottom:10px}
-    .footer-menu{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-weight:500;font-size:16px}
-    .footer-menu a:hover{opacity:.8}
-    .footer-col.contact-horario p{margin:4px 0;font-size:15px}
+    @media(max-width:1000px){.services{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:720px){
+      .navbar{height:auto;padding:12px var(--margen)}
+      .nav-links{flex-wrap:wrap;justify-content:center;gap:12px}
+      #siteLogo{height:64px}#distintivo{height:56px}
+      .services{grid-template-columns:1fr}
+      .hero h1{font-size:22px}
       .footer-grid{grid-template-columns:1fr;text-align:center;gap:30px}
     }
   </style>
@@ -224,19 +225,27 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
+  <!-- SERVICIOS (nuevo orden + letras negras) -->
   <div class="section-box">
     <div class="servicios-titulo"><h2>Servicios</h2></div>
     <div class="services">
+      <!-- 1 -->
+      <article class="card"><div class="icono">🏢</div><h3>Medicina ocupacional</h3><p>Exámenes pre-empleo, periódicos y de retiro. Evaluaciones integrales.</p></article>
+      <!-- 2 -->
+      <article class="card"><div class="icono">👨‍⚕️</div><h3>Medicina particular</h3><p>Atención personalizada con resultados el mismo día y convenios directos.</p></article>
+      <!-- 3 -->
+      <article class="card"><div class="icono">🌾</div><h3>Colinesterasa eritrocitaria</h3><p>Prueba diferencial especializada para empresas de fumigación y plantaciones.</p></article>
+      <!-- 4 -->
+      <article class="card"><div class="icono">🧬</div><h3>Pruebas de paternidad</h3><p>En convenio con la Universidad de Antioquia. Máxima fiabilidad.</p></article>
+      <!-- 5 -->
+      <article class="card"><div class="icono">🧪</div><h3>Pruebas de ITS</h3><p>Serología, VIH, VPH y otros. Resultados confidenciales y rápidos.</p></article>
+      <!-- resto sin cambios -->
       <article class="card"><div class="icono">🩸</div><h3>Hematología</h3><p>Hemograma completo (tipo IV) y análisis rápidos con control de calidad interno.</p></article>
       <article class="card"><div class="icono">🧪</div><h3>Química clínica</h3><p>Glicemia, perfil lipídico, creatinina, TSH y HbA1c con equipos de última generación.</p></article>
-      <article class="card"><div class="icono">🌾</div><h3>Colinesterasa eritrocitaria</h3><p>Prueba diferencial especializada para empresas de fumigación y plantaciones.</p></article>
       <article class="card"><div class="icono">👂</div><h3>Audiometría</h3><p>Cabina audiométrica certificada para exámenes ocupacionales.</p></article>
       <article class="card"><div class="icono">👁️</div><h3>Optometría</h3><p>Visiometría y optometría con consultorio profesional.</p></article>
       <article class="card"><div class="icono">💨</div><h3>Espirometría</h3><p>Evaluación funcional respiratoria para diagnóstico y seguimiento.</p></article>
       <article class="card"><div class="icono">🤰</div><h3>Pruebas de embarazo</h3><p>Cualitativas y cuantitativas que indican en qué semana de embarazo se encuentra.</p></article>
-      <article class="card"><div class="icono">🧬</div><h3>Pruebas de paternidad</h3><p>En convenio con la Universidad de Antioquia. Máxima fiabilidad.</p></article>
-      <article class="card"><div class="icono">🏢</div><h3>Medicina ocupacional</h3><p>Exámenes pre-empleo, periódicos y de retiro. Evaluaciones integrales.</p></article>
     </div>
     <!-- Botón portafolio restaurado -->
     <div style="margin-top:30px;text-align:center;">
@@ -249,27 +258,49 @@
     </div>
   </div>
 
-  <!-- BENEFICIOS Y CONVENIOS -->
+  <!-- BENEFICIOS Y CONVENIOS (carrussel) -->
   <div class="section-box">
     <h2 style="text-align:center;margin-bottom:30px">Beneficios y convenios</h2>
-    <div class="beneficios-3col">
-      <div class="caja programa">
-        <img src="cerrandonegocio.webp" alt="Cerrando negocio">
-        <h4>Programa empresas</h4>
-        <p>LABCCO ofrece soluciones integrales en laboratorio clínico y salud ocupacional con condiciones preferenciales por volumen, protocolos estandarizados y soporte permanente. Abrimos negociaciones para crear alianzas estables y de alto valor para tu empresa.</p>
-        <a href="#contacto" class="cta-naranja" onclick="mostrarContacto(); return false;">Quiero una cotización empresarial</a>
+
+    <div class="beneficios-wrapper">
+      <div class="beneficios-carousel" id="carousel">
+        <!-- 1 -->
+        <div class="caja">
+          <img src="cerrandonegocio.webp" alt="Cerrando negocio">
+          <h4>Programa empresas</h4>
+          <p>LABCCO ofrece soluciones integrales en laboratorio clínico y salud ocupacional con condiciones preferenciales por volumen, protocolos estandarizados y soporte permanente. Abrimos negociaciones para crear alianzas estables y de alto valor para tu empresa.</p>
+          <a href="#contacto" class="cta-naranja" onclick="mostrarContacto(); return false;">Quiero una cotización empresarial</a>
+        </div>
+
+        <!-- 2 -->
+        <div class="caja">
+          <img src="comfenalco.webp" alt="Convenio Comfenalco">
+          <h4>Convenio Comfenalco</h4>
+          <p>Gracias al convenio que Comfenalco Antioquia tiene con LABCCO, los afiliados pueden acceder a todos nuestros servicios. Como beneficiarios del convenio, puedes disfrutar de descuentos especiales en: valoraciones médicas, medicina ocupacional, audiometría, optometría, terapia respiratoria, toma de muestras de laboratorio, exámenes para manipuladores de alimentos y evaluaciones para trabajo en alturas.</p>
+          <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
+        </div>
+
+        <!-- 3 NUEVO -->
+        <div class="caja">
+          <img src="udea.webp" alt="Convenio UdeA">
+          <h4>Convenio UdeA pruebas de paternidad</h4>
+          <p>Las pruebas de paternidad más confiables del país. También realizamos otras pruebas especializadas en convenio con la Universidad de Antioquia.</p>
+          <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
+        </div>
+
+        <!-- 4 OCULTO (Plenitud) -->
+        <div class="caja">
+          <img src="plenitud.webp" alt="Convenio Plenitud">
+          <h4>Convenio Plenitud</h4>
+          <p>Grupo Plenitud; empresa pionera en ofrecer innovadores servicios en el sector funerario y brindar bienestar y calidad de vida a las familias. Gracias al convenio que Plenitud tiene con LABCCO 10% de descuento en laboratorio clínico, procedimientos médicos, espirometría, visiometría, audiometría y vacunación.</p>
+          <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
+        </div>
       </div>
-      <div class="caja">
-        <img src="comfenalco.webp" alt="Convenio Comfenalco">
-        <h4>Convenio Comfenalco</h4>
-        <p>Gracias al convenio que Comfenalco Antioquia tiene con LABCCO, los afiliados pueden acceder a todos nuestros servicios. Como beneficiarios del convenio, puedes disfrutar de descuentos especiales en: valoraciones médicas, medicina ocupacional, audiometría, optometría, terapia respiratoria, toma de muestras de laboratorio, exámenes para manipuladores de alimentos y evaluaciones para trabajo en alturas.</p>
-        <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
-      </div>
-      <div class="caja">
-        <img src="plenitud.webp" alt="Convenio Plenitud">
-        <h4>Convenio Plenitud</h4>
-        <p>Grupo Plenitud; empresa pionera en ofrecer innovadores servicios en el sector funerario y brindar bienestar y calidad de vida a las familias. Gracias al convenio que Plenitud tiene con LABCCO 10% de descuento en laboratorio clínico, procedimientos médicos, espirometría, visiometría, audiometría y vacunación.</p>
-        <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
+
+      <!-- Flechas -->
+      <div class="carousel-btns">
+        <button class="carousel-btn" id="prevBtn">‹</button>
+        <button class="carousel-btn" id="nextBtn">›</button>
       </div>
     </div>
   </div>
@@ -401,6 +432,26 @@
       seccion.style.display='block';
       seccion.scrollIntoView({behavior:'smooth'});
     }
+
+    /* Carrussel de convenios */
+    const carousel=document.getElementById('carousel');
+    const prevBtn=document.getElementById('prevBtn');
+    const nextBtn=document.getElementById('nextBtn');
+    let index=0;
+    const total=carousel.children.length;
+    const visible=3;
+    function updateCarousel(){
+      const offset=-(index*(100/visible));
+      carousel.style.transform=`translateX(${offset}%)`;
+    }
+    prevBtn.addEventListener('click',()=>{
+      index=(index-1+total)%total;
+      updateCarousel();
+    });
+    nextBtn.addEventListener('click',()=>{
+      index=(index+1)%total;
+      updateCarousel();
+    });
 
     /* Enviar copia a WhatsApp después del submit */
     document.querySelector('.form-corto').addEventListener('submit',function(){
