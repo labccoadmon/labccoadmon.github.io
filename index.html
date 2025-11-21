@@ -11,7 +11,7 @@
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#10324a">
 
-  <!-- Open Graph / Social -->
+  <!-- Open Graph -->
   <meta property="og:title" content="LABCCO — Laboratorio Clínico Colombia Oriente">
   <meta property="og:description" content="Laboratorio clínico en Rionegro con 33 años de experiencia. Espirometría, pruebas de embarazo, paternidad con convenio UdeA, descuentos por volumen.">
   <meta property="og:type" content="website">
@@ -33,27 +33,7 @@
   <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Structured Data (LocalBusiness minimal) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "LABCCO - Laboratorio Clínico Colombiano de Oriente S.A.S",
-    "url": "https://labccoadmon.github.io/",
-    "telephone": "+57 5311354",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Carrera 48 #52-54, Edificio Santa Bárbara",
-      "addressLocality": "Rionegro",
-      "addressRegion": "Antioquia",
-      "addressCountry": "CO"
-    },
-    "openingHours": ["Mo-Fr 07:00-12:00","Mo-Fr 14:00-17:00","Sa 08:00-11:00"],
-    "sameAs": []
-  }
-  </script>
-
-  <!-- CSS -->
+  <!-- CSS (mismo look & feel que tu original) -->
   <style>
     :root{
       --azul:#10324a;
@@ -96,7 +76,6 @@
     .hero h1{color:#1f4f76;font-size:38px;font-weight:700;margin:0 0 12px}
     .commitment{color:var(--azul);font-size:21px;font-weight:600;margin-bottom:10px}
     .final-text{color:var(--azul);font-size:16px;margin-bottom:18px}
-    .badges{display:none}
     .cta{display:inline-block;background:var(--celeste-2);color:var(--blanco);padding:14px 28px;border-radius:10px;font-weight:700;box-shadow:0 10px 24px var(--sombra);transition:transform .2s;font-size:17px}
     .cta:hover{transform:scale(1.05)}
 
@@ -139,6 +118,11 @@
     .carousel-btns{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;pointer-events:none}
     .carousel-btn{background:var(--celeste-2);color:var(--blanco);border:none;font-size:24px;width:40px;height:40px;border-radius:50%;cursor:pointer;pointer-events:auto;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.15)}
     .carousel-btn:hover{transform:scale(1.1)}
+    /* restored CTA styles used inside the carousel cards */
+    .cta-azul-hero{display:inline-block;background:var(--azul-b);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
+    .cta-azul-hero:hover{transform:scale(1.05)}
+    .cta-naranja{display:inline-block;background:var(--naranja);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
+    .cta-naranja:hover{transform:scale(1.05)}
     @media(max-width:720px){
       .beneficios-carousel .caja{min-width:100%}
       .carousel-btn{font-size:20px;width:36px;height:36px}
@@ -169,24 +153,16 @@
     /*--- FORMULARIO CORTO ---*/
     .form-corto{display:grid;gap:14px;max-width:520px;margin:0 auto}
     .form-corto label{font-size:15px;color:var(--azul);font-weight:600}
-    .form-corto input,.form-corto select,.form-corto textarea{width:100%;padding:12px;border:1px solid #d7e3ea;border-radius:8px;font-size:15px}
+    .form-corto input,.form-corto select{width:100%;padding:12px;border:1px solid #d7e3ea;border-radius:8px;font-size:15px}
     .btn-form{background:var(--celeste-2);color:#fff;padding:14px;border-radius:8px;border:none;font-weight:700;cursor:pointer;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
     .btn-form:hover{transform:scale(1.03)}
     .info-final{margin-top:60px;text-align:center}
 
-    /* Botón portafolio (restaurado) */
+    /*--- BOTÓN PORTAFOLIO (restaurado) ---*/
     .btn-down{display:inline-flex;align-items:center;background:var(--azul-b);color:var(--blanco);padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
     .btn-down:hover{transform:scale(1.05)}
 
-    /* Programa Empresas (nuevo bloque) */
-    .programa-empresas{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
-    .programa-text{flex:1;min-width:280px}
-    .programa-card{flex:0 0 420px;background:#f1fbff;border-radius:12px;padding:20px;border:1px solid #d7e3ea;box-shadow:0 6px 18px var(--sombra)}
-    .programa-card h3{color:var(--azul-b);margin-bottom:10px}
-    .programa-card p{font-size:15px;margin-bottom:12px}
-    .empresa-form label{display:block;margin-bottom:8px;font-weight:600;color:var(--azul)}
-
-    /* Footer */
+    /*===== FOOTER SIMÉTRICO (celeste institucional) =====*/
     footer{background:var(--celeste);color:var(--blanco);padding:40px 0}
     .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:center;padding:0 var(--margen)}
     .footer-col{text-align:center}
@@ -225,7 +201,8 @@
       <a href="#inicio">Inicio</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#servicios">Servicios</a>
-      <a href="#programa-empresas">Empresas</a>
+      <!-- enlace a la landing de empresas -->
+      <a href="programa-empresas.html">Empresas</a>
       <a href="#contacto" onclick="mostrarContacto(); return false;">Contacto</a>
     </nav>
   </header>
@@ -254,7 +231,7 @@
         <p>Desde 1992 trabajamos por la salud y el bienestar de Colombia.<br>
         Somos un laboratorio clínico con tecnología de última generación y personal certificado que garantiza resultados precisos y oportunos.<br>
         En LABCCO unimos rigor científico, procesos estandarizados y un servicio humano para acompañar a empresas y pacientes en cada decisión de salud clínica y ocupacional.</p>
-        <a href="#programa-empresas" class="cta-inline" onclick="document.getElementById('programa-empresas').scrollIntoView({behavior:'smooth'}); return false;">Solicita una cotización empresarial o particular</a>
+        <a href="programa-empresas.html" class="cta-inline">Solicita una cotización empresarial o particular</a>
       </div>
       <figure class="nos-fig" aria-hidden="false">
         <img src="nosotrosimg.webp" alt="Equipo LABCCO en laboratorio" loading="lazy" width="640" height="360">
@@ -273,19 +250,12 @@
   <div class="section-box" id="servicios" aria-labelledby="servicios-title">
     <div class="servicios-titulo"><h2 id="servicios-title">Servicios</h2></div>
     <div class="services" role="list">
-      <!-- 1 -->
       <article class="card" role="listitem"><div class="icono" aria-hidden="true">🏢</div><h3>Medicina ocupacional</h3><p>Exámenes pre-empleo, periódicos y de retiro. Evaluaciones integrales.</p></article>
-      <!-- 2 -->
       <article class="card" role="listitem"><div class="icono" aria-hidden="true">👨‍⚕️</div><h3>Medicina particular</h3><p>Atención personalizada con resultados el mismo día y convenios directos.</p></article>
-      <!-- 3 -->
       <article class="card" role="listitem"><div class="icono" aria-hidden="true">🌾</div><h3>Colinesterasa eritrocitaria</h3><p>Prueba diferencial especializada para empresas de fumigación y plantaciones.</p></article>
-      <!-- 4 -->
       <article class="card" role="listitem"><div class="icono" aria-hidden="true">🧬</div><h3>Pruebas de paternidad</h3><p>En convenio con la Universidad de Antioquia. Máxima fiabilidad.</p></article>
-      <!-- 5 -->
       <article class="card" role="listitem"><div class="icono" aria-hidden="true">🧪</div><h3>Pruebas de ITS</h3><p>Serología, VIH, VPH y otros. Resultados confidenciales y rápidos.</p></article>
-      <!-- 6 NUEVO -->
       <article class="card" role="listitem"><div class="icono" aria-hidden="true">🫀</div><h3>Electrocardiograma en reposo</h3><p>Registro rápido y preciso de la actividad eléctrica del corazón.</p></article>
-      <!-- resto -->
       <article class="card" role="listitem"><div class="icono" aria-hidden="true">🩸</div><h3>Hematología</h3><p>Hemograma completo (tipo IV) y análisis rápidos con control de calidad interno.</p></article>
       <article class="card" role="listitem"><div class="icono" aria-hidden="true">🧪</div><h3>Química clínica</h3><p>Glicemia, perfil lipídico, creatinina, TSH y HbA1c con equipos de última generación.</p></article>
       <article class="card" role="listitem"><div class="icono" aria-hidden="true">👂</div><h3>Audiometría</h3><p>Cabina audiométrica certificada para exámenes ocupacionales.</p></article>
@@ -305,83 +275,19 @@
     </div>
   </div>
 
-  <!-- PROGRAMA EMPRESAS (nuevo) -->
-  <div class="section-box" id="programa-empresas" aria-labelledby="programa-title">
-    <h2 id="programa-title" style="text-align:center;margin-bottom:18px">Programa Empresas — LABCCO</h2>
-    <div class="programa-empresas">
-      <div class="programa-text">
-        <h3 style="font-size:20px;color:var(--azul-b)">Aliado estratégico para tu empresa</h3>
-        <p>LABCCO es proveedor de servicios integrales de salud ocupacional y laboratorio clínico para empresas. Ofrecemos:</p>
-        <ul style="margin:12px 0 16px 20px;color:#1f4f76">
-          <li><strong>Descuentos por volumen</strong> desde el primer día</li>
-          <li><strong>Atención preferencial</strong> sin filas para grupos corporativos</li>
-          <li><strong>Perfiles ocupacionales</strong> listos para ARL y RRHH</li>
-          <li><strong>Colinesterasa</strong> con historial y seguimiento semestral</li>
-          <li><strong>Facturación empresarial</strong> y facilidades de pago</li>
-        </ul>
-        <p style="font-weight:600">Si deseas una cotización formal para tu empresa, completa el siguiente formulario. Te responderemos con propuesta y tarifas en máximo 24 horas hábiles.</p>
-      </div>
-
-      <aside class="programa-card" aria-labelledby="form-empresas-title">
-        <h3 id="form-empresas-title">Solicitar convenio empresarial</h3>
-        <form id="form-empresa" class="empresa-form" action="https://formsubmit.co/calidad@labccosas.com" method="POST" novalidate>
-          <!-- Redirect a la página de gracias del repo (ajusta si cambias) -->
-          <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
-          <input type="hidden" name="_captcha" value="false">
-          <label>Nombre de la empresa
-            <input type="text" name="empresa" placeholder="Nombre empresa" required>
-          </label>
-          <label>NIT / Identificación
-            <input type="text" name="nit" placeholder="NIT o identificación" required>
-          </label>
-          <label>Persona contacto
-            <input type="text" name="contacto" placeholder="Nombre y cargo" required>
-          </label>
-          <label>Teléfono (WhatsApp)
-            <input type="tel" name="telefono" placeholder="+57 3xx xxx xxxx" pattern="^\+?\d{7,15}$" required>
-          </label>
-          <label>Correo electrónico
-            <input type="email" name="email" placeholder="contacto@empresa.com" required>
-          </label>
-          <label>Servicios requeridos
-            <select name="servicios" required>
-              <option value="">Selecciona</option>
-              <option>Salud ocupacional (perfiles)</option>
-              <option>Colinesterasa</option>
-              <option>Pruebas de laboratorio (perfiles)</option>
-              <option>Auditoría de salud</option>
-              <option>Otro</option>
-            </select>
-          </label>
-          <label>Volumen estimado mensual
-            <input type="text" name="volumen" placeholder="Ej. 30 empleados / 120 exámenes">
-          </label>
-
-          <!-- Campo oculto para determinar que es formulario de empresa -->
-          <input type="hidden" name="tipo_form" value="empresa">
-          <button type="submit" class="btn-form" style="width:100%;margin-top:10px">Enviar solicitud</button>
-        </form>
-
-        <p style="font-size:13px;margin-top:12px">O si prefieres, escríbenos directo por <a href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
-      </aside>
-    </div>
-  </div>
-
   <!-- BENEFICIOS Y CONVENIOS (carrussel) -->
   <div class="section-box">
     <h2 style="text-align:center;margin-bottom:30px">Beneficios y convenios</h2>
 
     <div class="beneficios-wrapper">
       <div class="beneficios-carousel" id="carousel" aria-live="polite">
-        <!-- 1 -->
         <div class="caja" role="article">
           <img src="cerrandonegocio.webp" alt="Cerrando negocio" loading="lazy">
           <h4>Programa empresas</h4>
           <p>LABCCO ofrece soluciones integrales en laboratorio clínico y salud ocupacional con condiciones preferenciales por volumen, protocolos estandarizados y soporte permanente. Abrimos negociaciones para crear alianzas estables y de alto valor para tu empresa.</p>
-          <a href="#programa-empresas" class="cta-naranja" onclick="document.getElementById('programa-empresas').scrollIntoView({behavior:'smooth'}); return false;">Quiero una cotización empresarial</a>
+          <a href="programa-empresas.html" class="cta-naranja">Quiero una cotización empresarial</a>
         </div>
 
-        <!-- 2 -->
         <div class="caja" role="article">
           <img src="comfenalco.webp" alt="Beneficios para afiliados Comfenalco" loading="lazy">
           <h4>Beneficios para afiliados Comfenalco</h4>
@@ -389,7 +295,6 @@
           <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
         </div>
 
-        <!-- 3 -->
         <div class="caja" role="article">
           <img src="udea.webp" alt="Convenio Universidad de Antioquia" loading="lazy">
           <h4>Convenio UdeA — Pruebas de paternidad</h4>
@@ -397,7 +302,6 @@
           <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Cotiza la prueba de paternidad</a>
         </div>
 
-        <!-- 4 -->
         <div class="caja" role="article">
           <img src="plenitud.webp" alt="Convenio Plenitud" loading="lazy">
           <h4>Convenio Plenitud</h4>
@@ -406,7 +310,6 @@
         </div>
       </div>
 
-      <!-- Flechas -->
       <div class="carousel-btns" aria-hidden="false">
         <button class="carousel-btn" id="prevBtn" aria-label="Anterior" tabindex="0">‹</button>
         <button class="carousel-btn" id="nextBtn" aria-label="Siguiente" tabindex="0">›</button>
@@ -491,24 +394,21 @@
   <!-- FOOTER SIMÉTRICO (celeste institucional) -->
   <footer>
     <div class="footer-grid" role="contentinfo">
-      <!-- Logo (más grande, izquierda) -->
       <div class="footer-col logo" style="text-align:left;">
         <img src="LABCCO-Photoroom.png" alt="LABCCO" style="height:90px;">
         <p>LABCCO S.A.S – Comprometidos con tu salud.</p>
       </div>
 
-      <!-- Menú vertical (centro) -->
       <div class="footer-col">
         <ul class="footer-menu">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#programa-empresas">Empresas</a></li>
+          <li><a href="programa-empresas.html">Empresas</a></li>
           <li><a href="#contacto" onclick="mostrarContacto(); return false;">Contacto</a></li>
         </ul>
       </div>
 
-      <!-- Contacto + Horario (derecha) -->
       <div class="footer-col contact-horario" style="text-align:right;">
         <p><strong>Contacto</strong><br>
         📞 531 13 54<br>
@@ -527,7 +427,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    /* --- Hero slider --- */
+    /* Hero slider */
     (function(){
       const slides = document.querySelectorAll('.hero-slide');
       if(!slides || slides.length===0) return;
@@ -548,7 +448,7 @@
       seccion.scrollIntoView({behavior:'smooth'});
     }
 
-    /* --- Carrusel de convenios --- */
+    /* Carrusel de convenios */
     (function(){
       const carousel = document.getElementById('carousel');
       const prevBtn = document.getElementById('prevBtn');
@@ -563,7 +463,6 @@
         carousel.style.transform = `translateX(${offset}%)`;
       }
 
-      // Initialize
       updateCarousel();
 
       if(prevBtn){
@@ -579,16 +478,13 @@
         });
       }
 
-      // Resize handling (adjust visible)
       window.addEventListener('resize', () => {
-        // simple re-calc: keep index within bounds
         updateCarousel();
       });
     })();
 
-    /* Enviar copia a WhatsApp después del submit (formulario general y de empresa) */
+    /* Enviar copia a WhatsApp después del submit */
     (function(){
-      // general contacto
       const generalForm = document.querySelector('#seccion-contacto .form-corto');
       if(generalForm){
         generalForm.addEventListener('submit', function(){
@@ -599,24 +495,7 @@
             const email = this.email.value || '';
             const msg = `Nuevo contacto LABCCO:%0A%0ANombre: ${nombre}%0ATipo: ${tipo}%0ATel: ${tel}%0ACorreo: ${email}`;
             window.open(`https://wa.me/573128274796?text=${msg}`, '_blank');
-          } catch(e){ /* no bloquear envío si falla */ }
-        });
-      }
-
-      // empresa form
-      const empresaForm = document.getElementById('form-empresa') || document.getElementById('form-empresa');
-      if(empresaForm){
-        empresaForm.addEventListener('submit', function(){
-          try {
-            const form = this;
-            const empresa = form.empresa.value || '';
-            const contacto = form.contacto.value || '';
-            const tel = form.telefono.value || '';
-            const email = form.email.value || '';
-            const servicios = form.servicios.value || '';
-            const msg = `Solicitud convenio LABCCO:%0A%0AEmpresa: ${empresa}%0AContacto: ${contacto}%0ATel: ${tel}%0AEmail: ${email}%0AServicios: ${servicios}`;
-            window.open(`https://wa.me/573128274796?text=${msg}`, '_blank');
-          } catch(e){ /* silent */ }
+          } catch(e){}
         });
       }
     })();
