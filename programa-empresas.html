@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Programa Empresas — LABCCO</title>
+  <meta name="description" content="Programa Empresas LABCCO: convenios, descuentos por volumen y perfiles ocupacionales. Resultados rápidos y atención prioritaria.">
+  <link rel="canonical" href="https://labccoadmon.github.io/programa-empresas.html">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#10324a">
+
+  <!-- Preload -->
+  <link rel="preload" as="image" href="hero1.webp">
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Mantengo mismo CSS (copiado para consistencia visual) -->
+  <style>
+    :root{
+      --azul:#10324a;
+      --azul-b:#004a99;
+      --celeste:#0099cc;
+      --celeste-2:#0077cc;
+      --blanco:#ffffff;
+      --sombra:rgba(16,50,74,.09);
+      --wpp:#25d366;
+      --naranja:#ff6a00;
+      --margen:60px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--azul);background:#f6fbff;-webkit-font-smoothing:antialiased;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%;height:auto}
+
+    .top-bar{position:fixed;inset:0 0 auto 0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px var(--margen);height:34px;background:var(--celeste);color:var(--blanco);font-size:14px;z-index:1600}
+    .navbar{position:sticky;top:34px;display:flex;align-items:center;justify-content:space-between;padding:6px var(--margen);height:80px;background:var(--blanco);box-shadow:0 1px 6px var(--sombra);z-index:1500}
+    .brand{display:flex;align-items:center;gap:14px}
+    #siteLogo{height:72px;width:auto;border-radius:6px}
+    .nav-links{display:flex;gap:28px;align-items:center}
+    .nav-links a{font-weight:500;font-size:18px;padding:6px 4px}
+    .nav-links a:hover{color:var(--celeste-2)}
+
+    .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
+    .hero{position:relative;min-height:30vh;display:flex;align-items:center;justify-content:center;padding:20px 0;background:#f6fbff;overflow:hidden}
+    .text-box{display:inline-block;background:rgba(255,255,255,.95);padding:24px 36px;border-radius:12px;box-shadow:0 10px 28px var(--sombra);max-width:900px;text-align:left}
+    h1{color:var(--azul);font-size:30px;margin-bottom:8px}
+    p.lead{font-size:16px;color:#234;line-height:1.6;margin-bottom:14px}
+
+    .programa-empresas{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}
+    .programa-text{flex:1;min-width:280px}
+    .programa-card{flex:0 0 420px;background:#f1fbff;border-radius:12px;padding:20px;border:1px solid #d7e3ea;box-shadow:0 6px 18px var(--sombra)}
+    .programa-card h3{color:var(--azul-b);margin-bottom:10px}
+    .programa-card p{font-size:15px;margin-bottom:12px}
+    .empresa-form label{display:block;margin-bottom:8px;font-weight:600;color:var(--azul)}
+    .empresa-form input,.empresa-form select{width:100%;padding:10px;border:1px solid #d7e3ea;border-radius:8px;margin-bottom:10px}
+
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+    .feature{background:#fff;padding:14px;border-radius:10px;box-shadow:0 6px 18px var(--sombra);font-weight:600;color:var(--azul-b)}
+
+    footer{background:var(--celeste);color:var(--blanco);padding:40px 0;margin-top:30px}
+    .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:center;padding:0 var(--margen)}
+    .btn-form{background:var(--celeste-2);color:#fff;padding:14px;border-radius:8px;border:none;font-weight:700;cursor:pointer;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
+    .btn-form:hover{transform:scale(1.02)}
+    @media(max-width:720px){
+      .programa-empresas{flex-direction:column}
+      .features{grid-template-columns:repeat(1,1fr)}
+      .nav-links{display:none}
+    }
+
+    .btn-wpp{position:fixed;right:18px;bottom:18px;background:var(--wpp);color:#fff;padding:14px;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,.18);font-size:20px;z-index:2000;display:flex;align-items:center;justify-content:center}
+  </style>
+</head>
+
+<body>
+  <!-- TOP BAR -->
+  <div class="top-bar" role="banner">
+    <div style="font-weight:600">⏰ Horario: Lun - Vie 7am - 12m / 2pm - 5pm | Sáb 8am - 11am</div>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="tel:+5745311354" style="background:rgba(0,0,0,.08);padding:4px 8px;border-radius:14px;color:#fff">📞 531 13 54</a>
+      <a href="https://wa.me/573128274796" style="background:rgba(0,0,0,.08);padding:4px 8px;border-radius:14px;color:#fff" target="_blank" rel="noopener noreferrer">📱 312 827 4796</a>
+    </div>
+    <div style="font-weight:600">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div>
+  </div>
+
+  <!-- NAVBAR (idéntico al index) -->
+  <header class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="brand">
+      <img id="siteLogo" src="LABCCO-Photoroom.png" alt="Logo LABCCO">
+    </div>
+    <nav class="nav-links" role="navigation" aria-label="Enlaces principales">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#nosotros">Nosotros</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="programa-empresas.html" style="text-decoration:underline;font-weight:700">Empresas</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- HERO simple -->
+  <section class="hero" style="margin-top:24px">
+    <div class="text-box" style="text-align:left">
+      <h1>Programa Empresas — LABCCO</h1>
+      <p class="lead">Soluciones completas en salud ocupacional y laboratorio clínico para empresas. Convenios claros, procesos rápidos y soporte para RRHH y ARL.</p>
+      <p style="font-weight:700;color:var(--azul-b)">Obtén tarifas preferenciales, facturación empresarial y atención prioritaria. Propuesta en 24 horas hábiles.</p>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <main class="section-box" role="main" aria-labelledby="programa-title">
+    <h2 id="programa-title" style="text-align:center;margin-bottom:18px">Qué incluye nuestro programa empresarial</h2>
+
+    <div class="programa-empresas">
+      <div class="programa-text">
+        <p class="lead">LABCCO acompañará a tu empresa con servicios diseñados para minimizar tiempos y maximizar cumplimiento normativo:</p>
+
+        <div class="features" aria-hidden="false">
+          <div class="feature">Descuentos por volumen</div>
+          <div class="feature">Resultados el mismo día (pruebas clave)</div>
+          <div class="feature">Perfiles ocupacionales listos para ARL</div>
+          <div class="feature">Colinesterasa con historial y seguimiento</div>
+        </div>
+
+        <h3 style="margin-top:18px;color:var(--azul)">Perfiles recomendados</h3>
+        <ul style="margin-left:18px">
+          <li>Perfil ingreso: Hemograma, glucosa, orina, VDRL, VIH, creatinina.</li>
+          <li>Perfil periódico: Hemograma, perfil lipídico, TSH, HbA1c según riesgo.</li>
+          <li>Perfil fumigación: Colinesterasa eritrocitaria + controles periódicos.</li>
+        </ul>
+
+        <h3 style="margin-top:18px;color:var(--azul)">Por qué LABCCO</h3>
+        <p>33 años de experiencia en Antioquia, habilitación por el Ministerio de Salud, convenios académicos (UdeA) para pruebas de paternidad y procesos internos de aseguramiento de la calidad.</p>
+      </div>
+
+      <aside class="programa-card" aria-labelledby="form-empresas-title">
+        <h3 id="form-empresas-title">Solicitar convenio empresarial</h3>
+        <form id="form-empresa" class="empresa-form" action="https://formsubmit.co/calidad@labccosas.com" method="POST" novalidate>
+          <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
+          <input type="hidden" name="_captcha" value="false">
+          <label>Nombre de la empresa
+            <input type="text" name="empresa" placeholder="Nombre empresa" required>
+          </label>
+          <label>NIT / Identificación
+            <input type="text" name="nit" placeholder="NIT o identificación" required>
+          </label>
+          <label>Persona contacto
+            <input type="text" name="contacto" placeholder="Nombre y cargo" required>
+          </label>
+          <label>Teléfono (WhatsApp)
+            <input type="tel" name="telefono" placeholder="+57 3xx xxx xxxx" required>
+          </label>
+          <label>Correo electrónico
+            <input type="email" name="email" placeholder="contacto@empresa.com" required>
+          </label>
+          <label>Servicios requeridos
+            <select name="servicios" required>
+              <option value="">Selecciona</option>
+              <option>Salud ocupacional (perfiles)</option>
+              <option>Colinesterasa</option>
+              <option>Pruebas de laboratorio (perfiles)</option>
+              <option>Auditoría de salud</option>
+              <option>Otro</option>
+            </select>
+          </label>
+          <label>Volumen estimado mensual
+            <input type="text" name="volumen" placeholder="Ej. 30 empleados / 120 exámenes">
+          </label>
+
+          <input type="hidden" name="tipo_form" value="empresa">
+          <button type="submit" class="btn-form" style="width:100%;margin-top:10px">Enviar solicitud</button>
+        </form>
+
+        <p style="font-size:13px;margin-top:12px">También puedes escribir por <a href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer">WhatsApp</a> para atención inmediata.</p>
+      </aside>
+    </div>
+
+    <hr style="margin:28px 0;border:none;border-top:1px solid #e2eef6">
+
+    <section aria-labelledby="faq-title">
+      <h3 id="faq-title" style="color:var(--azul)">Preguntas frecuentes (rápidas)</h3>
+      <ul style="margin-left:18px">
+        <li><strong>¿Cuánto tardan en entregar propuestas?</strong> — En 24 horas hábiles te enviamos propuesta formal.</li>
+        <li><strong>¿Hacen facturación electrónica?</strong> — Sí, facturación empresarial y envíos mensuales a convenios.</li>
+        <li><strong>¿Tienen convenio académico?</strong> — Sí, convenio con Universidad de Antioquia para pruebas de paternidad.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer idéntico -->
+  <footer>
+    <div class="footer-grid" role="contentinfo">
+      <div class="footer-col logo" style="text-align:left;">
+        <img src="LABCCO-Photoroom.png" alt="LABCCO" style="height:90px;">
+        <p>LABCCO S.A.S – Comprometidos con tu salud.</p>
+      </div>
+
+      <div class="footer-col">
+        <ul class="footer-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#servicios">Servicios</a></li>
+          <li><a href="programa-empresas.html">Empresas</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact-horario" style="text-align:right;">
+        <p><strong>Contacto</strong><br>
+        📞 531 13 54<br>
+        📱 312 827 4796<br>
+        ✉ calidad@labccosas.com</p>
+        <p><strong>Horario</strong><br>
+        Lun-Vie: 7am-12m / 2pm - 5pm<br>
+        Sáb: 8am - 11am</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:20px;font-size:14px;">© 2025 LABCCO — Todos los derechos reservados.</div>
+  </footer>
+
+  <a href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" class="btn-wpp" aria-label="WhatsApp">💬</a>
+
+  <script>
+    // Envío sencillo por WhatsApp tras submit (no bloquea FormSubmit)
+    (function(){
+      const empresaForm = document.getElementById('form-empresa');
+      if(empresaForm){
+        empresaForm.addEventListener('submit', function(){
+          try {
+            const form = this;
+            const empresa = form.empresa.value || '';
+            const contacto = form.contacto.value || '';
+            const tel = form.telefono.value || '';
+            const email = form.email.value || '';
+            const servicios = form.servicios.value || '';
+            const msg = `Solicitud convenio LABCCO:%0A%0AEmpresa: ${empresa}%0AContacto: ${contacto}%0ATel: ${tel}%0AEmail: ${email}%0AServicios: ${servicios}`;
+            window.open(`https://wa.me/573128274796?text=${msg}`, '_blank');
+          } catch(e){}
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
