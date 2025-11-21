@@ -33,7 +33,7 @@
   <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS (mismo look & feel que tu original) -->
+  <!-- CSS -->
   <style>
     :root{
       --azul:#10324a;
@@ -76,6 +76,7 @@
     .hero h1{color:#1f4f76;font-size:38px;font-weight:700;margin:0 0 12px}
     .commitment{color:var(--azul);font-size:21px;font-weight:600;margin-bottom:10px}
     .final-text{color:var(--azul);font-size:16px;margin-bottom:18px}
+    .badges{display:none}
     .cta{display:inline-block;background:var(--celeste-2);color:var(--blanco);padding:14px 28px;border-radius:10px;font-weight:700;box-shadow:0 10px 24px var(--sombra);transition:transform .2s;font-size:17px}
     .cta:hover{transform:scale(1.05)}
 
@@ -195,14 +196,13 @@
   <header class="navbar" role="navigation" aria-label="Navegación principal">
     <div class="brand">
       <img id="siteLogo" src="LABCCO-Photoroom.png" alt="Logo LABCCO">
-      <img id="distintivo" src="distintivo30.png" alt="Distintivo 30 años LABCCO">
+      <img id="distintivo" src="distintivo30.png" alt="Distintivo 30 años">
     </div>
     <nav class="nav-links" role="navigation" aria-label="Enlaces principales">
       <a href="#inicio">Inicio</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#servicios">Servicios</a>
-      <!-- enlace a la landing de empresas -->
-      <a href="programa-empresas.html">Empresas</a>
+      <a href="empresas.html">Empresas</a>
       <a href="#contacto" onclick="mostrarContacto(); return false;">Contacto</a>
     </nav>
   </header>
@@ -217,53 +217,59 @@
         <h1 id="hero-title">Más de 30 años creciendo junto a ustedes</h1>
         <p class="commitment">Con profundo agradecimiento, continuamos comprometidos con un servicio humano, preciso y confiable para los pacientes que nos eligen y para las empresas que construyen nuestro país.</p>
         <p class="final-text">Medicina particular · Salud ocupacional · Laboratorio · Visiometría · Audiometría</p>
-        <a class="cta" href="#contacto" onclick="mostrarContacto(); return false;">Contáctanos</a>
+        <a class="cta" href="empresas.html">Contáctanos</a>
       </div>
     </div>
   </section>
 
   <!-- NOSOTROS -->
-  <section id="nosotros" class="section-box" aria-labelledby="nosotros-title">
+  <section id="nosotros" class="section-box">
     <div class="nos-hero">
       <div class="nos-texto">
-        <h2 id="nosotros-title" style="font-size:28px">NOSOTROS</h2>
+        <h2 style="font-size:28px">NOSOTROS</h2>
         <h3>Laboratorio habilitado por el Ministerio de Salud</h3>
         <p>Desde 1992 trabajamos por la salud y el bienestar de Colombia.<br>
         Somos un laboratorio clínico con tecnología de última generación y personal certificado que garantiza resultados precisos y oportunos.<br>
         En LABCCO unimos rigor científico, procesos estandarizados y un servicio humano para acompañar a empresas y pacientes en cada decisión de salud clínica y ocupacional.</p>
-        <a href="programa-empresas.html" class="cta-inline">Solicita una cotización empresarial o particular</a>
+        <a href="empresas.html" class="cta-inline">Solicita una cotización empresarial o particular</a>
       </div>
-      <figure class="nos-fig" aria-hidden="false">
+      <figure class="nos-fig">
         <img src="nosotrosimg.webp" alt="Equipo LABCCO en laboratorio" loading="lazy" width="640" height="360">
       </figure>
     </div>
-    <!-- Stats en 1 fila -->
-    <div class="stats-beneficios" role="list" aria-label="Estadísticas LABCCO">
-      <div class="stat-item-benef" role="listitem"><span>33</span><small>años</small></div>
-      <div class="stat-item-benef" role="listitem"><span>+200</span><small>empresas</small></div>
-      <div class="stat-item-benef" role="listitem"><span>3</span><small>IPS aliadas</small></div>
-      <div class="stat-item-benef" role="listitem"><span>✔</span><small>resultados el mismo día</small></div>
+    <!-- Stats en 1 fila (sin título) -->
+    <div class="stats-beneficios">
+      <div class="stat-item-benef"><span>33</span><small>años</small></div>
+      <div class="stat-item-benef"><span>+200</span><small>empresas</small></div>
+      <div class="stat-item-benef"><span>3</span><small>IPS aliadas</small></div>
+      <div class="stat-item-benef"><span>✔</span><small>resultados el mismo día</small></div>
     </div>
   </section>
 
-  <!-- SERVICIOS -->
-  <div class="section-box" id="servicios" aria-labelledby="servicios-title">
-    <div class="servicios-titulo"><h2 id="servicios-title">Servicios</h2></div>
-    <div class="services" role="list">
-      <article class="card" role="listitem"><div class="icono" aria-hidden="true">🏢</div><h3>Medicina ocupacional</h3><p>Exámenes pre-empleo, periódicos y de retiro. Evaluaciones integrales.</p></article>
-      <article class="card" role="listitem"><div class="icono" aria-hidden="true">👨‍⚕️</div><h3>Medicina particular</h3><p>Atención personalizada con resultados el mismo día y convenios directos.</p></article>
-      <article class="card" role="listitem"><div class="icono" aria-hidden="true">🌾</div><h3>Colinesterasa eritrocitaria</h3><p>Prueba diferencial especializada para empresas de fumigación y plantaciones.</p></article>
-      <article class="card" role="listitem"><div class="icono" aria-hidden="true">🧬</div><h3>Pruebas de paternidad</h3><p>En convenio con la Universidad de Antioquia. Máxima fiabilidad.</p></article>
-      <article class="card" role="listitem"><div class="icono" aria-hidden="true">🧪</div><h3>Pruebas de ITS</h3><p>Serología, VIH, VPH y otros. Resultados confidenciales y rápidos.</p></article>
-      <article class="card" role="listitem"><div class="icono" aria-hidden="true">🫀</div><h3>Electrocardiograma en reposo</h3><p>Registro rápido y preciso de la actividad eléctrica del corazón.</p></article>
-      <article class="card" role="listitem"><div class="icono" aria-hidden="true">🩸</div><h3>Hematología</h3><p>Hemograma completo (tipo IV) y análisis rápidos con control de calidad interno.</p></article>
-      <article class="card" role="listitem"><div class="icono" aria-hidden="true">🧪</div><h3>Química clínica</h3><p>Glicemia, perfil lipídico, creatinina, TSH y HbA1c con equipos de última generación.</p></article>
-      <article class="card" role="listitem"><div class="icono" aria-hidden="true">👂</div><h3>Audiometría</h3><p>Cabina audiométrica certificada para exámenes ocupacionales.</p></article>
-      <article class="card" role="listitem"><div class="icono" aria-hidden="true">👁️</div><h3>Optometría</h3><p>Visiometría y optometría con consultorio profesional.</p></article>
-      <article class="card" role="listitem"><div class="icono" aria-hidden="true">💨</div><h3>Espirometría</h3><p>Evaluación funcional respiratoria para diagnóstico y seguimiento.</p></article>
-      <article class="card" role="listitem"><div class="icono" aria-hidden="true">🤰</div><h3>Pruebas de embarazo</h3><p>Cualitativas y cuantitativas que indican en qué semana de embarazo se encuentra.</p></article>
+  <!-- SERVICIOS (nuevo orden + letras negras + cuadro nuevo) -->
+  <div class="section-box">
+    <div class="servicios-titulo"><h2>Servicios</h2></div>
+    <div class="services">
+      <!-- 1 -->
+      <article class="card"><div class="icono">🏢</div><h3>Medicina ocupacional</h3><p>Exámenes pre-empleo, periódicos y de retiro. Evaluaciones integrales.</p></article>
+      <!-- 2 -->
+      <article class="card"><div class="icono">👨‍⚕️</div><h3>Medicina particular</h3><p>Atención personalizada con resultados el mismo día y convenios directos.</p></article>
+      <!-- 3 -->
+      <article class="card"><div class="icono">🌾</div><h3>Colinesterasa eritrocitaria</h3><p>Prueba diferencial especializada para empresas de fumigación y plantaciones.</p></article>
+      <!-- 4 -->
+      <article class="card"><div class="icono">🧬</div><h3>Pruebas de paternidad</h3><p>En convenio con la Universidad de Antioquia. Máxima fiabilidad.</p></article>
+      <!-- 5 -->
+      <article class="card"><div class="icono">🧪</div><h3>Pruebas de ITS</h3><p>Serología, VIH, VPH y otros. Resultados confidenciales y rápidos.</p></article>
+      <!-- 6 NUEVO -->
+      <article class="card"><div class="icono">🫀</div><h3>Electrocardiograma en reposo</h3><p>Registro rápido y preciso de la actividad eléctrica del corazón.</p></article>
+      <!-- resto sin cambios -->
+      <article class="card"><div class="icono">🩸</div><h3>Hematología</h3><p>Hemograma completo (tipo IV) y análisis rápidos con control de calidad interno.</p></article>
+      <article class="card"><div class="icono">🧪</div><h3>Química clínica</h3><p>Glicemia, perfil lipídico, creatinina, TSH y HbA1c con equipos de última generación.</p></article>
+      <article class="card"><div class="icono">👂</div><h3>Audiometría</h3><p>Cabina audiométrica certificada para exámenes ocupacionales.</p></article>
+      <article class="card"><div class="icono">👁️</div><h3>Optometría</h3><p>Visiometría y optometría con consultorio profesional.</p></article>
+      <article class="card"><div class="icono">💨</div><h3>Espirometría</h3><p>Evaluación funcional respiratoria para diagnóstico y seguimiento.</p></article>
+      <article class="card"><div class="icono">🤰</div><h3>Pruebas de embarazo</h3><p>Cualitativas y cuantitativas que indican en qué semana de embarazo se encuentra.</p></article>
     </div>
-
     <!-- Botón portafolio restaurado -->
     <div style="margin-top:30px;text-align:center;">
       <a href="portafolio sin precio.pdf" class="btn-down" download>
@@ -281,38 +287,43 @@
 
     <div class="beneficios-wrapper">
       <div class="beneficios-carousel" id="carousel" aria-live="polite">
-        <div class="caja" role="article">
-          <img src="cerrandonegocio.webp" alt="Cerrando negocio" loading="lazy">
+        <!-- 1 -->
+        <div class="caja">
+          <img src="cerrandonegocio.webp" alt="Cerrando negocio">
           <h4>Programa empresas</h4>
           <p>LABCCO ofrece soluciones integrales en laboratorio clínico y salud ocupacional con condiciones preferenciales por volumen, protocolos estandarizados y soporte permanente. Abrimos negociaciones para crear alianzas estables y de alto valor para tu empresa.</p>
-          <a href="programa-empresas.html" class="cta-naranja">Quiero una cotización empresarial</a>
+          <a href="empresas.html" class="cta-naranja" onclick="/* navigation */">Quiero una cotización empresarial</a>
         </div>
 
-        <div class="caja" role="article">
-          <img src="comfenalco.webp" alt="Beneficios para afiliados Comfenalco" loading="lazy">
-          <h4>Beneficios para afiliados Comfenalco</h4>
-          <p>Los afiliados a Comfenalco Antioquia tienen acceso a tarifas preferenciales y descuentos en servicios seleccionados: valoraciones médicas, medicina ocupacional, audiometría, optometría, terapia respiratoria, toma de muestras y evaluaciones específicas.</p>
+        <!-- 2 -->
+        <div class="caja">
+          <img src="comfenalco.webp" alt="Convenio Comfenalco">
+          <h4>Convenio Comfenalco</h4>
+          <p>Gracias al convenio que Comfenalco Antioquia tiene con LABCCO, los afiliados pueden acceder a todos nuestros servicios. Como beneficiarios del convenio, puedes disfrutar de descuentos especiales en: valoraciones médicas, medicina ocupacional, audiometría, optometría, terapia respiratoria, toma de muestras de laboratorio, exámenes para manipuladores de alimentos y evaluaciones para trabajo en alturas.</p>
           <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
         </div>
 
-        <div class="caja" role="article">
-          <img src="udea.webp" alt="Convenio Universidad de Antioquia" loading="lazy">
-          <h4>Convenio UdeA — Pruebas de paternidad</h4>
-          <p>Las pruebas de paternidad se realizan en convenio con la Universidad de Antioquia (cadena de custodia y análisis por laboratorio académico). Garantizamos trazabilidad y resultados con el respaldo institucional adecuado.</p>
-          <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Cotiza la prueba de paternidad</a>
+        <!-- 3 -->
+        <div class="caja">
+          <img src="udea.webp" alt="Convenio UdeA">
+          <h4>Convenio UdeA pruebas de paternidad</h4>
+          <p>Las pruebas de paternidad más confiables del país. También realizamos otras pruebas especializadas en convenio con la Universidad de Antioquia.</p>
+          <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
         </div>
 
-        <div class="caja" role="article">
-          <img src="plenitud.webp" alt="Convenio Plenitud" loading="lazy">
+        <!-- 4 OCULTO (Plenitud) -->
+        <div class="caja">
+          <img src="plenitud.webp" alt="Convenio Plenitud">
           <h4>Convenio Plenitud</h4>
-          <p>Grupo Plenitud: descuentos del 10% en servicios seleccionados como exámenes de laboratorio, espirometría, visiometría y audiometría para beneficiarios del convenio.</p>
+          <p>Grupo Plenitud; empresa pionera en ofrecer innovadores servicios en el sector funerario y brindar bienestar y calidad de vida a las familias. Gracias al convenio que Plenitud tiene con LABCCO 10% de descuento en laboratorio clínico, procedimientos médicos, espirometría, visiometría, audiometría y vacunación.</p>
           <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
         </div>
       </div>
 
-      <div class="carousel-btns" aria-hidden="false">
-        <button class="carousel-btn" id="prevBtn" aria-label="Anterior" tabindex="0">‹</button>
-        <button class="carousel-btn" id="nextBtn" aria-label="Siguiente" tabindex="0">›</button>
+      <!-- Flechas -->
+      <div class="carousel-btns">
+        <button class="carousel-btn" id="prevBtn" aria-label="Anterior">‹</button>
+        <button class="carousel-btn" id="nextBtn" aria-label="Siguiente">›</button>
       </div>
     </div>
   </div>
@@ -322,7 +333,7 @@
     <h2 style="text-align:center;margin-bottom:30px">Certificados</h2>
     <div class="certificados-centrado">
       <div class="logo-hab">
-        <img src="habilitacion.png" alt="Habilitación Ministerio de Salud" loading="lazy">
+        <img src="habilitacion.png" alt="Habilitación Ministerio de Salud">
       </div>
       <div class="codigos">
         <ul>
@@ -342,17 +353,17 @@
     <h2 style="text-align:center;margin-bottom:30px">¿Cómo llegar o contactarnos?</h2>
     <div class="bloques-finales">
       <div class="bloque-final visita">
-        <div class="icono" aria-hidden="true">📍</div>
+        <div class="icono">📍</div>
         <h4>Visítanos</h4>
         <p>C.C Edificio Santa Bárbara, Cra 48 ·52-54, Rionegro Ant</p>
       </div>
       <div class="bloque-final llama">
-        <div class="icono" aria-hidden="true">📞</div>
+        <div class="icono">📞</div>
         <h4>Llámanos</h4>
         <p>531 13 54<br>312 827 4796</p>
       </div>
       <div class="bloque-final escribe">
-        <div class="icono" aria-hidden="true">✉</div>
+        <div class="icono">✉</div>
         <h4>Escríbenos</h4>
         <p>calidad@labccosas.com<br>312 827 4796 (WhatsApp)</p>
       </div>
@@ -361,10 +372,10 @@
 
   <!-- CONTACTO OCULTO -->
   <div class="section-box" id="seccion-contacto" style="display:none;">
-    <section id="contacto" aria-labelledby="contacto-title">
-      <h2 id="contacto-title">Contáctanos</h2>
+    <section id="contacto">
+      <h2>Contáctanos</h2>
       <form class="form-corto" action="https://formsubmit.co/calidad@labccosas.com" method="POST" novalidate>
-        <input type="hidden" name="_next" value="https://labccoadmin.github.io/gracias.html">
+        <input type="hidden" name="_next" value="https://labccoadmon.github.io/gracias.html">
         <input type="hidden" name="_captcha" value="false">
         <label>Nombre completo<input type="text" name="nombre" required placeholder="Tu nombre"></label>
         <label>Tipo de cliente
@@ -384,7 +395,7 @@
         📞 Fijo: <strong>531 13 54</strong><br>
         📱 WhatsApp: <a href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer">312 827 4796</a><br>
         ✉ Correo: <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></p>
-        <div class="map-wrap" aria-hidden="false">
+        <div class="map-wrap">
           <iframe src="https://www.google.com/maps?q=Carrera+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" loading="lazy"></iframe>
         </div>
       </div>
@@ -393,22 +404,25 @@
 
   <!-- FOOTER SIMÉTRICO (celeste institucional) -->
   <footer>
-    <div class="footer-grid" role="contentinfo">
+    <div class="footer-grid">
+      <!-- Logo (más grande, izquierda) -->
       <div class="footer-col logo" style="text-align:left;">
         <img src="LABCCO-Photoroom.png" alt="LABCCO" style="height:90px;">
         <p>LABCCO S.A.S – Comprometidos con tu salud.</p>
       </div>
 
+      <!-- Menú vertical (centro) -->
       <div class="footer-col">
         <ul class="footer-menu">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#servicios">Servicios</a></li>
-          <li><a href="programa-empresas.html">Empresas</a></li>
+          <li><a href="empresas.html">Empresas</a></li>
           <li><a href="#contacto" onclick="mostrarContacto(); return false;">Contacto</a></li>
         </ul>
       </div>
 
+      <!-- Contacto + Horario (derecha) -->
       <div class="footer-col contact-horario" style="text-align:right;">
         <p><strong>Contacto</strong><br>
         📞 531 13 54<br>
