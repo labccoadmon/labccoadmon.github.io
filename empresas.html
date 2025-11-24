@@ -42,7 +42,7 @@
   <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS (misma paleta que index) -->
+  <!-- CSS -->
   <style>
     :root{
       --azul:#10324a;
@@ -64,13 +64,16 @@
     h2{font-size:30px;font-weight:700;margin-bottom:14px;color:var(--azul-b)}
     h3{font-size:20px;font-weight:600;margin-bottom:6px;color:var(--azul)}
     p{font-size:17px;line-height:1.5;margin-bottom:12px}
-    ul{margin:10px 0 20px 20px;font-size:16px}
+    ul{margin:10px 0 20px 20px;font-size:16px;color:#000} /* ← texto negro para que se lea siempre */
 
     /* TOP BAR */
     .top-bar{position:fixed;top:0;left:0;right:0;height:34px;background:var(--celeste);color:#fff;font-size:14px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--margen);z-index:5000}
 
     /* NAV */
     .navbar{position:sticky;top:34px;background:#fff;height:80px;display:flex;justify-content:space-between;align-items:center;padding:0 var(--margen);box-shadow:0 4px 12px var(--sombra);z-index:4000}
+    .brand{display:flex;align-items:center;gap:14px}
+    #siteLogo{height:72px;width:auto;border-radius:6px}
+    #distintivo{height:64px;width:auto;border-radius:6px;border:2px solid var(--blanco);box-shadow:0 6px 14px var(--sombra)}
     .nav-links a{margin-left:24px;font-weight:500;font-size:18px}
 
     /* SECTION BOX GENERAL */
@@ -79,7 +82,6 @@
     /* CTA */
     .cta{display:inline-flex;align-items:center;background:var(--celeste-2);color:white;padding:14px 28px;border-radius:10px;font-weight:700;gap:8px;transition:.2s}
     .cta:hover{transform:scale(1.05)}
-    .cta-naranja{background:var(--naranja)}
 
     /* GRID */
     .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;margin-top:25px}
@@ -120,8 +122,8 @@
   <!-- NAV -->
   <header class="navbar">
     <div class="brand">
-      <img src="LABCCO-Photoroom.png" alt="LABCCO" style="height:72px;">
-      <img src="distintivo30.png" alt="30 años" style="height:64px;">
+      <img id="siteLogo" src="LABCCO-Photoroom.png" alt="LABCCO">
+      <img id="distintivo" src="distintivo30.png" alt="30 años">
     </div>
     <nav class="nav-links">
       <a href="index.html">Inicio</a>
@@ -181,16 +183,23 @@
   </div>
 
 
-  <!-- ZONA DE PAQUETES (solo 1 precio visible) -->
+  <!-- ZONA DE PAQUETES -->
   <section class="zona-blue">
     <h2 style="text-align:center;color:white;margin-bottom:40px;">Paquetes Empresariales</h2>
 
     <div class="section-box" style="background:white;">
+
+      <!-- Enganche general -->
+      <div style="text-align:center;margin-bottom:30px;">
+        <h3 style="color:var(--azul-b);font-size:24px;">Paquete Sencillo desde <strong style="color:var(--naranja);">$41.900</strong></h3>
+        <p style="font-size:17px;">Examen médico osteomuscular + visiometría. Ideal para ingresos rápidos.</p>
+      </div>
+
       <h2 style="color:var(--azul-b);">Paquetes por riesgo y actividad</h2>
 
       <div class="grid-3">
 
-        <!-- 1 Sencillo (único con precio) -->
+        <!-- 1 Sencillo (único con precio visible) -->
         <div class="card" itemscope itemtype="https://schema.org/Product">
           <meta itemprop="name" content="Paquete Sencillo Empresarial LABCCO">
           <meta itemprop="description" content="Examen médico osteomuscular + visiometría. Ideal para ingreso rápido de personal.">
@@ -207,8 +216,7 @@
             <li>Examen médico osteomuscular</li>
             <li>Visiometría tamiz</li>
           </ul>
-          <p style="margin-top:10px;font-weight:700;color:var(--naranja);">Desde $41.900</p>
-          <a class="cta cta-naranja" href="https://wa.me/573128274796?text=Quiero+cotizar+el+paquete+Sencillo" target="_blank">Cotizar paquete</a>
+          <a class="cta" href="https://wa.me/573128274796?text=Quiero+cotizar+el+paquete+Sencillo" target="_blank">Cotizar paquete</a>
         </div>
 
         <!-- 2 Alturas < 40 -->
@@ -224,7 +232,7 @@
           <a class="cta" href="https://wa.me/573128274796?text=Quiero+cotizar+el+paquete+Alturas<40" target="_blank">Cotizar paquete</a>
         </div>
 
-        <!-- 3 Alturas > 40 (nuevo) -->
+        <!-- 3 Alturas > 40 -->
         <div class="card">
           <h3>Alturas &gt; 40 años</h3>
           <ul>
