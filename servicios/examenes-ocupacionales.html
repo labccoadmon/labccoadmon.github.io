@@ -8,10 +8,11 @@
   <link rel="canonical" href="https://labccosas.com/servicios/examenes-ocupacionales.html">
   <meta name="robots" content="index, follow">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Outfit', sans-serif; background:#f6fbff; margin:0; color:#10324a; line-height:1.6; }
+    body { font-family:'Outfit', sans-serif; background:#f6fbff; margin:0; color:#10324a; line-height:1.6; }
     header { background:#ffffff; padding:16px 28px; box-shadow:0 3px 12px rgba(0,0,0,0.08); display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; }
-    header img { height:50px; display:block; }
+    header img { height:50px; }
     header a { font-weight:600; font-size:17px; color:#0077cc; text-decoration:none; }
     .hero { background:linear-gradient(to bottom, #e9f6ff, #ffffff); padding:60px 20px; text-align:center; }
     .hero h1 { font-size:40px; color:#004a99; margin-bottom:10px; }
@@ -24,7 +25,7 @@
     .beneficio { background:#e9f6ff; padding:20px; border-radius:10px; font-weight:500; box-shadow:0 3px 10px rgba(0,0,0,0.05); }
     .faq div { margin-bottom:20px; }
     .whatsapp { background:#25d366; color:white; padding:14px 24px; border-radius:10px; font-weight:700; text-align:center; display:inline-block; margin-top:12px; text-decoration:none; }
-    /* Footer (copiado/adaptado) */
+    
     footer { background:#10324a; color:white; padding:50px 20px; margin-top:60px; }
     footer .footer-container { max-width:1100px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:28px; }
     footer a { color:white; text-decoration:none; }
@@ -37,10 +38,9 @@
 <body>
 
 <header>
-  <!-- Usar exactamente el mismo logo que el index: LABCCO-Photoroom.png -->
-  <!-- Asegúrate de que LABCCO-Photoroom.png esté en la raíz del repo (mismo nivel que index.html) -->
   <a href="https://labccosas.com">
-    <img src="LABCCO-Photoroom.png" alt="LABCCO">
+    <!-- ruta correcta para leer el logo desde la carpeta /servicios/ -->
+    <img src="../LABCCO-Photoroom.png" alt="LABCCO">
   </a>
   <a href="https://labccosas.com">← Volver al inicio</a>
 </header>
@@ -48,7 +48,7 @@
 <section class="hero">
   <h1>Exámenes Ocupacionales en Rionegro</h1>
   <p>Ingreso, periódico y retiro · Resultados el mismo día · Médica + laboratorio + exámenes en un solo lugar.</p>
-  <a class="cta" href="https://wa.me/573128274796?text=Hola,+quiero+información+de+exámenes+ocupacionales" target="_blank" rel="noopener">📲 Solicitar cotización</a>
+  <a class="cta" href="https://wa.me/573128274796?text=Hola,+quiero+información+de+exámenes+ocupacionales" target="_blank">📲 Solicitar cotización</a>
 </section>
 
 <div class="section">
@@ -76,7 +76,7 @@
     <li>Espacios confinados</li>
   </ul>
 
-  <a class="whatsapp" href="https://wa.me/573128274796?text=Hola,+quiero+cotizar+un+paquete+ocupacional" target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
+  <a class="whatsapp" href="https://wa.me/573128274796?text=Hola,+quiero+cotizar+un+paquete+ocupacional" target="_blank">💬 Cotizar por WhatsApp</a>
 </div>
 
 <div class="section">
@@ -93,34 +93,17 @@
 
 <div class="section faq">
   <h2>Preguntas frecuentes</h2>
-
-  <div>
-    <strong>¿Necesito cita previa?</strong>
-    <p>No, puedes asistir directamente o escribirnos por WhatsApp.</p>
-  </div>
-
-  <div>
-    <strong>¿Cuánto tardan los resultados?</strong>
-    <p>El concepto médico se entrega el mismo día.</p>
-  </div>
-
-  <div>
-    <strong>¿Hacen brigadas empresariales?</strong>
-    <p>Sí, desde 25 trabajadores en adelante.</p>
-  </div>
-
-  <div>
-    <strong>¿Entregan soportes y anexos?</strong>
-    <p>Sí, entregamos todos los formatos necesarios según la normatividad vigente.</p>
-  </div>
+  <div><strong>¿Necesito cita previa?</strong><p>No, puedes asistir directamente o escribirnos por WhatsApp.</p></div>
+  <div><strong>¿Cuánto tardan los resultados?</strong><p>El concepto médico se entrega el mismo día.</p></div>
+  <div><strong>¿Hacen brigadas empresariales?</strong><p>Sí, desde 25 trabajadores en adelante.</p></div>
+  <div><strong>¿Entregan soportes y anexos?</strong><p>Sí, entregamos todos los formatos necesarios según la normatividad vigente.</p></div>
 </div>
 
 <section class="hero">
   <h2>¿Necesitas una cotización rápida?</h2>
-  <a class="cta" href="https://wa.me/573128274796?text=Hola,+quiero+una+cotización+ocupacional" target="_blank" rel="noopener">📲 Escribir por WhatsApp</a>
+  <a class="cta" href="https://wa.me/573128274796?text=Hola,+quiero+una+cotización+ocupacional" target="_blank">📲 Escribir por WhatsApp</a>
 </section>
 
-<!-- FOOTER corregido con horario, correo y descarga de portafolio -->
 <footer>
   <div class="footer-container">
     <div>
@@ -132,17 +115,18 @@
     <div>
       <h3>Contacto</h3>
       <p>📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia</p>
-      <p>📞 Fijo: 531 13 54</p>
-      <p>📱 WhatsApp: <a href="https://wa.me/573128274796" target="_blank" rel="noopener">312 827 4796</a></p>
-      <p>✉️ Email: <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></p>
-      <p><a href="/mnt/data/Portafolio empresas .pdf" download>Descargar portafolio (con precios)</a></p>
-      <p><a href="/mnt/data/portafolio sin precio (1).pdf" download>Descargar portafolio (sin precios)</a></p>
+      <p>📞 531 13 54</p>
+      <p>📱 WhatsApp: <a href="https://wa.me/573128274796">312 827 4796</a></p>
+      <p>✉ <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></p>
+
+      <!-- Solo un botón de portafolio sin precios -->
+      <p><a href="../portafolio.pdf" download>📄 Descargar portafolio</a></p>
     </div>
 
     <div>
       <h3>Horarios</h3>
-      <p>Lun – Vie: 7:00 a.m. – 12:00 m / 2:00 p.m. – 5:00 p.m.</p>
-      <p>Sáb: 8:00 a.m. – 11:00 a.m.</p>
+      <p>Lun – Vie: 7:00 a.m – 12:00 m / 2:00 p.m – 5:00 p.m</p>
+      <p>Sábados: 8:00 a.m – 11:00 a.m</p>
     </div>
   </div>
 
