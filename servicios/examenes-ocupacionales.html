@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <title>Exámenes Ocupacionales en Rionegro | Ingreso, Periódico, Retiro – LABCCO</title>
-  <meta name="description" content="Exámenes ocupacionales de ingreso, periódico y retiro en Rionegro. Alturas, manipuladores, riesgo químico, toxicológicos y brigadas empresariales. Resultados el mismo día.">
+  <meta name="description" content="Exámenes ocupacionales de ingreso, periódico y retiro en Rionegro. Alturas, manipuladores de alimentos, riesgo químico, toxicológicos y brigadas empresariales. Resultados el mismo día.">
   <link rel="canonical" href="https://labccosas.com/servicios/examenes-ocupacionales.html">
   <meta name="robots" content="index, follow">
 
@@ -30,10 +30,14 @@
       top:0;
       z-index:1000;
     }
+    header img {
+      height:50px;
+    }
     header a {
       font-weight:600;
       font-size:17px;
       color:#0077cc;
+      text-decoration:none;
     }
     .hero {
       background:linear-gradient(to bottom, #e9f6ff, #ffffff);
@@ -98,19 +102,53 @@
       margin-top:12px;
       text-decoration:none;
     }
+
+    /* Footer (copiado del index) */
+    footer {
+      background:#003459;
+      color:white;
+      padding:50px 20px;
+      margin-top:60px;
+    }
+    footer .footer-container {
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+      gap:28px;
+    }
+    footer a {
+      color:white;
+      text-decoration:none;
+    }
+    footer h3 {
+      margin-bottom:14px;
+      font-size:20px;
+      font-weight:600;
+    }
+    footer p { margin:6px 0; }
+    .footer-bottom {
+      text-align:center;
+      margin-top:30px;
+      font-size:14px;
+      opacity:0.7;
+    }
   </style>
 </head>
 
 <body>
 
 <header>
+  <a href="https://labccosas.com">
+    <!-- REEMPLAZAR ESTA RUTA POR LA DEL INDEX -->
+    <img src="../assets/logo.png" alt="LABCCO Logo">
+  </a>
   <a href="https://labccosas.com">← Volver al inicio</a>
-  <strong>LABCCO – Exámenes Ocupacionales</strong>
 </header>
 
 <section class="hero">
   <h1>Exámenes Ocupacionales en Rionegro</h1>
-  <p>Ingreso, periódico y retiro · Resultados el mismo día · Laboratorio + médica + exámenes en un solo lugar.</p>
+  <p>Ingreso, periódico y retiro · Resultados el mismo día · Médica + laboratorio + exámenes en un solo lugar.</p>
   <a class="cta" href="https://wa.me/573128274796?text=Hola,+quiero+información+de+exámenes+ocupacionales" target="_blank">📲 Solicitar cotización</a>
 </section>
 
@@ -147,8 +185,8 @@
 
   <div class="beneficios">
     <div class="beneficio">✔ Resultados del concepto médico el mismo día</div>
-    <div class="beneficio">✔ Todo en un mismo lugar (médica, laboratorio, audiometría, visiometría, RX si aplica)</div>
-    <div class="beneficio">✔ Control de calidad estrictos y habilitación del Ministerio de Salud</div>
+    <div class="beneficio">✔ Todo en un mismo lugar (médica, laboratorio, audiometría, visiometría, espirometría)</div>
+    <div class="beneficio">✔ Estrictos controles de calidad y habilitación del Ministerio de Salud</div>
     <div class="beneficio">✔ Descuentos por volumen y convenios empresariales</div>
     <div class="beneficio">✔ Brigadas extramurales desde 25 trabajadores</div>
     <div class="beneficio">✔ Reportes administrativos completos para tu empresa</div>
@@ -174,8 +212,8 @@
   </div>
 
   <div>
-    <strong>¿Entregan soporte y anexos?</strong>
-    <p>Sí, entregamos todos los formatos necesarios según normatividad.</p>
+    <strong>¿Entregan soportes y anexos?</strong>
+    <p>Sí, entregamos todos los formatos necesarios según la normatividad vigente.</p>
   </div>
 </div>
 
@@ -183,6 +221,35 @@
   <h2>¿Necesitas una cotización rápida?</h2>
   <a class="cta" href="https://wa.me/573128274796?text=Hola,+quiero+una+cotización+ocupacional" target="_blank">📲 Escribir por WhatsApp</a>
 </section>
+
+<!-- FOOTER EXACTO DEL INDEX -->
+<footer>
+  <div class="footer-container">
+    <div>
+      <h3>LABCCO</h3>
+      <p>Laboratorio Clínico Colombiano de Oriente</p>
+      <p>30 años de experiencia en servicios de laboratorio clínico y salud ocupacional.</p>
+    </div>
+
+    <div>
+      <h3>Contacto</h3>
+      <p>📍 Rionegro, Antioquia</p>
+      <p>📞 312 827 4796</p>
+      <p>✉️ contacto@labcco.com</p>
+      <p><a href="https://wa.me/573128274796" target="_blank">WhatsApp</a></p>
+    </div>
+
+    <div>
+      <h3>Horarios</h3>
+      <p>Lunes a viernes: 6:30 a.m – 5:00 p.m</p>
+      <p>Sábados: 7:00 a.m – 1:00 p.m</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 LABCCO – Todos los derechos reservados.
+  </div>
+</footer>
 
 </body>
 </html>
