@@ -5,7 +5,6 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <script>
-    /* Limpia # y redirige rutas fantasmas al index sin numeral */
     (function(){
       const fantasmas = ['/nosotros.html','/servicios.html','/contacto.html'];
       if (location.hash || fantasmas.includes(location.pathname)) {
@@ -53,7 +52,7 @@
     img{display:block;max-width:100%;height:auto}
 
     /*----------------------------------------------------------
-      1.  BANNER VIDEO FULL-SCREEN  (reemplaza al .hero anterior)
+      1.  BANNER VIDEO FULL-SCREEN  (nuevo)
     ----------------------------------------------------------*/
     .banner-video{
       position:relative;
@@ -74,7 +73,7 @@
     .banner-overlay{
       position:absolute;
       inset:0;
-      background:rgba(16,50,74,.55);   /* azul LAB translúcido */
+      background:rgba(16,50,74,.40);   /* más transparente y más azul */
       z-index:2;
     }
     .banner-inner{
@@ -130,7 +129,7 @@
     }
 
     /*----------------------------------------------------------
-      2.  BARRA SUPERIOR TRANSLÚCIDA  (mismo contenido, look nuevo)
+      2.  BARRA SUPERIOR ESTÁTICA  (color LABCCO sólido)
     ----------------------------------------------------------*/
     .top-bar{
       position:fixed;
@@ -141,12 +140,10 @@
       gap:8px;
       padding:6px var(--margen);
       height:34px;
-      background:rgba(16,50,74,.80);   /* azul LAB translúcido */
+      background:var(--azul);           /* azul LABCCO sólido */
       color:var(--blanco);
       font-size:14px;
       z-index:1600;
-      backdrop-filter:blur(4px);       /* efecto cristal */
-      -webkit-backdrop-filter:blur(4px);
     }
     .top-col{display:flex;gap:8px;align-items:center}
     .top-left{flex:1;justify-content:flex-end}.top-center{flex:1.5;justify-content:center;gap:12px}.top-right{flex:1;justify-content:flex-start}
@@ -155,7 +152,7 @@
     .brand-extra{font-weight:600;font-size:12px;color:var(--blanco);white-space:nowrap}
 
     /*----------------------------------------------------------
-      3.  NAVEGACIÓN  (sin cambios de contenido, solo estilo)
+      3.  NAVEGACIÓN TRANSLÚCIDA  (navega con scroll, azul tenue)
     ----------------------------------------------------------*/
     .navbar{
       position:sticky;
@@ -165,9 +162,11 @@
       justify-content:space-between;
       padding:6px var(--margen);
       height:80px;
-      background:var(--blanco);
+      background:rgba(16,50,74,.70);   /* translúcido, azul tenue */
       box-shadow:0 1px 6px var(--sombra);
       z-index:1500;
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
     }
     .brand{display:flex;align-items:center;gap:14px}
     #siteLogo{height:72px;width:auto;border-radius:6px}
@@ -177,16 +176,108 @@
     .nav-links a:hover{color:var(--celeste-2)}
 
     /*----------------------------------------------------------
-      4.  RESTO DE TU ESTILO ORIGINAL  (sin tocar)
+      4.  RESTO DE TU ESTILO ORIGINAL  (copiado tal cual)
     ----------------------------------------------------------*/
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
-    /* ... aquí iría todo tu CSS anterior (Nosotros, Servicios, Carrusel, etc.) ... */
+
+    /* NOSOTROS */
+    .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
+    .nos-texto{flex:1;min-width:280px}
+    .nos-texto h2{font-size:28px;color:var(--azul);font-weight:700;margin-bottom:8px}
+    .nos-texto h3{font-size:22px;color:var(--azul-b);margin-bottom:16px}
+    .nos-texto p{font-size:17px;line-height:1.7;margin-bottom:20px}
+    .cta-inline{display:inline-block;background:var(--celeste-2);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap}
+    .nos-fig{flex:0 0 560px;text-align:center}
+    .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sombra);width:100%}
+
+    .stats-beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin:20px 0 0 0;text-align:center}
+    .stat-item-benef{background:#e9f1f9;padding:20px;border-radius:10px}
+    .stat-item-benef span{display:block;font-size:36px;font-weight:700;color:var(--azul-b)}
+    .stat-item-benef small{color:#445569;font-size:14px}
+
+    @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}}
+
+    /* SERVICIOS */
+    .servicios-titulo{margin-top:0}
+    .servicios-titulo h2{margin-bottom:20px}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 22px var(--sombra);text-align:center}
+    .card .icono{font-size:40px;margin-bottom:8px}
+    .card h3{margin:6px 0 8px;font-size:18px;color:var(--azul-b)}
+    .card p{font-size:14px;color:#000}
+
+    /* BENEFICIOS Y CONVENIOS (carrussel) */
+    .beneficios-wrapper{position:relative;max-width:1200px;margin:0 auto;padding:0 50px}
+    .beneficios-carousel{display:flex;gap:30px;transition:transform .4s ease}
+    .beneficios-carousel .caja{min-width:calc(33.333% - 20px);background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:40px;box-shadow:0 6px 18px var(--sombra);display:flex;flex-direction:column;align-items:center}
+    .beneficios-carousel .caja img{width:100%;max-width:200px;margin-bottom:16px;border-radius:8px}
+    .beneficios-carousel .caja h4{font-size:20px;color:var(--azul);font-weight:700;margin-bottom:12px}
+    .beneficios-carousel .caja p{font-size:15px;color:#000;margin-bottom:16px;font-weight:600;flex-grow:1}
+    .carousel-btns{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;pointer-events:none}
+    .carousel-btn{background:var(--celeste-2);color:var(--blanco);border:none;font-size:24px;width:40px;height:40px;border-radius:50%;cursor:pointer;pointer-events:auto;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+    .carousel-btn:hover{transform:scale(1.1)}
+    .cta-azul-hero{display:inline-block;background:var(--azul-b);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
+    .cta-azul-hero:hover{transform:scale(1.05)}
+    .cta-naranja{display:inline-block;background:var(--naranja);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
+    .cta-naranja:hover{transform:scale(1.05)}
+    @media(max-width:720px){
+      .beneficios-carousel .caja{min-width:100%}
+      .carousel-btn{font-size:20px;width:36px;height:36px}
+      .services{grid-template-columns:repeat(1,1fr)}
+    }
+
+    /* CERTIFICADOS */
+    .certificados-centrado{display:flex;flex-wrap:wrap;gap:40px;align-items:center;justify-content:center;text-align:center;margin-top:60px}
+    .certificados-centrado .logo-hab{flex:0 0 260px}
+    .certificados-centrado .logo-hab img{width:100%;max-width:220px;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}
+    .certificados-centrado .codigos{flex:0 0 320px}
+    .certificados-centrado .codigos ul{list-style:none;padding:0;margin:0;font-size:18px;line-height:1.8;font-weight:600}
+    .certificados-centrado .codigos li{position:relative;padding-left:20px}
+    .certificados-centrado .codigos li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
+
+    @media(max-width:720px){.certificados-centrado{flex-direction:column;align-items:center}}
+
+    /* 3 BLOQUES FINALES */
+    .bloques-finales{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:40px}
+    .bloque-final{color:var(--blanco);padding:30px;border-radius:10px;text-align:center;box-shadow:0 6px 18px var(--sombra)}
+    .bloque-final.visita{background:var(--azul)}
+    .bloque-final.llama{background:var(--azul-b)}
+    .bloque-final.escribe{background:var(--celeste-2)}
+    .bloque-final .icono{font-size:32px;margin-bottom:10px}
+    .bloque-final h4{font-size:20px;margin-bottom:8px}
+    .bloque-final p{font-size:15px}
+
+    /* FORMULARIO CORTO */
+    .form-corto{display:grid;gap:14px;max-width:520px;margin:0 auto}
+    .form-corto label{font-size:15px;color:var(--azul);font-weight:600}
+    .form-corto input,.form-corto select{width:100%;padding:12px;border:1px solid #d7e3ea;border-radius:8px;font-size:15px}
+    .btn-form{background:var(--celeste-2);color:#fff;padding:14px;border-radius:8px;border:none;font-weight:700;cursor:pointer;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
+    .btn-form:hover{transform:scale(1.03)}
+    .info-final{margin-top:60px;text-align:center}
+
+    .btn-down{display:inline-flex;align-items:center;background:var(--azul-b);color:var(--blanco);padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
+    .btn-down:hover{transform:scale(1.05)}
+
+    /* FOOTER SIMÉTRICO (celeste institucional) */
+    footer{background:var(--celeste);color:var(--blanco);padding:40px 0}
+    .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:center;padding:0 var(--margen)}
+    .footer-col{text-align:center}
+    .footer-col.logo img{height:90px;margin-bottom:10px}
+    .footer-menu{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-weight:500;font-size:16px}
+    .footer-menu a:hover{opacity:.8}
+    .footer-col.contact-horario p{margin:4px 0;font-size:15px}
+    @media(max-width:720px){
+      .footer-grid{grid-template-columns:1fr;text-align:center;gap:30px}
+    }
+
+    /* WhatsApp floating */
+    .btn-wpp{position:fixed;right:18px;bottom:18px;background:var(--wpp);color:#fff;padding:14px;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,.18);font-size:20px;z-index:2000;display:flex;align-items:center;justify-content:center}
   </style>
 </head>
 
 <body>
   <!-- ==========================================================
-       1.  BARRA SUPERIOR TRANSLÚCIDA  (mismo contenido, look nuevo)
+       1.  BARRA SUPERIOR ESTÁTICA  (color LABCCO sólido)
   =========================================================== -->
   <div class="top-bar" role="banner">
     <div class="top-col top-left"><div class="horario">⏰ Horario: Lun - Vie 7am - 12m / 2pm - 5pm | Sáb 8am - 11am</div></div>
@@ -199,7 +290,7 @@
   </div>
 
   <!-- ==========================================================
-       2.  NAVEGACIÓN  (sin cambios de contenido, solo estilo)
+       2.  NAVEGACIÓN TRANSLÚCIDA  (navega con scroll, azul tenue)
   =========================================================== -->
   <header class="navbar" role="navigation" aria-label="Navegación principal">
     <div class="brand">
@@ -216,7 +307,7 @@
   </header>
 
   <!-- ==========================================================
-       3.  BANNER VIDEO FULL-SCREEN  (reemplaza al .hero anterior)
+       3.  BANNER VIDEO FULL-SCREEN  (más transparente y más azul)
   =========================================================== -->
   <section class="banner-video" id="inicio" aria-labelledby="hero-title">
     <!-- Video de fondo -->
@@ -225,7 +316,7 @@
       Tu navegador no soporta video HTML5.
     </video>
 
-    <!-- Overlay oscuro para legibilidad -->
+    <!-- Overlay más transparente y más azul -->
     <div class="banner-overlay"></div>
 
     <!-- Texto flotante -->
@@ -240,7 +331,7 @@
   </section>
 
   <!-- ==========================================================
-       4.  RESTO DE TU CONTENIDO ORIGINAL  (copiado tal cual)
+       4.  RESTO DE TU CONTENIDO ORIGINAL  (sin tocar)
   =========================================================== -->
   <!-- NOSOTROS -->
   <section id="nosotros" class="section-box">
