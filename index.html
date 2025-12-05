@@ -34,25 +34,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* ===== AZÚL SUAVE LABCCO (mismo tono que footer) ===== */
     :root{
-      --azul:#0077cc;        /* azul clarito y cálido */
-      --azul-b:#005fa3;
+      --azul:#0099cc;        /* azul suave, mismo que footer */
+      --azul-b:#0077cc;
       --celeste:#0099cc;
-      --celeste-2:#0077cc;
+      --celeste-2:#0099cc;
       --blanco:#ffffff;
-      --sombra:rgba(0,119,204,.09);
+      --sombra:rgba(0,153,204,.08);
       --wpp:#25d366;
       --naranja:#ff6a00;
       --margen:60px;
     }
+
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
     body{font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--azul);background:#f6fbff;-webkit-font-smoothing:antialiased;line-height:1.5}
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%;height:auto}
 
-    /*----------------------------------------------------------
-      1.  BANNER VIDEO FULL-SCREEN  (overlay azul clarito)
+    /* ----------------------------------------------------------
+       1.  BANNER VIDEO FULL-SCREEN  (overlay azul suave)
     ----------------------------------------------------------*/
     .banner-video{
       position:relative;
@@ -61,6 +63,7 @@
       align-items:center;
       justify-content:center;
       overflow:hidden;
+      margin:0; /* aseguramos que no haya separación con navbar */
     }
     .banner-video video{
       position:absolute;
@@ -70,10 +73,11 @@
       object-fit:cover;
       z-index:1;
     }
+    /* overlay menos potente para tono más suave */
     .banner-overlay{
       position:absolute;
       inset:0;
-      background:rgba(0,119,204,.40);   /* azul clarito, más transparente */
+      background:rgba(0,153,204,.30);   /* 30% de opacidad, azul suave */
       z-index:2;
     }
     .banner-inner{
@@ -92,6 +96,7 @@
       margin-bottom:12px;
       font-weight:700;
       letter-spacing:-.5px;
+      text-shadow:0 6px 18px rgba(0,0,0,.25);
     }
     .banner-sub{
       font-size:clamp(1rem,2.5vw,1.4rem);
@@ -104,7 +109,7 @@
     }
     .banner-tag{
       font-size:clamp(.9rem,2vw,1.1rem);
-      color:var(--celeste-2);
+      color:rgba(255,255,255,.9);
       margin-bottom:25px;
       font-weight:600;
     }
@@ -128,22 +133,22 @@
       .banner-video{ background:url('hero1.webp') center/cover; }
     }
 
-    /*----------------------------------------------------------
-      2.  BARRA SUPERIOR ESTÁTICA  (color LABCCO claro sólido)
+    /* ----------------------------------------------------------
+       2.  TOP BAR (estática y suave — mismo color que footer)
     ----------------------------------------------------------*/
     .top-bar{
-      position:fixed;
-      inset:0 0 auto 0;
+      position:static;           /* NO fijo -> queda en flujo */
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:8px;
       padding:6px var(--margen);
       height:34px;
-      background:var(--azul);           /* azul clarito sólido */
+      background:var(--azul);   /* azul suave, mismo que footer */
       color:var(--blanco);
       font-size:14px;
       z-index:1600;
+      border-bottom:none;
     }
     .top-col{display:flex;gap:8px;align-items:center}
     .top-left{flex:1;justify-content:flex-end}.top-center{flex:1.5;justify-content:center;gap:12px}.top-right{flex:1;justify-content:flex-start}
@@ -151,32 +156,43 @@
     .contact-small{display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,.08);padding:3px 8px;border-radius:16px;font-weight:500;font-size:13px}
     .brand-extra{font-weight:600;font-size:12px;color:var(--blanco);white-space:nowrap}
 
-    /*----------------------------------------------------------
-      3.  NAVEGACIÓN TRANSLÚCIDA  (mismo tono que el banner)
+    /* ----------------------------------------------------------
+       3.  NAVBAR (se desplaza con scroll; al inicio transparente)
     ----------------------------------------------------------*/
     .navbar{
-      position:sticky;
-      top:34px;
+      position:relative;            /* se desplaza con el scroll (no sticky) */
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:6px var(--margen);
+      padding:10px var(--margen);
       height:80px;
-      background:rgba(0,119,204,.75);   /* translúcido, azul clarito */
-      box-shadow:0 1px 6px var(--sombra);
+      background:transparent;       /* transparente al inicio para integrarse con el banner */
+      box-shadow:none;
       z-index:1500;
-      backdrop-filter:blur(4px);
-      -webkit-backdrop-filter:blur(4px);
+      transition:background .25s ease, box-shadow .25s ease, padding .25s ease;
     }
-    .brand{display:flex;align-items:center;gap:14px}
-    #siteLogo{height:72px;width:auto;border-radius:6px}
-    #distintivo{height:64px;width:auto;border-radius:6px;border:2px solid var(--blanco);box-shadow:0 6px 14px var(--sombra)}
-    .nav-links{display:flex;gap:28px;align-items:center}
-    .nav-links a{font-weight:500;font-size:18px;padding:6px 4px}
-    .nav-links a:hover{color:var(--celeste-2)}
 
-    /*----------------------------------------------------------
-      4.  RESTO DE TU ESTILO ORIGINAL  (copiado tal cual)
+    /* estado al hacer scroll (clase .scrolled añadida por JS) */
+    .navbar.scrolled{
+      background:rgba(0,153,204,.60);   /* translúcido suave al bajar */
+      box-shadow:0 6px 18px var(--sombra);
+      padding:8px var(--margen);
+      backdrop-filter:blur(3px);
+      -webkit-backdrop-filter:blur(3px);
+    }
+
+    .brand{display:flex;align-items:center;gap:14px}
+    #siteLogo{height:64px;width:auto;border-radius:6px;transition:height .2s ease}
+    #distintivo{height:56px;width:auto;border-radius:6px;border:2px solid rgba(255,255,255,.12);box-shadow:0 6px 14px var(--sombra);transition:height .2s ease}
+    .nav-links{display:flex;gap:28px;align-items:center}
+    .nav-links a{font-weight:500;font-size:18px;padding:6px 4px;color:var(--blanco)}
+    .nav-links a:hover{color:rgba(255,255,255,.9)}
+
+    /* Si deseas que los enlaces cambien ligeramente al scrolled, puedes ajustar con: */
+    .navbar.scrolled .nav-links a{color:var(--blanco)}
+
+    /* ----------------------------------------------------------
+       4.  RESTO DE TU ESTILO ORIGINAL (ajustado al nuevo color)
     ----------------------------------------------------------*/
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
 
@@ -272,12 +288,22 @@
 
     /* WhatsApp floating */
     .btn-wpp{position:fixed;right:18px;bottom:18px;background:var(--wpp);color:#fff;padding:14px;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,.18);font-size:20px;z-index:2000;display:flex;align-items:center;justify-content:center}
+
+    /* small helpers */
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    @media(max-width:900px){
+      :root{--margen:20px}
+      .top-bar{padding:6px var(--margen)}
+      .navbar{padding:8px var(--margen)}
+      #siteLogo{height:56px}
+      #distintivo{height:48px}
+    }
   </style>
 </head>
 
 <body>
   <!-- ==========================================================
-       1.  BARRA SUPERIOR ESTÁTICA  (color LABCCO claro sólido)
+       1.  BARRA SUPERIOR ESTÁTICA  (color LABCCO suave)
   =========================================================== -->
   <div class="top-bar" role="banner">
     <div class="top-col top-left"><div class="horario">⏰ Horario: Lun - Vie 7am - 12m / 2pm - 5pm | Sáb 8am - 11am</div></div>
@@ -290,7 +316,7 @@
   </div>
 
   <!-- ==========================================================
-       2.  NAVEGACIÓN TRANSLÚCIDA  (mismo tono que el banner)
+       2.  NAVEGACIÓN TRANSLÚCIDA (se integra con banner al inicio)
   =========================================================== -->
   <header class="navbar" role="navigation" aria-label="Navegación principal">
     <div class="brand">
@@ -307,7 +333,7 @@
   </header>
 
   <!-- ==========================================================
-       3.  BANNER VIDEO FULL-SCREEN  (overlay azul clarito)
+       3.  BANNER VIDEO FULL-SCREEN  (overlay suave)
   =========================================================== -->
   <section class="banner-video" id="inicio" aria-labelledby="hero-title">
     <!-- Video de fondo -->
@@ -316,7 +342,7 @@
       Tu navegador no soporta video HTML5.
     </video>
 
-    <!-- Overlay más transparente y más azul -->
+    <!-- Overlay mas suave -->
     <div class="banner-overlay"></div>
 
     <!-- Texto flotante -->
@@ -331,7 +357,7 @@
   </section>
 
   <!-- ==========================================================
-       4.  RESTO DE TU CONTENIDO ORIGINAL  (sin tocar)
+       4.  RESTO DE TU CONTENIDO ORIGINAL
   =========================================================== -->
   <!-- NOSOTROS -->
   <section id="nosotros" class="section-box">
@@ -376,7 +402,7 @@
     </div>
     <div style="margin-top:30px;text-align:center;">
       <a href="portafolio sin precio.pdf" class="btn-down" download>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg " style="margin-right:8px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="margin-right:8px;">
           <path d="M19 9h-4V3H9v6H5l7 8 7-8h-3zm-7-4V3h2v2h-2zm-9 12v2c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-2c0-.77-.41-1.47-1.06-1.82l-6.94-7.73-6.94 7.73A1.989 1.989 0 0 0 3 17zm2 2v-2h16v2H5z"/>
         </svg>
         Descargue aquí nuestro portafolio de servicios
@@ -538,9 +564,11 @@
     (function(){
       const video = document.getElementById('bannerVid');
       const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if (mq.matches || window.innerWidth < 768) {
-        video.removeAttribute('autoplay');
-        video.pause();
+      if (video) {
+        if (mq.matches || window.innerWidth < 768) {
+          video.removeAttribute('autoplay');
+          video.pause();
+        }
       }
     })();
 
@@ -560,8 +588,11 @@
       if(!carousel) return;
       let index = 0;
       const total = carousel.children.length;
-      const visible = window.innerWidth <= 720 ? 1 : 3;
+      function visibleCount(){
+        return window.innerWidth <= 720 ? 1 : 3;
+      }
       function updateCarousel(){
+        const visible = visibleCount();
         const offset = -(index * (100 / visible));
         carousel.style.transform = `translateX(${offset}%)`;
       }
@@ -598,6 +629,34 @@
           } catch(e){}
         });
       }
+    })();
+
+    /* Manejo del scroll para cambiar apariencia de la navbar */
+    (function(){
+      const navbar = document.querySelector('.navbar');
+      const banner = document.querySelector('.banner-video');
+      if (!navbar || !banner) return;
+
+      // altura a partir de la cual la navbar cambia (puedes ajustar)
+      function threshold(){
+        return Math.max(60, banner.offsetHeight - 100);
+      }
+
+      function checkScroll(){
+        const y = window.scrollY || window.pageYOffset;
+        if (y > threshold()) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', checkScroll, {passive:true});
+      window.addEventListener('resize', checkScroll);
+      // ejecutar al inicio
+      document.addEventListener('DOMContentLoaded', checkScroll);
+      // también correr inmediatamente en caso de que contenedor ya esté cargado
+      setTimeout(checkScroll, 300);
     })();
   </script>
 </body>
