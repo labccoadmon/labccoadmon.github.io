@@ -35,12 +35,12 @@
 
   <style>
     :root{
-      --azul:#10324a;
-      --azul-b:#004a99;
+      --azul:#0077cc;        /* azul clarito y cálido */
+      --azul-b:#005fa3;
       --celeste:#0099cc;
       --celeste-2:#0077cc;
       --blanco:#ffffff;
-      --sombra:rgba(16,50,74,.09);
+      --sombra:rgba(0,119,204,.09);
       --wpp:#25d366;
       --naranja:#ff6a00;
       --margen:60px;
@@ -52,11 +52,11 @@
     img{display:block;max-width:100%;height:auto}
 
     /*----------------------------------------------------------
-      1.  BANNER VIDEO FULL-SCREEN  (nuevo)
+      1.  BANNER VIDEO FULL-SCREEN  (overlay azul clarito)
     ----------------------------------------------------------*/
     .banner-video{
       position:relative;
-      height:100vh;                      /* ocupa toda la pantalla */
+      height:100vh;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -73,7 +73,7 @@
     .banner-overlay{
       position:absolute;
       inset:0;
-      background:rgba(16,50,74,.40);   /* más transparente y más azul */
+      background:rgba(0,119,204,.40);   /* azul clarito, más transparente */
       z-index:2;
     }
     .banner-inner{
@@ -129,7 +129,7 @@
     }
 
     /*----------------------------------------------------------
-      2.  BARRA SUPERIOR ESTÁTICA  (color LABCCO sólido)
+      2.  BARRA SUPERIOR ESTÁTICA  (color LABCCO claro sólido)
     ----------------------------------------------------------*/
     .top-bar{
       position:fixed;
@@ -140,7 +140,7 @@
       gap:8px;
       padding:6px var(--margen);
       height:34px;
-      background:var(--azul);           /* azul LABCCO sólido */
+      background:var(--azul);           /* azul clarito sólido */
       color:var(--blanco);
       font-size:14px;
       z-index:1600;
@@ -152,7 +152,7 @@
     .brand-extra{font-weight:600;font-size:12px;color:var(--blanco);white-space:nowrap}
 
     /*----------------------------------------------------------
-      3.  NAVEGACIÓN TRANSLÚCIDA  (navega con scroll, azul tenue)
+      3.  NAVEGACIÓN TRANSLÚCIDA  (mismo tono que el banner)
     ----------------------------------------------------------*/
     .navbar{
       position:sticky;
@@ -162,7 +162,7 @@
       justify-content:space-between;
       padding:6px var(--margen);
       height:80px;
-      background:rgba(16,50,74,.70);   /* translúcido, azul tenue */
+      background:rgba(0,119,204,.75);   /* translúcido, azul clarito */
       box-shadow:0 1px 6px var(--sombra);
       z-index:1500;
       backdrop-filter:blur(4px);
@@ -277,7 +277,7 @@
 
 <body>
   <!-- ==========================================================
-       1.  BARRA SUPERIOR ESTÁTICA  (color LABCCO sólido)
+       1.  BARRA SUPERIOR ESTÁTICA  (color LABCCO claro sólido)
   =========================================================== -->
   <div class="top-bar" role="banner">
     <div class="top-col top-left"><div class="horario">⏰ Horario: Lun - Vie 7am - 12m / 2pm - 5pm | Sáb 8am - 11am</div></div>
@@ -290,7 +290,7 @@
   </div>
 
   <!-- ==========================================================
-       2.  NAVEGACIÓN TRANSLÚCIDA  (navega con scroll, azul tenue)
+       2.  NAVEGACIÓN TRANSLÚCIDA  (mismo tono que el banner)
   =========================================================== -->
   <header class="navbar" role="navigation" aria-label="Navegación principal">
     <div class="brand">
@@ -307,7 +307,7 @@
   </header>
 
   <!-- ==========================================================
-       3.  BANNER VIDEO FULL-SCREEN  (más transparente y más azul)
+       3.  BANNER VIDEO FULL-SCREEN  (overlay azul clarito)
   =========================================================== -->
   <section class="banner-video" id="inicio" aria-labelledby="hero-title">
     <!-- Video de fondo -->
@@ -529,10 +529,10 @@
     <div style="text-align:center;margin-top:20px;font-size:14px;">© 2025 LABCCO — Todos los derechos reservados.</div>
   </footer>
 
-  <!-- WHATSAPP -->
+  <!-- WHATSAPP FLOATING -->
   <a href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" class="btn-wpp" aria-label="WhatsApp">💬</a>
 
-  <!-- SCRIPTS (sin cambios) -->
+  <!-- SCRIPTS -->
   <script>
     /* Optimización video banner */
     (function(){
