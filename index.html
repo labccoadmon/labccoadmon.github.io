@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html lang="es-CO">
 <head>
+  <!-- Redirección + metadatos -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script>
+    /* Opción A: limpia # y redirige rutas fantasmas al index sin numeral */
+    (function(){
+      const fantasmas = ['/nosotros.html','/servicios.html','/contacto.html'];
+      if (location.hash || fantasmas.includes(location.pathname)) {
+        history.replaceState(null,null,'/index.html');
+        location.href = '/index.html';
+      }
+    })();
+  </script>
 
   <title>LABCCO — Laboratorio Clínico Colombia Oriente</title>
   <meta name="description" content="Laboratorio clínico en Rionegro con 33 años de experiencia. Espirometría, pruebas de embarazo, paternidad con convenio UdeA, descuentos por volumen.">
@@ -169,7 +180,7 @@
     <div class="top-col top-right"><div class="brand-extra" style="color:var(--blanco)">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div></div>
   </div>
 
-  <!-- NAVBAR (sin # en Nosotros, Servicios, Empresas) -->
+  <!-- NAVBAR (enlaces sin #) -->
   <header class="navbar" role="navigation" aria-label="Navegación principal">
     <div class="brand">
       <img id="siteLogo" src="LABCCO-Photoroom.png" alt="Logo LABCCO">
@@ -177,10 +188,10 @@
     </div>
     <nav class="nav-links" role="navigation" aria-label="Enlaces principales">
       <a href="index.html">Inicio</a>
-      <a href="index.html#nosotros">Nosotros</a>
-      <a href="index.html#servicios">Servicios</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="servicios.html">Servicios</a>
       <a href="empresas.html">Empresas</a>
-      <a href="index.html#contacto" onclick="mostrarContacto(); return false;">Contacto</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
   </header>
 
@@ -376,10 +387,10 @@
       <div class="footer-col">
         <ul class="footer-menu">
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="index.html#nosotros">Nosotros</a></li>
-          <li><a href="index.html#servicios">Servicios</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
           <li><a href="empresas.html">Empresas</a></li>
-          <li><a href="index.html#contacto" onclick="mostrarContacto(); return false;">Contacto</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
       <div class="footer-col contact-horario" style="text-align:right;">
