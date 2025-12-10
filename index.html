@@ -7,7 +7,7 @@
   <meta name="description" content="Laboratorio clínico en Rionegro con 33 años de experiencia. Espirometría, pruebas de embarazo, paternidad con convenio UdeA, descuentos por volumen.">
   <link rel="canonical" href="https://labccoadmon.github.io/">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0099cc">
+  <meta name="theme-color" content="#004d6f">
 
   <meta property="og:title" content="LABCCO — Laboratorio Clínico Colombiano de Oriente">
   <meta property="og:description" content="Laboratorio clínico en Rionegro con 33 años de experiencia. Espirometría, pruebas de embarazo, paternidad con convenio UdeA, descuentos por volumen.">
@@ -24,23 +24,24 @@
 
   <style>
     :root{
-      --azul:#0099cc;
-      --azul-b:#0077cc;
+      --azul-frio:#004d6f;
+      --azul-suave:#0077aa;
       --celeste:#0099cc;
-      --celeste-2:#0099cc;
       --blanco:#ffffff;
-      --sombra:rgba(0,153,204,.09);
+      --negro:#111111;
+      --gris-claro:#f4f7fb;
+      --sombra:rgba(0,119,170,.08);
       --wpp:#25d366;
       --naranja:#ff6a00;
       --margen:60px;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
-    body{font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--azul);background:#f6fbff;-webkit-font-smoothing:antialiased;line-height:1.5}
+    body{font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--azul-frio);background:var(--gris-claro);-webkit-font-smoothing:antialiased;line-height:1.5}
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%;height:auto}
 
-    /* BANNER VIDEO FULL-SCREEN */
+    /* BANNER VIDEO FULL-SCREEN – overlay más opaco y azul frío */
     .banner-video{
       position:relative;
       height:100vh;
@@ -60,7 +61,7 @@
     .banner-overlay{
       position:absolute;
       inset:0;
-      background:rgba(0,153,204,.30);
+      background:rgba(0,77,111,.55); /* más opaco y frío */
       z-index:2;
     }
     .banner-inner{
@@ -98,7 +99,7 @@
     .cta-banner{
       display:inline-flex;
       align-items:center;
-      background:var(--celeste-2);
+      background:var(--celeste);
       color:var(--blanco);
       padding:14px 28px;
       border-radius:10px;
@@ -114,9 +115,9 @@
       .banner-video{ background:url('hero1.webp') center/cover; }
     }
 
-    /* BARRA SUPERIOR ESTÁTICA */
+    /* BARRA SUPERIOR ESTÁTICA – sin cambios */
     .top-bar{
-      background:var(--azul);
+      background:var(--celeste);
       color:var(--blanco);
       display:flex;
       align-items:center;
@@ -127,6 +128,7 @@
       font-size:14px;
       border-bottom:none;
       position:static;
+      z-index:1800;
     }
     .top-col{display:flex;gap:8px;align-items:center}
     .top-left{flex:1;justify-content:flex-end}.top-center{flex:1.5;justify-content:center;gap:12px}.top-right{flex:1;justify-content:flex-start}
@@ -134,19 +136,23 @@
     .contact-small{display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,.08);padding:3px 8px;border-radius:16px;font-weight:500;font-size:13px}
     .brand-extra{font-weight:600;font-size:12px;color:var(--blanco);white-space:nowrap}
 
-    /* NAVEGACIÓN (se desplaza con scroll) */
+    /* NAVBAR STICKY – translúcida sobre banner, azul suave al bajar */
     .navbar{
-      background:rgba(0,153,204,.60);
-      backdrop-filter:blur(3px);
-      -webkit-backdrop-filter:blur(3px);
+      position:sticky;
+      top:0;
       display:flex;
       align-items:center;
       justify-content:space-between;
       padding:6px var(--margen);
       height:80px;
-      box-shadow:0 1px 6px var(--sombra);
-      position:relative;
+      background:rgba(0,153,204,0); /* 100 % transparente inicial */
+      box-shadow:0 1px 6px transparent;
       z-index:1500;
+      transition:background .3s, box-shadow .3s;
+    }
+    .navbar.scrolled{
+      background:rgba(0,119,170,.85); /* azul suave al bajar */
+      box-shadow:0 4px 12px var(--sombra);
     }
     .brand{display:flex;align-items:center;gap:14px}
     #siteLogo{height:72px;width:auto;border-radius:6px}
@@ -156,40 +162,45 @@
       font-weight:500;
       font-size:18px;
       padding:6px 4px;
-      color:var(--blanco); /* 🔥 LETRAS DEL MENÚ EN BLANCO */
+      color:var(--blanco);
+      transition:opacity .2s;
     }
-    .nav-links a:hover{color:var(--blanco);opacity:.8}
+    .nav-links a:hover{opacity:.8}
 
-    /* RESTO DE ESTILOS */
+    /* NOSOTROS – menos azules, más contraste y negro */
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
-    .nos-texto h2{font-size:28px;color:var(--azul);font-weight:700;margin-bottom:8px}
-    .nos-texto h3{font-size:22px;color:var(--azul-b);margin-bottom:16px}
-    .nos-texto p{font-size:17px;line-height:1.7;margin-bottom:20px}
-    .cta-inline{display:inline-block;background:var(--celeste-2);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap}
+    .nos-texto h2{font-size:32px;color:var(--negro);font-weight:800;margin-bottom:8px}
+    .nos-texto h3{font-size:24px;color:var(--azul-suave);margin-bottom:16px}
+    .nos-texto p{font-size:17px;line-height:1.7;margin-bottom:20px;color:#333}
+    .cta-inline{display:inline-block;background:var(--azul-suave);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap}
     .nos-fig{flex:0 0 560px;text-align:center}
     .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sombra);width:100%}
     .stats-beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin:20px 0 0 0;text-align:center}
-    .stat-item-benef{background:#e9f1f9;padding:20px;border-radius:10px}
-    .stat-item-benef span{display:block;font-size:36px;font-weight:700;color:var(--azul-b)}
-    .stat-item-benef small{color:#445569;font-size:14px}
+    .stat-item-benef{background:var(--gris-claro);padding:20px;border-radius:10px}
+    .stat-item-benef span{display:block;font-size:36px;font-weight:700;color:var(--azul-suave)}
+    .stat-item-benef small{color:#555;font-size:14px}
     @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}}
+
+    /* SERVICIOS */
     .servicios-titulo{margin-top:0}
     .servicios-titulo h2{margin-bottom:20px}
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 22px var(--sombra);text-align:center}
     .card .icono{font-size:40px;margin-bottom:8px}
-    .card h3{margin:6px 0 8px;font-size:18px;color:var(--azul-b)}
+    .card h3{margin:6px 0 8px;font-size:18px;color:var(--azul-suave)}
     .card p{font-size:14px;color:#000}
+
+    /* BENEFICIOS Y CONVENIOS (carrussel) */
     .beneficios-wrapper{position:relative;max-width:1200px;margin:0 auto;padding:0 50px}
     .beneficios-carousel{display:flex;gap:30px;transition:transform .4s ease}
     .beneficios-carousel .caja{min-width:calc(33.333% - 20px);background:var(--blanco);border:1px solid #d7e3ea;border-radius:10px;padding:40px;box-shadow:0 6px 18px var(--sombra);display:flex;flex-direction:column;align-items:center}
     .beneficios-carousel .caja img{width:100%;max-width:200px;margin-bottom:16px;border-radius:8px}
-    .beneficios-carousel .caja h4{font-size:20px;color:var(--azul);font-weight:700;margin-bottom:12px}
+    .beneficios-carousel .caja h4{font-size:20px;color:var(--azul-frio);font-weight:700;margin-bottom:12px}
     .beneficios-carousel .caja p{font-size:15px;color:#000;margin-bottom:16px;font-weight:600;flex-grow:1}
     .carousel-btns{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;pointer-events:none}
-    .carousel-btn{background:var(--celeste-2);color:var(--blanco);border:none;font-size:24px;width:40px;height:40px;border-radius:50%;cursor:pointer;pointer-events:auto;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+    .carousel-btn{background:var(--azul-suave);color:var(--blanco);border:none;font-size:24px;width:40px;height:40px;border-radius:50%;cursor:pointer;pointer-events:auto;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.15)}
     .carousel-btn:hover{transform:scale(1.1)}
     .cta-azul-hero{display:inline-block;background:var(--azul-b);color:var(--blanco);padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
     .cta-azul-hero:hover{transform:scale(1.05)}
@@ -200,31 +211,41 @@
       .carousel-btn{font-size:20px;width:36px;height:36px}
       .services{grid-template-columns:repeat(1,1fr)}
     }
+
+    /* CERTIFICADOS */
     .certificados-centrado{display:flex;flex-wrap:wrap;gap:40px;align-items:center;justify-content:center;text-align:center;margin-top:60px}
     .certificados-centrado .logo-hab{flex:0 0 260px}
     .certificados-centrado .logo-hab img{width:100%;max-width:220px;border-radius:10px;box-shadow:0 6px 18px var(--sombra)}
     .certificados-centrado .codigos{flex:0 0 320px}
     .certificados-centrado .codigos ul{list-style:none;padding:0;margin:0;font-size:18px;line-height:1.8;font-weight:600}
     .certificados-centrado .codigos li{position:relative;padding-left:20px}
-    .certificados-centrado .codigos li::before{content:"✔";position:absolute;left:0;color:var(--celeste-2);font-weight:700}
+    .certificados-centrado .codigos li::before{content:"✔";position:absolute;left:0;color:var(--azul-suave);font-weight:700}
     @media(max-width:720px){.certificados-centrado{flex-direction:column;align-items:center}}
+
+    /* 3 BLOQUES FINALES */
     .bloques-finales{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:40px}
     .bloque-final{color:var(--blanco);padding:30px;border-radius:10px;text-align:center;box-shadow:0 6px 18px var(--sombra)}
-    .bloque-final.visita{background:var(--azul)}
-    .bloque-final.llama{background:var(--azul-b)}
-    .bloque-final.escribe{background:var(--celeste-2)}
+    .bloque-final.visita{background:var(--azul-suave)}
+    .bloque-final.llama{background:var(--azul-frio)}
+    .bloque-final.escribe{background:var(--celeste)}
     .bloque-final .icono{font-size:32px;margin-bottom:10px}
     .bloque-final h4{font-size:20px;margin-bottom:8px}
     .bloque-final p{font-size:15px}
+
+    /* CONTACTO – ahora penúltimo */
+    #seccion-contacto{background:var(--gris-claro);}
     .form-corto{display:grid;gap:14px;max-width:520px;margin:0 auto}
-    .form-corto label{font-size:15px;color:var(--azul);font-weight:600}
+    .form-corto label{font-size:15px;color:var(--azul-frio);font-weight:600}
     .form-corto input,.form-corto select{width:100%;padding:12px;border:1px solid #d7e3ea;border-radius:8px;font-size:15px}
-    .btn-form{background:var(--celeste-2);color:#fff;padding:14px;border-radius:8px;border:none;font-weight:700;cursor:pointer;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
+    .btn-form{background:var(--azul-suave);color:#fff;padding:14px;border-radius:8px;border:none;font-weight:700;cursor:pointer;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
     .btn-form:hover{transform:scale(1.03)}
     .info-final{margin-top:60px;text-align:center}
-    .btn-down{display:inline-flex;align-items:center;background:var(--azul-b);color:var(--blanco);padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
+
+    .btn-down{display:inline-flex;align-items:center;background:var(--azul-frio);color:var(--blanco);padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;box-shadow:0 6px 18px var(--sombra);transition:transform .2s}
     .btn-down:hover{transform:scale(1.05)}
-    footer{background:var(--celeste);color:var(--blanco);padding:40px 0}
+
+    /* FOOTER */
+    footer{background:var(--azul-frio);color:var(--blanco);padding:40px 0}
     .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:center;padding:0 var(--margen)}
     .footer-col{text-align:center}
     .footer-col.logo img{height:90px;margin-bottom:10px}
@@ -234,6 +255,8 @@
     @media(max-width:720px){
       .footer-grid{grid-template-columns:1fr;text-align:center;gap:30px}
     }
+
+    /* WHATSAPP */
     .btn-wpp{position:fixed;right:18px;bottom:18px;background:var(--wpp);color:#fff;padding:14px;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,.18);font-size:20px;z-index:2000;display:flex;align-items:center;justify-content:center}
   </style>
 </head>
@@ -250,24 +273,24 @@
     <div class="top-col top-right"><div class="brand-extra">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div></div>
   </div>
 
-  <!-- NAVBAR QUE SE DESPLAZA -->
-  <header class="navbar" role="navigation" aria-label="Navegación principal">
+  <!-- NAVBAR STICKY -->
+  <header class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
     <div class="brand">
       <img id="siteLogo" src="LABCCO-Photoroom.png" alt="Logo LABCCO">
       <img id="distintivo" src="distintivo30.png" alt="Distintivo 30 años">
     </div>
     <nav class="nav-links" aria-label="Enlaces principales">
       <a href="index.html">Inicio</a>
-      <a href="index.html#nosotros">Nosotros</a>
-      <a href="index.html#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
       <a href="empresas.html">Empresas</a>
-      <a href="index.html#contacto" onclick="mostrarContacto(); return false;">Contacto</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
   <!-- BANNER VIDEO -->
   <section class="banner-video" id="inicio" aria-labelledby="hero-title">
-    <video id="bannerVid" autoplay muted loop playsinline preload="metadata" poster="hero1.webp">
+    <video id="bannerVid" autoplay muted loop playsinline preload="auto" poster="hero1.webp">
       <source src="banner-lab.mp4" type="video/mp4">
       Tu navegador no soporta video HTML5.
     </video>
@@ -282,7 +305,7 @@
     </div>
   </section>
 
-  <!-- NOSOTROS -->
+  <!-- NOSOTROS – menos azules, más contraste y negro -->
   <section id="nosotros" class="section-box">
     <div class="nos-hero">
       <div class="nos-texto">
@@ -305,8 +328,8 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
-  <div class="section-box">
+  <!-- SERVICIOS – ancla funcional -->
+  <div id="servicios" class="section-box">
     <div class="servicios-titulo"><h2>Servicios</h2></div>
     <div class="services">
       <article class="card"><div class="icono">🏢</div><h3>Medicina ocupacional</h3><p>Exámenes pre-empleo, periódicos y de retiro. Evaluaciones integrales.</p></article>
@@ -349,21 +372,21 @@
           <img src="comfenalco.webp" alt="Convenio Comfenalco">
           <h4>Convenio Comfenalco</h4>
           <p>Gracias al convenio que Comfenalco Antioquia tiene con LABCCO, los afiliados pueden acceder a todos nuestros servicios. Como beneficiarios del convenio, puedes disfrutar de descuentos especiales en: valoraciones médicas, medicina ocupacional, audiometría, optometría, terapia respiratoria, toma de muestras de laboratorio, exámenes para manipuladores de alimentos y evaluaciones para trabajo en alturas.</p>
-          <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
+          <a href="#contacto" class="cta-azul-hero">Consulta aquí tus beneficios</a>
         </div>
 
         <div class="caja">
           <img src="udea.webp" alt="Convenio UdeA">
           <h4>Convenio UdeA pruebas de paternidad</h4>
           <p>Las pruebas de paternidad más confiables del país. También realizamos otras pruebas especializadas en convenio con la Universidad de Antioquia.</p>
-          <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
+          <a href="#contacto" class="cta-azul-hero">Consulta aquí tus beneficios</a>
         </div>
 
         <div class="caja">
           <img src="plenitud.webp" alt="Convenio Plenitud">
           <h4>Convenio Plenitud</h4>
           <p>Grupo Plenitud; empresa pionera en ofrecer innovadores servicios en el sector funerario y brindar bienestar y calidad de vida a las familias. Gracias al convenio que Plenitud tiene con LABCCO 10% de descuento en laboratorio clínico, procedimientos médicos, espirometría, visiometría, audiometría y vacunación.</p>
-          <a href="#contacto" class="cta-azul-hero" onclick="mostrarContacto(); return false;">Consulta aquí tus beneficios</a>
+          <a href="#contacto" class="cta-azul-hero">Consulta aquí tus beneficios</a>
         </div>
       </div>
 
@@ -401,7 +424,7 @@
       <div class="bloque-final visita">
         <div class="icono">📍</div>
         <h4>Visítanos</h4>
-        <p>C.C Edificio Santa Bárbara, Cra 48 ·52-54, Rionegro Ant</p>
+        <p>Cra 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia</p>
       </div>
       <div class="bloque-final llama">
         <div class="icono">📞</div>
@@ -416,8 +439,8 @@
     </div>
   </div>
 
-  <!-- CONTACTO OCULTO -->
-  <div class="section-box" id="seccion-contacto" style="display:none;">
+  <!-- CONTACTO – ahora penúltimo, una sola dirección en el mapa -->
+  <div class="section-box" id="seccion-contacto">
     <section id="contacto">
       <h2>Contáctanos</h2>
       <form class="form-corto" action="https://formsubmit.co/calidad@labccosas.com" method="POST" novalidate>
@@ -437,12 +460,12 @@
         <button type="submit" class="btn-form">Enviar solicitud</button>
       </form>
       <div class="info-final">
-        <p>📍 Carrera 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
+        <p>📍 Cra 48 #52-54, Edificio Santa Bárbara, Rionegro, Antioquia<br>
         📞 Fijo: <strong>531 13 54</strong><br>
         📱 WhatsApp: <a href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer">312 827 4796</a><br>
         ✉ Correo: <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></p>
         <div class="map-wrap">
-          <iframe src="https://www.google.com/maps?q=Carrera+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" loading="lazy"></iframe>
+          <iframe src="https://www.google.com/maps?q=Cra+48+%2352-54+Rionegro+Antioquia&output=embed" width="100%" height="360" loading="lazy"></iframe>
         </div>
       </div>
     </section>
@@ -458,10 +481,10 @@
       <div class="footer-col">
         <ul class="footer-menu">
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="index.html#nosotros">Nosotros</a></li>
-          <li><a href="index.html#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
           <li><a href="empresas.html">Empresas</a></li>
-          <li><a href="index.html#contacto" onclick="mostrarContacto(); return false;">Contacto</a></li>
+          <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
       <div class="footer-col contact-horario" style="text-align:right;">
@@ -492,12 +515,15 @@
       }
     })();
 
-    function mostrarContacto(){
-      const seccion = document.getElementById('seccion-contacto');
-      if(!seccion) return;
-      seccion.style.display = 'block';
-      seccion.scrollIntoView({behavior:'smooth'});
-    }
+    /* Navbar sticky con cambio de color al hacer scroll */
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 80) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
 
     /* Carrusel de convenios */
     (function(){
