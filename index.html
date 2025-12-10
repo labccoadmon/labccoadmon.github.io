@@ -150,17 +150,24 @@
       background:rgba(0,153,204,0); /* 100 % transparente */
       box-shadow:0 1px 6px transparent;
       z-index:1500;
-      transition:background .3s, box-shadow .3s;
+      transition:background .3s, box-shadow .3s, margin-top .3s;
     }
+    /* ✅ MARGEN SUPERIOR solo cuando está arriba */
+    .navbar.top{
+      margin-top:34px; /* altura exacta del top-bar */
+    }
+    /* Al bajar se pega arriba y cambia color */
     .navbar.scrolled{
+      margin-top:0;
       background:rgba(0,119,170,.70); /* azul más tenue que antes */
       box-shadow:0 4px 12px var(--sombra);
     }
-    .brand{display:flex;align-items:center;gap:14px}
-    #siteLogo{height:72px;width:auto;border-radius:6px}
+    /* Quitamos borde blanco del distintivo */
     #distintivo{
       height:64px;width:auto;border-radius:6px;box-shadow:0 6px 14px var(--sombra);
     }
+    .brand{display:flex;align-items:center;gap:14px}
+    #siteLogo{height:72px;width:auto;border-radius:6px}
     .nav-links{display:flex;gap:28px;align-items:center}
     .nav-links a{
       font-weight:500;
@@ -277,8 +284,8 @@
     <div class="top-col top-right"><div class="brand-extra">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div></div>
   </div>
 
-  <!-- NAVBAR STICKY – 100 % translúcido arriba, azul tenue al bajar -->
-  <header class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+  <!-- NAVBAR STICKY – 100 % translúcido arriba, azul tenue al bajar, sin borde blanco -->
+  <header class="navbar top" id="navbar" role="navigation" aria-label="Navegación principal">
     <div class="brand">
       <img id="siteLogo" src="LABCCO-Photoroom.png" alt="Logo LABCCO">
       <img id="distintivo" src="distintivo30.png" alt="Distintivo 30 años">
@@ -519,12 +526,14 @@
       }
     })();
 
-    /* Navbar sticky con cambio de color al hacer scroll */
+    /* Navbar sticky con cambio de color y margen al hacer scroll */
     window.addEventListener('scroll', function () {
       const navbar = document.getElementById('navbar');
-      if (window.scrollY > 80) {
+      if (window.scrollY > 34) { /* altura del top-bar */
+        navbar.classList.remove('top');
         navbar.classList.add('scrolled');
       } else {
+        navbar.classList.add('top');
         navbar.classList.remove('scrolled');
       }
     });
