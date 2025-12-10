@@ -136,27 +136,31 @@
     .contact-small{display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,.08);padding:3px 8px;border-radius:16px;font-weight:500;font-size:13px}
     .brand-extra{font-weight:600;font-size:12px;color:var(--blanco);white-space:nowrap}
 
-    /* NAVBAR STICKY – translúcida sobre banner, azul suave al bajar */
+    /* NAVBAR STICKY – 100 % translúcido arriba, azul tenue al bajar, sin borde blanco */
     .navbar{
-      position:sticky;
+      position:fixed; /* se desplaza por TODA la página */
       top:0;
+      left:0;
+      right:0;
       display:flex;
       align-items:center;
       justify-content:space-between;
       padding:6px var(--margen);
       height:80px;
-      background:rgba(0,153,204,0); /* 100 % transparente inicial */
+      background:rgba(0,153,204,0); /* 100 % transparente */
       box-shadow:0 1px 6px transparent;
       z-index:1500;
       transition:background .3s, box-shadow .3s;
     }
     .navbar.scrolled{
-      background:rgba(0,119,170,.85); /* azul suave al bajar */
+      background:rgba(0,119,170,.70); /* azul más tenue que antes */
       box-shadow:0 4px 12px var(--sombra);
     }
     .brand{display:flex;align-items:center;gap:14px}
     #siteLogo{height:72px;width:auto;border-radius:6px}
-    #distintivo{height:64px;width:auto;border-radius:6px;border:2px solid var(--blanco);box-shadow:0 6px 14px var(--sombra)}
+    #distintivo{
+      height:64px;width:auto;border-radius:6px;box-shadow:0 6px 14px var(--sombra);
+    }
     .nav-links{display:flex;gap:28px;align-items:center}
     .nav-links a{
       font-weight:500;
@@ -183,7 +187,7 @@
     .stat-item-benef small{color:#555;font-size:14px}
     @media(max-width:720px){.nos-hero{flex-direction:column;text-align:center}}
 
-    /* SERVICIOS */
+    /* SERVICIOS – ancla funcional */
     .servicios-titulo{margin-top:0}
     .servicios-titulo h2{margin-bottom:20px}
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -273,7 +277,7 @@
     <div class="top-col top-right"><div class="brand-extra">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div></div>
   </div>
 
-  <!-- NAVBAR STICKY -->
+  <!-- NAVBAR STICKY – 100 % translúcido arriba, azul tenue al bajar -->
   <header class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
     <div class="brand">
       <img id="siteLogo" src="LABCCO-Photoroom.png" alt="Logo LABCCO">
@@ -288,7 +292,7 @@
     </nav>
   </header>
 
-  <!-- BANNER VIDEO -->
+  <!-- BANNER VIDEO – detrás del navbar -->
   <section class="banner-video" id="inicio" aria-labelledby="hero-title">
     <video id="bannerVid" autoplay muted loop playsinline preload="auto" poster="hero1.webp">
       <source src="banner-lab.mp4" type="video/mp4">
@@ -305,7 +309,7 @@
     </div>
   </section>
 
-  <!-- NOSOTROS – menos azules, más contraste y negro -->
+  <!-- NOSOTROS -->
   <section id="nosotros" class="section-box">
     <div class="nos-hero">
       <div class="nos-texto">
@@ -328,7 +332,7 @@
     </div>
   </section>
 
-  <!-- SERVICIOS – ancla funcional -->
+  <!-- SERVICIOS -->
   <div id="servicios" class="section-box">
     <div class="servicios-titulo"><h2>Servicios</h2></div>
     <div class="services">
