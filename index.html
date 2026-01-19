@@ -4,17 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Exámenes Médicos Ocupacionales en Rionegro | LABCCO Salud Laboral</title>
-  <meta name="description" content="Laboratorio clínico especializado en Salud Ocupacional en Rionegro. Exámenes de ingreso, periódicos, alturas y manipulación de alimentos.">
+  <meta name="description" content="Laboratorio clínico especializado en Salud Ocupacional en Rionegro. Exámenes de ingreso, periódicos y retiro. Resultados el mismo día.">
   <link rel="canonical" href="https://labccosas.com/">
-  <meta name="theme-color" content="#004d6f">
   
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================================
-       ESTILOS GENERALES Y ESTRUCTURA
-       ========================================= */
+    /* VARIABLES Y RESET */
     :root {
       --azul-frio: #004d6f;
       --azul-suave: #0077aa;
@@ -22,10 +20,10 @@
       --blanco: #ffffff;
       --negro: #111111;
       --gris-claro: #f4f7fb;
-      --sombra: rgba(0, 119, 170, 0.12); /* Sombra más visible */
+      --sombra: rgba(0, 119, 170, 0.08);
       --wpp: #25d366;
       --naranja: #ff6a00;
-      --margen: 5%; /* Ajuste dinámico para pantallas grandes */
+      --margen: 60px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,543 +31,298 @@
       font-family: 'Outfit', sans-serif;
       color: var(--azul-frio);
       background: var(--gris-claro);
-      line-height: 1.6;
+      line-height: 1.5;
+      overflow-x: hidden;
     }
-    a { text-decoration: none; color: inherit; transition: 0.3s; }
-    img { max-width: 100%; height: auto; display: block; }
-    ul { list-style: none; }
+    a { text-decoration: none; color: inherit; }
 
-    /* =========================================
-       BARRA SUPERIOR (CORREGIDA - UNA SOLA LÍNEA)
-       ========================================= */
+    /* 1. TOP BAR (CORREGIDA EN UNA LÍNEA) */
     .top-bar {
       background: var(--celeste);
       color: var(--blanco);
       display: flex;
       align-items: center;
-      justify-content: space-between; /* Distribuye espacio */
+      justify-content: space-between;
       padding: 0 var(--margen);
-      height: 40px; /* Altura fija para alineación */
-      font-size: 13px; /* Tamaño ajustado para que quepa */
-      white-space: nowrap; /* Evita que el texto baje de línea */
-      overflow: hidden;
+      height: 34px;
+      font-size: 13px;
+      position: relative;
+      z-index: 1800;
+      white-space: nowrap;
     }
-    .top-left, .top-right {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-    .top-center {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 500;
-    }
-    .contact-item:hover { opacity: 0.8; }
-    
-    @media (max-width: 900px) {
-      .top-bar { display: none; } /* Se oculta en móviles para no saturar */
+    .top-col { display: flex; align-items: center; gap: 12px; }
+    .horario { font-weight: 600; }
+    .contact-small { 
+      background: rgba(0,0,0,0.08); 
+      padding: 2px 8px; 
+      border-radius: 12px; 
+      display: flex; 
+      align-items: center; 
+      gap: 5px; 
     }
 
-    /* =========================================
-       NAVEGACIÓN PRINCIPAL
-       ========================================= */
+    /* 2. NAVBAR (ESTILO ORIGINAL) */
     .navbar {
       position: fixed;
       top: 0; left: 0; right: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px var(--margen);
-      height: 90px;
-      z-index: 1000;
-      transition: all 0.3s ease;
-      background: transparent;
-    }
-    .navbar.top { margin-top: 40px; } /* Deja espacio a la top-bar */
-    .navbar.scrolled {
-      margin-top: 0;
-      background: rgba(0, 77, 111, 0.95);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 6px var(--margen);
       height: 80px;
+      z-index: 1500;
+      transition: all 0.3s;
     }
-    .brand { display: flex; align-items: center; gap: 15px; }
-    #siteLogo { height: 75px; width: auto; }
-    #distintivo { height: 65px; width: auto; }
+    .navbar.top { margin-top: 34px; background: transparent; }
+    .navbar.scrolled { margin-top: 0; background: rgba(0, 77, 111, 0.9); box-shadow: 0 4px 12px var(--sombra); }
     
-    .nav-links { display: flex; gap: 30px; }
-    .nav-links a {
-      color: #fff;
-      font-weight: 600;
-      font-size: 16px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .nav-links a:hover { color: var(--celeste); }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    #siteLogo { height: 72px; width: auto; }
+    #distintivo { height: 64px; width: auto; border-radius: 6px; }
 
-    /* =========================================
-       BANNER VIDEO
-       ========================================= */
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-weight: 500; font-size: 17px; color: var(--blanco); }
+
+    /* 3. BANNER (COPY ORIGINAL) */
     .banner-video {
       position: relative;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      color: #fff;
       overflow: hidden;
     }
-    .banner-video video {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      object-fit: cover; z-index: -2;
+    .banner-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+    .banner-overlay { position: absolute; inset: 0; background: rgba(0,77,111,0.55); z-index: 2; }
+    .banner-inner { position: relative; z-index: 3; text-align: center; color: #fff; padding: 20px; }
+    
+    .banner-text h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 10px; }
+    .banner-tag { font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: #e0f7ff; }
+    .banner-sub { font-size: 1.3rem; max-width: 700px; margin: 0 auto 30px; }
+    
+    .cta-banner { 
+      display: inline-block; background: var(--celeste); color: #fff; 
+      padding: 14px 28px; border-radius: 10px; font-weight: 700; 
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
     }
-    .banner-overlay {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 40, 60, 0.6); z-index: -1;
-    }
-    .banner-content h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-      line-height: 1.1;
-    }
-    .banner-content p {
-      font-size: 1.25rem;
-      margin-bottom: 30px;
-      max-width: 800px;
-      margin-left: auto; margin-right: auto;
-    }
-    .btn-main {
-      background: var(--naranja);
-      color: white;
-      padding: 15px 35px;
-      font-size: 18px;
-      font-weight: 700;
-      border-radius: 50px;
-      box-shadow: 0 5px 15px rgba(255, 106, 0, 0.4);
-    }
-    .btn-main:hover { transform: translateY(-3px); background: #e65c00; }
 
-    /* =========================================
-       SECCIONES GENERALES
-       ========================================= */
+    /* 4. SECCIÓN NOSOTROS (RESTAURADA) */
     .section-box {
-      max-width: 1300px;
-      margin: 50px auto;
-      padding: 50px;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 50px var(--margen);
+      background: var(--blanco);
+      border-radius: 12px;
+      box-shadow: 0 4px 18px var(--sombra);
     }
-    h2 {
-      font-size: 2.5rem;
-      color: var(--azul-frio);
-      text-align: center;
-      margin-bottom: 40px;
-      font-weight: 800;
-    }
+    .nos-hero { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+    .nos-texto { flex: 1; min-width: 300px; }
+    .nos-texto h2 { font-size: 32px; margin-bottom: 10px; font-weight: 800; }
+    .nos-texto h3 { font-size: 22px; color: var(--azul-suave); margin-bottom: 15px; }
+    .nos-fig { flex: 1; text-align: center; }
+    .nos-fig img { border-radius: 10px; box-shadow: 0 8px 24px var(--sombra); width: 100%; }
 
-    /* =========================================
-       GRID DE SERVICIOS (AMPLIADO A 12)
-       ========================================= */
+    .stats-beneficios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+      text-align: center;
+    }
+    .stat-item { background: var(--gris-claro); padding: 20px; border-radius: 10px; }
+    .stat-item span { display: block; font-size: 32px; font-weight: 700; color: var(--azul-suave); }
+
+    /* 5. SERVICIOS (FUSIÓN COMPLETA) */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-    .service-card {
-      background: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      text-align: center;
-      border: 1px solid #eee;
-      transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-    }
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-      border-color: var(--celeste);
-    }
-    .service-icon { font-size: 40px; margin-bottom: 15px; }
-    .service-card h3 {
-      color: var(--azul-suave);
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    .service-card p { font-size: 14px; color: #555; }
-
-    /* =========================================
-       CARRUSEL DE CONVENIOS (TEXTOS LARGOS)
-       ========================================= */
-    .carousel-container {
-      position: relative;
-      overflow: hidden;
-      padding: 20px 0;
-    }
-    .carousel-track {
-      display: flex;
-      gap: 30px;
-      transition: transform 0.5s ease-in-out;
-    }
-    .convenio-card {
-      min-width: 350px; /* Ancho fijo para tarjetas grandes */
-      background: #fff;
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      text-align: center;
-      border: 1px solid #e0e0e0;
-    }
-    .convenio-card img {
-      height: 80px;
-      margin: 0 auto 20px;
-      object-fit: contain;
-    }
-    .convenio-card h4 {
-      font-size: 22px;
-      color: var(--azul-frio);
-      margin-bottom: 15px;
-    }
-    .convenio-card p {
-      font-size: 15px;
-      color: #444;
-      line-height: 1.6;
-    }
-    .nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--azul-frio);
-      color: white;
-      border: none;
-      width: 50px; height: 50px;
-      border-radius: 50%;
-      font-size: 24px;
-      cursor: pointer;
-      z-index: 10;
-    }
-    .prev { left: 10px; }
-    .next { right: 10px; }
-
-    /* =========================================
-       CONTACTO Y MAPA REAL
-       ========================================= */
-    .contact-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-    .form-box {
-      background: var(--gris-claro);
-      padding: 30px;
-      border-radius: 15px;
-    }
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-weight: 600; margin-bottom: 8px; }
-    .form-group input, .form-group select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    .btn-submit {
-      width: 100%;
-      background: var(--azul-suave);
-      color: white;
-      padding: 15px;
-      border: none;
-      border-radius: 8px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    .map-box {
-      height: 100%;
-      min-height: 400px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--azul-frio);
-      color: white;
-      padding: 60px 0;
-      margin-top: 60px;
-    }
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      padding: 0 20px;
+      gap: 20px;
+      margin-top: 30px;
     }
+    .card {
+      background: #fff; padding: 25px; border-radius: 12px;
+      text-align: center; border: 1px solid #eee; transition: 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px var(--sombra); }
+    .card .icono { font-size: 35px; margin-bottom: 10px; }
+    .card h3 { font-size: 18px; margin-bottom: 8px; color: var(--azul-suave); }
+    .card p { font-size: 14px; color: #555; }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .navbar { display: none; } /* En móvil se usaría menú hamburguesa (simplificado aquí) */
-      .contact-wrapper { grid-template-columns: 1fr; }
-      .banner-content h1 { font-size: 2.2rem; }
+    /* 6. CONVENIOS (ORIGINAL) */
+    .bcr-wrap { position: relative; overflow: hidden; padding: 20px 0; }
+    .bcr { display: flex; gap: 30px; transition: 0.4s ease; }
+    .caja-conv {
+      min-width: calc(33.333% - 20px);
+      background: #fff; border: 1px solid #d7e3ea;
+      padding: 35px; border-radius: 12px; text-align: center;
+    }
+    .caja-conv img { height: 70px; margin-bottom: 15px; object-fit: contain; }
+    .caja-conv p { font-size: 14px; line-height: 1.6; }
+
+    /* 7. CONTACTO Y MAPA REAL */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
+    .fc { display: flex; flex-direction: column; gap: 15px; }
+    .fc input, .fc select { padding: 12px; border: 1px solid #ccc; border-radius: 8px; }
+    .btn-f { background: var(--azul-suave); color: #fff; padding: 15px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
+    
+    .map-container { border-radius: 12px; overflow: hidden; height: 100%; min-height: 350px; box-shadow: 0 4px 15px var(--sombra); }
+
+    @media (max-width: 800px) {
+      .top-bar { display: none; }
+      .navbar { background: var(--azul-frio); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .caja-conv { min-width: 100%; }
     }
   </style>
 </head>
+
 <body>
 
   <div class="top-bar">
-    <div class="top-left">
-      <span class="contact-item">⏰ Lun-Vie 7am-5pm | Sáb 8am-11am</span>
+    <div class="top-col">
+      <span class="horario">⏰ Lun - Vie 7am - 12m / 2pm - 5pm | Sáb 8am - 11am</span>
     </div>
-    <div class="top-center">
-      <span class="contact-item">📍 Rionegro, Ant.</span>
-      <span class="contact-item">🛡️ Res. 3100 Habilitada</span>
-    </div>
-    <div class="top-right">
-      <a href="tel:5311354" class="contact-item">📞 531 13 54</a>
-      <a href="https://wa.me/573128274796" class="contact-item">📱 312 827 4796</a>
-      <a href="mailto:calidad@labccosas.com" class="contact-item">✉ calidad@labccosas.com</a>
+    <div class="top-col">
+      <a href="tel:+5745311354" class="contact-small">📞 531 13 54</a>
+      <a href="https://wa.me/573128274796" class="contact-small">📱 312 827 4796</a>
+      <span class="contact-small">✉ calidad@labccosas.com</span>
     </div>
   </div>
 
-  <nav class="navbar top" id="navbar">
+  <header class="navbar top" id="navbar">
     <div class="brand">
       <img id="siteLogo" src="LABCCO-Photoroom.png" alt="Logo LABCCO">
-      <img id="distintivo" src="distintivo30.png" alt="30 Años">
+      <img id="distintivo" src="distintivo30.png" alt="30 años">
     </div>
-    <div class="nav-links">
+    <nav class="nav-links">
       <a href="index.html">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#convenios">Convenios</a>
-      <a href="empresas.html">Empresas</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios SST</a>
+      <a href="empresas.html">Portal Empresas</a>
       <a href="#contacto">Contacto</a>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <header class="banner-video">
+  <section class="banner-video">
     <video autoplay muted loop playsinline poster="hero1.webp">
       <source src="banner-lab.mp4" type="video/mp4">
     </video>
     <div class="banner-overlay"></div>
-    <div class="banner-content">
-      <h1>Expertos en Seguridad y<br>Salud en el Trabajo</h1>
-      <p>Resultados confiables el mismo día. Su aliado estratégico en Rionegro y el Oriente Antioqueño.</p>
-      <a href="#contacto" class="btn-main">Solicitar Cotización</a>
-    </div>
-  </header>
-
-  <section id="servicios" class="section-box">
-    <h2>Nuestros Servicios Integrales</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">👨‍⚕️</div>
-        <h3>Examen de Ingreso</h3>
-        <p>Evaluación médica completa para determinar la aptitud del candidato antes de la contratación.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🔄</div>
-        <h3>Examen Periódico</h3>
-        <p>Monitoreo de salud anual para prevenir enfermedades laborales en sus empleados.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">👋</div>
-        <h3>Examen de Retiro</h3>
-        <p>Certificación del estado de salud del trabajador al finalizar su vínculo laboral.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">👂</div>
-        <h3>Audiometría</h3>
-        <p>Cabina sonoamortiguada certificada para evaluar la capacidad auditiva.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">👁️</div>
-        <h3>Visiometría</h3>
-        <p>Tamizaje visual ocupacional para conductores, administrativos y operativos.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">💨</div>
-        <h3>Espirometría</h3>
-        <p>Prueba de función pulmonar vital para trabajadores expuestos a material particulado.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🏗️</div>
-        <h3>Trabajo en Alturas</h3>
-        <p>Certificación médica específica para tareas de alto riesgo según normativa vigente.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🍔</div>
-        <h3>Manipulación Alimentos</h3>
-        <p>Frotis de garganta y uñas con certificado apto para el sector gastronómico.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🧬</div>
-        <h3>Laboratorio Clínico</h3>
-        <p>Procesamiento de muestras de nivel I, II y III con tecnología automatizada.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🌾</div>
-        <h3>Colinesterasa</h3>
-        <p>Prueba toxicológica indispensable para el sector floricultor y agrícola.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">💉</div>
-        <h3>Vacunación</h3>
-        <p>Esquemas completos para empresas (Tétano, Influenza, Hepatitis).</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🚫</div>
-        <h3>Pruebas Toxicológicas</h3>
-        <p>Detección de sustancias psicoactivas para garantizar entornos seguros.</p>
+    <div class="banner-inner">
+      <div class="banner-text">
+        <h1>Aliado Estratégico en Salud Ocupacional</h1>
+        <p class="banner-tag">✅ Habilitados Res. 3100/19 | ✔ Más de 33 años | ✔ Resultados Mismo Día</p>
+        <p class="banner-sub">Optimice sus procesos de contratación con cumplimiento legal garantizado y la rapidez que su empresa necesita.</p>
+        <a class="cta-banner" href="#contacto">COTIZAR EXÁMENES</a>
       </div>
     </div>
   </section>
 
-  <section id="convenios" class="section-box" style="background: #fff;">
-    <h2>Nuestros Aliados y Convenios</h2>
-    <div class="carousel-container">
-      <button class="nav-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-      <div class="carousel-track" id="track">
-        
-        <div class="convenio-card">
-          <img src="cerrandonegocio.webp" alt="Convenio Empresas">
-          <h4>Atención a Empresas</h4>
-          <p>Ofrecemos tarifas preferenciales y facturación mensual consolidada para compañías con más de 10 empleados. Garantizamos la entrega oportuna de conceptos de aptitud para no frenar sus procesos de contratación.</p>
+  <section id="nosotros" class="section-box">
+    <div class="nos-hero">
+      <div class="nos-texto">
+        <h2>Respaldo y Calidad para su Empresa</h2>
+        <h3>Laboratorio habilitado bajo Resolución 3100 de 2019</h3>
+        <p>Desde 1992, en LABCCO hemos sido el soporte diagnóstico de las principales empresas de Antioquia. Entendemos que en el mundo corporativo, la rapidez y la legalidad son fundamentales para el éxito de su gestión humana.</p>
+        <div class="stats-beneficios">
+          <div class="stat-item"><span>33</span><small>años de experiencia</small></div>
+          <div class="stat-item"><span>+200</span><small>empresas aliadas</small></div>
+          <div class="stat-item"><span>100%</span><small>normatividad</small></div>
         </div>
-
-        <div class="convenio-card">
-          <img src="comfenalco.webp" alt="Comfenalco Antioquia">
-          <h4>Comfenalco Antioquia</h4>
-          <p>Si usted o su empresa están afiliados a la Caja de Compensación Comfenalco, disfruten de descuentos exclusivos en todo nuestro portafolio de laboratorio clínico y salud ocupacional presentando su carnet vigente.</p>
-        </div>
-
-        <div class="convenio-card">
-          <img src="udea.webp" alt="Universidad de Antioquia">
-          <h4>Universidad de Antioquia</h4>
-          <p>Somos punto de toma de muestras autorizado para pruebas especializadas de ADN, genética y paternidad, procesadas directamente con el respaldo científico de la Universidad de Antioquia.</p>
-        </div>
-
-        <div class="convenio-card">
-          <img src="plenitud.webp" alt="Plenitud">
-          <h4>Grupo Plenitud</h4>
-          <p>Los afiliados al grupo exequial Plenitud cuentan con beneficios directos en chequeos médicos preventivos y exámenes de rutina, pensados para el bienestar integral de toda la familia.</p>
-        </div>
-
       </div>
-      <button class="nav-btn next" onclick="moveSlide(1)">&#10095;</button>
+      <div class="nos-fig">
+        <img src="nosotrosimg.webp" alt="Equipo LABCCO">
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="section-box">
+    <h2 style="text-align:center;">Servicios Integrales SST</h2>
+    <div class="services-grid">
+      <div class="card"><div class="icono">🏢</div><h3>Exámenes de Ingreso</h3><p>Conceptos de aptitud laboral inmediatos para agilizar sus contrataciones.</p></div>
+      <div class="card"><div class="icono">👂</div><h3>Audiometría</h3><p>Evaluación auditiva en cabina sonoamortiguada certificada.</p></div>
+      <div class="card"><div class="icono">💨</div><h3>Espirometría</h3><p>Pruebas de función pulmonar para personal expuesto a riesgos.</p></div>
+      <div class="card"><div class="icono">👁️</div><h3>Visiometría</h3><p>Tamizaje visual para conductores y personal administrativo.</p></div>
+      <div class="card"><div class="icono">🏗️</div><h3>Alturas y Espacios</h3><p>Certificación médica para tareas de alto riesgo según ley.</p></div>
+      <div class="card"><div class="icono">🍔</div><h3>Manipulación Alimentos</h3><p>Exámenes clínicos y de laboratorio para sector horeca.</p></div>
+      <div class="card"><div class="icono">🧬</div><h3>Laboratorio Clínico</h3><p>Más de 500 tipos de pruebas con tecnología automatizada.</p></div>
+      <div class="card"><div class="icono">🌾</div><h3>Colinesterasa</h3><p>Control vital para empresas del sector agrícola y floricultor.</p></div>
+    </div>
+  </section>
+
+  <section class="section-box">
+    <h2 style="text-align:center;">Nuestros Aliados y Convenios</h2>
+    <div class="bcr-wrap">
+      <div class="bcr" id="carousel">
+        <div class="caja-conv">
+          <img src="comfenalco.webp" alt="Comfenalco">
+          <h4>Convenio Comfenalco</h4>
+          <p>Si su empresa está afiliada a Comfenalco Antioquia, acceda a beneficios y descuentos exclusivos en todo nuestro portafolio de servicios médicos y de laboratorio.</p>
+        </div>
+        <div class="caja-conv">
+          <img src="udea.webp" alt="UdeA">
+          <h4>Convenio UdeA</h4>
+          <p>Punto de toma de muestras autorizado para pruebas de ADN y genética con el respaldo científico de la Universidad de Antioquia.</p>
+        </div>
+        <div class="caja-conv">
+          <img src="plenitud.webp" alt="Plenitud">
+          <h4>Convenio Plenitud</h4>
+          <p>Beneficios especiales para los afiliados al plan de bienestar de Plenitud, garantizando atención prioritaria y tarifas preferenciales.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="contacto" class="section-box">
-    <h2>Visítenos en Rionegro</h2>
-    <div class="contact-wrapper">
-      
+    <h2 style="text-align:center;">Solicite su Cotización Corporativa</h2>
+    <div class="contact-grid">
       <div class="form-box">
-        <h3 style="margin-bottom:20px;">Solicitud de Información</h3>
-        <form action="https://formsubmit.co/calidad@labccosas.com" method="POST">
-          <div class="form-group">
-            <label>Nombre Completo / Empresa</label>
-            <input type="text" name="nombre" required>
-          </div>
-          <div class="form-group">
-            <label>Teléfono de Contacto</label>
-            <input type="tel" name="telefono" required>
-          </div>
-          <div class="form-group">
-            <label>Servicio de Interés</label>
-            <select name="servicio">
-              <option>Exámenes de Ingreso</option>
-              <option>Laboratorio Clínico</option>
-              <option>Convenios Empresariales</option>
-            </select>
-          </div>
-          <button type="submit" class="btn-submit">Enviar Mensaje</button>
+        <form class="fc" action="https://formsubmit.co/calidad@labccosas.com" method="POST">
+          <input type="text" name="empresa" placeholder="Nombre de la Empresa" required>
+          <input type="tel" name="whatsapp" placeholder="WhatsApp / Teléfono" required>
+          <select name="servicio">
+            <option>Cotización Exámenes Ocupacionales</option>
+            <option>Información Convenios</option>
+            <option>Laboratorio Clínico</option>
+          </select>
+          <button type="submit" class="btn-f">ENVIAR SOLICITUD</button>
         </form>
-        <div style="margin-top: 30px; font-size: 15px;">
-          <p><strong>Dirección:</strong> Carrera 48 #52-54, Edificio Santa Bárbara, Local 102.</p>
-          <p><strong>Referencia:</strong> Cerca al parque principal de Rionegro.</p>
-          <p><strong>Horario:</strong> Lunes a Viernes 7:00 a.m. - 5:00 p.m.</p>
-        </div>
+        <p style="margin-top:20px; font-size:14px;">📍 Cra 48 #52-54, Edificio Santa Bárbara, Rionegro.</p>
       </div>
-
-      <div class="map-box">
+      <div class="map-container">
         <iframe 
-          src="https://maps.google.com/maps?q=Laboratorio%20Cl%C3%ADnico%20LABCCO%20Rionegro&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy">
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.2255740448135!2d-75.4286754!3d6.1536009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428a11e18c89b%3A0x8673322d64f0e74e!2sLABCCO%20-%20Laboratorio%20Cl%C3%ADnico!5e0!3m2!1ses!2sco!4v1703000000000!5m2!1ses!2sco2" 
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
         </iframe>
       </div>
-      
     </div>
   </section>
 
-  <footer>
-    <div class="footer-content">
-      <div>
-        <img src="LABCCO-Photoroom.png" alt="Labcco Footer" style="height: 60px; margin-bottom: 20px;">
-        <p>Más de 33 años al servicio de la salud en el Oriente Antioqueño.</p>
-      </div>
-      <div>
-        <h4>Enlaces Rápidos</h4>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="empresas.html">Portal Empresas</a></li>
-          <li><a href="#">Descargar Resultados</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contacto Legal</h4>
-        <p>Vigilado Supersalud</p>
-        <p>NIT: 800.xxx.xxx-x</p>
-        <p>Rionegro - Colombia</p>
-      </div>
-    </div>
-    <div style="text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); margin-top:20px;">
-      <p>© 2026 LABCCO S.A.S. Todos los derechos reservados.</p>
-    </div>
+  <footer style="background: var(--azul-frio); color: #fff; padding: 40px; text-align: center;">
+    <p>© 2026 LABCCO S.A.S — Calidad y Respaldo en Salud Ocupacional.</p>
   </footer>
 
   <script>
-    // Navbar Scroll
+    // Navbar Scroll Effect
     window.addEventListener('scroll', function() {
       const nav = document.getElementById('navbar');
-      if (window.scrollY > 50) {
+      if (window.scrollY > 40) {
         nav.classList.add('scrolled');
         nav.classList.remove('top');
       } else {
-        nav.classList.remove('scrolled');
         nav.classList.add('top');
+        nav.classList.remove('scrolled');
       }
     });
 
-    // Carrusel Logic
-    let index = 0;
-    function moveSlide(step) {
-      const track = document.getElementById('track');
-      const cards = document.querySelectorAll('.convenio-card');
-      const cardWidth = cards[0].offsetWidth + 30; // Ancho + gap
-      const maxIndex = cards.length - 1; // Simplificado
-
-      index += step;
-      if (index < 0) index = 0;
-      // Lógica simple para evitar desbordamiento visual
-      // En producción idealmente se calcula según el ancho de pantalla
-      if (index > maxIndex - 1) index = maxIndex - 1; 
-
-      track.style.transform = `translateX(-${index * cardWidth}px)`;
-    }
+    // Carousel simple (Autoplay)
+    const track = document.getElementById('carousel');
+    let scrollAmount = 0;
+    setInterval(() => {
+      scrollAmount += 350;
+      if (scrollAmount >= track.scrollWidth - track.clientWidth) scrollAmount = 0;
+      track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }, 4000);
   </script>
-
 </body>
 </html>
