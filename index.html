@@ -15,15 +15,13 @@
   <meta property="og:url" content="https://labccosas.com/">
   <meta property="og:image" content="https://labccosas.com/hero1.webp">
 
-  <!-- PERFORMANCE OPTIMIZATION -->
-  <link rel="preload" as="image" href="hero1.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="hero1.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap&font-display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -40,263 +38,48 @@
     }
 
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    
-    html {
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-    
-    html,body{
-      height:100%;
-      max-width: 100vw;
-    }
-    
-    body{
-      font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-      color:var(--azul-frio);
-      background:var(--gris-claro);
-      -webkit-font-smoothing:antialiased;
-      line-height:1.5;
-    }
-    
+    html,body{height:100%}
+    body{font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--azul-frio);background:var(--gris-claro);-webkit-font-smoothing:antialiased;line-height:1.5}
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%;height:auto}
 
-    /* HERO VIDEO CON ANTI-CLS */
-    .banner-video{
-      position:relative;
-      height:100vh;
-      min-height:600px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      aspect-ratio: 16 / 9;
-    }
-    
-    @supports not (aspect-ratio: 16 / 9) {
-      .banner-video {
-        padding-bottom: 56.25%;
-      }
-    }
-    
-    .banner-video video{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      z-index:1;
-    }
-    
-    .banner-overlay{
-      position:absolute;
-      inset:0;
-      background:rgba(0,77,111,.55);
-      z-index:2;
-    }
-    
-    .banner-inner{
-      position:relative;
-      z-index:3;
-      width:100%;
-      max-width:1200px;
-      margin:0 auto;
-      padding:20px;
-      text-align:center;
-      animation:fadeIn 1.2s ease;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .banner-text h1{
-      font-size:clamp(2.2rem,5vw,3.5rem);
-      color:var(--blanco);
-      margin-bottom:12px;
-      font-weight:700;
-      letter-spacing:-.5px;
-    }
-    
-    .banner-sub{
-      font-size:clamp(1rem,2.5vw,1.4rem);
-      color:var(--blanco);
-      margin-bottom:8px;
-      font-weight:500;
-      max-width:680px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-    
-    .banner-tag{
-      font-size:clamp(.9rem,2vw,1.1rem);
-      color:var(--blanco);
-      margin-bottom:25px;
-      font-weight:600;
-    }
-    
-    .cta-banner{
-      display:inline-flex;
-      align-items:center;
-      justify-content: center;
-      background:var(--celeste);
-      color:var(--blanco);
-      padding:16px 32px;
-      border-radius:10px;
-      font-weight:700;
-      font-size:17px;
-      box-shadow:0 10px 24px rgba(0,0,0,.18);
-      transition:transform .2s;
-      margin-right:15px;
-      min-height:48px;
-      min-width: 44px;
-      transform: translateZ(0);
-      will-change: transform;
-    }
-    
+    .banner-video{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .banner-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+    .banner-overlay{position:absolute;inset:0;background:rgba(0,77,111,.55);z-index:2}
+    .banner-inner{position:relative;z-index:3;width:100%;max-width:1200px;margin:0 auto;padding:20px;text-align:center;animation:fadeIn 1.2s ease}
+    .banner-text h1{font-size:clamp(2.2rem,5vw,3.5rem);color:var(--blanco);margin-bottom:12px;font-weight:700;letter-spacing:-.5px}
+    .banner-sub{font-size:clamp(1rem,2.5vw,1.4rem);color:var(--blanco);margin-bottom:8px;font-weight:500;max-width:680px;margin-left:auto;margin-right:auto}
+    .banner-tag{font-size:clamp(.9rem,2vw,1.1rem);color:var(--blanco);margin-bottom:25px;font-weight:600}
+    .cta-banner{display:inline-flex;align-items:center;background:var(--celeste);color:var(--blanco);padding:16px 32px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .2s;margin-right:15px;min-height:48px}
     .cta-banner:hover{transform:scale(1.05)}
-    .cta-banner:active{transform:scale(0.97)}
-    
-    .cta-secundario{
-      display:inline-flex;
-      align-items:center;
-      justify-content: center;
-      background:var(--azul-frio);
-      color:var(--blanco);
-      padding:16px 32px;
-      border-radius:10px;
-      font-weight:700;
-      font-size:17px;
-      box-shadow:0 10px 24px rgba(0,0,0,.18);
-      transition:transform .2s;
-      min-height:48px;
-      min-width: 44px;
-      transform: translateZ(0);
-      will-change: transform;
-    }
-    
+    .cta-secundario{display:inline-flex;align-items:center;background:var(--azul-frio);color:var(--blanco);padding:16px 32px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .2s;min-height:48px}
     .cta-secundario:hover{transform:scale(1.05)}
-    .cta-secundario:active{transform:scale(0.97)}
 
     @media (prefers-reduced-motion:reduce),(max-width:768px){
       #bannerVid{display:none}
       .banner-video{background:url('hero1.webp') center/cover}
     }
 
-    /* TOP BAR */
-    .top-bar{
-      background:var(--celeste);
-      color:var(--blanco);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:8px;
-      padding:6px var(--margen);
-      height:34px;
-      font-size:14px;
-      border-bottom:none;
-      position:static;
-      z-index:1800;
-    }
-    
+    .top-bar{background:var(--celeste);color:var(--blanco);display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px var(--margen);height:34px;font-size:14px;border-bottom:none;position:static;z-index:1800}
     .top-col{display:flex;gap:8px;align-items:center}
     .top-left{flex:1;justify-content:flex-end}
     .top-center{flex:1.5;justify-content:center;gap:12px}
     .top-right{flex:1;justify-content:flex-start}
     .horario{display:flex;align-items:center;gap:5px;font-weight:600;white-space:nowrap}
-    
-    .contact-small{
-      display:inline-flex;
-      align-items:center;
-      gap:5px;
-      background:rgba(0,0,0,.08);
-      padding:3px 8px;
-      border-radius:16px;
-      font-weight:500;
-      font-size:13px;
-    }
-    
+    .contact-small{display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,.08);padding:3px 8px;border-radius:16px;font-weight:500;font-size:13px}
     .brand-extra{font-weight:600;font-size:12px;color:var(--blanco);white-space:nowrap}
 
-    /* NAVBAR */
-    .navbar{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:6px var(--margen);
-      height:80px;
-      background:transparent;
-      box-shadow:0 1px 6px transparent;
-      z-index:1500;
-      transition:margin-top .3s,background .3s,box-shadow .3s;
-    }
-    
+    .navbar{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:6px var(--margen);height:80px;background:transparent;box-shadow:0 1px 6px transparent;z-index:1500;transition:margin-top .3s,background .3s,box-shadow .3s}
     .navbar.top{margin-top:34px}
-    
-    .navbar.scrolled{
-      margin-top:0;
-      background:rgba(0, 77, 111, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow:0 4px 12px var(--sombra);
-    }
-    
-    #distintivo{
-      height:64px;
-      width:auto;
-      border-radius:6px;
-      box-shadow:0 6px 14px var(--sombra);
-    }
-    
+    .navbar.scrolled{margin-top:0;background:rgba(0, 77, 111, 0.85);box-shadow:0 4px 12px var(--sombra)}
+    #distintivo{height:64px;width:auto;border-radius:6px;box-shadow:0 6px 14px var(--sombra)}
     .brand{display:flex;align-items:center;gap:14px}
-    
-    #siteLogo{
-      height:72px;
-      width:auto;
-      border-radius:6px;
-    }
-    
-    .nav-links{
-      display:flex;
-      gap:28px;
-      align-items:center;
-    }
-    
-    .nav-links a{
-      font-weight:500;
-      font-size:18px;
-      padding:10px 8px;
-      color:var(--blanco);
-      transition:opacity .2s;
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-    }
-    
+    #siteLogo{height:72px;width:auto;border-radius:6px}
+    .nav-links{display:flex;gap:28px;align-items:center}
+    .nav-links a{font-weight:500;font-size:18px;padding:6px 4px;color:var(--blanco);transition:opacity .2s}
     .nav-links a:hover{opacity:.8}
 
-    /* MENU HAMBURGUESA */
-    .menu-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s;
-      z-index: 1400;
-    }
-
-    .menu-backdrop.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
+    /* Menu Hamburguesa */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -328,57 +111,17 @@
       transform: rotate(-45deg) translate(6px, -6px);
     }
 
-    /* SECTIONS */
-    .section-box{
-      max-width:1200px;
-      margin:0 auto;
-      padding:40px var(--margen);
-      background:var(--blanco);
-      border-radius:12px;
-      box-shadow:0 4px 18px var(--sombra);
-      margin-bottom:30px;
-    }
-    
-    .nos-hero{
-      display:flex;
-      flex-wrap:wrap;
-      gap:40px;
-      align-items:center;
-      margin-bottom:40px;
-    }
-    
+    .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
+    .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
     .nos-texto h2{font-size:24px;color:var(--negro);font-weight:600;margin-bottom:6px}
     .nos-texto h3{font-size:20px;color:var(--azul-suave);margin-bottom:12px}
-    
-    .nos-texto p{
-      font-size:clamp(16px, 4vw, 17px);
-      line-height:1.7;
-      margin-bottom:20px;
-      color:#333;
-    }
-    
-    .cta-inline{
-      display:inline-block;
-      background:var(--azul-suave);
-      color:#fff;
-      padding:10px 20px;
-      border-radius:8px;
-      font-weight:600;
-      font-size:15px;
-      box-shadow:0 4px 12px var(--sombra);
-      white-space:nowrap;
-      min-height: 44px;
-      min-width: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
+    .nos-texto p{font-size:17px;line-height:1.7;margin-bottom:20px;color:#333}
+    .cta-inline{display:inline-block;background:var(--azul-suave);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap}
     .nos-fig{flex:0 0 560px;text-align:center}
     .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sombra);width:100%}
 
-    /* STATS BENEFICIOS */
+    /* DISEÑO MINIMALISTA DE AUTORIDAD - STATS */
     .stats-beneficios {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -388,12 +131,10 @@
       border-top: 1px solid #edf2f7;
       text-align: center;
     }
-    
     .stat-item-benef {
       padding: 10px;
       position: relative;
     }
-    
     @media (min-width: 769px) {
       .stat-item-benef:not(:last-child)::after {
         content: '';
@@ -405,7 +146,6 @@
         background: #e2e8f0;
       }
     }
-    
     .stat-item-benef span {
       display: block;
       font-size: 48px;
@@ -414,7 +154,6 @@
       letter-spacing: -2px;
       margin-bottom: 5px;
     }
-    
     .stat-item-benef small {
       display: block;
       font-size: 13px;
@@ -423,7 +162,6 @@
       text-transform: uppercase;
       letter-spacing: 1.2px;
     }
-    
     .stat-item-benef p {
       font-size: 14px;
       color: #718096;
@@ -431,37 +169,32 @@
       font-weight: 400;
     }
 
-    /* SERVICIOS */
+    /* SERVICIOS - GRID MODERNO */
     .servicios-container {
       padding: 60px 0;
     }
-    
     .servicios-header {
       text-align: center;
       max-width: 800px;
       margin: 0 auto 50px;
       padding: 0 20px;
     }
-    
     .servicios-header h2 {
       font-size: clamp(2rem, 5vw, 2.8rem);
       color: var(--azul-frio);
       font-weight: 700;
       margin-bottom: 15px;
     }
-    
     .servicios-header p {
       color: #64748b;
       font-size: 1.1rem;
       line-height: 1.6;
     }
-    
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
     }
-    
     .service-card {
       background: #ffffff;
       padding: 35px;
@@ -473,13 +206,11 @@
       position: relative;
       overflow: hidden;
     }
-    
     .service-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(0, 77, 111, 0.08);
       border-color: var(--celeste);
     }
-    
     .service-icon {
       font-size: 26px;
       background: #f8fafc;
@@ -492,25 +223,21 @@
       margin-bottom: 25px;
       transition: background 0.3s;
     }
-    
     .service-card:hover .service-icon {
       background: var(--gris-claro);
     }
-    
     .service-card h3 {
       font-size: 20px;
       color: var(--azul-frio);
       margin-bottom: 15px;
       font-weight: 700;
     }
-    
     .service-card p {
-      font-size: clamp(16px, 3.5vw, 15px);
+      font-size: 15px;
       color: #64748b;
-      line-height: 1.65;
+      line-height: 1.6;
       margin: 0;
     }
-    
     .category-tag {
       font-size: 11px;
       font-weight: 700;
@@ -521,14 +248,13 @@
       display: block;
     }
 
-    /* CONVENIOS */
+    /* CONVENIOS - GRILLA FIJA */
     .aliados-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       margin-top: 40px;
     }
-    
     .aliado-card {
       background: #ffffff;
       padding: 40px 30px;
@@ -540,12 +266,10 @@
       align-items: center;
       transition: transform 0.3s ease;
     }
-    
     .aliado-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 35px rgba(0, 77, 111, 0.05);
     }
-    
     .aliado-card img {
       height: 80px;
       width: auto;
@@ -553,26 +277,22 @@
       filter: grayscale(20%);
       transition: filter 0.3s;
     }
-    
     .aliado-card:hover img {
       filter: grayscale(0%);
     }
-    
     .aliado-card h4 {
       font-size: 22px;
       color: var(--azul-frio);
       margin-bottom: 15px;
       font-weight: 700;
     }
-    
     .aliado-card p {
-      font-size: clamp(16px, 3.5vw, 15px);
+      font-size: 15px;
       color: #64748b;
-      line-height: 1.65;
+      line-height: 1.6;
       margin-bottom: 25px;
       flex-grow: 1;
     }
-    
     .btn-convenio {
       display: inline-block;
       padding: 12px 24px;
@@ -581,38 +301,29 @@
       font-size: 15px;
       transition: all 0.3s;
       width: 100%;
-      min-height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    
     .btn-negociar {
       background: var(--azul-frio);
       color: #fff;
     }
-    
     .btn-negociar:hover {
       background: var(--azul-suave);
       transform: scale(1.02);
     }
-    
     .btn-beneficio {
       border: 2px solid var(--celeste);
       color: var(--celeste);
     }
-    
     .btn-beneficio:hover {
       background: var(--celeste);
       color: #fff;
     }
 
-    /* CONTACTO */
+    /* CONTACTO MINIMALISTA */
     #contacto {
       background: #ffffff;
       padding: 80px var(--margen);
     }
-    
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -621,17 +332,14 @@
       margin: 0 auto;
       align-items: start;
     }
-    
     .contact-info h2 {
       font-size: 32px;
       color: var(--azul-frio);
       margin-bottom: 20px;
     }
-    
     .contact-details {
       margin-top: 30px;
     }
-    
     .detail-item {
       display: flex;
       align-items: center;
@@ -640,7 +348,6 @@
       font-size: 16px;
       color: #4a5568;
     }
-    
     .detail-item span {
       background: var(--gris-claro);
       width: 40px;
@@ -651,18 +358,14 @@
       border-radius: 50%;
       color: var(--celeste);
       font-size: 18px;
-      flex-shrink: 0;
     }
-    
     .form-container {
       background: #f8fafc;
       padding: 40px;
       border-radius: 24px;
       box-shadow: 0 4px 20px rgba(0, 77, 111, 0.03);
     }
-    
     .form-group { margin-bottom: 20px; }
-    
     .form-group label {
       display: block;
       margin-bottom: 8px;
@@ -670,27 +373,19 @@
       font-size: 14px;
       color: var(--azul-frio);
     }
-    
-    .form-group input, 
-    .form-group select, 
-    .form-group textarea {
+    .form-group input, .form-group select, .form-group textarea {
       width: 100%;
       padding: 14px;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
       font-family: inherit;
-      font-size: 16px;
       transition: all 0.3s;
     }
-    
-    .form-group input:focus, 
-    .form-group select:focus, 
-    .form-group textarea:focus {
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
       outline: none;
       border-color: var(--celeste);
       box-shadow: 0 0 0 3px rgba(0, 153, 204, 0.1);
     }
-    
     .btn-enviar {
       width: 100%;
       background: var(--azul-frio);
@@ -699,16 +394,10 @@
       border: none;
       border-radius: 12px;
       font-weight: 700;
-      font-size: 16px;
       cursor: pointer;
       transition: background 0.3s;
-      min-height: 48px;
     }
-    
-    .btn-enviar:hover { 
-      background: var(--azul-suave); 
-    }
-    
+    .btn-enviar:hover { background: var(--azul-suave); }
     .map-container {
       height: 350px;
       border-radius: 24px;
@@ -717,13 +406,12 @@
       border: 1px solid #edf2f7;
     }
 
-    /* FOOTER */
+    /* FOOTER PREMIUM */
     footer {
       background: #002d41;
       color: #cbd5e0;
       padding: 60px var(--margen) 30px;
     }
-    
     .footer-grid {
       max-width: 1200px;
       margin: 0 auto;
@@ -731,25 +419,16 @@
       grid-template-columns: 2fr 1fr 1fr;
       gap: 60px;
     }
-    
     .footer-logo img { height: 65px; margin-bottom: 20px; }
-    
     .footer-col h4 {
       color: white;
       margin-bottom: 20px;
       font-size: 18px;
     }
-    
     .footer-links { list-style: none; }
     .footer-links li { margin-bottom: 12px; }
-    .footer-links a { 
-      color: inherit; 
-      transition: color 0.3s;
-      display: inline-block;
-      padding: 4px 0;
-    }
+    .footer-links a { color: inherit; transition: color 0.3s; }
     .footer-links a:hover { color: var(--celeste); }
-    
     .footer-bottom {
       max-width: 1200px;
       margin: 60px auto 0;
@@ -759,13 +438,12 @@
       font-size: 14px;
     }
 
-    /* WHATSAPP BUTTON */
+    /* ANIMACIÓN WHATSAPP */
     @keyframes pulse-wpp {
       0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
       70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
       100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
-    
     .btn-wpp {
       position: fixed;
       right: 18px;
@@ -781,12 +459,10 @@
       align-items: center;
       justify-content: center;
       animation: pulse-wpp 2s infinite;
-      width: 56px;
-      height: 56px;
     }
 
     /* ============================================
-       RESPONSIVE DESIGN - MOBILE OPTIMIZATIONS
+       MOBILE OPTIMIZATIONS - NO AFECTA DESKTOP
        ============================================ */
 
     /* Tablets y Mobile Grande (≤900px) */
@@ -807,16 +483,7 @@
         --margen: 20px;
       }
 
-      * {
-        max-width: 100%;
-      }
-      
-      img, video, iframe {
-        max-width: 100%;
-        height: auto;
-      }
-
-      /* Ocultar Top Bar */
+      /* Ocultar Top Bar en móviles */
       .top-bar {
         display: none;
       }
@@ -848,18 +515,16 @@
         position: fixed;
         top: 65px;
         right: -100%;
-        width: min(320px, 85vw);
+        width: 280px;
         height: calc(100vh - 65px);
-        background: linear-gradient(135deg, rgba(0, 77, 111, 0.98), rgba(0, 119, 170, 0.95));
-        backdrop-filter: blur(12px);
+        background: rgba(0, 77, 111, 0.98);
+        backdrop-filter: blur(10px);
         flex-direction: column;
-        padding: 20px 0;
+        padding: 30px 20px;
         gap: 0;
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -8px 0 24px rgba(0,0,0,0.4);
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
         overflow-y: auto;
-        z-index: 1500;
-        -webkit-overflow-scrolling: touch;
       }
 
       .nav-links.active {
@@ -867,19 +532,13 @@
       }
 
       .nav-links a {
-        padding: 16px 20px;
-        font-size: 18px;
+        padding: 18px 0;
+        font-size: 20px;
         border-bottom: 1px solid rgba(255,255,255,0.1);
         width: 100%;
-        min-height: 56px;
+        min-height: 48px;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        transition: background 0.2s;
-      }
-
-      .nav-links a:active {
-        background: rgba(255,255,255,0.1);
       }
 
       /* Banner Hero Mobile */
@@ -919,7 +578,6 @@
         font-size: 18px;
         min-height: 48px;
         text-align: center;
-        box-shadow: 0 8px 20px rgba(0, 153, 204, 0.4);
       }
 
       /* Secciones */
@@ -1025,176 +683,160 @@
     }
   </style>
 
-  <!-- SCHEMA UNIFICADO (SEO YMYL OPTIMIZADO) -->
+  <!-- SCHEMAS JSON-LD -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["MedicalOrganization", "LocalBusiness"],
-        "@id": "https://labccosas.com/#organization",
-        "name": "LABCCO – Laboratorio Clínico Colombiano de Oriente",
-        "alternateName": "IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S",
-        "url": "https://labccosas.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://labccosas.com/LABCCO-Photoroom.png",
-          "width": 200,
-          "height": 72
-        },
-        "image": "https://labccosas.com/hero1.webp",
-        "description": "Laboratorio clínico habilitado en Rionegro con 33 años de experiencia. Especialistas en salud ocupacional, exámenes de ingreso y diagnóstico de alta precisión.",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Cra 48 #52-54, Edificio Santa Bárbara, Local 102",
-          "addressLocality": "Rionegro",
-          "addressRegion": "Antioquia",
-          "postalCode": "054040",
-          "addressCountry": "CO"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 6.1536009,
-          "longitude": -75.4286754
-        },
-        "telephone": "+576045311354",
-        "email": "calidad@labccosas.com",
-        "openingHours": "Mo-Fr 07:00-12:00,14:00-17:00, Sa 08:00-11:00",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-            "opens": "07:00",
-            "closes": "12:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-            "opens": "14:00",
-            "closes": "17:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
-            "opens": "08:00",
-            "closes": "11:00"
-          }
-        ],
-        "medicalSpecialty": ["OccupationalHealth", "LaboratoryScience", "ClinicalPathology"],
-        "sameAs": [
-          "https://www.facebook.com/labccosas",
-          "https://www.instagram.com/labccosas",
-          "https://maps.app.goo.gl/1XBnR9hSvuqZ2U9y8"
-        ],
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+576045311354",
-            "contactType": "customer service",
-            "areaServed": "CO",
-            "availableLanguage": "es"
-          },
-          {
-            "@type": "ContactPoint",
-            "telephone": "+573128274796",
-            "contactType": "sales",
-            "areaServed": "CO",
-            "availableLanguage": "es"
-          }
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "reviewCount": "30"
-        }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://labccosas.com/#webpage",
-        "url": "https://labccosas.com/",
-        "name": "Laboratorio Clínico en Rionegro | Resultados Rápidos – LABCCO",
-        "description": "Laboratorio clínico en Rionegro con resultados rápidos y confiables. Exámenes de laboratorio, salud ocupacional y atención a empresas.",
-        "isPartOf": {
-          "@id": "https://labccosas.com/#organization"
-        },
-        "breadcrumb": {
-          "@id": "https://labccosas.com/#breadcrumb"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://labccosas.com/#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Inicio",
-            "item": "https://labccosas.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Servicios",
-            "item": "https://labccosas.com/#servicios"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "¿Dónde está LABCCO en Rionegro?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Estamos en la Cra 48 #52-54, Edificio Santa Bárbara, a una cuadra del parque principal de Rionegro, Antioquia."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Entregan resultados el mismo día?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sí, entregamos resultados el mismo día para la mayoría de exámenes clínicos y ocupacionales si la muestra se toma antes de las 11 a.m."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Hacen exámenes a domicilio?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sí. Realizamos toma de muestras a domicilio en Rionegro y el Oriente Antioqueño sin costo adicional para particulares y empresas."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "ItemList",
-        "name": "Servicios principales LABCCO",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Exámenes de Ingreso Laboral Rionegro"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Salud Ocupacional Res. 3100"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Pruebas de Paternidad ADN"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Visiometría y Audiometría"
-          }
-        ]
-      }
-    ]
+  "@context": "https://schema.org",
+  "@type": ["MedicalOrganization","LocalBusiness"],
+  "name": "LABCCO – Laboratorio Clínico Colombiano de Oriente",
+  "image": "https://labccosas.com/hero1.webp",
+  "telephone": "+5745311354",
+  "email": "calidad@labccosas.com",
+  "url": "https://labccosas.com/",
+  "sameAs": [
+  "https://www.facebook.com/labccosas",
+  "https://www.instagram.com/labccosas",
+  "https://maps.app.goo.gl/1XBnR9hSvuqZ2U9y8"
+  ],
+  "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "Cra 48 #52-54, Edificio Santa Bárbara",
+  "addressLocality": "Rionegro",
+  "addressRegion": "Antioquia",
+  "postalCode": "054040",
+  "addressCountry": "CO"
+  },
+  "geo": {
+  "@type": "GeoCoordinates",
+  "latitude": 6.1536009,
+  "longitude": -75.4286754
+  },
+  "openingHoursSpecification": [
+  {
+  "@type": "OpeningHoursSpecification",
+  "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+  "opens": "07:00",
+  "closes": "12:00"
+  },
+  {
+  "@type": "OpeningHoursSpecification",
+  "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+  "opens": "14:00",
+  "closes": "17:00"
+  },
+  {
+  "@type": "OpeningHoursSpecification",
+  "dayOfWeek": "Saturday",
+  "opens": "08:00",
+  "closes": "11:00"
+  }
+  ],
+  "department": [
+  {"@type":"MedicalClinic","name":"Laboratorio Clínico General","serviceType":"Laboratory"},
+  {"@type":"MedicalClinic","name":"Salud Ocupacional","serviceType":"OccupationalHealth"}
+  ],
+  "mainEntityOfPage": {
+  "@type":"WebPage",
+  "@id":"https://labccosas.com/"
+  }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+  "@context":"https://schema.org",
+  "@type":"MedicalOrganization",
+  "name":"LABCCO – Laboratorio Clínico Colombiano de Oriente",
+  "url":"https://labccosas.com/",
+  "contactPoint":[
+  {
+  "@type":"ContactPoint",
+  "telephone":"+5745311354",
+  "contactType":"customer service",
+  "areaServed":"CO",
+  "availableLanguage":["es"]
+  },
+  {
+  "@type":"ContactPoint",
+  "telephone":"+573128274796",
+  "contactType":"sales",
+  "areaServed":"CO",
+  "availableLanguage":["es"]
+  }
+  ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://labccosas.com/"},
+  {"@type":"ListItem","position":2,"name":"Servicios","item":"https://labccosas.com/#servicios"}
+  ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {
+  "@type": "Question",
+  "name": "¿Dónde está LABCCO en Rionegro?",
+  "acceptedAnswer": {
+  "@type": "Answer",
+  "text": "Estamos en la Cra 48 #52-54, Edificio Santa Bárbara, a una cuadra del parque principal de Rionegro, Antioquia."
+  }
+  },
+  {
+  "@type": "Question",
+  "name": "¿Entregan resultados el mismo día?",
+  "acceptedAnswer": {
+  "@type": "Answer",
+  "text": "Sí. La mayoría de nuestros exámenes de laboratorio clínico y salud ocupacional se entregan el mismo día si la muestra se toma antes de las 11 a.m."
+  }
+  },
+  {
+  "@type": "Question",
+  "name": "¿Hacen exámenes a domicilio?",
+  "acceptedAnswer": {
+  "@type": "Answer",
+  "text": "Sí. Realizamos toma de muestras a domicilio en Rionegro y el Oriente Antioqueño sin costo adicional para particulares y empresas."
+  }
+  }
+  ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Exámenes de Ingreso Laboral Rionegro"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Salud Ocupacional Res. 3100"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Pruebas de Paternidad ADN"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Visiometría y Audiometría"
+    }
+  ]
   }
   </script>
 </head>
@@ -1217,7 +859,7 @@
     </div>
     
     <!-- Botón Hamburguesa (solo visible en móviles) -->
-    <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+    <button class="menu-toggle" aria-label="Abrir menú de navegación">
       <span></span>
       <span></span>
       <span></span>
@@ -1232,13 +874,10 @@
     </nav>
   </header>
 
-  <!-- Backdrop del menú móvil -->
-  <div class="menu-backdrop"></div>
-
   <main id="main">
     <!-- BANNER -->
     <section class="banner-video" id="inicio" aria-labelledby="hero-title">
-      <video id="bannerVid" autoplay muted loop playsinline preload="auto" poster="hero1.webp" width="1920" height="1080">
+      <video id="bannerVid" autoplay muted loop playsinline preload="auto" poster="hero1.webp">
         <source src="banner-lab.mp4" type="video/mp4">
         Tu navegador no soporta video HTML5.
       </video>
@@ -1256,10 +895,10 @@
           </p>
           
           <div style="margin-top: 30px;">
-            <a class="cta-banner" href="https://wa.me/573128274796?text=Hola,%20quisiera%20agendar%20una%20cita" aria-label="Agendar cita por WhatsApp">
+            <a class="cta-banner" href="https://wa.me/573128274796?text=Hola,%20quisiera%20agendar%20una%20cita">
               Agendar mi Cita
             </a>
-            <a class="cta-secundario" href="empresas.html" aria-label="Solicitar cotización empresarial">
+            <a class="cta-secundario" href="empresas.html">
               Cotizar para Empresas
             </a>
           </div>
@@ -1272,14 +911,13 @@
       <div class="nos-hero">
         <div class="nos-texto">
           <p style="font-size:14px;color:#555;margin-bottom:4px;">Laboratorio clínico habilitado en Rionegro – 33 años de experiencia</p>
-          <h2>LABCCO: Líderes en Salud Ocupacional</h2>
           <h3>Laboratorio habilitado por el Ministerio de Salud (Resolución 3100)</h3>
           <p>Desde 1992 trabajamos por la salud y el bienestar de Colombia. Nos especializamos en laboratorio clínico general, salud ocupacional y diagnóstico especializado para empresas y particulares.</p>
           <p>Nuestro equipo humano está altamente calificado y usa tecnología de punta para garantizar resultados precisos y oportunos.</p>
           <a class="cta-inline" href="#contacto">Agendar cita</a>
         </div>
         <div class="nos-fig">
-          <img src="nosotrosimg.webp" alt="Instalaciones LABCCO Rionegro" width="560" height="420" loading="lazy">
+          <img src="nosotrosimg.webp" alt="Instalaciones LABCCO Rionegro" loading="lazy">
         </div>
       </div>
       
@@ -1315,89 +953,89 @@
       </div>
 
       <div class="services-grid">
-        <article class="service-card">
+        <div class="service-card">
           <small class="category-tag">Salud Ocupacional</small>
-          <div class="service-icon" aria-hidden="true">💼</div>
+          <div class="service-icon">💼</div>
           <h3>Exámenes de Ingreso</h3>
           <p>Evaluaciones de aptitud laboral con entrega inmediata de conceptos médicos para contratación.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
+        <div class="service-card">
           <small class="category-tag">Salud Ocupacional</small>
-          <div class="service-icon" aria-hidden="true">🏗️</div>
+          <div class="service-icon">🏗️</div>
           <h3>Trabajo en Alturas</h3>
           <p>Certificación médica bajo normativa legal vigente para garantizar seguridad en tareas de alto riesgo.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
+        <div class="service-card">
           <small class="category-tag">Salud Ocupacional</small>
-          <div class="service-icon" aria-hidden="true">👂</div>
+          <div class="service-icon">👂</div>
           <h3>Visiometría y Audiometría</h3>
           <p>Tamizaje sensorial completo en cabina certificada para conductores y personal operativo.</p>
-        </article>
+        </div>
 
-        <article class="service-card" style="border-bottom: 3px solid var(--celeste);">
+        <div class="service-card" style="border-bottom: 3px solid var(--celeste);">
           <small class="category-tag">Especialidad Agrícola</small>
-          <div class="service-icon" aria-hidden="true">🧪</div>
+          <div class="service-icon">🧪</div>
           <h3>Colinesterasa Eritrocitaria</h3>
           <p>Prueba crítica para el monitoreo de exposición a plaguicidas, con alta precisión para el sector del agro.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
+        <div class="service-card">
           <small class="category-tag">Salud Ocupacional</small>
-          <div class="service-icon" aria-hidden="true">💨</div>
+          <div class="service-icon">💨</div>
           <h3>Espirometría</h3>
           <p>Pruebas de función pulmonar para trabajadores expuestos a polvos, humos o químicos.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
+        <div class="service-card">
           <small class="category-tag">Laboratorio Clínico</small>
-          <div class="service-icon" aria-hidden="true">🛡️</div>
+          <div class="service-icon">🛡️</div>
           <h3>Perfil de Salud Sexual</h3>
           <p>Detección profesional de ITS con absoluta reserva, confidencialidad y acompañamiento.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
+        <div class="service-card">
           <small class="category-tag">Especializado</small>
-          <div class="service-icon" aria-hidden="true">👶</div>
+          <div class="service-icon">👶</div>
           <h3>Prueba de Embarazo</h3>
           <p>Análisis cuantitativo de alta sensibilidad que permite determinar las semanas exactas de gestación.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
+        <div class="service-card">
           <small class="category-tag">Especializado</small>
-          <div class="service-icon" aria-hidden="true">🧬</div>
+          <div class="service-icon">🧬</div>
           <h3>Pruebas de ADN</h3>
           <p>Estudios de paternidad y parentesco con el rigor científico de la Universidad de Antioquia.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
+        <div class="service-card">
           <small class="category-tag">Salud Masculina</small>
-          <div class="service-icon" aria-hidden="true">🔬</div>
+          <div class="service-icon">🔬</div>
           <h3>Espermograma</h3>
           <p>Análisis detallados de fertilidad y control de efectividad para pacientes post-vasectomía.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
+        <div class="service-card">
           <small class="category-tag">Laboratorio Clínico</small>
-          <div class="service-icon" aria-hidden="true">💉</div>
+          <div class="service-icon">💉</div>
           <h3>Laboratorio Clínico</h3>
           <p>Procesamiento automatizado de muestras nivel I, II y III con resultados el mismo día.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
+        <div class="service-card">
           <small class="category-tag">Salud Ocupacional</small>
-          <div class="service-icon" aria-hidden="true">🍔</div>
+          <div class="service-icon">🍔</div>
           <h3>Manipulación Alimentos</h3>
           <p>Perfiles microbiológicos completos con certificación de aptitud para el sector alimentos.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
+        <div class="service-card">
           <small class="category-tag">Salud Ocupacional</small>
-          <div class="service-icon" aria-hidden="true">🏥</div>
+          <div class="service-icon">🏥</div>
           <h3>Vacunación</h3>
           <p>Esquemas de protección (Tétano, Influenza) para prevenir riesgos biológicos en la empresa.</p>
-        </article>
+        </div>
       </div>
     </section>
 
@@ -1409,32 +1047,32 @@
       </div>
 
       <div class="aliados-grid">
-        <article class="aliado-card">
-          <img src="cerrandonegocio.webp" alt="Atención Corporativa LABCCO" width="300" height="200" loading="lazy">
+        <div class="aliado-card">
+          <img src="cerrandonegocio.webp" alt="Atención Corporativa LABCCO" loading="lazy">
           <h4>Convenios Empresariales</h4>
           <p>Optimice sus costos de contratación. Ofrecemos tarifas preferenciales escalables y facturación mensual consolidada para empresas del Oriente Antioqueño.</p>
           <a class="btn-convenio btn-negociar" href="https://wa.me/573128274796?text=Deseo%20solicitar%20una%20cotización%20corporativa%20y%20negociar%20tarifas%20para%20mi%20empresa">
             Negociar Tarifas Especiales
           </a>
-        </article>
+        </div>
 
-        <article class="aliado-card">
-          <img src="comfenalco.webp" alt="Logo Comfenalco" width="150" height="80" loading="lazy">
+        <div class="aliado-card">
+          <img src="comfenalco.webp" alt="Logo Comfenalco" loading="lazy">
           <h4>Comfenalco Antioquia</h4>
           <p>Si es afiliado a Comfenalco, usted y su familia pueden acceder a descuentos exclusivos en todo nuestro portafolio de exámenes clínicos y salud ocupacional.</p>
           <a class="btn-convenio btn-beneficio" href="https://wa.me/573128274796?text=Soy%20afiliado%20a%20Comfenalco%20y%20quiero%20conocer%20mis%20descuentos">
             Consultar Descuentos
           </a>
-        </article>
+        </div>
 
-        <article class="aliado-card">
-          <img src="udea.webp" alt="Logo Universidad de Antioquia" width="150" height="80" loading="lazy">
+        <div class="aliado-card">
+          <img src="udea.webp" alt="Logo Universidad de Antioquia" loading="lazy">
           <h4>Respaldo UdeA</h4>
           <p>Punto de toma de muestras autorizado para pruebas de ADN y genética, procesadas con el rigor científico y la tecnología de la Universidad de Antioquia.</p>
           <a class="btn-convenio btn-beneficio" href="https://wa.me/573128274796?text=Deseo%20información%20sobre%20las%20pruebas%20de%20ADN%20con%20la%20UdeA">
             Solicitar Información
           </a>
-        </article>
+        </div>
       </div>
     </section>
 
@@ -1447,28 +1085,28 @@
           
           <div class="contact-details">
             <div class="detail-item">
-              <span aria-hidden="true">📍</span>
+              <span>📍</span>
               <div>
                 <strong>Dirección</strong><br>
                 Carrera 48 #52-54, Edificio Santa Bárbara, Local 102.
               </div>
             </div>
             <div class="detail-item">
-              <span aria-hidden="true">📞</span>
+              <span>📞</span>
               <div>
                 <strong>Teléfono Fijo</strong><br>
-                <a href="tel:+5745311354">(604) 531 13 54</a>
+                (604) 531 13 54
               </div>
             </div>
             <div class="detail-item">
-              <span aria-hidden="true">📱</span>
+              <span>📱</span>
               <div>
                 <strong>WhatsApp</strong><br>
-                <a href="https://wa.me/573128274796">312 827 4796</a>
+                312 827 4796
               </div>
             </div>
             <div class="detail-item">
-              <span aria-hidden="true">⏰</span>
+              <span>⏰</span>
               <div>
                 <strong>Atención</strong><br>
                 Lun - Vie: 7:00 am - 5:00 pm | Sáb: 8:00 am - 11:00 am
@@ -1479,12 +1117,7 @@
           <div class="map-container">
             <iframe 
               src="https://maps.google.com/maps?q=Laboratorio%20Cl%C3%ADnico%20LABCCO%20Rionegro&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-              width="100%" 
-              height="100%" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy"
-              title="Ubicación LABCCO en Google Maps">
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
             </iframe>
           </div>
         </div>
@@ -1493,16 +1126,16 @@
           <h3 style="margin-bottom: 25px; color: var(--azul-frio);">Envíenos un mensaje</h3>
           <form action="https://formsubmit.co/calidad@labccosas.com" method="POST">
             <div class="form-group">
-              <label for="name">Nombre o Empresa</label>
-              <input type="text" id="name" name="name" placeholder="Ej: Juan Pérez / Empresa S.A.S" required>
+              <label>Nombre o Empresa</label>
+              <input type="text" name="name" placeholder="Ej: Juan Pérez / Empresa S.A.S" required>
             </div>
             <div class="form-group">
-              <label for="phone">WhatsApp / Teléfono</label>
-              <input type="tel" id="phone" name="phone" placeholder="312..." required>
+              <label>WhatsApp / Teléfono</label>
+              <input type="tel" name="phone" placeholder="312..." required>
             </div>
             <div class="form-group">
-              <label for="service">Servicio de interés</label>
-              <select id="service" name="service">
+              <label>Servicio de interés</label>
+              <select name="service">
                 <option>Exámenes de Ingreso Laboral</option>
                 <option>Laboratorio Clínico General</option>
                 <option>Salud Sexual / ITS</option>
@@ -1511,10 +1144,10 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="message">¿En qué podemos ayudarle?</label>
-              <textarea id="message" name="message" rows="4" placeholder="Escriba su consulta aquí..."></textarea>
+              <label>¿En qué podemos ayudarle?</label>
+              <textarea name="message" rows="4" placeholder="Escriba su consulta aquí..."></textarea>
             </div>
-            <button type="submit" class="btn-enviar">Solicitar Cotización Empresarial</button>
+            <button type="submit" class="btn-enviar">Enviar Solicitud</button>
           </form>
         </div>
       </div>
@@ -1527,7 +1160,7 @@
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
           
-          <article>
+          <div>
             <h3 style="color: #0077cc; border-bottom: 2px solid #e9f6ff; padding-bottom: 10px;">Ingreso y Riesgo</h3>
             <ul style="list-style: none; padding: 0; line-height: 2;">
               <li><a href="servicios/examen-medico-ingreso-laboral.html" style="text-decoration: none; color: #444;">➜ Ingreso Laboral (Resultados Hoy)</a></li>
@@ -1535,9 +1168,9 @@
               <li><a href="servicios/examen-aptitud-brigadistas.html" style="text-decoration: none; color: #444;">➜ Aptitud para Brigadistas</a></li>
               <li><a href="servicios/medicina-preventiva-del-trabajo.html" style="text-decoration: none; color: #444;">➜ Medicina Preventiva (Empresas)</a></li>
             </ul>
-          </article>
+          </div>
 
-          <article>
+          <div>
             <h3 style="color: #0077cc; border-bottom: 2px solid #e9f6ff; padding-bottom: 10px;">Exámenes por Cargo</h3>
             <ul style="list-style: none; padding: 0; line-height: 2;">
               <li><a href="servicios/manipuladores-de-alimentos-rionegro.html" style="text-decoration: none; color: #444;">➜ Manipulación de Alimentos</a></li>
@@ -1545,9 +1178,9 @@
               <li><a href="servicios/examen-medico-para-soldadores-rionegro.html" style="text-decoration: none; color: #444;">➜ Soldadores y Altas Temperaturas</a></li>
               <li><a href="servicios/examen-medico-para-vigilantes-rionegro.html" style="text-decoration: none; color: #444;">➜ Personal de Seguridad</a></li>
             </ul>
-          </article>
+          </div>
 
-          <article>
+          <div>
             <h3 style="color: #0077cc; border-bottom: 2px solid #e9f6ff; padding-bottom: 10px;">Laboratorio Avanzado</h3>
             <ul style="list-style: none; padding: 0; line-height: 2;">
               <li><a href="servicios/pruebas-paternidad-adn-rionegro.html" style="text-decoration: none; color: #444;">➜ Pruebas de Paternidad ADN</a></li>
@@ -1555,7 +1188,7 @@
               <li><a href="servicios/prueba-colinesterasa-riesgo-quimico.html" style="text-decoration: none; color: #444;">➜ Prueba de Colinesterasa</a></li>
               <li><a href="servicios/audiometria-ocupacional.html" style="text-decoration: none; color: #444;">➜ Audiometría en Cabina</a></li>
             </ul>
-          </article>
+          </div>
 
         </div>
 
@@ -1572,7 +1205,7 @@
   <footer>
     <div class="footer-grid">
       <div class="footer-col footer-logo">
-        <img src="LABCCO-Photoroom.png" alt="LABCCO Logo" width="200" height="65" loading="lazy">
+        <img src="LABCCO-Photoroom.png" alt="LABCCO Logo Blanco" loading="lazy">
         <p style="line-height: 1.7;">Más de 33 años liderando la salud ocupacional y el diagnóstico clínico en el Oriente Antioqueño. Calidad humana y técnica a su servicio.</p>
       </div>
       
@@ -1603,10 +1236,7 @@
     </div>
   </footer>
 
-  <a class="btn-wpp" href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" aria-label="Chatear con LABCCO por WhatsApp">
-    <span style="position: absolute; width: 1px; height: 1px; overflow: hidden;">WhatsApp LABCCO</span>
-    📱
-  </a>
+  <a class="btn-wpp" href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp LABCCO">📱</a>
 
   <script>
     // Navbar Scroll Effect
@@ -1621,24 +1251,19 @@
       }
     });
 
-    // Menu Hamburguesa Toggle - VERSIÓN MEJORADA
+    // Menu Hamburguesa Toggle
     document.addEventListener('DOMContentLoaded', function() {
       const menuToggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
-      const backdrop = document.querySelector('.menu-backdrop');
       
-      if (menuToggle && backdrop) {
-        // Abrir/Cerrar menú
+      if (menuToggle) {
         menuToggle.addEventListener('click', function() {
-          const isActive = this.classList.toggle('active');
+          this.classList.toggle('active');
           navLinks.classList.toggle('active');
-          backdrop.classList.toggle('active');
-          
-          // Actualizar aria-expanded para accesibilidad
-          this.setAttribute('aria-expanded', isActive);
           
           // Prevenir scroll del body cuando menú está abierto
-          document.body.style.overflow = isActive ? 'hidden' : '';
+          document.body.style.overflow = 
+            navLinks.classList.contains('active') ? 'hidden' : '';
         });
 
         // Cerrar menú al hacer click en un link
@@ -1646,28 +1271,17 @@
           link.addEventListener('click', function() {
             navLinks.classList.remove('active');
             menuToggle.classList.remove('active');
-            backdrop.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
           });
         });
 
-        // Cerrar menú al hacer click en el backdrop
-        backdrop.addEventListener('click', function() {
-          navLinks.classList.remove('active');
-          menuToggle.classList.remove('active');
-          backdrop.classList.remove('active');
-          menuToggle.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
-        });
-
-        // Cerrar menú con tecla ESC
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        // Cerrar menú al hacer click fuera
+        document.addEventListener('click', function(e) {
+          if (!navLinks.contains(e.target) && 
+              !menuToggle.contains(e.target) && 
+              navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             menuToggle.classList.remove('active');
-            backdrop.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
           }
         });
