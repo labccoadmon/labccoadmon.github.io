@@ -50,9 +50,9 @@
     .banner-text h1{font-size:clamp(2.2rem,5vw,3.5rem);color:var(--blanco);margin-bottom:12px;font-weight:700;letter-spacing:-.5px}
     .banner-sub{font-size:clamp(1rem,2.5vw,1.4rem);color:var(--blanco);margin-bottom:8px;font-weight:500;max-width:680px;margin-left:auto;margin-right:auto}
     .banner-tag{font-size:clamp(.9rem,2vw,1.1rem);color:var(--blanco);margin-bottom:25px;font-weight:600}
-    .cta-banner{display:inline-flex;align-items:center;background:var(--celeste);color:var(--blanco);padding:14px 28px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .2s;margin-right:15px}
+    .cta-banner{display:inline-flex;align-items:center;background:var(--celeste);color:var(--blanco);padding:16px 32px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .2s;margin-right:15px;min-height:48px}
     .cta-banner:hover{transform:scale(1.05)}
-    .cta-secundario{display:inline-flex;align-items:center;background:var(--azul-frio);color:var(--blanco);padding:14px 28px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .2s}
+    .cta-secundario{display:inline-flex;align-items:center;background:var(--azul-frio);color:var(--blanco);padding:16px 32px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .2s;min-height:48px}
     .cta-secundario:hover{transform:scale(1.05)}
 
     @media (prefers-reduced-motion:reduce),(max-width:768px){
@@ -78,6 +78,38 @@
     .nav-links{display:flex;gap:28px;align-items:center}
     .nav-links a{font-weight:500;font-size:18px;padding:6px 4px;color:var(--blanco);transition:opacity .2s}
     .nav-links a:hover{opacity:.8}
+
+    /* Menu Hamburguesa */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1600;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 3px;
+      transition: all 0.3s;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
 
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
@@ -160,7 +192,7 @@
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
     }
     .service-card {
@@ -429,11 +461,225 @@
       animation: pulse-wpp 2s infinite;
     }
 
-    @media(max-width:720px){
-      .nos-hero{flex-direction:column;text-align:center}
-      .contact-grid, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-      #contacto { padding: 40px 20px; }
-      .services-grid { grid-template-columns: 1fr; }
+    /* ============================================
+       MOBILE OPTIMIZATIONS - NO AFECTA DESKTOP
+       ============================================ */
+
+    /* Tablets y Mobile Grande (≤900px) */
+    @media (max-width: 900px) {
+      :root {
+        --margen: 30px;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    /* Tablets y Mobile (≤768px) */
+    @media (max-width: 768px) {
+      :root {
+        --margen: 20px;
+      }
+
+      /* Ocultar Top Bar en móviles */
+      .top-bar {
+        display: none;
+      }
+
+      /* Navbar Mobile */
+      .navbar {
+        height: 65px;
+        padding: 8px 20px;
+      }
+
+      .navbar.top {
+        margin-top: 0;
+      }
+
+      #siteLogo {
+        height: 50px;
+      }
+
+      #distintivo {
+        height: 45px;
+      }
+
+      /* Menú Hamburguesa Activo */
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 65px;
+        right: -100%;
+        width: 280px;
+        height: calc(100vh - 65px);
+        background: rgba(0, 77, 111, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 0;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+        overflow-y: auto;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links a {
+        padding: 18px 0;
+        font-size: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Banner Hero Mobile */
+      .banner-video {
+        height: 100vh;
+        min-height: 600px;
+      }
+
+      .banner-inner {
+        padding: 20px;
+      }
+
+      .banner-text h1 {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+        line-height: 1.2;
+        margin-bottom: 15px;
+      }
+
+      .banner-sub {
+        font-size: clamp(0.95rem, 4vw, 1.1rem);
+        margin-bottom: 10px;
+      }
+
+      .banner-tag {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+
+      /* CTAs en Columna */
+      .cta-banner, .cta-secundario {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        margin: 10px auto;
+        padding: 18px 32px;
+        font-size: 18px;
+        min-height: 48px;
+        text-align: center;
+      }
+
+      /* Secciones */
+      .section-box {
+        padding: 30px 20px;
+        margin-bottom: 20px;
+      }
+
+      /* Nosotros */
+      .nos-hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+      }
+
+      .nos-fig {
+        flex: 1;
+      }
+
+      /* Stats */
+      .stats-beneficios {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
+
+      .stat-item-benef span {
+        font-size: 40px;
+      }
+
+      /* Servicios */
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .service-card {
+        padding: 25px;
+      }
+
+      /* Aliados */
+      .aliados-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      /* Contacto */
+      #contacto {
+        padding: 40px 20px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .form-container {
+        padding: 30px 20px;
+      }
+
+      /* Footer */
+      footer {
+        padding: 40px 20px 20px;
+      }
+    }
+
+    /* Mobile Pequeño (≤640px) */
+    @media (max-width: 640px) {
+      .stats-beneficios {
+        grid-template-columns: 1fr;
+      }
+
+      .banner-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .cta-banner, .cta-secundario {
+        font-size: 16px;
+        padding: 16px 24px;
+      }
+    }
+
+    /* Mobile Extra Pequeño (≤375px) */
+    @media (max-width: 375px) {
+      .navbar {
+        padding: 8px 15px;
+      }
+
+      #siteLogo {
+        height: 45px;
+      }
+
+      #distintivo {
+        height: 40px;
+      }
+
+      .section-box {
+        padding: 25px 15px;
+      }
+
+      .service-card {
+        padding: 20px;
+      }
     }
   </style>
 
@@ -611,6 +857,14 @@
       <img id="siteLogo" src="LABCCO-Photoroom.png" alt="Logo LABCCO - Laboratorio Clínico Rionegro" width="200" height="72" loading="eager">
       <img id="distintivo" src="distintivo30.png" alt="Distintivo 30 años de experiencia en salud" width="64" height="64" loading="eager">
     </div>
+    
+    <!-- Botón Hamburguesa (solo visible en móviles) -->
+    <button class="menu-toggle" aria-label="Abrir menú de navegación">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
     <nav class="nav-links" aria-label="Enlaces principales">
       <a href="index.html">Inicio</a>
       <a href="#nosotros">Nosotros</a>
@@ -663,7 +917,7 @@
           <a class="cta-inline" href="#contacto">Agendar cita</a>
         </div>
         <div class="nos-fig">
-          <img src="nosotrosimg.webp" alt="Instalaciones LABCCO Rionegro">
+          <img src="nosotrosimg.webp" alt="Instalaciones LABCCO Rionegro" loading="lazy">
         </div>
       </div>
       
@@ -794,7 +1048,7 @@
 
       <div class="aliados-grid">
         <div class="aliado-card">
-          <img src="cerrandonegocio.webp" alt="Atención Corporativa LABCCO">
+          <img src="cerrandonegocio.webp" alt="Atención Corporativa LABCCO" loading="lazy">
           <h4>Convenios Empresariales</h4>
           <p>Optimice sus costos de contratación. Ofrecemos tarifas preferenciales escalables y facturación mensual consolidada para empresas del Oriente Antioqueño.</p>
           <a class="btn-convenio btn-negociar" href="https://wa.me/573128274796?text=Deseo%20solicitar%20una%20cotización%20corporativa%20y%20negociar%20tarifas%20para%20mi%20empresa">
@@ -803,7 +1057,7 @@
         </div>
 
         <div class="aliado-card">
-          <img src="comfenalco.webp" alt="Logo Comfenalco">
+          <img src="comfenalco.webp" alt="Logo Comfenalco" loading="lazy">
           <h4>Comfenalco Antioquia</h4>
           <p>Si es afiliado a Comfenalco, usted y su familia pueden acceder a descuentos exclusivos en todo nuestro portafolio de exámenes clínicos y salud ocupacional.</p>
           <a class="btn-convenio btn-beneficio" href="https://wa.me/573128274796?text=Soy%20afiliado%20a%20Comfenalco%20y%20quiero%20conocer%20mis%20descuentos">
@@ -812,7 +1066,7 @@
         </div>
 
         <div class="aliado-card">
-          <img src="udea.webp" alt="Logo Universidad de Antioquia">
+          <img src="udea.webp" alt="Logo Universidad de Antioquia" loading="lazy">
           <h4>Respaldo UdeA</h4>
           <p>Punto de toma de muestras autorizado para pruebas de ADN y genética, procesadas con el rigor científico y la tecnología de la Universidad de Antioquia.</p>
           <a class="btn-convenio btn-beneficio" href="https://wa.me/573128274796?text=Deseo%20información%20sobre%20las%20pruebas%20de%20ADN%20con%20la%20UdeA">
@@ -951,7 +1205,7 @@
   <footer>
     <div class="footer-grid">
       <div class="footer-col footer-logo">
-        <img src="LABCCO-Photoroom.png" alt="LABCCO Logo Blanco">
+        <img src="LABCCO-Photoroom.png" alt="LABCCO Logo Blanco" loading="lazy">
         <p style="line-height: 1.7;">Más de 33 años liderando la salud ocupacional y el diagnóstico clínico en el Oriente Antioqueño. Calidad humana y técnica a su servicio.</p>
       </div>
       
@@ -985,6 +1239,7 @@
   <a class="btn-wpp" href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp LABCCO">📱</a>
 
   <script>
+    // Navbar Scroll Effect
     window.addEventListener('scroll', function() {
       const nav = document.getElementById('navbar');
       if (window.scrollY > 50) {
@@ -993,6 +1248,43 @@
       } else {
         nav.classList.remove('scrolled');
         nav.classList.add('top');
+      }
+    });
+
+    // Menu Hamburguesa Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+          this.classList.toggle('active');
+          navLinks.classList.toggle('active');
+          
+          // Prevenir scroll del body cuando menú está abierto
+          document.body.style.overflow = 
+            navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Cerrar menú al hacer click en un link
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        });
+
+        // Cerrar menú al hacer click fuera
+        document.addEventListener('click', function(e) {
+          if (!navLinks.contains(e.target) && 
+              !menuToggle.contains(e.target) && 
+              navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
       }
     });
   </script>
