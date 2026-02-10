@@ -652,6 +652,181 @@
       font-size:20px
     }
     
+    /* Calculadora de Ahorro */
+    .calculadora-section{
+      background:linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+      padding:80px 0;
+      position:relative;
+      overflow:hidden
+    }
+    .calculadora-section::before{
+      content:'💰';
+      position:absolute;
+      top:-20px;
+      right:5%;
+      font-size:200px;
+      opacity:.03;
+      pointer-events:none
+    }
+    .calculadora-container{
+      max-width:1000px;
+      margin:0 auto;
+      padding:0 var(--margen)
+    }
+    .calculadora-header{
+      text-align:center;
+      margin-bottom:50px
+    }
+    .calculadora-header h2{
+      color:var(--azul);
+      margin-bottom:15px
+    }
+    .calculadora-header p{
+      color:#666;
+      font-size:18px;
+      max-width:600px;
+      margin:0 auto
+    }
+    .calculadora-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+      margin-bottom:40px
+    }
+    .calculadora-card{
+      background:#fff;
+      padding:35px;
+      border-radius:var(--radio);
+      box-shadow:0 10px 40px rgba(0,0,0,.08);
+      text-align:center;
+      position:relative;
+      transition:transform .3s
+    }
+    .calculadora-card:hover{
+      transform:translateY(-5px)
+    }
+    .calculadora-card.tradicional{
+      border-top:5px solid #e0e0e0
+    }
+    .calculadora-card.labcco{
+      border-top:5px solid var(--exito);
+      transform:scale(1.05);
+      box-shadow:0 15px 50px rgba(0,200,83,.15)
+    }
+    .calculadora-card.labcco:hover{
+      transform:scale(1.05) translateY(-5px)
+    }
+    .calculadora-badge{
+      position:absolute;
+      top:-12px;
+      left:50%;
+      transform:translateX(-50%);
+      background:var(--exito);
+      color:#fff;
+      padding:6px 20px;
+      border-radius:20px;
+      font-size:12px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:1px
+    }
+    .calculadora-icon{
+      font-size:48px;
+      margin-bottom:20px
+    }
+    .calculadora-card h3{
+      font-size:22px;
+      margin-bottom:10px;
+      color:var(--azul)
+    }
+    .calculadora-card.tradicional h3{
+      color:#666
+    }
+    .calculadora-card.labcco h3{
+      color:var(--exito)
+    }
+    .calculadora-descripcion{
+      font-size:14px;
+      color:#888;
+      margin-bottom:25px;
+      line-height:1.6
+    }
+    .calculadora-monto{
+      font-size:48px;
+      font-weight:800;
+      margin:20px 0;
+      line-height:1
+    }
+    .calculadora-card.tradicional .calculadora-monto{
+      color:#666
+    }
+    .calculadora-card.labcco .calculadora-monto{
+      color:var(--exito)
+    }
+    .calculadora-monto span{
+      font-size:16px;
+      font-weight:500;
+      display:block;
+      margin-top:8px;
+      color:#888
+    }
+    .calculadora-detalle{
+      background:var(--gris-medio);
+      padding:15px;
+      border-radius:8px;
+      margin-top:20px;
+      font-size:13px;
+      color:#666;
+      text-align:left
+    }
+    .calculadora-detalle ul{
+      list-style:none;
+      padding:0;
+      margin:0
+    }
+    .calculadora-detalle li{
+      padding:5px 0;
+      display:flex;
+      align-items:center;
+      gap:8px
+    }
+    .calculadora-detalle li::before{
+      content:'•';
+      color:var(--celeste);
+      font-weight:700
+    }
+    .calculadora-ahorro{
+      background:var(--azul);
+      color:#fff;
+      padding:30px;
+      border-radius:var(--radio);
+      text-align:center;
+      margin-top:30px;
+      box-shadow:0 10px 30px rgba(16,50,74,.2)
+    }
+    .calculadora-ahorro h4{
+      font-size:20px;
+      margin-bottom:15px;
+      opacity:.9
+    }
+    .ahorro-total{
+      font-size:56px;
+      font-weight:800;
+      color:#fff;
+      text-shadow:0 4px 10px rgba(0,0,0,.2)
+    }
+    .ahorro-total span{
+      font-size:20px;
+      font-weight:500;
+      display:block;
+      margin-top:10px;
+      opacity:.9
+    }
+    .calculadora-cta{
+      margin-top:40px;
+      text-align:center
+    }
+    
     /* Testimonios Corporativos */
     .testimonio-card{
       background:#fff;
@@ -708,28 +883,112 @@
       margin-top:8px
     }
     
-    /* Footer */
+    /* CTA Final - CORREGIDO CONTRASTE */
+    .cta-final{
+      background:linear-gradient(135deg, var(--celeste-2) 0%, var(--azul-b) 100%);
+      padding:100px 20px;
+      text-align:center;
+      position:relative;
+      overflow:hidden
+    }
+    .cta-final::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity:.5
+    }
+    .cta-final-content{
+      position:relative;
+      z-index:1;
+      max-width:800px;
+      margin:0 auto
+    }
+    .cta-final h2{
+      color:#fff;
+      font-size:42px;
+      margin-bottom:25px;
+      text-shadow:0 2px 10px rgba(0,0,0,.1)
+    }
+    .cta-final > .cta-final-content > p{
+      color:rgba(255,255,255,.95);
+      font-size:20px;
+      margin-bottom:40px;
+      line-height:1.6
+    }
+    .cta-final .cta{
+      background:#fff;
+      color:var(--azul-b);
+      font-size:20px;
+      padding:22px 45px;
+      box-shadow:0 10px 30px rgba(0,0,0,.2)
+    }
+    .cta-final .cta:hover{
+      background:var(--gris-medio);
+      transform:translateY(-3px);
+      box-shadow:0 15px 40px rgba(0,0,0,.3)
+    }
+    .cta-final-contacto{
+      margin-top:35px;
+      color:rgba(255,255,255,.9);
+      font-size:16px
+    }
+    .cta-final-contacto strong{
+      color:#fff;
+      font-weight:600
+    }
+    
+    /* Footer - CORREGIDO CONTRASTE */
     footer{
       background:var(--azul);
       color:#fff;
       padding:60px 20px 40px;
-      text-align:center;
-      margin-top:80px
+      text-align:center
     }
     footer img{
-      height:60px;
+      height:70px;
       width:auto;
       filter:brightness(0) invert(1);
-      margin-bottom:24px;
-      opacity:.9
+      margin-bottom:25px;
+      opacity:.95
     }
-    footer p{margin-bottom:8px;opacity:.9}
+    .footer-brand{
+      font-size:24px;
+      font-weight:700;
+      margin-bottom:10px;
+      color:#fff;
+      letter-spacing:.5px
+    }
+    .footer-tagline{
+      font-size:16px;
+      opacity:.9;
+      margin-bottom:15px;
+      color:var(--gris-medio)
+    }
+    .footer-experiencia{
+      font-size:14px;
+      opacity:.8;
+      margin-bottom:30px;
+      color:#fff
+    }
+    .footer-divider{
+      height:1px;
+      background:rgba(255,255,255,.15);
+      max-width:400px;
+      margin:30px auto
+    }
     .footer-legal{
       font-size:13px;
-      opacity:.6;
-      margin-top:20px;
-      padding-top:20px;
-      border-top:1px solid rgba(255,255,255,.1)
+      opacity:.7;
+      color:rgba(255,255,255,.8);
+      line-height:1.8
+    }
+    .footer-legal p{
+      margin-bottom:8px;
+      color:rgba(255,255,255,.8)
     }
     
     /* Sticky CTA */
@@ -776,6 +1035,22 @@
       .grid-2{grid-template-columns:1fr}
       .section-box{padding:40px 20px}
       .alerta-precios{flex-direction:column;text-align:center}
+      .calculadora-card.labcco{
+        transform:scale(1);
+        order:-1
+      }
+      .calculadora-card.labcco:hover{
+        transform:scale(1) translateY(-5px)
+      }
+      .ahorro-total{
+        font-size:40px
+      }
+      .cta-final{
+        padding:60px 20px
+      }
+      .cta-final h2{
+        font-size:32px
+      }
       .sticky-cta{
         bottom:15px;
         right:15px;
@@ -813,7 +1088,7 @@
       <a href="index.html">Inicio</a>
       <a href="#paquetes">Paquetes SST</a>
       <a href="#brigadas">Brigadas</a>
-      <a href="#normativa">Cumplimiento</a>
+      <a href="#calculadora">Calculadora</a>
       <a href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial" target="_blank">Cotizar</a>
     </nav>
   </header>
@@ -1222,6 +1497,84 @@
     </div>
   </section>
 
+  <!-- CALCULADORA DE AHORRO - ENGANCHE PSICOLÓGICO -->
+  <section id="calculadora" class="calculadora-section">
+    <div class="calculadora-container">
+      <div class="calculadora-header">
+        <h2>💰 Calculadora de Ahorro Empresarial</h2>
+        <p>Compare el costo real de enviar a sus colaboradores a diferentes proveedores vs. nuestro convenio empresarial con brigadas in situ.</p>
+      </div>
+      
+      <div class="calculadora-grid">
+        <!-- Escenario Tradicional -->
+        <div class="calculadora-card tradicional">
+          <div class="calculadora-icon">🏢</div>
+          <h3>Modelo Tradicional</h3>
+          <p class="calculadora-descripcion">
+            Enviar 50 empleados a laboratorios dispersos + tiempo productivo perdido + transporte + logística interna
+          </p>
+          <div class="calculadora-monto">
+            ~$6.450.000
+            <span>Costo estimado mensual</span>
+          </div>
+          <div class="calculadora-detalle">
+            <ul>
+              <li>50 empleados × $129.000 promedio mercado</li>
+              <li>+ 100 horas productivas perdidas</li>
+              <li>+ Transporte y viáticos</li>
+              <li>+ Logística de agendamiento</li>
+              <li>+ Seguimiento administrativo</li>
+              <li>+ Riesgo de incumplimiento</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Escenario LABCCO -->
+        <div class="calculadora-card labcco">
+          <div class="calculadora-badge">RECOMENDADO</div>
+          <div class="calculadora-icon">🚀</div>
+          <h3>Convenio LABCCO</h3>
+          <p class="calculadora-descripcion">
+            Brigada en su empresa + resultados el mismo día + soporte legal incluido + cero tiempo productivo perdido
+          </p>
+          <div class="calculadora-monto">
+            $2.350.000
+            <span>Costo real mensual</span>
+          </div>
+          <div class="calculadora-detalle">
+            <ul>
+              <li>50 empleados × $47.000 (ingreso sencillo)</li>
+              <li>+ Brigada sin costo de desplazamiento</li>
+              <li>+ Cero horas productivas perdidas</li>
+              <li>+ Resultados el mismo día</li>
+              <li>+ Soporte legal y certificados</li>
+              <li>+ Cumplimiento garantizado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Resultado del ahorro -->
+      <div class="calculadora-ahorro">
+        <h4>💡 Ahorro Total Mensual Estimado</h4>
+        <div class="ahorro-total">
+          $4.100.000
+          <span>+ 100 horas productivas recuperadas + tranquilidad legal</span>
+        </div>
+      </div>
+      
+      <div class="calculadora-cta">
+        <a class="cta cta-naranja" href="https://wa.me/573128274796?text=Solicitar%20calculo%20personalizado%20de%20ahorro%20para%20mi%20empresa" target="_blank" style="font-size:18px;padding:20px 40px">
+          📊 Solicitar Cálculo Personalizado para mi Empresa
+        </a>
+        <p style="margin-top:20px;color:#666;font-size:14px">
+          <em>* La calculadora muestra una estimación basada en paquete de ingreso sencillo. 
+          Los ahorros reales varían según el tipo de examen y volumen.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- TESTIMONIOS CORPORATIVOS -->
   <section style="background:#fff;padding:80px 0">
     <div class="section-box" style="background:transparent;box-shadow:none">
@@ -1270,32 +1623,37 @@
     </div>
   </section>
 
-  <!-- CTA FINAL -->
-  <section style="background:linear-gradient(135deg, var(--azul-b) 0%, var(--azul) 100%);padding:80px 20px;text-align:center;color:#fff">
-    <h2 style="color:#fff;font-size:36px;margin-bottom:20px">¿Listo para cumplir sin complicaciones?</h2>
-    <p style="font-size:20px;opacity:.9;max-width:600px;margin:0 auto 30px">
-      Obtenga su cotización personalizada. Precios empresariales transparentes, 
-      facturación inmediata y soporte legal incluido.
-    </p>
-    <a class="cta" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20cotizar%20paquetes" target="_blank" style="background:#fff;color:var(--azul);font-size:19px;padding:20px 40px">
-      🚀 Quiero mi Cotización Ahora
-    </a>
-    <p style="margin-top:25px;opacity:.7;font-size:15px">
-      📞 También puede llamarnos: (604) 531 13 54 | 📍 Carrera 48 # 52-54, Rionegro
-    </p>
+  <!-- CTA FINAL - CORREGIDO CONTRASTE -->
+  <section class="cta-final">
+    <div class="cta-final-content">
+      <h2>¿Listo para cumplir sin complicaciones?</h2>
+      <p>
+        Obtenga su cotización personalizada en menos de 2 horas. Precios empresariales transparentes, 
+        facturación inmediata y soporte legal incluido.
+      </p>
+      <a class="cta" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20cotizar%20paquetes" target="_blank">
+        🚀 Quiero mi Cotización Ahora
+      </a>
+      <div class="cta-final-contacto">
+        <p>📞 <strong>Llámenos:</strong> (604) 531 13 54 | 📱 <strong>WhatsApp:</strong> 312 827 4796</p>
+        <p>📍 <strong>Visítenos:</strong> Carrera 48 # 52-54, Rionegro, Antioquia</p>
+      </div>
+    </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER - CORREGIDO CONTRASTE -->
   <footer>
     <img src="LABCCO-Photoroom.png" alt="LABCCO Logo" loading="lazy"/>
-    <p style="font-size:20px;font-weight:600;margin-bottom:10px">LABCCO S.A.S</p>
-    <p>Laboratorio Clínico Colombiano de Oriente</p>
-    <p style="font-size:14px;opacity:.8;margin-top:10px">
-      30 años cuidando la salud de Rionegro y el Oriente Antioqueño
-    </p>
+    <div class="footer-brand">LABCCO S.A.S</div>
+    <div class="footer-tagline">Laboratorio Clínico Colombiano de Oriente</div>
+    <div class="footer-experiencia">30 años cuidando la salud de Rionegro y el Oriente Antioqueño</div>
+    
+    <div class="footer-divider"></div>
+    
     <div class="footer-legal">
-      <p>Vigilado por la Superintendencia Nacional de Salud · Habilitado Seccional de Salud de Antioquia</p>
-      <p style="margin-top:8px">© 2026 LABCCO S.A.S - Todos los derechos reservados</p>
+      <p>Vigilado por la Superintendencia Nacional de Salud</p>
+      <p>Habilitado por la Seccional de Salud de Antioquia</p>
+      <p style="margin-top:15px">© 2026 LABCCO S.A.S - Todos los derechos reservados</p>
     </div>
   </footer>
 
