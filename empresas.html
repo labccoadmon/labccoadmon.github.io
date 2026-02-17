@@ -761,45 +761,101 @@
       font-weight:600
     }
     
-    /* NUEVO FOOTER ESTANDARIZADO */
+    /* =========================================
+       FOOTER UNIVERSAL LABCCO - ALTO CONTRASTE
+       ========================================= */
     footer {
-      background: #002d41;
-      color: #cbd5e0;
-      padding: 60px var(--margen) 30px;
-      margin-top: 50px;
+        background-color: #001a2c; /* Azul aún más profundo para resaltar el blanco */
+        color: #ffffff; /* Blanco puro para legibilidad máxima */
+        padding: 80px var(--margen) 40px;
+        font-family: 'Outfit', sans-serif;
     }
+
     .footer-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1.2fr;
-      gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr; /* 4 columnas para mejor orden */
+        gap: 40px;
     }
+
     .footer-col h4 {
-      color: white;
-      margin-bottom: 20px;
-      position: relative;
-      padding-bottom: 8px;
+        color: var(--celeste); /* Usamos tu variable celeste para títulos */
+        font-size: 18px;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
     }
-    .footer-col h4::after {
-      content: '';
-      position: absolute; left: 0; bottom: 0;
-      width: 30px; height: 2px; background: var(--celeste);
+
+    .footer-logo-img {
+        height: 70px;
+        filter: brightness(0) invert(1); /* Asegura que el logo se vea blanco */
+        margin-bottom: 20px;
     }
-    .footer-links { list-style: none; padding: 0; }
-    .footer-links li { margin-bottom: 10px; }
-    .footer-links a { 
-      color: #cbd5e0; text-decoration: none; transition: 0.3s; 
+
+    .footer-description {
+        font-size: 14px;
+        line-height: 1.8;
+        color: #e0e0e0; /* Gris muy claro para descripción */
     }
-    .footer-links a:hover { 
-      color: var(--celeste); padding-left: 5px; 
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
     }
+
+    .footer-links li {
+        margin-bottom: 15px;
+    }
+
+    .footer-links a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 15px;
+        display: inline-block;
+    }
+
+    .footer-links a:hover {
+        color: var(--celeste);
+        transform: translateX(8px); /* Efecto de movimiento */
+    }
+
     .footer-contact-item {
-      display: flex; gap: 10px; margin-bottom: 12px; font-size: 14px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 18px;
+        font-size: 14px;
     }
+
+    .footer-contact-icon {
+        color: var(--celeste);
+        font-size: 18px;
+    }
+
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      margin-top: 40px; padding-top: 20px; text-align: center; font-size: 13px;
+        max-width: 1200px;
+        margin: 60px auto 0;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        color: #aaaaaa;
+    }
+
+    /* Ajuste para móviles */
+    @media (max-width: 900px) {
+        .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+        .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+        .footer-contact-item { justify-content: center; }
+        .footer-links a:hover { transform: translateY(-3px); }
     }
     
     .sticky-cta{
@@ -868,7 +924,6 @@
         border-radius:12px;
         padding:16px
       }
-      .footer-grid { grid-template-columns: 1fr; }
     }
     
     .text-center{text-align:center}
@@ -1431,31 +1486,56 @@
   <footer role="contentinfo">
     <div class="footer-grid">
       <div class="footer-col">
-        <img src="LABCCO-Photoroom.png" alt="LABCCO" style="height:60px; filter: brightness(0) invert(1); margin-bottom: 15px;">
-        <p style="font-size: 14px; line-height: 1.6;">Líderes en salud ocupacional y diagnóstico clínico en Rionegro. Más de 30 años de precisión y calidez humana al servicio del Oriente Antioqueño.</p>
+        <img src="LABCCO-Photoroom.png" alt="LABCCO" class="footer-logo-img">
+        <p class="footer-description">
+          IPS líder en el Oriente Antioqueño. Más de 30 años de experiencia en Salud Ocupacional y Laboratorio Clínico de alta precisión.
+        </p>
       </div>
 
       <div class="footer-col">
-        <h4>Servicios</h4>
+        <h4>Navegación</h4>
         <ul class="footer-links">
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="empresas.html">Salud Ocupacional</a></li>
+          <li><a href="empresas.html">Servicios Empresas</a></li>
           <li><a href="particulares.html">Exámenes ARL</a></li>
           <li><a href="clinico.html">Laboratorio Clínico</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Contacto</h4>
-        <div class="footer-contact-item"><span>📍</span> Cra 48 # 52 - 54, Rionegro (Vía Principal)</div>
-        <div class="footer-contact-item"><span>📞</span> (604) 531 13 54</div>
-        <div class="footer-contact-item"><span>📱</span> 312 827 4796</div>
-        <div class="footer-contact-item"><span>✉</span> calidad@labccosas.com</div>
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#">Habilitación DSSA</a></li>
+          <li><a href="#">Tratamiento de Datos</a></li>
+          <li><a href="#">Políticas de Calidad</a></li>
+          <li><a href="#">SST Res. 3100</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto Directo</h4>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <span>Cra 48 # 52 - 54, Rionegro (Sector Principal)</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📱</span>
+          <span>312 827 4796</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📞</span>
+          <span>(604) 531 13 54</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉</span>
+          <span>calidad@labccosas.com</span>
+        </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      &copy; 2026 <strong>IPS LABCCO S.A.S.</strong> — Rionegro, Antioquia. | Vigilado DSSA.
+      <div>© 2026 <strong>IPS LABCCO S.A.S.</strong> | Rionegro, Antioquia</div>
+      <div>Vigilado por la DSSA</div>
     </div>
   </footer>
 
