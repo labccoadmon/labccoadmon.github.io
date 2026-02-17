@@ -4,6 +4,14 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   
+  <!-- Google Tag Manager - Head -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KFW5WLWP');</script>
+  <!-- End Google Tag Manager -->
+  
   <!-- SEO Core -->
   <title>Salud Ocupacional Rionegro | Exámenes Empresariales 2026 | LABCCO</title>
   <meta name="description" content="Paquetes de salud ocupacional para empresas en Rionegro y Oriente Antioqueño. Precios empresariales desde $47.000. Brigadas, resultados el mismo día.">
@@ -761,52 +769,49 @@
       font-weight:600
     }
     
-    /* --- FOOTER FINAL CORREGIDO --- */
+    /* --- FOOTER ACTUALIZADO CON ALTO CONTRASTE --- */
     footer {
-        background-color: #001a2c !important; 
-        color: #ffffff !important; 
+        background-color: #001a2c !important;
+        color: #ffffff !important;
         padding: 60px 5% 30px;
         font-family: 'Outfit', sans-serif;
+        clear: both;
     }
-
     .footer-grid {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 40px;
     }
-
-    /* ESTO ASEGURA QUE EL LOGO SE VEA */
     .footer-logo-img {
         height: 70px !important;
         width: auto !important;
-        display: block !important;
-        margin-bottom: 20px;
-        filter: none !important; /* Quitamos filtros que lo borran */
+        filter: none !important;
         opacity: 1 !important;
-        visibility: visible !important;
+        display: block;
+        margin-bottom: 20px;
     }
-
     .footer-col h4 {
         color: #00ccff !important;
         font-size: 17px;
         margin-bottom: 20px;
         text-transform: uppercase;
     }
-
     .footer-links a {
         color: #ffffff !important;
         text-decoration: none;
-        font-size: 15px;
+        transition: 0.3s;
     }
-
+    .footer-links a:hover { color: #00ccff !important; }
+    .footer-contact-item { color: #ffffff; margin-bottom: 10px; font-size: 14px; }
     .footer-bottom {
         margin-top: 40px;
         padding-top: 20px;
         border-top: 1px solid rgba(255,255,255,0.2);
         display: flex;
         justify-content: space-between;
+        font-size: 12px;
         color: #00ccff;
     }
     
@@ -877,6 +882,7 @@
         padding:16px
       }
       .footer-grid{grid-template-columns:1fr}
+      .footer-bottom{flex-direction:column;gap:10px;text-align:center}
     }
     
     .text-center{text-align:center}
@@ -887,6 +893,10 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFW5WLWP"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <div class="top-bar">
     <span>📍 Rionegro, Antioquia | Zona Franca - Aeropuerto JMC</span>
@@ -917,7 +927,7 @@
       Garantizamos el cumplimiento de la <strong>Resolución 3100 de 2019</strong> y la <strong>Norma de Seguridad en Alturas</strong>. 
       Resultados de conceptos médicos ocupacionales el <strong>mismo día</strong> en Rionegro y el Oriente Antioqueño.
     </p>
-    <a class="cta cta-naranja" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20una%20propuesta" target="_blank">
+    <a id="btn-ws-hero" class="cta cta-naranja" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20una%20propuesta" target="_blank">
       🚀 Solicitar Cotización Empresarial
     </a>
     
@@ -976,7 +986,7 @@
               <div class="precio-nota">Precio empresa sin descuento por volumen</div>
             </div>
           </div>
-          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Ingreso%20Sencillo%20$47.000%20-%20convenio%20empresarial" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-ingreso" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Ingreso%20Sencillo%20$47.000%20-%20convenio%20empresarial" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="47000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Activar Convenio</span>
@@ -1008,7 +1018,7 @@
               <div class="precio-nota">Precio empresa sin descuento por volumen</div>
             </div>
           </div>
-          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Menores%2040%20$119.000%20-%20Res%204272" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-alturas-menor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Menores%2040%20$119.000%20-%20Res%204272" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="119000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar para Brigada</span>
@@ -1041,7 +1051,7 @@
               <div class="precio-nota">Precio empresa sin descuento por volumen</div>
             </div>
           </div>
-          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Mayores%2040%20$161.000%20-%20perfil%20lipidico" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-alturas-mayor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Mayores%2040%20$161.000%20-%20perfil%20lipidico" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="161000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar para Brigada</span>
@@ -1074,7 +1084,7 @@
               <div class="precio-nota">Precio empresa sin descuento por volumen</div>
             </div>
           </div>
-          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Manipuladores%20Alimentos%20$107.000%20-%20certificado%20sanitario" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-alimentos" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Manipuladores%20Alimentos%20$107.000%20-%20certificado%20sanitario" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="107000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar Certificación</span>
@@ -1106,7 +1116,7 @@
               <div class="precio-nota">Precio empresa sin descuento por volumen</div>
             </div>
           </div>
-          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Conductores%20$188.000%20-%20psicotecnica%20drogas" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-conductores" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Conductores%20$188.000%20-%20psicotecnica%20drogas" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="188000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar para Flotas</span>
@@ -1139,7 +1149,7 @@
               <div class="precio-nota">Precio empresa sin descuento por volumen</div>
             </div>
           </div>
-          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Riesgo%20Quimico%20$194.000%20-%20colinesterasa%20sector%20agricola" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-quimico" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Riesgo%20Quimico%20$194.000%20-%20colinesterasa%20sector%20agricola" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="194000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar Sector Agrícola</span>
@@ -1171,7 +1181,7 @@
               <div class="precio-nota">Precio empresa sin descuento por volumen</div>
             </div>
           </div>
-          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20$146.000%20-%20espirometria" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-confinados-menor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20$146.000%20-%20espirometria" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="146000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar Evaluación</span>
@@ -1203,7 +1213,7 @@
               <div class="precio-nota">Precio empresa sin descuento por volumen</div>
             </div>
           </div>
-          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20Mayores%2040%20$188.000" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-confinados-mayor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20Mayores%2040%20$188.000" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="188000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar Evaluación</span>
@@ -1252,7 +1262,7 @@
         </div>
       </div>
       <div style="text-align:center;margin-top:30px">
-        <a class="cta" href="https://wa.me/573128274796?text=Solicitar%20soporte%20legal%20y%20certificados%20Res%203100" target="_blank" style="background:#fff;color:var(--azul)">
+        <a id="btn-ws-normativa" class="cta" href="https://wa.me/573128274796?text=Solicitar%20soporte%20legal%20y%20certificados%20Res%203100" target="_blank" style="background:#fff;color:var(--azul)">
           📄 Solicitar Soporte Legal y Certificados
         </a>
       </div>
@@ -1275,7 +1285,7 @@
           toma de muestras de laboratorio en sitio y entrega de resultados digitalizados el mismo día.
         </p>
         <div style="margin-top:30px">
-          <a class="cta cta-naranja" href="https://wa.me/573128274796?text=Agendar%20Brigada%20Extramural%20-%20visita%20empresa" target="_blank">
+          <a id="btn-ws-brigadas" class="cta cta-naranja" href="https://wa.me/573128274796?text=Agendar%20Brigada%20Extramural%20-%20visita%20empresa" target="_blank">
             🚑 Agendar Brigada en mi Empresa
           </a>
         </div>
@@ -1361,7 +1371,7 @@
       </div>
       
       <div class="calculadora-cta">
-        <a class="cta cta-naranja" href="https://wa.me/573128274796?text=Solicitar%20calculo%20personalizado%20de%20ahorro%20para%20mi%20empresa" target="_blank" style="font-size:18px;padding:20px 40px">
+        <a id="btn-ws-calculadora" class="cta cta-naranja" href="https://wa.me/573128274796?text=Solicitar%20calculo%20personalizado%20de%20ahorro%20para%20mi%20empresa" target="_blank" style="font-size:18px;padding:20px 40px">
           📊 Solicitar Cálculo Personalizado para mi Empresa
         </a>
         <p style="margin-top:20px;color:#666;font-size:14px">
@@ -1426,7 +1436,7 @@
         Obtenga su cotización personalizada en menos de 2 horas. Precios empresariales transparentes, 
         facturación inmediata y soporte legal incluido.
       </p>
-      <a class="cta" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20cotizar%20paquetes" target="_blank">
+      <a id="btn-ws-final" class="cta" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20cotizar%20paquetes" target="_blank">
         🚀 Quiero mi Cotización Ahora
       </a>
       <div class="cta-final-contacto">
@@ -1440,54 +1450,40 @@
     <div class="footer-grid">
       <div class="footer-col">
         <img src="LABCCO-Photoroom.png" alt="LABCCO Logo" class="footer-logo-img">
-        <p class="footer-description">
-          IPS líder en el Oriente Antioqueño. Más de 30 años de precisión y calidez humana al servicio de su salud.
-        </p>
+        <p style="font-size: 14px; line-height: 1.6;">IPS líder en el Oriente Antioqueño. Más de 30 años de precisión y calidez humana al servicio de su salud.</p>
       </div>
-
       <div class="footer-col">
         <h4>Secciones</h4>
-        <ul class="footer-links">
+        <ul class="footer-links" style="list-style:none; padding:0;">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="empresas.html">Empresas</a></li>
           <li><a href="particulares.html">Exámenes ARL</a></li>
           <li><a href="clinico.html">Laboratorio</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Institucional</h4>
-        <ul class="footer-links">
+        <ul class="footer-links" style="list-style:none; padding:0;">
           <li><a href="#">Políticas de Calidad</a></li>
           <li><a href="#">SST Res. 3100</a></li>
           <li><a href="#">Ética Médica</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
-        <h4>Rionegro</h4>
-        <div class="footer-contact-item">
-          <span>📍</span> Cra 48 # 52 - 54 (Vía Principal)
-        </div>
-        <div class="footer-contact-item">
-          <span>📱</span> 312 827 4796
-        </div>
-        <div class="footer-contact-item">
-          <span>📞</span> (604) 531 13 54
-        </div>
-        <div class="footer-contact-item">
-          <span>✉</span> calidad@labccosas.com
-        </div>
+        <h4>Contacto</h4>
+        <div class="footer-contact-item">📍 Cra 48 # 52 - 54, Rionegro</div>
+        <div class="footer-contact-item">📱 312 827 4796</div>
+        <div class="footer-contact-item">📞 (604) 531 13 54</div>
+        <div class="footer-contact-item">✉ calidad@labccosas.com</div>
       </div>
     </div>
-
     <div class="footer-bottom">
-      <div>© 2026 <strong>IPS LABCCO S.A.S.</strong></div>
-      <div>Sede Rionegro - Vigilado por la DSSA</div>
+      <div>© 2026 IPS LABCCO S.A.S.</div>
+      <div>Vigilado por la DSSA</div>
     </div>
   </footer>
 
-  <a class="sticky-cta" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20cotizar" target="_blank">
+  <a id="btn-ws-sticky" class="sticky-cta" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20cotizar" target="_blank">
     <span>💬</span>
     <span>Cotizar Ahora</span>
   </a>
