@@ -761,21 +761,12 @@
       font-weight:600
     }
     
-    /* =========================================
-       FOOTER UNIVERSAL LABCCO - CONTRASTE TOTAL
-       ========================================= */
+    /* --- FOOTER FINAL CORREGIDO --- */
     footer {
-        background-color: #001a2c !important; /* Azul profundo */
-        color: #ffffff !important; /* Blanco Puro */
-        padding: 60px var(--margen) 30px;
+        background-color: #001a2c !important; 
+        color: #ffffff !important; 
+        padding: 60px 5% 30px;
         font-family: 'Outfit', sans-serif;
-        clear: both;
-    }
-
-    /* Arreglo para las letras grises que mencionas (sección de contacto previa al footer) */
-    .cta-final-contacto p {
-        color: #ffffff !important; /* Forzamos blanco */
-        font-weight: 500;
     }
 
     .footer-grid {
@@ -786,74 +777,37 @@
         gap: 40px;
     }
 
+    /* ESTO ASEGURA QUE EL LOGO SE VEA */
+    .footer-logo-img {
+        height: 70px !important;
+        width: auto !important;
+        display: block !important;
+        margin-bottom: 20px;
+        filter: none !important; /* Quitamos filtros que lo borran */
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
     .footer-col h4 {
-        color: #00ccff !important; /* Celeste Vibrante */
+        color: #00ccff !important;
         font-size: 17px;
         margin-bottom: 20px;
         text-transform: uppercase;
-        font-weight: 700;
-    }
-
-    .footer-logo-img {
-        height: 75px; /* Aumentamos un poco el tamaño */
-        display: block;
-        margin-bottom: 15px;
-        /* Si el logo es oscuro, esto lo vuelve blanco. Si ya es blanco, no le afecta */
-        filter: brightness(0) invert(1); 
-    }
-
-    .footer-description {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #ffffff; /* Blanco total */
-    }
-
-    .footer-links {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-links li {
-        margin-bottom: 12px;
     }
 
     .footer-links a {
         color: #ffffff !important;
         text-decoration: none;
-        transition: 0.3s;
         font-size: 15px;
     }
 
-    .footer-links a:hover {
-        color: #00ccff !important;
-        padding-left: 5px;
-    }
-
-    .footer-contact-item {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 15px;
-        font-size: 14px;
-        color: #ffffff;
-    }
-
     .footer-bottom {
-        max-width: 1200px;
-        margin: 40px auto 0;
+        margin-top: 40px;
         padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-top: 1px solid rgba(255,255,255,0.2);
         display: flex;
         justify-content: space-between;
-        font-size: 12px;
-        color: #00ccff; /* Celeste para que se vea */
-    }
-
-    @media (max-width: 850px) {
-        .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 500px) {
-        .footer-grid { grid-template-columns: 1fr; text-align: center; }
-        .footer-contact-item { justify-content: center; }
+        color: #00ccff;
     }
     
     .sticky-cta{
@@ -922,6 +876,7 @@
         border-radius:12px;
         padding:16px
       }
+      .footer-grid{grid-template-columns:1fr}
     }
     
     .text-center{text-align:center}
@@ -1484,7 +1439,7 @@
   <footer role="contentinfo">
     <div class="footer-grid">
       <div class="footer-col">
-        <img src="LABCCO-Photoroom.png" alt="LABCCO" class="footer-logo-img">
+        <img src="LABCCO-Photoroom.png" alt="LABCCO Logo" class="footer-logo-img">
         <p class="footer-description">
           IPS líder en el Oriente Antioqueño. Más de 30 años de precisión y calidez humana al servicio de su salud.
         </p>
