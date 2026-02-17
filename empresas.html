@@ -1,32 +1,1541 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-CO">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Empresas</title>
-    <style>
-        .footer-logo-img {
-            background: #ffffff;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-    </style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  
+  <!-- SEO Core -->
+  <title>Salud Ocupacional Rionegro | Exámenes Empresariales 2026 | LABCCO</title>
+  <meta name="description" content="Paquetes de salud ocupacional para empresas en Rionegro y Oriente Antioqueño. Precios empresariales desde $47.000. Brigadas, resultados el mismo día.">
+  <meta name="keywords" content="salud ocupacional rionegro, examenes medicos ingreso empresas, sst oriente antioqueño, brigadas salud ocupacional, resolucion 3100, laboratorio empresarial rionegro">
+  <link rel="canonical" href="https://labccosas.com/empresas.html"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Salud Ocupacional Empresarial Rionegro | Precios 2026 | LABCCO">
+  <meta property="og:description" content="Paquetes empresariales desde $47.000. Brigadas de salud ocupacional en Rionegro y Oriente Antioqueño.">
+  <meta property="og:type" content="business.business">
+  <meta property="og:url" content="https://labccosas.com/empresas.html"/>
+  <meta property="og:image" content="https://labccosas.com/LABCCO-Photoroom.png"/>
+  <meta property="og:locale" content="es_CO"/>
+  
+  <!-- Preconnect Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://wa.me"/>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  
+  <!-- Schema.org Product Optimizado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Examen Médico de Ingreso / Retiro LABCCO",
+    "image": "https://labccosas.com/LABCCO-Photoroom.png",
+    "description": "Evaluación médica ocupacional con énfasis osteomuscular. Incluye Visiometría tamiz sin costo adicional. Resultados el mismo día en Rionegro.",
+    "sku": "EMP-ING-2026",
+    "brand": {
+      "@type": "Brand",
+      "name": "LABCCO"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://labccosas.com/empresas.html",
+      "priceCurrency": "COP",
+      "price": "47000",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "24"
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --azul:#10324a;
+      --azul-b:#004a99;
+      --celeste:#0099cc;
+      --celeste-2:#0077cc;
+      --celeste-dark:#005fa3;
+      --blanco:#ffffff;
+      --gris:#f6fbff;
+      --gris-medio:#e9f6ff;
+      --gris-claro:#f0f4f8;
+      --sombra:rgba(16,50,74,.12);
+      --sombra-fuerte:rgba(16,50,74,.2);
+      --naranja:#ff6a00;
+      --naranja-hover:#e55f00;
+      --exito:#00c853;
+      --alerta:#ffc107;
+      --margen:60px;
+      --radio:14px;
+      --radio-sm:10px;
+    }
+    
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Outfit',sans-serif;background:var(--gris);color:var(--azul);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;transition:all .3s ease}
+    img{max-width:100%;height:auto;display:block}
+    
+    h1{font-size:clamp(32px,5vw,48px);font-weight:800;line-height:1.2;margin-bottom:20px;color:var(--azul)}
+    h2{font-size:clamp(26px,4vw,36px);font-weight:700;margin-bottom:16px;color:var(--azul-b)}
+    h3{font-size:22px;font-weight:700;margin-bottom:12px;color:var(--azul)}
+    p{font-size:17px;line-height:1.7;margin-bottom:16px;color:#444}
+    
+    .top-bar{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      height:36px;
+      background:var(--celeste);
+      color:#fff;
+      font-size:13px;
+      font-weight:500;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 var(--margen);
+      z-index:5000;
+      box-shadow:0 2px 10px rgba(0,0,0,.1)
+    }
+    .top-bar span{display:flex;align-items:center;gap:6px}
+    
+    .navbar{
+      position:sticky;
+      top:36px;
+      background:#fff;
+      height:80px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 var(--margen);
+      box-shadow:0 4px 20px var(--sombra);
+      z-index:4000
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    #siteLogo{height:55px;width:auto}
+    .badge-30{height:50px;width:auto;border-radius:6px;border:2px solid var(--blanco);box-shadow:0 4px 12px var(--sombra)}
+    
+    .nav-links{display:flex;gap:28px}
+    .nav-links a{
+      font-weight:600;
+      font-size:16px;
+      color:var(--azul);
+      position:relative;
+      padding:8px 0
+    }
+    .nav-links a::after{
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:0;
+      height:3px;
+      background:var(--celeste);
+      transition:width .3s;
+      border-radius:2px
+    }
+    .nav-links a:hover{color:var(--celeste-2)}
+    .nav-links a:hover::after{width:100%}
+    
+    .hero-biz{
+      text-align:center;
+      padding:140px 20px 100px;
+      background:linear-gradient(135deg, var(--gris-medio) 0%, var(--gris) 100%);
+      position:relative;
+      overflow:hidden
+    }
+    .hero-biz::before{
+      content:'';
+      position:absolute;
+      top:-50%;
+      right:-10%;
+      width:600px;
+      height:600px;
+      background:radial-gradient(circle, rgba(0,153,204,0.08) 0%, transparent 70%);
+      border-radius:50%
+    }
+    
+    .urgency-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--naranja);
+      color:#fff;
+      padding:10px 24px;
+      border-radius:50px;
+      font-weight:700;
+      font-size:15px;
+      margin-bottom:24px;
+      box-shadow:0 6px 20px rgba(255,106,0,.3);
+      animation:pulse 2s infinite
+    }
+    @keyframes pulse{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.02)}
+    }
+    
+    .hero-subtitle{
+      font-size:clamp(18px,2.5vw,22px);
+      max-width:800px;
+      margin:0 auto 40px;
+      color:#555;
+      font-weight:400
+    }
+    .hero-subtitle strong{color:var(--azul-b);font-weight:600}
+    
+    .hero-note{
+      background:rgba(255,255,255,.8);
+      padding:20px 30px;
+      border-radius:12px;
+      border-left:5px solid var(--naranja);
+      max-width:700px;
+      margin:30px auto 0;
+      text-align:left;
+      box-shadow:0 4px 15px rgba(0,0,0,.05)
+    }
+    .hero-note p{
+      margin:0;
+      font-size:15px;
+      color:var(--azul);
+      font-weight:500
+    }
+    .hero-note strong{color:var(--naranja)}
+    
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      background:var(--celeste-2);
+      color:#fff;
+      padding:18px 36px;
+      border-radius:var(--radio-sm);
+      font-weight:700;
+      font-size:17px;
+      box-shadow:0 6px 20px rgba(0,119,204,.25);
+      transform:translateY(0);
+      transition:all .3s ease
+    }
+    .cta:hover{
+      background:var(--azul-b);
+      transform:translateY(-3px);
+      box-shadow:0 10px 30px rgba(0,119,204,.35)
+    }
+    .cta-naranja{background:var(--naranja);box-shadow:0 6px 20px rgba(255,106,0,.25)}
+    .cta-naranja:hover{background:var(--naranja-hover);box-shadow:0 10px 30px rgba(255,106,0,.35)}
+    
+    .section-box{
+      max-width:1200px;
+      margin:0 auto;
+      padding:60px var(--margen);
+      background:#fff;
+      border-radius:var(--radio);
+      box-shadow:0 4px 24px var(--sombra)
+    }
+    .zona-blue{background:var(--azul);color:#fff;padding:80px 0}
+    .zona-blue h2{color:#fff;text-align:center;margin-bottom:50px}
+    .zona-light{background:var(--gris-claro);padding:80px 0}
+    
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:28px
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+      gap:40px;
+      align-items:center
+    }
+    
+    .card{
+      background:#fff;
+      padding:32px;
+      border-radius:var(--radio);
+      border:1px solid #e8e8e8;
+      border-top:5px solid var(--celeste-2);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition:all .3s ease;
+      position:relative;
+      overflow:hidden
+    }
+    .card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:5px;
+      background:linear-gradient(90deg, var(--celeste), var(--celeste-2));
+      opacity:0;
+      transition:opacity .3s
+    }
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 40px var(--sombra-fuerte);
+      border-color:var(--celeste)
+    }
+    .card:hover::before{opacity:1}
+    
+    .card h3{
+      font-size:24px;
+      margin-bottom:12px;
+      color:var(--azul-b)
+    }
+    .card .tag-riesgo{
+      display:inline-block;
+      background:var(--gris-medio);
+      color:var(--celeste-2);
+      padding:6px 14px;
+      border-radius:20px;
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:16px;
+      text-transform:uppercase;
+      letter-spacing:.5px
+    }
+    .card ul{
+      list-style:none;
+      margin:20px 0;
+      padding:0
+    }
+    .card ul li{
+      padding:10px 0;
+      border-bottom:1px solid #f0f0f0;
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      font-size:15px;
+      color:#555
+    }
+    .card ul li::before{
+      content:'✓';
+      color:var(--exito);
+      font-weight:800;
+      font-size:18px;
+      flex-shrink:0
+    }
+    .card ul li:last-child{border-bottom:none}
+    
+    .precio-empresa{
+      background:var(--gris-medio);
+      padding:20px;
+      border-radius:12px;
+      margin:20px 0;
+      text-align:center;
+      border:2px solid transparent;
+      transition:all .3s
+    }
+    .card:hover .precio-empresa{
+      border-color:var(--celeste);
+      background:#fff
+    }
+    .precio-label{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+      color:#666;
+      font-weight:600;
+      margin-bottom:8px
+    }
+    .precio-monto{
+      font-size:42px;
+      font-weight:800;
+      color:var(--azul);
+      line-height:1
+    }
+    .precio-monto span{
+      font-size:16px;
+      font-weight:600;
+      color:var(--celeste-2)
+    }
+    .precio-nota{
+      font-size:13px;
+      color:#888;
+      margin-top:8px;
+      font-style:italic
+    }
+    
+    .alerta-precios{
+      background:linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+      border:2px solid var(--alerta);
+      border-radius:12px;
+      padding:25px;
+      margin:40px 0;
+      display:flex;
+      align-items:center;
+      gap:20px
+    }
+    .alerta-icon{
+      font-size:40px;
+      flex-shrink:0
+    }
+    .alerta-content h4{
+      color:var(--azul);
+      margin-bottom:8px;
+      font-size:20px
+    }
+    .alerta-content p{
+      margin:0;
+      color:#666;
+      font-size:15px
+    }
+    .alerta-content strong{
+      color:var(--naranja)
+    }
+    
+    .normativa-box{
+      background:linear-gradient(135deg, var(--azul-b) 0%, var(--azul) 100%);
+      color:#fff;
+      padding:40px;
+      border-radius:var(--radio);
+      margin:40px 0;
+      box-shadow:0 10px 40px rgba(16,50,74,.2)
+    }
+    .normativa-box h3{
+      color:#fff;
+      font-size:28px;
+      margin-bottom:20px;
+      display:flex;
+      align-items:center;
+      gap:12px
+    }
+    .normativa-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:24px;
+      margin-top:24px
+    }
+    .normativa-item{
+      background:rgba(255,255,255,.1);
+      padding:20px;
+      border-radius:var(--radio-sm);
+      border-left:4px solid var(--celeste)
+    }
+    .normativa-item strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:16px;
+      color:#fff
+    }
+    .normativa-item span{
+      font-size:14px;
+      opacity:.9;
+      line-height:1.5
+    }
+    
+    .brigada-visual{
+      background:var(--gris-medio);
+      padding:40px;
+      border-radius:var(--radio);
+      border-left:8px solid var(--celeste);
+      position:relative
+    }
+    .brigada-visual::after{
+      content:'🏥';
+      position:absolute;
+      top:20px;
+      right:20px;
+      font-size:48px;
+      opacity:.1
+    }
+    .brigada-visual h3{
+      color:var(--azul-b);
+      margin-bottom:20px;
+      font-size:26px
+    }
+    .check-list{
+      list-style:none;
+      padding:0
+    }
+    .check-list li{
+      padding:12px 0;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:500;
+      color:var(--azul)
+    }
+    .check-list li::before{
+      content:'✅';
+      font-size:20px
+    }
+    
+    .calculadora-section{
+      background:linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+      padding:80px 0;
+      position:relative;
+      overflow:hidden
+    }
+    .calculadora-section::before{
+      content:'💰';
+      position:absolute;
+      top:-20px;
+      right:5%;
+      font-size:200px;
+      opacity:.03;
+      pointer-events:none
+    }
+    .calculadora-container{
+      max-width:1000px;
+      margin:0 auto;
+      padding:0 var(--margen)
+    }
+    .calculadora-header{
+      text-align:center;
+      margin-bottom:50px
+    }
+    .calculadora-header h2{
+      color:var(--azul);
+      margin-bottom:15px
+    }
+    .calculadora-header p{
+      color:#666;
+      font-size:18px;
+      max-width:600px;
+      margin:0 auto
+    }
+    .calculadora-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+      margin-bottom:40px
+    }
+    .calculadora-card{
+      background:#fff;
+      padding:35px;
+      border-radius:var(--radio);
+      box-shadow:0 10px 40px rgba(0,0,0,.08);
+      text-align:center;
+      position:relative;
+      transition:transform .3s
+    }
+    .calculadora-card:hover{
+      transform:translateY(-5px)
+    }
+    .calculadora-card.tradicional{
+      border-top:5px solid #e0e0e0
+    }
+    .calculadora-card.labcco{
+      border-top:5px solid var(--exito);
+      transform:scale(1.05);
+      box-shadow:0 15px 50px rgba(0,200,83,.15)
+    }
+    .calculadora-card.labcco:hover{
+      transform:scale(1.05) translateY(-5px)
+    }
+    .calculadora-badge{
+      position:absolute;
+      top:-12px;
+      left:50%;
+      transform:translateX(-50%);
+      background:var(--exito);
+      color:#fff;
+      padding:6px 20px;
+      border-radius:20px;
+      font-size:12px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:1px
+    }
+    .calculadora-icon{
+      font-size:48px;
+      margin-bottom:20px
+    }
+    .calculadora-card h3{
+      font-size:22px;
+      margin-bottom:10px;
+      color:var(--azul)
+    }
+    .calculadora-card.tradicional h3{
+      color:#666
+    }
+    .calculadora-card.labcco h3{
+      color:var(--exito)
+    }
+    .calculadora-descripcion{
+      font-size:14px;
+      color:#888;
+      margin-bottom:25px;
+      line-height:1.6
+    }
+    .calculadora-monto{
+      font-size:48px;
+      font-weight:800;
+      margin:20px 0;
+      line-height:1
+    }
+    .calculadora-card.tradicional .calculadora-monto{
+      color:#666
+    }
+    .calculadora-card.labcco .calculadora-monto{
+      color:var(--exito)
+    }
+    .calculadora-monto span{
+      font-size:16px;
+      font-weight:500;
+      display:block;
+      margin-top:8px;
+      color:#888
+    }
+    .calculadora-detalle{
+      background:var(--gris-medio);
+      padding:15px;
+      border-radius:8px;
+      margin-top:20px;
+      font-size:13px;
+      color:#666;
+      text-align:left
+    }
+    .calculadora-detalle ul{
+      list-style:none;
+      padding:0;
+      margin:0
+    }
+    .calculadora-detalle li{
+      padding:5px 0;
+      display:flex;
+      align-items:center;
+      gap:8px
+    }
+    .calculadora-detalle li::before{
+      content:'•';
+      color:var(--celeste);
+      font-weight:700
+    }
+    .calculadora-ahorro{
+      background:var(--azul);
+      color:#fff;
+      padding:30px;
+      border-radius:var(--radio);
+      text-align:center;
+      margin-top:30px;
+      box-shadow:0 10px 30px rgba(16,50,74,.2)
+    }
+    .calculadora-ahorro h4{
+      font-size:20px;
+      margin-bottom:15px;
+      opacity:.9
+    }
+    .ahorro-total{
+      font-size:56px;
+      font-weight:800;
+      color:#fff;
+      text-shadow:0 4px 10px rgba(0,0,0,.2)
+    }
+    .ahorro-total span{
+      font-size:20px;
+      font-weight:500;
+      display:block;
+      margin-top:10px;
+      opacity:.9
+    }
+    .calculadora-cta{
+      margin-top:40px;
+      text-align:center
+    }
+    
+    .testimonio-card{
+      background:#fff;
+      padding:35px;
+      border-radius:var(--radio);
+      border-bottom:5px solid var(--celeste);
+      box-shadow:0 6px 24px var(--sombra);
+      transition:transform .3s
+    }
+    .testimonio-card:hover{transform:translateY(-5px)}
+    .testimonio-card p{
+      font-style:italic;
+      font-size:17px;
+      color:#555;
+      line-height:1.8;
+      margin-bottom:24px;
+      position:relative;
+      padding-left:24px
+    }
+    .testimonio-card p::before{
+      content:'"';
+      position:absolute;
+      left:0;
+      top:-10px;
+      font-size:48px;
+      color:var(--celeste);
+      opacity:.3;
+      font-family:Georgia,serif
+    }
+    .testimonio-meta{
+      border-top:1px solid #eee;
+      padding-top:20px
+    }
+    .testimonio-meta strong{
+      display:block;
+      color:var(--azul-b);
+      font-size:16px;
+      margin-bottom:4px
+    }
+    .testimonio-meta span{
+      font-size:14px;
+      color:#777;
+      text-transform:uppercase;
+      letter-spacing:.5px
+    }
+    .sector-badge{
+      display:inline-block;
+      background:var(--gris-medio);
+      color:var(--celeste-2);
+      padding:4px 12px;
+      border-radius:12px;
+      font-size:12px;
+      font-weight:600;
+      margin-top:8px
+    }
+    
+    .cta-final{
+      background:linear-gradient(135deg, var(--celeste-2) 0%, var(--azul-b) 100%);
+      padding:100px 20px;
+      text-align:center;
+      position:relative;
+      overflow:hidden
+    }
+    .cta-final::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity:.5
+    }
+    .cta-final-content{
+      position:relative;
+      z-index:1;
+      max-width:800px;
+      margin:0 auto
+    }
+    .cta-final h2{
+      color:#fff;
+      font-size:42px;
+      margin-bottom:25px;
+      text-shadow:0 2px 10px rgba(0,0,0,.1)
+    }
+    .cta-final > .cta-final-content > p{
+      color:rgba(255,255,255,.95);
+      font-size:20px;
+      margin-bottom:40px;
+      line-height:1.6
+    }
+    .cta-final .cta{
+      background:#fff;
+      color:var(--azul-b);
+      font-size:20px;
+      padding:22px 45px;
+      box-shadow:0 10px 30px rgba(0,0,0,.2)
+    }
+    .cta-final .cta:hover{
+      background:var(--gris-medio);
+      transform:translateY(-3px);
+      box-shadow:0 15px 40px rgba(0,0,0,.3)
+    }
+    .cta-final-contacto{
+      margin-top:35px;
+      color:rgba(255,255,255,.9);
+      font-size:16px
+    }
+    .cta-final-contacto strong{
+      color:#fff;
+      font-weight:600
+    }
+    
+    /* =========================================
+       FOOTER UNIVERSAL LABCCO - CONTRASTE TOTAL
+       ========================================= */
+    footer {
+        background-color: #001a2c !important; /* Azul profundo */
+        color: #ffffff !important; /* Blanco Puro */
+        padding: 60px var(--margen) 30px;
+        font-family: 'Outfit', sans-serif;
+        clear: both;
+    }
+
+    /* Arreglo para las letras grises que mencionas (sección de contacto previa al footer) */
+    .cta-final-contacto p {
+        color: #ffffff !important; /* Forzamos blanco */
+        font-weight: 500;
+    }
+
+    .footer-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        gap: 40px;
+    }
+
+    .footer-col h4 {
+        color: #00ccff !important; /* Celeste Vibrante */
+        font-size: 17px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .footer-logo-img {
+        height: 75px; /* Aumentamos un poco el tamaño */
+        display: block;
+        margin-bottom: 15px;
+        /* Si el logo es oscuro, esto lo vuelve blanco. Si ya es blanco, no le afecta */
+        filter: brightness(0) invert(1); 
+    }
+
+    .footer-description {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #ffffff; /* Blanco total */
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: #ffffff !important;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 15px;
+    }
+
+    .footer-links a:hover {
+        color: #00ccff !important;
+        padding-left: 5px;
+    }
+
+    .footer-contact-item {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: #ffffff;
+    }
+
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: #00ccff; /* Celeste para que se vea */
+    }
+
+    @media (max-width: 850px) {
+        .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 500px) {
+        .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        .footer-contact-item { justify-content: center; }
+    }
+    
+    .sticky-cta{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      background:var(--naranja);
+      color:#fff;
+      padding:16px 28px;
+      border-radius:50px;
+      font-weight:700;
+      font-size:16px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      z-index:3000;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      animation:float 3s ease-in-out infinite
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-5px)}
+    }
+    .sticky-cta:hover{
+      background:var(--naranja-hover);
+      transform:scale(1.05);
+      animation:none
+    }
+    
+    @media (max-width:768px){
+      :root{--margen:20px}
+      .top-bar{display:none}
+      .navbar{
+        top:0;
+        height:70px;
+        justify-content:center;
+        padding:0 20px
+      }
+      .nav-links{display:none}
+      #siteLogo{height:45px}
+      .hero-biz{padding:100px 20px 60px}
+      .grid-2{grid-template-columns:1fr}
+      .section-box{padding:40px 20px}
+      .alerta-precios{flex-direction:column;text-align:center}
+      .calculadora-card.labcco{
+        transform:scale(1);
+        order:-1
+      }
+      .calculadora-card.labcco:hover{
+        transform:scale(1) translateY(-5px)
+      }
+      .ahorro-total{
+        font-size:40px
+      }
+      .cta-final{
+        padding:60px 20px
+      }
+      .cta-final h2{
+        font-size:32px
+      }
+      .sticky-cta{
+        bottom:15px;
+        right:15px;
+        left:15px;
+        justify-content:center;
+        border-radius:12px;
+        padding:16px
+      }
+    }
+    
+    .text-center{text-align:center}
+    .mb-0{margin-bottom:0}
+    .mt-40{margin-top:40px}
+    .highlight{background:linear-gradient(120deg, rgba(0,153,204,.2) 0%, rgba(0,153,204,.2) 100%);background-repeat:no-repeat;background-size:100% 40%;background-position:0 88%;padding:0 4px}
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Empresas</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Welcome to our Empresa Page</h2>
-            <p>This page contains information about our companies.</p>
-        </section>
-    </main>
-    <footer>
-        <img src="logo.png" class="footer-logo-img" alt="Logo">
-        <p>&copy; 2026. All rights reserved.</p>
-    </footer>
+
+  <div class="top-bar">
+    <span>📍 Rionegro, Antioquia | Zona Franca - Aeropuerto JMC</span>
+    <span>📞 (604) 531 13 54 | 📱 312 827 4796</span>
+    <span>🕐 Lun-Vie: 7am-12m / 2pm-5pm · Sáb: 8am-11am</span>
+  </div>
+
+  <header class="navbar">
+    <div class="brand">
+      <img id="siteLogo" src="LABCCO-Photoroom.png" alt="LABCCO Laboratorio Clínico Colombiano de Oriente" loading="lazy"/>
+      <img src="distintivo30.png" alt="30 años de experiencia en salud" class="badge-30" loading="lazy"/>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="#paquetes">Paquetes SST</a>
+      <a href="#brigadas">Brigadas</a>
+      <a href="#calculadora">Calculadora</a>
+      <a href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial" target="_blank">Cotizar</a>
+    </nav>
+  </header>
+
+  <section class="hero-biz">
+    <div class="urgency-badge">
+      🔥 Tarifas Empresariales 2026 Vigentes
+    </div>
+    <h1>Aliado Estratégico en<br><span class="highlight">Salud Ocupacional y SST</span></h1>
+    <p class="hero-subtitle">
+      Garantizamos el cumplimiento de la <strong>Resolución 3100 de 2019</strong> y la <strong>Norma de Seguridad en Alturas</strong>. 
+      Resultados de conceptos médicos ocupacionales el <strong>mismo día</strong> en Rionegro y el Oriente Antioqueño.
+    </p>
+    <a class="cta cta-naranja" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20una%20propuesta" target="_blank">
+      🚀 Solicitar Cotización Empresarial
+    </a>
+    
+    <div class="hero-note">
+      <p>
+        <strong>⚠️ IMPORTANTE:</strong> Los precios mostrados son <strong>tarifas empresariales base</strong>. 
+        Aplican para convenios directos <strong>sin descuento por volumen</strong>. 
+        Para brigadas extramurales o negociaciones especiales, contáctenos directamente.
+      </p>
+    </div>
+  </section>
+
+  <section id="paquetes" class="zona-blue">
+    <div style="max-width:1200px;margin:0 auto;padding:0 var(--margen)">
+      <h2>Portafolio Empresarial 2026</h2>
+      <p style="text-align:center;color:rgba(255,255,255,.85);max-width:700px;margin:-30px auto 50px;font-size:18px">
+        Paquetes de salud ocupacional con <strong>precios empresariales transparentes</strong>. 
+        Visiometría tamiz incluida en evaluaciones médicas.
+      </p>
+      
+      <div class="alerta-precios">
+        <div class="alerta-icon">💼</div>
+        <div class="alerta-content">
+          <h4>Política de Precios Empresariales</h4>
+          <p>
+            Los valores mostrados son <strong>precios de lista para empresas</strong> y aplican para convenios directos. 
+            <strong>No incluyen descuento por volumen.</strong> Para cotizaciones especiales por cantidad o brigadas en sitio, 
+            nuestro equipo comercial evaluará cada caso particular.
+          </p>
+        </div>
+      </div>
+      
+      <div class="grid-3">
+        <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
+          <meta itemprop="name" content="Paquete Ingreso Sencillo Empresarial LABCCO">
+          <meta itemprop="description" content="Evaluación médica ocupacional con énfasis osteomuscular y visiometría tamiz incluida">
+          <div>
+            <span class="tag-riesgo" style="background:var(--naranja);color:#fff">MÁS SOLICITADO</span>
+            <h3>Ingreso / Retiro Sencillo</h3>
+            <p style="font-size:15px;color:#666;margin-bottom:20px">
+              Evaluación médica ocupacional con énfasis osteomuscular. 
+              <strong>Visiometría tamiz ¡INCLUIDA sin costo adicional!</strong>
+            </p>
+            <ul>
+              <li>Evaluación médica completa (ingreso, periódico o retiro)</li>
+              <li>Énfasis osteomuscular especializado</li>
+              <li>Visiometría tamiz computarizada</li>
+              <li>Concepto de aptitud física</li>
+              <li>Certificado válido ante el Ministerio</li>
+            </ul>
+            <div class="precio-empresa">
+              <div class="precio-label">Inversión por colaborador</div>
+              <div class="precio-monto">
+                $47.000<span> COP</span>
+              </div>
+              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+            </div>
+          </div>
+          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Ingreso%20Sencillo%20$47.000%20-%20convenio%20empresarial" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="47000">
+            <meta itemprop="priceCurrency" content="COP">
+            <span>Activar Convenio</span>
+            <span>→</span>
+          </a>
+        </article>
+
+        <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
+          <meta itemprop="name" content="Paquete Trabajo en Alturas Menores 40 Años LABCCO">
+          <meta itemprop="description" content="Evaluación completa para trabajo en alturas según Resolución 4272 de 2021">
+          <div>
+            <span class="tag-riesgo">Riesgo II - Alturas</span>
+            <h3>Alturas &lt; 40 Años</h3>
+            <p style="font-size:15px;color:#666;margin-bottom:20px">
+              Cumplimiento total <strong>Resolución 4272 de 2021</strong> para trabajadores menores de 40 años en alturas.
+            </p>
+            <ul>
+              <li>Evaluación médica ocupacional completa</li>
+              <li>Visiometría tamiz + Audiometría tamiz</li>
+              <li>Glicemia en ayunas</li>
+              <li>Hemograma completo</li>
+              <li>Concepto de aptitud para alturas</li>
+            </ul>
+            <div class="precio-empresa">
+              <div class="precio-label">Paquete completo por persona</div>
+              <div class="precio-monto">
+                $119.000<span> COP</span>
+              </div>
+              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+            </div>
+          </div>
+          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Menores%2040%20$119.000%20-%20Res%204272" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="119000">
+            <meta itemprop="priceCurrency" content="COP">
+            <span>Cotizar para Brigada</span>
+            <span>→</span>
+          </a>
+        </article>
+
+        <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
+          <meta itemprop="name" content="Paquete Trabajo en Alturas Mayores 40 Años LABCCO">
+          <meta itemprop="description" content="Perfil lipídico completo para trabajadores mayores de 40 años en alturas">
+          <div>
+            <span class="tag-riesgo">Riesgo II - Alturas +40</span>
+            <h3>Alturas &gt; 40 Años</h3>
+            <p style="font-size:15px;color:#666;margin-bottom:20px">
+              Perfil cardiovascular completo para trabajadores mayores de 40 años en alturas.
+            </p>
+            <ul>
+              <li>Evaluación médica ocupacional completa</li>
+              <li>Visiometría tamiz + Audiometría tamiz</li>
+              <li>Glicemia en ayunas</li>
+              <li><strong>Colesterol total + Triglicéridos</strong></li>
+              <li>Hemograma completo</li>
+              <li>Concepto de aptitud para alturas</li>
+            </ul>
+            <div class="precio-empresa">
+              <div class="precio-label">Paquete completo por persona</div>
+              <div class="precio-monto">
+                $161.000<span> COP</span>
+              </div>
+              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+            </div>
+          </div>
+          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Mayores%2040%20$161.000%20-%20perfil%20lipidico" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="161000">
+            <meta itemprop="priceCurrency" content="COP">
+            <span>Cotizar para Brigada</span>
+            <span>→</span>
+          </a>
+        </article>
+
+        <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
+          <meta itemprop="name" content="Paquete Manipuladores de Alimentos LABCCO">
+          <meta itemprop="description" content="Perfil higiénico-sanitario completo para manipuladores de alimentos">
+          <div>
+            <span class="tag-riesgo">Riesgo V - Alimentos</span>
+            <h3>Manipuladores de Alimentos</h3>
+            <p style="font-size:15px;color:#666;margin-bottom:20px">
+              Certificación sanitaria completa para restaurantes, cafeterías y plantas de procesamiento.
+            </p>
+            <ul>
+              <li>Evaluación médica ocupacional</li>
+              <li>Visiometría tamiz incluida</li>
+              <li>KOH (uñas - detección de hongos)</li>
+              <li>Coprológico (parasitología)</li>
+              <li>Frotis faríngeo (cultivo streptococo)</li>
+              <li>Certificado sanitario vigente</li>
+            </ul>
+            <div class="precio-empresa">
+              <div class="precio-label">Paquete sanitario por persona</div>
+              <div class="precio-monto">
+                $107.000<span> COP</span>
+              </div>
+              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+            </div>
+          </div>
+          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Manipuladores%20Alimentos%20$107.000%20-%20certificado%20sanitario" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="107000">
+            <meta itemprop="priceCurrency" content="COP">
+            <span>Cotizar Certificación</span>
+            <span>→</span>
+          </a>
+        </article>
+
+        <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
+          <meta itemprop="name" content="Paquete Conductores y Seguridad Vial LABCCO">
+          <meta itemprop="description" content="Evaluación completa para conductores con psicotécnicos y prueba de drogas">
+          <div>
+            <span class="tag-riesgo">Riesgo IV - Vial</span>
+            <h3>Conductores / Seguridad Vial</h3>
+            <p style="font-size:15px;color:#666;margin-bottom:20px">
+              Evaluación completa para conductores de vehículos livianos, pesados y maquinaria amarilla.
+            </p>
+            <ul>
+              <li>Evaluación médica ocupacional</li>
+              <li>Visiometría tamiz + Audiometría tamiz</li>
+              <li>Prueba psicotécnica y psicosensométrica</li>
+              <li>Prueba de drogas COC-THC</li>
+              <li>Concepto aptitud para conducción</li>
+            </ul>
+            <div class="precio-empresa">
+              <div class="precio-label">Paquete vial completo por persona</div>
+              <div class="precio-monto">
+                $188.000<span> COP</span>
+              </div>
+              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+            </div>
+          </div>
+          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Conductores%20$188.000%20-%20psicotecnica%20drogas" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="188000">
+            <meta itemprop="priceCurrency" content="COP">
+            <span>Cotizar para Flotas</span>
+            <span>→</span>
+          </a>
+        </article>
+
+        <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
+          <meta itemprop="name" content="Paquete Riesgo Químico y Toxicológico LABCCO">
+          <meta itemprop="description" content="Evaluación toxicológica para trabajadores expuestos a agroquímicos y plaguicidas">
+          <div>
+            <span class="tag-riesgo" style="background:#fff3e0;color:#e65100">Riesgo III - Químico</span>
+            <h3>Riesgo Químico / Toxicológico</h3>
+            <p style="font-size:15px;color:#666;margin-bottom:20px">
+              Especial para sector agrícola, floricultores y trabajadores expuestos a plaguicidas del Oriente Antioqueño.
+            </p>
+            <ul>
+              <li>Evaluación médica especializada</li>
+              <li>Visiometría tamiz incluida</li>
+              <li>Colinesterasa eritrocitaria (plaguicidas)</li>
+              <li>AST + ALT (función hepática)</li>
+              <li>Hemograma completo</li>
+              <li>Citoquímico de orina</li>
+            </ul>
+            <div class="precio-empresa">
+              <div class="precio-label">Perfil toxicológico por persona</div>
+              <div class="precio-monto">
+                $194.000<span> COP</span>
+              </div>
+              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+            </div>
+          </div>
+          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Riesgo%20Quimico%20$194.000%20-%20colinesterasa%20sector%20agricola" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="194000">
+            <meta itemprop="priceCurrency" content="COP">
+            <span>Cotizar Sector Agrícola</span>
+            <span>→</span>
+          </a>
+        </article>
+
+        <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
+          <meta itemprop="name" content="Paquete Espacios Confinados Menores 40 Años LABCCO">
+          <meta itemprop="description" content="Evaluación respiratoria para trabajo en tanques, silos y espacios reducidos">
+          <div>
+            <span class="tag-riesgo">Riesgo Especial</span>
+            <h3>Espacios Confinados &lt; 40</h3>
+            <p style="font-size:15px;color:#666;margin-bottom:20px">
+              Evaluación respiratoria especializada para trabajo en tanques, silos, tuberías y espacios reducidos.
+            </p>
+            <ul>
+              <li>Evaluación médica ocupacional</li>
+              <li>Visiometría tamiz + Audiometría tamiz</li>
+              <li><strong>Espirometría (función pulmonar)</strong></li>
+              <li>Glicemia en ayunas</li>
+              <li>Hemograma completo</li>
+            </ul>
+            <div class="precio-empresa">
+              <div class="precio-label">Menores 40 años por persona</div>
+              <div class="precio-monto">
+                $146.000<span> COP</span>
+              </div>
+              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+            </div>
+          </div>
+          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20$146.000%20-%20espirometria" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="146000">
+            <meta itemprop="priceCurrency" content="COP">
+            <span>Cotizar Evaluación</span>
+            <span>→</span>
+          </a>
+        </article>
+
+        <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
+          <meta itemprop="name" content="Paquete Espacios Confinados Mayores 40 Años LABCCO">
+          <meta itemprop="description" content="Evaluación respiratoria con perfil lipídico para mayores de 40 años">
+          <div>
+            <span class="tag-riesgo">Riesgo Especial +40</span>
+            <h3>Espacios Confinados &gt; 40</h3>
+            <p style="font-size:15px;color:#666;margin-bottom:20px">
+              Incluye perfil lipídico completo para trabajadores mayores de 40 años en espacios confinados.
+            </p>
+            <ul>
+              <li>Todo el paquete anterior +</li>
+              <li><strong>Colesterol total</strong></li>
+              <li><strong>Triglicéridos</strong></li>
+              <li>Evaluación cardiovascular adicional</li>
+              <li>Concepto de aptitud específico</li>
+            </ul>
+            <div class="precio-empresa">
+              <div class="precio-label">Mayores 40 años por persona</div>
+              <div class="precio-monto">
+                $188.000<span> COP</span>
+              </div>
+              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+            </div>
+          </div>
+          <a class="cta" href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20Mayores%2040%20$188.000" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="188000">
+            <meta itemprop="priceCurrency" content="COP">
+            <span>Cotizar Evaluación</span>
+            <span>→</span>
+          </a>
+        </article>
+
+      </div>
+      
+      <div style="background:rgba(255,255,255,.1);padding:30px;border-radius:12px;margin-top:50px;text-align:center">
+        <p style="color:#fff;margin:0;font-size:16px">
+          <strong>💼 Política de Precios Transparente:</strong> Los valores mostrados son precios de lista para empresas 
+          y aplican para convenios directos. No incluyen descuento por volumen. 
+          Para cotizaciones especiales, brigadas extramurales o negociaciones por cantidad, 
+          nuestro equipo comercial evaluará cada caso particular.
+        </p>
+        <p style="color:rgba(255,255,255,.7);margin:15px 0 0;font-size:14px">
+          Precios en pesos colombianos (COP) - Vigentes desde Enero 2026
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="normativa" class="section-box" style="margin-top:60px">
+    <div class="normativa-box">
+      <h3>📋 Cumplimiento Legal Garantizado</h3>
+      <p style="color:rgba(255,255,255,.9);font-size:18px;margin-bottom:10px">
+        Todas nuestras evaluaciones cumplen con la normativa vigente del Ministerio de Salud y Protección Social de Colombia.
+      </p>
+      <div class="normativa-grid">
+        <div class="normativa-item">
+          <strong>Resolución 3100 de 2019</strong>
+          <span>Protocolos de evaluación médica ocupacional y conceptos de aptitud física</span>
+        </div>
+        <div class="normativa-item">
+          <strong>Resolución 4272 de 2021</strong>
+          <span>Normativa específica para trabajo en alturas y espacios confinados</span>
+        </div>
+        <div class="normativa-item">
+          <strong>Decreto 1072 de 2015</strong>
+          <span>Normativa del Sector Trabajo sobre Sistema de Gestión de Seguridad y Salud en el Trabajo</span>
+        </div>
+        <div class="normativa-item">
+          <strong>Norma Técnica GTC 45</strong>
+          <span>Guía técnica para la investigación de incidentes y accidentes de trabajo</span>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:30px">
+        <a class="cta" href="https://wa.me/573128274796?text=Solicitar%20soporte%20legal%20y%20certificados%20Res%203100" target="_blank" style="background:#fff;color:var(--azul)">
+          📄 Solicitar Soporte Legal y Certificados
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="brigadas" class="section-box">
+    <div class="grid-2">
+      <div>
+        <h2 style="text-align:left">Brigadas Extramurales de Salud Ocupacional</h2>
+        <p style="font-size:19px;color:var(--azul-b);font-weight:600;margin-bottom:20px">
+          ¿No puede detener su operación? Llevamos el laboratorio a su empresa.
+        </p>
+        <p>
+          Realizamos operativos de salud ocupacional desde <strong>25 trabajadores</strong> en adelante. 
+          Cobertura completa en <strong>Rionegro, Guarne, Marinilla, El Retiro, La Ceja y sector del Aeropuerto JMC</strong>.
+        </p>
+        <p>
+          <strong>Incluimos:</strong> Equipos portátiles de audiometría industrial, cabinas móviles de visiometría, 
+          toma de muestras de laboratorio en sitio y entrega de resultados digitalizados el mismo día.
+        </p>
+        <div style="margin-top:30px">
+          <a class="cta cta-naranja" href="https://wa.me/573128274796?text=Agendar%20Brigada%20Extramural%20-%20visita%20empresa" target="_blank">
+            🚑 Agendar Brigada en mi Empresa
+          </a>
+        </div>
+        <p style="margin-top:15px;font-size:14px;color:#666">
+          <small>* Las brigadas tienen condiciones especiales de precio según ubicación y cantidad. Contáctenos para evaluación.</small>
+        </p>
+      </div>
+      
+      <div class="brigada-visual">
+        <h3>Capacidad Técnica Certificada</h3>
+        <ul class="check-list">
+          <li>Habilitados ante la Seccional de Salud de Antioquia</li>
+          <li>Equipos calibrados con certificado de metrología vigente</li>
+          <li>Médicos especialistas en Medicina del Trabajo</li>
+          <li>Bioquímicos certificados en control de calidad externo</li>
+          <li>Software de gestión SST con reportes consolidados</li>
+          <li>Soporte legal para auditorías del Ministerio</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculadora" class="calculadora-section">
+    <div class="calculadora-container">
+      <div class="calculadora-header">
+        <h2>💰 Calculadora de Ahorro Empresarial</h2>
+        <p>Compare el costo real de enviar a sus colaboradores a diferentes proveedores vs. nuestro convenio empresarial con brigadas in situ.</p>
+      </div>
+      
+      <div class="calculadora-grid">
+        <div class="calculadora-card tradicional">
+          <div class="calculadora-icon">🏢</div>
+          <h3>Modelo Tradicional</h3>
+          <p class="calculadora-descripcion">
+            Enviar 50 empleados a laboratorios dispersos + tiempo productivo perdido + transporte + logística interna
+          </p>
+          <div class="calculadora-monto">
+            ~$6.450.000
+            <span>Costo estimado mensual</span>
+          </div>
+          <div class="calculadora-detalle">
+            <ul>
+              <li>50 empleados × $129.000 promedio mercado</li>
+              <li>+ 100 horas productivas perdidas</li>
+              <li>+ Transporte y viáticos</li>
+              <li>+ Logística de agendamiento</li>
+              <li>+ Seguimiento administrativo</li>
+              <li>+ Riesgo de incumplimiento</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="calculadora-card labcco">
+          <div class="calculadora-badge">RECOMENDADO</div>
+          <div class="calculadora-icon">🚀</div>
+          <h3>Convenio LABCCO</h3>
+          <p class="calculadora-descripcion">
+            Brigada en su empresa + resultados el mismo día + soporte legal incluido + cero tiempo productivo perdido
+          </p>
+          <div class="calculadora-monto">
+            $2.350.000
+            <span>Costo real mensual</span>
+          </div>
+          <div class="calculadora-detalle">
+            <ul>
+              <li>50 empleados × $47.000 (ingreso sencillo)</li>
+              <li>+ Brigada sin costo de desplazamiento</li>
+              <li>+ Cero horas productivas perdidas</li>
+              <li>+ Resultados el mismo día</li>
+              <li>+ Soporte legal y certificados</li>
+              <li>+ Cumplimiento garantizado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calculadora-ahorro">
+        <h4>💡 Ahorro Total Mensual Estimado</h4>
+        <div class="ahorro-total">
+          $4.100.000
+          <span>+ 100 horas productivas recuperadas + tranquilidad legal</span>
+        </div>
+      </div>
+      
+      <div class="calculadora-cta">
+        <a class="cta cta-naranja" href="https://wa.me/573128274796?text=Solicitar%20calculo%20personalizado%20de%20ahorro%20para%20mi%20empresa" target="_blank" style="font-size:18px;padding:20px 40px">
+          📊 Solicitar Cálculo Personalizado para mi Empresa
+        </a>
+        <p style="margin-top:20px;color:#666;font-size:14px">
+          <em>* La calculadora muestra una estimación basada en paquete de ingreso sencillo. 
+          Los ahorros reales varían según el tipo de examen y volumen.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:80px 0">
+    <div class="section-box" style="background:transparent;box-shadow:none">
+      <h2 class="text-center">Confianza de Empresas del Oriente Antioqueño</h2>
+      <p class="text-center" style="max-width:700px;margin:-20px auto 50px;color:#666">
+        Estas son las experiencias de quienes confían en nosotros para mantener a su personal saludable y cumplir con la normativa.
+      </p>
+      
+      <div class="grid-3">
+        <div class="testimonio-card">
+          <p>
+            La velocidad de respuesta de LABCCO es clave para nuestras contrataciones masivas en temporada alta. 
+            El año pasado hicimos 200 exámenes en 2 días sin detener la operación. Los precios empresariales son transparentes.
+          </p>
+          <div class="testimonio-meta">
+            <strong>Carlos Martínez</strong>
+            <span>Jefe de Talento Humano</span>
+            <div class="sector-badge">Sector Floricultor - Rionegro</div>
+          </div>
+        </div>
+        
+        <div class="testimonio-card">
+          <p>
+            Excelente soporte técnico y legal. Sus certificados siempre cumplen con los requisitos de nuestras auditorías SST 
+            y el Ministerio de Trabajo. Nunca hemos tenido un hallazgo por documentación médica.
+          </p>
+          <div class="testimonio-meta">
+            <strong>Andrea López</strong>
+            <span>Coordinadora HSEQ</span>
+            <div class="sector-badge">Constructora - Proyectos Oriente</div>
+          </div>
+        </div>
+        
+        <div class="testimonio-card">
+          <p>
+            Las brigadas en planta nos ahorran días de productividad. Su equipo médico es muy profesional, 
+            organizado y entiende la dinámica de una zona franca. Totalmente recomendados.
+          </p>
+          <div class="testimonio-meta">
+            <strong>Roberto Vargas</strong>
+            <span>Gerente de Operaciones</span>
+            <div class="sector-badge">Zona Franca Rionegro</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="cta-final-content">
+      <h2>¿Listo para cumplir sin complicaciones?</h2>
+      <p>
+        Obtenga su cotización personalizada en menos de 2 horas. Precios empresariales transparentes, 
+        facturación inmediata y soporte legal incluido.
+      </p>
+      <a class="cta" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20cotizar%20paquetes" target="_blank">
+        🚀 Quiero mi Cotización Ahora
+      </a>
+      <div class="cta-final-contacto">
+        <p>📞 <strong>Llámenos:</strong> (604) 531 13 54 | 📱 <strong>WhatsApp:</strong> 312 827 4796</p>
+        <p>📍 <strong>Visítenos:</strong> Carrera 48 # 52-54, Rionegro, Antioquia</p>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="LABCCO-Photoroom.png" alt="LABCCO" class="footer-logo-img">
+        <p class="footer-description">
+          IPS líder en el Oriente Antioqueño. Más de 30 años de precisión y calidez humana al servicio de su salud.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Secciones</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="empresas.html">Empresas</a></li>
+          <li><a href="particulares.html">Exámenes ARL</a></li>
+          <li><a href="clinico.html">Laboratorio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Institucional</h4>
+        <ul class="footer-links">
+          <li><a href="#">Políticas de Calidad</a></li>
+          <li><a href="#">SST Res. 3100</a></li>
+          <li><a href="#">Ética Médica</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Rionegro</h4>
+        <div class="footer-contact-item">
+          <span>📍</span> Cra 48 # 52 - 54 (Vía Principal)
+        </div>
+        <div class="footer-contact-item">
+          <span>📱</span> 312 827 4796
+        </div>
+        <div class="footer-contact-item">
+          <span>📞</span> (604) 531 13 54
+        </div>
+        <div class="footer-contact-item">
+          <span>✉</span> calidad@labccosas.com
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 <strong>IPS LABCCO S.A.S.</strong></div>
+      <div>Sede Rionegro - Vigilado por la DSSA</div>
+    </div>
+  </footer>
+
+  <a class="sticky-cta" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20cotizar" target="_blank">
+    <span>💬</span>
+    <span>Cotizar Ahora</span>
+  </a>
+
 </body>
 </html>
