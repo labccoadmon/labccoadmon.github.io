@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="es-CO">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KFW5WLWP');</script>
+  <!-- End Google Tag Manager -->
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Laboratorio Clínico en Rionegro | Resultados Rápidos – LABCCO</title>
@@ -109,6 +117,10 @@
 
     .menu-toggle.active span:nth-child(3) {
       transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .nav-links.active {
+      right: 0;
     }
 
     .section-box{max-width:1200px;margin:0 auto;padding:40px var(--margen);background:var(--blanco);border-radius:12px;box-shadow:0 4px 18px var(--sombra);margin-bottom:30px}
@@ -406,36 +418,50 @@
       border: 1px solid #edf2f7;
     }
 
-    /* FOOTER PREMIUM */
+    /* FOOTER PREMIUM CORREGIDO */
     footer {
-      background: #002d41;
-      color: #cbd5e0;
-      padding: 60px var(--margen) 30px;
+        background-color: #001a2c !important;
+        color: #ffffff !important;
+        padding: 60px 5% 30px;
+        font-family: 'Outfit', sans-serif;
+        clear: both;
     }
     .footer-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
     }
-    .footer-logo img { height: 65px; margin-bottom: 20px; }
+    .footer-logo-img {
+        height: 70px !important;
+        width: auto !important;
+        filter: none !important;
+        opacity: 1 !important;
+        display: block;
+        margin-bottom: 20px;
+    }
     .footer-col h4 {
-      color: white;
-      margin-bottom: 20px;
-      font-size: 18px;
+        color: #00ccff !important;
+        font-size: 17px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
     }
-    .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 12px; }
-    .footer-links a { color: inherit; transition: color 0.3s; }
-    .footer-links a:hover { color: var(--celeste); }
+    .footer-links a {
+        color: #ffffff !important;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .footer-links a:hover { color: #00ccff !important; }
+    .footer-contact-item { color: #ffffff; margin-bottom: 10px; font-size: 14px; }
     .footer-bottom {
-      max-width: 1200px;
-      margin: 60px auto 0;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      text-align: center;
-      font-size: 14px;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: #00ccff;
     }
 
     /* ANIMACIÓN WHATSAPP */
@@ -641,6 +667,12 @@
       footer {
         padding: 40px 20px 20px;
       }
+      
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
     }
 
     /* Mobile Pequeño (≤640px) */
@@ -842,6 +874,11 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFW5WLWP"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <div class="top-bar" role="banner">
     <div class="top-col top-left"><div class="horario">⏰ Horario: Lun - Vie 7am - 12m / 2pm - 5pm | Sáb 8am - 11am</div></div>
     <div class="top-col top-center">
@@ -895,10 +932,10 @@
           </p>
           
           <div style="margin-top: 30px;">
-            <a class="cta-banner" href="https://wa.me/573128274796?text=Hola,%20quisiera%20agendar%20una%20cita">
+            <a id="btn-ws-hero" class="cta-banner" href="https://wa.me/573128274796?text=Hola,%20quisiera%20agendar%20una%20cita">
               Agendar mi Cita
             </a>
-            <a class="cta-secundario" href="empresas.html">
+            <a id="btn-ws-empresas" class="cta-secundario" href="empresas.html">
               Cotizar para Empresas
             </a>
           </div>
@@ -914,7 +951,7 @@
           <h3>Laboratorio habilitado por el Ministerio de Salud (Resolución 3100)</h3>
           <p>Desde 1992 trabajamos por la salud y el bienestar de Colombia. Nos especializamos en laboratorio clínico general, salud ocupacional y diagnóstico especializado para empresas y particulares.</p>
           <p>Nuestro equipo humano está altamente calificado y usa tecnología de punta para garantizar resultados precisos y oportunos.</p>
-          <a class="cta-inline" href="#contacto">Agendar cita</a>
+          <a id="btn-ws-nosotros" class="cta-inline" href="https://wa.me/573128274796?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20agendar%20una%20cita">Agendar cita</a>
         </div>
         <div class="nos-fig">
           <img src="nosotrosimg.webp" alt="Instalaciones LABCCO Rionegro" loading="lazy">
@@ -1051,7 +1088,7 @@
           <img src="cerrandonegocio.webp" alt="Atención Corporativa LABCCO" loading="lazy">
           <h4>Convenios Empresariales</h4>
           <p>Optimice sus costos de contratación. Ofrecemos tarifas preferenciales escalables y facturación mensual consolidada para empresas del Oriente Antioqueño.</p>
-          <a class="btn-convenio btn-negociar" href="https://wa.me/573128274796?text=Deseo%20solicitar%20una%20cotización%20corporativa%20y%20negociar%20tarifas%20para%20mi%20empresa">
+          <a id="btn-ws-convenio-empresas" class="btn-convenio btn-negociar" href="https://wa.me/573128274796?text=Deseo%20solicitar%20una%20cotizacion%20corporativa%20y%20negociar%20tarifas%20para%20mi%20empresa">
             Negociar Tarifas Especiales
           </a>
         </div>
@@ -1060,7 +1097,7 @@
           <img src="comfenalco.webp" alt="Logo Comfenalco" loading="lazy">
           <h4>Comfenalco Antioquia</h4>
           <p>Si es afiliado a Comfenalco, usted y su familia pueden acceder a descuentos exclusivos en todo nuestro portafolio de exámenes clínicos y salud ocupacional.</p>
-          <a class="btn-convenio btn-beneficio" href="https://wa.me/573128274796?text=Soy%20afiliado%20a%20Comfenalco%20y%20quiero%20conocer%20mis%20descuentos">
+          <a id="btn-ws-comfenalco" class="btn-convenio btn-beneficio" href="https://wa.me/573128274796?text=Soy%20afiliado%20a%20Comfenalco%20y%20quiero%20conocer%20mis%20descuentos">
             Consultar Descuentos
           </a>
         </div>
@@ -1069,7 +1106,7 @@
           <img src="udea.webp" alt="Logo Universidad de Antioquia" loading="lazy">
           <h4>Respaldo UdeA</h4>
           <p>Punto de toma de muestras autorizado para pruebas de ADN y genética, procesadas con el rigor científico y la tecnología de la Universidad de Antioquia.</p>
-          <a class="btn-convenio btn-beneficio" href="https://wa.me/573128274796?text=Deseo%20información%20sobre%20las%20pruebas%20de%20ADN%20con%20la%20UdeA">
+          <a id="btn-ws-udea" class="btn-convenio btn-beneficio" href="https://wa.me/573128274796?text=Deseo%20informacion%20sobre%20las%20pruebas%20de%20ADN%20con%20la%20UdeA">
             Solicitar Información
           </a>
         </div>
@@ -1124,7 +1161,7 @@
 
         <div class="form-container">
           <h3 style="margin-bottom: 25px; color: var(--azul-frio);">Envíenos un mensaje</h3>
-          <form action="https://formsubmit.co/calidad@labccosas.com" method="POST">
+          <form id="form-contacto" action="https://formsubmit.co/calidad@labccosas.com" method="POST">
             <div class="form-group">
               <label>Nombre o Empresa</label>
               <input type="text" name="name" placeholder="Ej: Juan Pérez / Empresa S.A.S" required>
@@ -1147,7 +1184,7 @@
               <label>¿En qué podemos ayudarle?</label>
               <textarea name="message" rows="4" placeholder="Escriba su consulta aquí..."></textarea>
             </div>
-            <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+            <button id="btn-enviar-form" type="submit" class="btn-enviar">Enviar Solicitud</button>
           </form>
         </div>
       </div>
@@ -1202,41 +1239,44 @@
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <div class="footer-grid">
-      <div class="footer-col footer-logo">
-        <img src="LABCCO-Photoroom.png" alt="LABCCO Logo Blanco" loading="lazy">
-        <p style="line-height: 1.7;">Más de 33 años liderando la salud ocupacional y el diagnóstico clínico en el Oriente Antioqueño. Calidad humana y técnica a su servicio.</p>
-      </div>
-      
       <div class="footer-col">
-        <h4>Enlaces</h4>
-        <ul class="footer-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="empresas.html">Portal Empresas</a></li>
+        <img src="LABCCO-Photoroom.png" alt="LABCCO Logo" class="footer-logo-img">
+        <p style="font-size: 14px; line-height: 1.6;">IPS líder en el Oriente Antioqueño. Más de 30 años de precisión y calidez humana al servicio de su salud.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Secciones</h4>
+        <ul class="footer-links" style="list-style:none; padding:0;">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="empresas.html">Empresas</a></li>
+          <li><a href="particulares.html">Exámenes ARL</a></li>
+          <li><a href="clinico.html">Laboratorio</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
-        <h4>Legal</h4>
-        <ul class="footer-links">
-          <li>Vigilado Supersalud</li>
-          <li>Habilitación Res. 3100</li>
-          <li>Política de Privacidad</li>
-          <li>NIT: 800.xxx.xxx-x</li>
+        <h4>Institucional</h4>
+        <ul class="footer-links" style="list-style:none; padding:0;">
+          <li><a href="#">Políticas de Calidad</a></li>
+          <li><a href="#">SST Res. 3100</a></li>
+          <li><a href="#">Ética Médica</a></li>
         </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <div class="footer-contact-item">📍 Cra 48 # 52 - 54, Rionegro</div>
+        <div class="footer-contact-item">📱 312 827 4796</div>
+        <div class="footer-contact-item">📞 (604) 531 13 54</div>
+        <div class="footer-contact-item">✉ calidad@labccosas.com</div>
       </div>
     </div>
-
     <div class="footer-bottom">
-      <p>&copy; 2026 IPS LABCCO S.A.S. Rionegro, Antioquia. Todos los derechos reservados.</p>
-      <p style="font-size: 12px; margin-top: 10px; opacity: 0.5;">Desarrollado con precisión médica.</p>
+      <div>© 2026 IPS LABCCO S.A.S.</div>
+      <div>Vigilado por la DSSA</div>
     </div>
   </footer>
 
-  <a class="btn-wpp" href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp LABCCO">📱</a>
+  <a id="btn-ws-sticky" class="btn-wpp" href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp LABCCO">📱</a>
 
   <script>
     // Navbar Scroll Effect
