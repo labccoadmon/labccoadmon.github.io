@@ -259,6 +259,34 @@
       margin-bottom: 10px;
       display: block;
     }
+    
+    /* BOTÓN VER PORTAFOLIO COMPLETO */
+    .ver-portafolio-container {
+      text-align: center;
+      margin-top: 50px;
+      padding: 30px 0;
+    }
+    .btn-portafolio-completo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--azul-frio);
+      color: #fff;
+      padding: 18px 40px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 10px 30px rgba(0, 77, 111, 0.2);
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    .btn-portafolio-completo:hover {
+      background: #fff;
+      color: var(--azul-frio);
+      border-color: var(--azul-frio);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0, 77, 111, 0.15);
+    }
 
     /* CONVENIOS - GRILLA FIJA */
     .aliados-grid {
@@ -642,6 +670,13 @@
       .service-card {
         padding: 25px;
       }
+      
+      .btn-portafolio-completo {
+        width: 90%;
+        justify-content: center;
+        font-size: 16px;
+        padding: 16px 24px;
+      }
 
       /* Aliados */
       .aliados-grid {
@@ -805,7 +840,7 @@
   "@type":"BreadcrumbList",
   "itemListElement":[
   {"@type":"ListItem","position":1,"name":"Inicio","item":"https://labccosas.com/"},
-  {"@type":"ListItem","position":2,"name":"Servicios","item":"https://labccosas.com/#servicios"}
+  {"@type":"ListItem","position":2,"name":"Servicios","item":"https://labccosas.com/servicios.html"}
   ]
   }
   </script>
@@ -905,7 +940,7 @@
     <nav class="nav-links" aria-label="Enlaces principales">
       <a href="index.html">Inicio</a>
       <a href="#nosotros">Nosotros</a>
-      <a href="#servicios">Servicios</a>
+      <a href="servicios.html">Servicios</a>
       <a href="empresas.html">Empresas</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -990,89 +1025,96 @@
       </div>
 
       <div class="services-grid">
-        <div class="service-card">
+        <a href="servicios/examen-medico-ingreso-laboral.html" class="service-card" style="text-decoration: none; color: inherit;">
           <small class="category-tag">Salud Ocupacional</small>
           <div class="service-icon">💼</div>
           <h3>Exámenes de Ingreso</h3>
           <p>Evaluaciones de aptitud laboral con entrega inmediata de conceptos médicos para contratación.</p>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="servicios/laboratorio-trabajo-en-alturas.html" class="service-card" style="text-decoration: none; color: inherit;">
           <small class="category-tag">Salud Ocupacional</small>
           <div class="service-icon">🏗️</div>
           <h3>Trabajo en Alturas</h3>
           <p>Certificación médica bajo normativa legal vigente para garantizar seguridad en tareas de alto riesgo.</p>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="servicios/audiometria-ocupacional.html" class="service-card" style="text-decoration: none; color: inherit;">
           <small class="category-tag">Salud Ocupacional</small>
           <div class="service-icon">👂</div>
           <h3>Visiometría y Audiometría</h3>
           <p>Tamizaje sensorial completo en cabina certificada para conductores y personal operativo.</p>
-        </div>
+        </a>
 
-        <div class="service-card" style="border-bottom: 3px solid var(--celeste);">
+        <a href="servicios/prueba-colinesterasa-riesgo-quimico.html" class="service-card" style="text-decoration: none; color: inherit; border-bottom: 3px solid var(--celeste);">
           <small class="category-tag">Especialidad Agrícola</small>
           <div class="service-icon">🧪</div>
           <h3>Colinesterasa Eritrocitaria</h3>
           <p>Prueba crítica para el monitoreo de exposición a plaguicidas, con alta precisión para el sector del agro.</p>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="servicios/espirometria.html" class="service-card" style="text-decoration: none; color: inherit;">
           <small class="category-tag">Salud Ocupacional</small>
           <div class="service-icon">💨</div>
           <h3>Espirometría</h3>
           <p>Pruebas de función pulmonar para trabajadores expuestos a polvos, humos o químicos.</p>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="servicios/perfil-salud-sexual.html" class="service-card" style="text-decoration: none; color: inherit;">
           <small class="category-tag">Laboratorio Clínico</small>
           <div class="service-icon">🛡️</div>
           <h3>Perfil de Salud Sexual</h3>
           <p>Detección profesional de ITS con absoluta reserva, confidencialidad y acompañamiento.</p>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="servicios/prueba-embarazo.html" class="service-card" style="text-decoration: none; color: inherit;">
           <small class="category-tag">Especializado</small>
           <div class="service-icon">👶</div>
           <h3>Prueba de Embarazo</h3>
           <p>Análisis cuantitativo de alta sensibilidad que permite determinar las semanas exactas de gestación.</p>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="servicios/pruebas-paternidad-adn-rionegro.html" class="service-card" style="text-decoration: none; color: inherit;">
           <small class="category-tag">Especializado</small>
           <div class="service-icon">🧬</div>
           <h3>Pruebas de ADN</h3>
           <p>Estudios de paternidad y parentesco con el rigor científico de la Universidad de Antioquia.</p>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="servicios/espermograma-laboratorio-rionegro.html" class="service-card" style="text-decoration: none; color: inherit;">
           <small class="category-tag">Salud Masculina</small>
           <div class="service-icon">🔬</div>
           <h3>Espermograma</h3>
           <p>Análisis detallados de fertilidad y control de efectividad para pacientes post-vasectomía.</p>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="servicios/laboratorio-clinico-general.html" class="service-card" style="text-decoration: none; color: inherit;">
           <small class="category-tag">Laboratorio Clínico</small>
           <div class="service-icon">💉</div>
           <h3>Laboratorio Clínico</h3>
           <p>Procesamiento automatizado de muestras nivel I, II y III con resultados el mismo día.</p>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="servicios/manipuladores-de-alimentos-rionegro.html" class="service-card" style="text-decoration: none; color: inherit;">
           <small class="category-tag">Salud Ocupacional</small>
           <div class="service-icon">🍔</div>
           <h3>Manipulación Alimentos</h3>
           <p>Perfiles microbiológicos completos con certificación de aptitud para el sector alimentos.</p>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="servicios/vacunacion-empresarial.html" class="service-card" style="text-decoration: none; color: inherit;">
           <small class="category-tag">Salud Ocupacional</small>
           <div class="service-icon">🏥</div>
           <h3>Vacunación</h3>
           <p>Esquemas de protección (Tétano, Influenza) para prevenir riesgos biológicos en la empresa.</p>
-        </div>
+        </a>
+      </div>
+      
+      <!-- BOTÓN VER PORTAFOLIO COMPLETO -->
+      <div class="ver-portafolio-container">
+        <a href="servicios.html" class="btn-portafolio-completo">
+          🔍 Ver los 24 servicios disponibles
+        </a>
       </div>
     </section>
 
