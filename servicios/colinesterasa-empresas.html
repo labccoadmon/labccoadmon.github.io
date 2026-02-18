@@ -105,6 +105,10 @@
       0%, 100% { box-shadow: 0 0 0 0 rgba(249, 178, 51, 0.4); }
       50% { box-shadow: 0 0 0 15px rgba(249, 178, 51, 0); }
     }
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -207,11 +211,50 @@
     .servicio-card h3{color:var(--azul-frio);font-size:18px;margin-bottom:12px;font-weight:700}
     .servicio-card p{font-size:15px;color:#64748b;line-height:1.6;margin:0}
 
-    /* CTA EMPRESAS DESTACADO */
-    .cta-empresas-box{background:linear-gradient(135deg, var(--azul-frio) 0%, var(--azul-suave) 100%);padding:50px;border-radius:20px;text-align:center;color:white;margin:50px 0;position:relative;overflow:hidden}
-    .cta-empresas-box::before{content:'';position:absolute;top:-50%;right:-10%;width:300px;height:300px;background:rgba(249,178,51,0.1);border-radius:50%}
-    .cta-empresas-box h3{color:var(--amarillo);font-size:26px;margin-bottom:15px;position:relative;z-index:2}
-    .cta-empresas-box p{font-size:18px;margin-bottom:30px;opacity:0.95;position:relative;z-index:2;max-width:700px;margin-left:auto;margin-right:auto}
+    /* CTA DESTACADO - CORREGIDO PARA MÁXIMO CONTRASTE */
+    .cta-destacado-box{
+      background:linear-gradient(135deg, var(--azul-frio) 0%, var(--azul-suave) 100%);
+      padding:50px;
+      border-radius:20px;
+      text-align:center;
+      color:white;
+      margin:50px 0;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,77,111,0.3);
+    }
+    .cta-destacado-box::before{
+      content:'';
+      position:absolute;
+      top:-50%;
+      right:-10%;
+      width:300px;
+      height:300px;
+      background:rgba(249,178,51,0.1);
+      border-radius:50%;
+    }
+    .cta-destacado-box h3{
+      color:var(--amarillo) !important;
+      font-size:28px;
+      margin-bottom:20px;
+      position:relative;
+      z-index:2;
+      font-weight:700;
+      text-shadow:0 2px 4px rgba(0,0,0,0.3);
+    }
+    .cta-destacado-box p{
+      color:#ffffff !important;
+      font-size:18px;
+      margin-bottom:30px;
+      position:relative;
+      z-index:2;
+      font-weight:500;
+      line-height:1.6;
+      opacity:0.95;
+      max-width:700px;
+      margin-left:auto;
+      margin-right:auto;
+    }
 
     /* INTERLINKING */
     .interlinking-box{background:#e9f6ff;padding:30px;border-radius:12px;margin-top:40px;border:2px solid transparent;transition:all 0.3s}
@@ -221,24 +264,125 @@
     .interlinking-box li a{display:block;padding:15px 20px;background:white;border-radius:10px;color:var(--azul-suave);font-weight:600;transition:all 0.3s;border:1px solid #e2e8f0}
     .interlinking-box li a:hover{background:var(--amarillo);color:var(--azul-frio);transform:translateX(5px);border-color:var(--amarillo)}
 
-    /* FOOTER */
-    footer{background-color:#001a2c !important;color:#ffffff !important;padding:60px 5% 30px;font-family:'Outfit', sans-serif;clear:both;position:relative;margin-top:80px}
-    footer::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg, var(--amarillo), var(--celeste), var(--amarillo));background-size:200% 100%;animation:shimmer 3s linear infinite}
-    .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:40px}
-    .footer-logo-img{height:70px !important;width:auto !important;filter:brightness(0) invert(1) !important;opacity:1 !important;display:block;margin-bottom:20px;transition:all 0.3s}
-    .footer-logo-img:hover{transform:scale(1.05);filter:brightness(0) invert(1) drop-shadow(0 0 10px rgba(249, 178, 51, 0.3)) !important}
-    .footer-col h4{color:var(--amarillo) !important;font-size:17px;margin-bottom:20px;text-transform:uppercase;position:relative;display:inline-block}
-    .footer-col h4::after{content:'';position:absolute;bottom:-5px;left:0;width:30px;height:2px;background:var(--amarillo)}
-    .footer-links a{color:#ffffff !important;text-decoration:none;transition:0.3s;display:inline-block;padding:3px 0}
-    .footer-links a:hover{color:var(--amarillo) !important;transform:translateX(5px)}
-    .footer-contact-item{color:#ffffff;margin-bottom:10px;font-size:14px;transition:all 0.3s}
-    .footer-contact-item:hover{color:var(--amarillo)}
-    .footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.2);display:flex;justify-content:space-between;font-size:12px;color:var(--amarillo)}
+    /* FOOTER - LOGO CORREGIDO (SIN FILTRO INVERT) */
+    footer{
+      background-color:#001a2c !important;
+      color:#ffffff !important;
+      padding:60px 5% 30px;
+      font-family:'Outfit', sans-serif;
+      clear:both;
+      position:relative;
+      margin-top:80px;
+    }
+    footer::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:4px;
+      background:linear-gradient(90deg, var(--amarillo), var(--celeste), var(--amarillo));
+      background-size:200% 100%;
+      animation:shimmer 3s linear infinite;
+    }
+    .footer-grid{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+      gap:40px;
+    }
+    /* LOGO SIN FILTRO - SE VE ORIGINAL */
+    .footer-logo-img{
+      height:70px !important;
+      width:auto !important;
+      display:block;
+      margin-bottom:20px;
+      transition:all 0.3s;
+      background:transparent;
+    }
+    .footer-logo-img:hover{
+      transform:scale(1.05);
+      filter:drop-shadow(0 0 10px rgba(249, 178, 51, 0.5));
+    }
+    .footer-col h4{
+      color:var(--amarillo) !important;
+      font-size:17px;
+      margin-bottom:20px;
+      text-transform:uppercase;
+      position:relative;
+      display:inline-block;
+    }
+    .footer-col h4::after{
+      content:'';
+      position:absolute;
+      bottom:-5px;
+      left:0;
+      width:30px;
+      height:2px;
+      background:var(--amarillo);
+    }
+    .footer-links a{
+      color:#ffffff !important;
+      text-decoration:none;
+      transition:0.3s;
+      display:inline-block;
+      padding:3px 0;
+    }
+    .footer-links a:hover{
+      color:var(--amarillo) !important;
+      transform:translateX(5px);
+    }
+    .footer-contact-item{
+      color:#ffffff;
+      margin-bottom:10px;
+      font-size:14px;
+      transition:all 0.3s;
+    }
+    .footer-contact-item:hover{
+      color:var(--amarillo);
+    }
+    .footer-bottom{
+      margin-top:40px;
+      padding-top:20px;
+      border-top:1px solid rgba(255,255,255,0.2);
+      display:flex;
+      justify-content:space-between;
+      font-size:12px;
+      color:var(--amarillo);
+    }
 
     /* WHATSAPP STICKY */
-    @keyframes pulse-wpp{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0.7)}70%{transform:scale(1.1);box-shadow:0 0 0 20px rgba(37,211,102,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0)}}
-    .btn-wpp{position:fixed;right:18px;bottom:18px;background:var(--wpp);color:#fff;padding:14px;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,.18);font-size:20px;z-index:2000;display:flex;align-items:center;justify-content:center;animation:pulse-wpp 2s infinite;transition:all 0.3s;border:3px solid transparent;text-decoration:none}
-    .btn-wpp:hover{background:var(--amarillo);color:var(--azul-frio);border-color:white;transform:scale(1.1)}
+    @keyframes pulse-wpp{
+      0%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0.7)}
+      70%{transform:scale(1.1);box-shadow:0 0 0 20px rgba(37,211,102,0)}
+      100%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0)}
+    }
+    .btn-wpp{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      background:var(--wpp);
+      color:#fff;
+      padding:14px;
+      border-radius:50%;
+      box-shadow:0 10px 30px rgba(0,0,0,.18);
+      font-size:20px;
+      z-index:2000;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      animation:pulse-wpp 2s infinite;
+      transition:all 0.3s;
+      border:3px solid transparent;
+      text-decoration:none;
+    }
+    .btn-wpp:hover{
+      background:var(--amarillo);
+      color:var(--azul-frio);
+      border-color:white;
+      transform:scale(1.1);
+    }
 
     /* MOBILE */
     @media (max-width:768px){
@@ -259,7 +403,9 @@
       .interlinking-box ul{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr;gap:30px;text-align:center}
       .footer-bottom{flex-direction:column;gap:10px;text-align:center}
-      .cta-empresas-box{padding:30px 20px}
+      .cta-destacado-box{padding:30px 20px}
+      .cta-destacado-box h3{font-size:22px}
+      .cta-destacado-box p{font-size:16px}
     }
     @media (max-width:640px){
       .landing-content h2{font-size:24px}
@@ -303,9 +449,9 @@
     </nav>
   </header>
 
-  <!-- HERO ESPECÍFICO LANDING -->
+  <!-- HERO ESPECÍFICO LANDING - BADGE CORREGIDO -->
   <section class="hero-landing">
-    <div class="badge-destacado">⚡ Resultados en 24-48 Horas</div>
+    <div class="badge-destacado">⚡ Resultados el Mismo Día</div>
     <h1>Prueba de Colinesterasa Eritrocitaria para Empresas</h1>
     <p>Brigadas en sitio · Monitoreo de plaguicidas · Riesgo químico · Fumigadores · Cultivos · Plantaciones · Resultados certificados para SG-SST</p>
     <div style="margin-top:30px;">
@@ -318,7 +464,7 @@
     </div>
   </section>
 
-  <!-- CONTENIDO ESPECÍFICO (PRESERVADO Y ENRIQUECIDO) -->
+  <!-- CONTENIDO ESPECÍFICO -->
   <main class="section-box landing-content reveal">
     
     <!-- SINÓNIMOS SEO -->
@@ -409,7 +555,8 @@
       <li><strong>Tarifas corporativas escalables</strong> según volumen de trabajadores y frecuencia</li>
     </ul>
 
-    <div class="cta-empresas-box">
+    <!-- CTA DESTACADO - CORREGIDO CON MÁXIMO CONTRASTE -->
+    <div class="cta-destacado-box">
       <h3>¿Necesita brigada de colinesterasa para su empresa agrícola?</h3>
       <p>Cotizamos según número de trabajadores, ubicación de fincas y frecuencia de monitoreo. Más de 150 empresas agrícolas del Oriente Antioqueño confían en nosotros.</p>
       <a href="https://wa.me/573128274796?text=Hola,%20soy%20empresa%20agrícola%20y%20necesito%20cotización%20para%20brigada%20de%20colinesterasa" class="cta-main" style="background:var(--amarillo);color:var(--azul-frio);" target="_blank" rel="noopener noreferrer">
@@ -457,10 +604,11 @@
 
   </main>
 
-  <!-- BLOQUE 3: FOOTER -->
+  <!-- BLOQUE 3: FOOTER - LOGO CORREGIDO -->
   <footer role="contentinfo">
     <div class="footer-grid">
       <div class="footer-col">
+        <!-- LOGO SIN FILTRO - SE VE ORIGINAL -->
         <img src="../LABCCO-Photoroom.png" alt="LABCCO Logo" class="footer-logo-img">
         <p style="font-size: 14px; line-height: 1.6;">IPS líder en el Oriente Antioqueño. Más de 33 años de precisión y calidez humana al servicio de su salud.</p>
       </div>
