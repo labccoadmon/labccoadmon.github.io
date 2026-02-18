@@ -3,403 +3,450 @@
 <head>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KFW5WLWP');</script>
-  <!-- End Google Tag Manager -->
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>24 Servicios Médicos | Laboratorio Clínico Rionegro | LABCCO</title>
-  <meta name="description" content="Portafolio completo de salud ocupacional y laboratorio clínico en Rionegro. Resultados el mismo día. 33 años de experiencia. ¡Agende ya!">
+  <meta name="description" content="Portafolio completo de salud ocupacional y laboratorio clínico en Rionegro. Resultados el mismo día. 33 años de experiencia.">
   <link rel="canonical" href="https://labccosas.com/servicios.html">
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   
-  <!-- Schema.org MedicalOrganization + Service -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "MedicalOrganization",
-        "name": "LABCCO - Laboratorio Clínico Colombiano de Oriente",
-        "url": "https://labccosas.com",
-        "logo": "https://labccosas.com/LABCCO-Photoroom.png",
-        "description": "IPS líder en salud ocupacional y laboratorio clínico en Rionegro desde 1992",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Cra 48 #52-54, Edificio Santa Bárbara",
-          "addressLocality": "Rionegro",
-          "addressRegion": "Antioquia",
-          "addressCountry": "CO"
-        },
-        "telephone": "+57-312-827-4796",
-        "openingHours": ["Mo-Fr 07:00-12:00,14:00-17:00", "Sa 08:00-11:00"]
-      },
-      {
-        "@type": "ItemList",
-        "itemListElement": [
-          {"@type": "MedicalTest", "name": "Audiometría Ocupacional", "url": "https://labccosas.com/servicios/audiometria-ocupacional.html"},
-          {"@type": "MedicalTest", "name": "Examen Médico de Ingreso", "url": "https://labccosas.com/servicios/examen-medico-ingreso-laboral.html"},
-          {"@type": "MedicalTest", "name": "Trabajo en Alturas", "url": "https://labccosas.com/servicios/examen-trabajo-en-alturas.html"},
-          {"@type": "MedicalTest", "name": "Prueba de ADN Paternidad", "url": "https://labccosas.com/servicios/pruebas-paternidad-adn-rionegro.html"}
-        ]
+  <!-- CSS DE EMERGENCIA PARA CONTRASTES -->
+  <style>
+    :root {
+      --azul-frio: #004d6f;
+      --celeste: #0099cc;
+      --azul-suave: #0077aa;
+      --amarillo: #f9b233;
+      --gris-claro: #f4f7fb;
+    }
+    
+    /* NAVBAR FORZADO A AZUL OSCURO */
+    .navbar {
+      background-color: var(--azul-frio) !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+      position: fixed !important;
+      width: 100% !important;
+      top: 0 !important;
+      z-index: 1000 !important;
+      padding: 15px 0 !important;
+    }
+    
+    .navbar .logo-lab { color: white !important; font-weight: 700 !important; font-size: 1.8rem !important; }
+    .navbar .logo-cco { color: var(--amarillo) !important; font-weight: 700 !important; font-size: 1.8rem !important; }
+    .navbar .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .navbar .nav-links a { color: white !important; text-decoration: none; margin-left: 30px; font-weight: 600; transition: color 0.3s; }
+    .navbar .nav-links a:hover { color: var(--amarillo) !important; }
+    .navbar .nav-links a.active { color: var(--amarillo) !important; border-bottom: 2px solid var(--amarillo); }
+    
+    /* MENU HAMBURGUESA BLANCO */
+    .menu-toggle .bar { background-color: white !important; width: 25px; height: 3px; margin: 5px 0; display: block; transition: 0.3s; }
+    
+    /* HERO SUBPAGE */
+    .hero-subpage {
+      background: linear-gradient(rgba(0, 77, 111, 0.9), rgba(0, 119, 170, 0.85)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23004d6f" width="100" height="100"/><circle cx="50" cy="50" r="40" fill="%230077aa" opacity="0.3"/></svg>');
+      background-size: cover;
+      padding: 140px 20px 80px;
+      text-align: center;
+      color: white;
+      margin-top: 0;
+    }
+    .hero-subpage h1 { color: var(--amarillo) !important; font-size: 3rem; margin-bottom: 15px; }
+    .hero-subpage p { font-size: 1.3rem; opacity: 0.95; }
+    
+    /* SECCIÓN WHATSAPP CON CONTRASTE REAL */
+    .cta-emergencia {
+      background: linear-gradient(135deg, var(--azul-frio) 0%, var(--azul-suave) 100%) !important;
+      color: white !important;
+      padding: 60px 40px !important;
+      border-radius: 20px !important;
+      text-align: center !important;
+      margin: 60px auto !important;
+      border-bottom: 8px solid var(--amarillo) !important;
+      box-shadow: 0 20px 60px rgba(0,77,111,0.3) !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-emergencia::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: rgba(249,178,51,0.1);
+      border-radius: 50%;
+    }
+    .cta-emergencia h3 { color: var(--amarillo) !important; font-size: 2rem !important; margin-bottom: 15px !important; position: relative; z-index: 2; }
+    .cta-emergencia p { color: white !important; font-size: 1.2rem !important; margin-bottom: 30px !important; position: relative; z-index: 2; }
+    .cta-emergencia .cta-btn {
+      display: inline-block;
+      background: #25D366 !important;
+      color: white !important;
+      padding: 18px 36px !important;
+      border-radius: 50px !important;
+      text-decoration: none !important;
+      font-weight: 700 !important;
+      font-size: 1.1rem !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+      position: relative;
+      z-index: 2;
+      transition: transform 0.3s;
+    }
+    .cta-emergencia .cta-btn:hover { transform: translateY(-3px); }
+    
+    /* FOOTER EXACTO DEL INDEX CON COLORES FORZADOS */
+    .footer {
+      background-color: var(--azul-frio) !important;
+      color: white !important;
+      padding: 60px 20px 0 !important;
+      margin-top: 80px !important;
+    }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 40px; }
+    .footer-column h3 { color: var(--amarillo) !important; font-size: 1.8rem; margin-bottom: 20px; }
+    .footer-column h4 { color: white !important; font-size: 1.2rem; margin-bottom: 20px; border-bottom: 2px solid var(--amarillo); display: inline-block; padding-bottom: 5px; }
+    .footer-column p, .footer-column a { color: rgba(255,255,255,0.9) !important; text-decoration: none; line-height: 1.8; }
+    .footer-column a:hover { color: var(--amarillo) !important; }
+    .footer-bottom {
+      background-color: rgba(0,0,0,0.2) !important;
+      padding: 25px !important;
+      text-align: center !important;
+      border-top: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    .footer-bottom p { color: rgba(255,255,255,0.7) !important; margin: 0; font-size: 0.9rem; }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .navbar .nav-links { 
+        position: fixed; 
+        left: -100%; 
+        top: 70px; 
+        flex-direction: column; 
+        background-color: var(--azul-frio) !important; 
+        width: 100%; 
+        text-align: center; 
+        transition: 0.3s; 
+        padding: 20px 0;
       }
-    ]
-  }
-  </script>
+      .navbar .nav-links.active { left: 0; }
+      .navbar .nav-links a { margin: 15px 0 !important; display: block; }
+      .menu-toggle { display: block !important; cursor: pointer; background: none; border: none; }
+      .hero-subpage h1 { font-size: 2rem; }
+      .services-grid { grid-template-columns: 1fr !important; }
+    }
+    
+    @media (min-width: 769px) {
+      .menu-toggle { display: none !important; }
+    }
+  </style>
 </head>
-<body>
+<body style="margin: 0; font-family: 'Outfit', sans-serif; background-color: var(--gris-claro);">
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFW5WLWP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- HEADER EXACTO -->
-  <header class="navbar top" id="navbar">
+  <!-- HEADER EXACTO DEL INDEX -->
+  <header class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo" aria-label="LABCCO Inicio">
+      <a href="index.html" class="logo" style="text-decoration: none;">
         <span class="logo-lab">LAB</span><span class="logo-cco">CCO</span>
       </a>
-      <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
-      <nav class="nav-links" aria-label="Navegación principal">
+      <nav class="nav-links" id="nav-links">
         <a href="index.html">Inicio</a>
         <a href="index.html#nosotros">Nosotros</a>
-        <a href="servicios.html" class="active" aria-current="page">Servicios</a>
+        <a href="servicios.html" class="active">Servicios</a>
         <a href="empresas.html">Empresas</a>
         <a href="index.html#contacto">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO INTERNO -->
-  <section class="hero-subpage" style="background: linear-gradient(135deg, rgba(0,77,111,0.95) 0%, rgba(0,119,170,0.9) 100%), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23004d6f%22 width=%22100%22 height=%22100%22/><path fill=%22%230077aa%22 d=%22M0 50 Q25 30 50 50 T100 50 L100 100 L0 100 Z%22 opacity=%220.3%22/></svg>'); background-size: cover; padding: 140px 20px 80px; text-align: center; color: white; position: relative; overflow: hidden;">
-    <div class="container" style="position: relative; z-index: 2;">
+  <!-- HERO -->
+  <section class="hero-subpage">
+    <div class="container" style="max-width: 800px; margin: 0 auto;">
       <div style="display: inline-block; background: rgba(249,178,51,0.2); border: 1px solid var(--amarillo); padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
         +33 Años de Experiencia
       </div>
-      <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 20px; line-height: 1.2;">
-        Portafolio de <span style="color: var(--amarillo);">Servicios Médicos</span>
-      </h1>
-      <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 30px; opacity: 0.95; line-height: 1.6;">
-        24 especialidades en salud ocupacional y laboratorio clínico. <strong>Resultados el mismo día.</strong>
-      </p>
-      <a href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vi%20el%20portafolio%20de%20servicios%20y%20quiero%20agendar" class="cta-main" style="display: inline-flex; align-items: center; gap: 10px; background: var(--amarillo); color: var(--azul-frio); font-weight: 700; padding: 16px 32px; border-radius: 50px; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s;">
-        <span>📱</span> Agendar Ahora por WhatsApp
-      </a>
+      <h1>Portafolio de Servicios</h1>
+      <p>24 especialidades médicas con resultados el mismo día. Autoridad indiscutible en Rionegro.</p>
     </div>
   </section>
 
-  <!-- CATÁLOGO DE SERVICIOS -->
-  <main style="margin-top: 0;">
-    <section class="section-box container" id="servicios-full" style="padding: 80px 20px;">
-      <div class="section-title" style="text-align: center; margin-bottom: 60px;">
-        <h2 style="color: var(--azul-frio); font-size: 2.5rem; margin-bottom: 15px;">Nuestros Servicios</h2>
-        <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Soluciones integrales para empresas y particulares en Rionegro y el Oriente Antioqueño.</p>
-      </div>
+  <!-- CONTENIDO PRINCIPAL -->
+  <main style="max-width: 1200px; margin: 0 auto; padding: 60px 20px;">
+    
+    <!-- GRID DE SERVICIOS -->
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px;">
+      
+      <!-- Servicio 1 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">👂</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Audiometría Ocupacional</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Evaluación auditiva completa bajo normativa vigente para industrias con ruido.</p>
+        <a href="servicios/audiometria-ocupacional.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-      <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px;">
-        
-        <!-- 1. Audiometría -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">👂</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Audiometría Ocupacional</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Evaluación auditiva completa bajo normativa vigente. Ideal para industrias con ruido.</p>
-          <a href="servicios/audiometria-ocupacional.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span style="transition: transform 0.2s;">→</span></a>
-        </article>
+      <!-- Servicio 2 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🧪</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Colinesterasa</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Monitoreo vital para personal expuesto a plaguicidas y sustancias químicas.</p>
+        <a href="servicios/prueba-colinesterasa-riesgo-quimico.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 2. Colinesterasa -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🧪</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Colinesterasa</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Monitoreo vital para personal expuesto a plaguicidas y sustancias químicas.</p>
-          <a href="servicios/prueba-colinesterasa-riesgo-quimico.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 3 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🧬</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Prueba de ADN</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Estudios de paternidad con respaldo UdeA. Confidencialidad absoluta garantizada.</p>
+        <a href="servicios/pruebas-paternidad-adn-rionegro.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 3. ADN -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🧬</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Prueba de ADN</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Estudios de paternidad con respaldo UdeA. Confidencialidad absoluta.</p>
-          <a href="servicios/pruebas-paternidad-adn-rionegro.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 4 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">📝</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Ingreso Laboral</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Examen médico obligatorio pre-empleo. Entrega de resultados el mismo día.</p>
+        <a href="servicios/examen-medico-ingreso-laboral.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 4. Ingreso Laboral -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">📝</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Ingreso Laboral</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Examen médico obligatorio pre-empleo. Entrega de resultados el mismo día.</p>
-          <a href="servicios/examen-medico-ingreso-laboral.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 5 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🪜</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Trabajo en Alturas</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Certificación médica completa para labores en altura. Incluye laboratorio.</p>
+        <a href="servicios/examen-trabajo-en-alturas.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 5. Trabajo en Alturas -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🪜</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Trabajo en Alturas</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Certificación médica completa para labores en altura. Incluye laboratorio.</p>
-          <a href="servicios/examen-trabajo-en-alturas.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 6 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🚗</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Conductores</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Exámenes para licencias de conducción y control ocupacional periódico.</p>
+        <a href="servicios/examen-medico-para-conductores-rionegro.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 6. Conductores -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🚗</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Conductores</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Exámenes para licencias de conducción y control ocupacional periódico.</p>
-          <a href="servicios/examen-medico-para-conductores-rionegro.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 7 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🍱</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Manipulación Alimentos</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Frotis de garganta, uñas y KOH. Carné sanitario para sector gastronómico.</p>
+        <a href="servicios/manipuladores-de-alimentos-rionegro.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 7. Manipuladores -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🍱</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Manipulación Alimentos</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Frotis de garganta, uñas y KOH. Carné sanitario para sector gastronómico.</p>
-          <a href="servicios/manipuladores-de-alimentos-rionegro.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 8 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🫁</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Espirometría</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Análisis de función pulmonar para salud ocupacional y diagnóstico respiratorio.</p>
+        <a href="servicios/espirometria-ocupacional.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 8. Espirometría -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🫁</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Espirometría</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Análisis de función pulmonar para salud ocupacional y diagnóstico respiratorio.</p>
-          <a href="servicios/espirometria-ocupacional.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 9 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">👁️</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Visiometría</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Tamizaje visual completo para perfiles de cargo con exigencia visual.</p>
+        <a href="servicios/visiometria-ocupacional.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 9. Visiometría -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">👁️</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Visiometría</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Tamizaje visual completo para perfiles de cargo con exigencia visual.</p>
-          <a href="servicios/visiometria-ocupacional.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 10 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🛡️</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Vigilantes</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Protocolos de salud específicos para personal de seguridad privada.</p>
+        <a href="servicios/examen-medico-para-vigilantes-rionegro.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 10. Vigilantes -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🛡️</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Vigilantes</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Protocolos de salud específicos para personal de seguridad privada.</p>
-          <a href="servicios/examen-medico-para-vigilantes-rionegro.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 11 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">👨‍🚒</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Brigadistas</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Evaluación física de alto rendimiento para personal de emergencias.</p>
+        <a href="servicios/examen-aptitud-brigadistas.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 11. Brigadistas -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">👨‍🚒</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Brigadistas</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Evaluación física de alto rendimiento para personal de emergencias.</p>
-          <a href="servicios/examen-aptitud-brigadistas.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 12 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🔬</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Espermograma</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Estudio completo de fertilidad masculina con estándares de laboratorio clínico.</p>
+        <a href="servicios/espermograma-laboratorio-rionegro.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 12. Espermograma -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🔬</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Espermograma</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Estudio completo de fertilidad masculina con estándares de laboratorio clínico.</p>
-          <a href="servicios/espermograma-laboratorio-rionegro.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 13 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">👨‍🏭</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Soldadores</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Evaluación específica para riesgos de soldadura: metales pesados, visión.</p>
+        <a href="servicios/examen-medico-para-soldadores-rionegro.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 13. Soldadores -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">👨‍🏭</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Soldadores</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Evaluación específica para riesgos de soldadura: metales pesados, visión.</p>
-          <a href="servicios/examen-medico-para-soldadores-rionegro.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 14 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🏗️</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Operador Maquinaria</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Certificación médica para operadores de retroexcavadora y maquinaria pesada.</p>
+        <a href="servicios/examen-para-operador-de-retroexcavadora-rionegro.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 14. Retroexcavadora -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🏗️</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Operador Maquinaria</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Certificación médica para operadores de retroexcavadora y maquinaria pesada.</p>
-          <a href="servicios/examen-para-operador-de-retroexcavadora-rionegro.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 15 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">☣️</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Fumigadores</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Control de salud completo para manejo de agroquímicos y plaguicidas.</p>
+        <a href="servicios/examen-para-fumigadores.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 15. Fumigadores -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">☣️</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Fumigadores</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Control de salud completo para manejo de agroquímicos y plaguicidas.</p>
-          <a href="servicios/examen-para-fumigadores.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 16 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🌾</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Trabajadores Agrícolas</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Exámenes preventivos específicos para el sector floricultor y agrícola.</p>
+        <a href="servicios/examen-trabajadores-agricolas.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 16. Agrícolas -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🌾</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Trabajadores Agrícolas</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Exámenes preventivos específicos para el sector floricultor y agrícola.</p>
-          <a href="servicios/examen-trabajadores-agricolas.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 17 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">⚙️</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Mantenimiento Industrial</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Aptitud física para técnicos de mantenimiento y áreas industriales.</p>
+        <a href="servicios/examen-para-tecnico-de-mantenimiento-industrial-rionegro.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 17. Mantenimiento -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">⚙️</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Mantenimiento Industrial</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Aptitud física para técnicos de mantenimiento y áreas industriales.</p>
-          <a href="servicios/examen-para-tecnico-de-mantenimiento-industrial-rionegro.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 18 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🧗</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Laboratorio Alturas</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Pruebas de sangre específicas requeridas para certificación en alturas.</p>
+        <a href="servicios/laboratorio-trabajo-en-alturas.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 18. Laboratorio Alturas -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🧗</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Laboratorio Alturas</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Pruebas de sangre específicas requeridas para certificación en alturas.</p>
-          <a href="servicios/laboratorio-trabajo-en-alturas.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 19 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🚛</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Control Ocupacional</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Exámenes periódicos para transportadores y conductores profesionales.</p>
+        <a href="servicios/examen-ocupacional-conductores.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 19. Ocupacional Conductores -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🚛</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Control Ocupacional</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Exámenes periódicos para transportadores y conductores profesionales.</p>
-          <a href="servicios/examen-ocupacional-conductores.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 20 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">📊</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Medicina Preventiva</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Sistemas de vigilancia epidemiológica y prevención de riesgos laborales.</p>
+        <a href="servicios/medicina-preventiva-del-trabajo.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 20. Medicina Preventiva -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">📊</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Medicina Preventiva</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Sistemas de vigilancia epidemiológica y prevención de riesgos laborales.</p>
-          <a href="servicios/medicina-preventiva-del-trabajo.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 21 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">💼</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Paquetes Empresariales</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Soluciones integrales de salud para empresas. Tarifas corporativas especiales.</p>
+        <a href="servicios/examenes-ocupacionales.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 21. Exámenes Ocupacionales -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">💼</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Paquetes Empresariales</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Soluciones integrales de salud para empresas. Tarifas corporativas.</p>
-          <a href="servicios/examenes-ocupacionales.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 22 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">📋</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Info Colinesterasa</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Información detallada sobre la prueba y su importancia en salud ocupacional.</p>
+        <a href="servicios/colinesterasa-info.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 22. Colinesterasa Info -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">📋</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Info Colinesterasa</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Información detallada sobre la prueba y su importancia en salud ocupacional.</p>
-          <a href="servicios/colinesterasa-info.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 23 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🏭</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Colinesterasa Empresas</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Programa corporativo de monitoreo para industrias químicas y agrícolas.</p>
+        <a href="servicios/colinesterasa-empresas.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 23. Colinesterasa Empresas -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🏭</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Colinesterasa Empresas</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Programa corporativo de monitoreo para industrias químicas y agrícolas.</p>
-          <a href="servicios/colinesterasa-empresas.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+      <!-- Servicio 24 -->
+      <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border-top: 5px solid var(--azul-frio); transition: transform 0.3s;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🧼</div>
+        <h3 style="color: var(--azul-frio); margin-bottom: 10px; font-size: 1.3rem;">Higiene Alimentos</h3>
+        <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Certificaciones de salud completas para sector gastronómico y alimentario.</p>
+        <a href="servicios/manipuladores-de-alimentos.html" style="color: var(--celeste); text-decoration: none; font-weight: 600;">Ver más →</a>
+      </article>
 
-        <!-- 24. Manipuladores Higiene -->
-        <article class="service-card" style="background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,77,111,0.08); border: 1px solid rgba(0,77,111,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--azul-frio), var(--celeste));"></div>
-          <div class="service-icon" style="font-size: 3rem; margin-bottom: 20px; display: block;">🧼</div>
-          <h3 style="color: var(--azul-frio); font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Higiene Alimentos</h3>
-          <p style="color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Certificaciones de salud completas para sector gastronómico y alimentario.</p>
-          <a href="servicios/manipuladores-de-alimentos.html" class="cta-inline" style="color: var(--celeste); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">Ver más <span>→</span></a>
-        </article>
+    </div>
 
-      </div>
+    <!-- CTA EMERGENCIA CON CONTRASTE GARANTIZADO -->
+    <div class="cta-emergencia">
+      <h3>¿No encuentra el examen que necesita?</h3>
+      <p>Realizamos más de 500 tipos de exámenes clínicos. Asesoría inmediata vía WhatsApp con nuestros especialistas.</p>
+      <a href="https://wa.me/573128274796?text=Hola%20LABCCO,%20necesito%20información%20sobre%20un%20examen%20específico" class="cta-btn">
+        💬 Consultar por WhatsApp Ahora
+      </a>
+      <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.9;">
+        📍 Cra 48 #52-54, Edificio Santa Bárbara, Rionegro | 📞 312 827 4796
+      </p>
+    </div>
 
-      <!-- CTA CONVERSIÓN AGRESIVA -->
-      <div style="background: linear-gradient(135deg, var(--azul-frio) 0%, var(--azul-suave) 100%); padding: 50px 40px; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0,77,111,0.3);">
-        <div style="position: absolute; top: -50%; right: -10%; width: 300px; height: 300px; background: rgba(249,178,51,0.1); border-radius: 50%;"></div>
-        <div style="position: relative; z-index: 2;">
-          <h3 style="font-size: 1.8rem; margin-bottom: 15px; font-weight: 700;">¿No encuentra el examen que necesita?</h3>
-          <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.95; max-width: 500px; margin-left: auto; margin-right: auto;">Realizamos más de 500 tipos de exámenes clínicos. Asesoría inmediata vía WhatsApp.</p>
-          <a href="https://wa.me/573128274796?text=Hola%20LABCCO,%20necesito%20información%20sobre%20un%20examen%20específico" class="cta-main" style="display: inline-flex; align-items: center; gap: 10px; background: var(--amarillo); color: var(--azul-frio); font-weight: 700; padding: 18px 36px; border-radius: 50px; text-decoration: none; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s;">
-            <span>💬</span> Consultar por WhatsApp Ahora
-          </a>
-          <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">📍 Cra 48 #52-54, Edificio Santa Bárbara, Rionegro | 📞 312 827 4796</p>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <!-- FOOTER EXACTO -->
+  <!-- FOOTER EXACTO DEL INDEX CON COLORES FORZADOS -->
   <footer class="footer">
     <div class="footer-container">
-      <div class="footer-info">
+      <div class="footer-column">
         <h3>LABCCO</h3>
-        <p>Laboratorio Clínico y Salud Ocupacional en Rionegro desde 1992.</p>
-        <div class="contact-item">📍 Cra 48 #52-54, Edificio Santa Bárbara, Rionegro</div>
-        <div class="contact-item">📞 312 827 4796</div>
-        <div class="contact-item">✉️ calidad@labccosas.com</div>
+        <p>IPS líder en el Oriente Antioqueño. Más de 33 años de precisión y calidez humana al servicio de su salud.</p>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: var(--amarillo) !important;">Habilitados Res. 3100</p>
+      </div>
+      <div class="footer-column">
+        <h4>Secciones</h4>
+        <p><a href="index.html">Inicio</a></p>
+        <p><a href="servicios.html">Servicios</a></p>
+        <p><a href="empresas.html">Empresas</a></p>
+        <p><a href="index.html#contacto">Contacto</a></p>
+      </div>
+      <div class="footer-column">
+        <h4>Contacto</h4>
+        <p>📍 Cra 48 #52-54, Edificio Santa Bárbara<br>Rionegro, Antioquia</p>
+        <p>📱 312 827 4796</p>
+        <p>📞 (604) 531 13 54</p>
+        <p>✉ calidad@labccosas.com</p>
+      </div>
+      <div class="footer-column">
+        <h4>Horario</h4>
+        <p>Lun - Vie: 7:00 AM - 12:00 PM<br>2:00 PM - 5:00 PM</p>
+        <p>Sábados: 8:00 AM - 11:00 AM</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 LABCCO. Todos los derechos reservados. | Habilitados Res. 3100</p>
+      <p>&copy; 2026 IPS LABCCO S.A.S. Todos los derechos reservados. | Vigilado por la DSSA</p>
     </div>
   </footer>
 
   <!-- BOTÓN WHATSAPP STICKY -->
-  <a href="https://wa.me/573128274796" class="btn-wpp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp LABCCO" style="position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 1000; transition: transform 0.3s; text-decoration: none;">📱</a>
+  <a href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" style="position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 1000; text-decoration: none; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📱</a>
 
   <!-- SCRIPT MENÚ HAMBURGUESA -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
       
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function() {
-          this.classList.toggle('active');
-          navLinks.classList.toggle('active');
-          const isExpanded = this.getAttribute('aria-expanded') === 'true';
-          this.setAttribute('aria-expanded', !isExpanded);
-          document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
+      menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+      });
 
-        // Cerrar al hacer click en links
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-          });
+      // Cerrar menú al hacer click en links
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          menuToggle.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
         });
-
-        // Cerrar al click fuera
-        document.addEventListener('click', function(e) {
-          if (!navLinks.contains(e.target) && !menuToggle.contains(e.target) && navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-          }
-        });
-      }
-
-      // Navbar scroll effect
-      window.addEventListener('scroll', function() {
-        const nav = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-          nav.classList.add('scrolled');
-          nav.classList.remove('top');
-        } else {
-          nav.classList.remove('scrolled');
-          nav.classList.add('top');
-        }
       });
 
       // Hover effects para cards
