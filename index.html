@@ -5,7 +5,7 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  'https://www.googletagmanager.com/gtm.js?id=  '+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-KFW5WLWP');</script>
   <!-- End Google Tag Manager -->
   
@@ -13,23 +13,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Laboratorio Clínico en Rionegro | Resultados Rápidos – LABCCO</title>
   <meta name="description" content="Laboratorio clínico en Rionegro — exámenes con resultados el mismo día, toma a domicilio y servicios de salud ocupacional para empresas. Solicita cotización por WhatsApp.">
-  <link rel="canonical" href="https://labccosas.com/">
+  <link rel="canonical" href="https://labccosas.com/  ">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#004d6f">
 
   <meta property="og:title" content="Laboratorio Clínico en Rionegro | Resultados Rápidos – LABCCO">
   <meta property="og:description" content="Laboratorio clínico en Rionegro con resultados rápidos y confiables. Exámenes de laboratorio, salud ocupacional y atención a empresas. LABCCO IPS habilitada.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://labccosas.com/">
-  <meta property="og:image" content="https://labccosas.com/hero1.webp">
+  <meta property="og:url" content="https://labccosas.com/  ">
+  <meta property="og:image" content="https://labccosas.com/hero1.webp  ">
 
   <link rel="preload" as="image" href="hero1.webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com  ">
+  <link rel="preconnect" href="https://fonts.gstatic.com  " crossorigin>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap&font-display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300  ;400;500;600;700&display=swap&font-display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -42,6 +42,7 @@
       --sombra: rgba(0, 119, 170, .08);
       --wpp: #25d366;
       --naranja: #ff6a00;
+      --amarillo: #f9b233;
       --margen: 60px;
     }
 
@@ -51,6 +52,38 @@
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%;height:auto}
 
+    /* ANIMACIONES GLOBALES */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse-amarillo {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(249, 178, 51, 0.4); }
+      50% { box-shadow: 0 0 0 15px rgba(249, 178, 51, 0); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes rotate-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .banner-video{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
     .banner-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
     .banner-overlay{position:absolute;inset:0;background:rgba(0,77,111,.55);z-index:2}
@@ -58,10 +91,75 @@
     .banner-text h1{font-size:clamp(2.2rem,5vw,3.5rem);color:var(--blanco);margin-bottom:12px;font-weight:700;letter-spacing:-.5px}
     .banner-sub{font-size:clamp(1rem,2.5vw,1.4rem);color:var(--blanco);margin-bottom:8px;font-weight:500;max-width:680px;margin-left:auto;margin-right:auto}
     .banner-tag{font-size:clamp(.9rem,2vw,1.1rem);color:var(--blanco);margin-bottom:25px;font-weight:600}
-    .cta-banner{display:inline-flex;align-items:center;background:var(--celeste);color:var(--blanco);padding:16px 32px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .2s;margin-right:15px;min-height:48px}
+    
+    /* BADGE AMARILLO DESTACADO */
+    .badge-destacado {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--amarillo) 0%, #ffcc00 100%);
+      color: var(--azul-frio);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(249, 178, 51, 0.3);
+      animation: pulse-amarillo 2s infinite;
+      position: relative;
+      overflow: hidden;
+    }
+    .badge-destacado::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    .cta-banner{display:inline-flex;align-items:center;background:var(--celeste);color:var(--blanco);padding:16px 32px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .2s,margin-right .15s;margin-right:15px;min-height:48px;position:relative;overflow:hidden}
     .cta-banner:hover{transform:scale(1.05)}
-    .cta-secundario{display:inline-flex;align-items:center;background:var(--azul-frio);color:var(--blanco);padding:16px 32px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .2s;min-height:48px}
-    .cta-secundario:hover{transform:scale(1.05)}
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+    .cta-banner:active::after {
+      width: 300px;
+      height: 300px;
+    }
+    
+    /* CTA SECUNDARIO CON ACENTO AMARILLO */
+    .cta-secundario{display:inline-flex;align-items:center;background:var(--azul-frio);color:var(--blanco);padding:16px 32px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:all .3s;min-height:48px;border:2px solid transparent;position:relative;overflow:hidden}
+    .cta-secundario:hover {
+      transform:scale(1.05);
+      border-color: var(--amarillo);
+      box-shadow: 0 10px 30px rgba(249, 178, 51, 0.2);
+    }
+    .cta-secundario::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--amarillo);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .cta-secundario:hover::before {
+      transform: scaleX(1);
+    }
 
     @media (prefers-reduced-motion:reduce),(max-width:768px){
       #bannerVid{display:none}
@@ -74,7 +172,12 @@
     .top-center{flex:1.5;justify-content:center;gap:12px}
     .top-right{flex:1;justify-content:flex-start}
     .horario{display:flex;align-items:center;gap:5px;font-weight:600;white-space:nowrap}
-    .contact-small{display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,.08);padding:3px 8px;border-radius:16px;font-weight:500;font-size:13px}
+    .contact-small{display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,.08);padding:3px 8px;border-radius:16px;font-weight:500;font-size:13px;transition:all 0.3s}
+    .contact-small:hover {
+      background: var(--amarillo);
+      color: var(--azul-frio);
+      transform: translateY(-2px);
+    }
     .brand-extra{font-weight:600;font-size:12px;color:var(--blanco);white-space:nowrap}
 
     .navbar{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:6px var(--margen);height:80px;background:transparent;box-shadow:0 1px 6px transparent;z-index:1500;transition:margin-top .3s,background .3s,box-shadow .3s}
@@ -84,8 +187,21 @@
     .brand{display:flex;align-items:center;gap:14px}
     #siteLogo{height:72px;width:auto;border-radius:6px}
     .nav-links{display:flex;gap:28px;align-items:center}
-    .nav-links a{font-weight:500;font-size:18px;padding:6px 4px;color:var(--blanco);transition:opacity .2s}
+    .nav-links a{font-weight:500;font-size:18px;padding:6px 4px;color:var(--blanco);transition:opacity .2s;position:relative}
     .nav-links a:hover{opacity:.8}
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--amarillo);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
     /* Menu Hamburguesa */
     .menu-toggle {
@@ -127,11 +243,45 @@
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
     .nos-texto h2{font-size:24px;color:var(--negro);font-weight:600;margin-bottom:6px}
-    .nos-texto h3{font-size:20px;color:var(--azul-suave);margin-bottom:12px}
+    .nos-texto h3{font-size:20px;color:var(--azul-suave);margin-bottom:12px;position:relative;display:inline-block}
+    .nos-texto h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--amarillo);
+      border-radius: 2px;
+    }
     .nos-texto p{font-size:17px;line-height:1.7;margin-bottom:20px;color:#333}
-    .cta-inline{display:inline-block;background:var(--azul-suave);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap}
-    .nos-fig{flex:0 0 560px;text-align:center}
-    .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sombra);width:100%}
+    
+    /* CTA INLINE MEJORADO CON AMARILLO */
+    .cta-inline{display:inline-block;background:var(--azul-suave);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 4px 12px var(--sombra);white-space:nowrap;transition:all 0.3s;position:relative;overflow:hidden;border:2px solid transparent}
+    .cta-inline:hover {
+      background: var(--azul-frio);
+      border-color: var(--amarillo);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(249, 178, 51, 0.2);
+    }
+    .nos-fig{flex:0 0 560px;text-align:center;position:relative}
+    .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sombra);width:100%;transition:transform 0.5s}
+    .nos-fig:hover img {
+      transform: scale(1.02);
+    }
+    /* ESQUINA DECORATIVA AMARILLA */
+    .nos-fig::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 80px;
+      height: 80px;
+      border-top: 4px solid var(--amarillo);
+      border-right: 4px solid var(--amarillo);
+      border-radius: 0 20px 0 0;
+      animation: float 3s ease-in-out infinite;
+    }
 
     /* DISEÑO MINIMALISTA DE AUTORIDAD - STATS */
     .stats-beneficios {
@@ -146,6 +296,10 @@
     .stat-item-benef {
       padding: 10px;
       position: relative;
+      transition: all 0.3s;
+    }
+    .stat-item-benef:hover {
+      transform: translateY(-5px);
     }
     @media (min-width: 769px) {
       .stat-item-benef:not(:last-child)::after {
@@ -165,6 +319,11 @@
       color: var(--azul-frio);
       letter-spacing: -2px;
       margin-bottom: 5px;
+      transition: all 0.3s;
+    }
+    .stat-item-benef:hover span {
+      color: var(--amarillo);
+      text-shadow: 0 0 20px rgba(249, 178, 51, 0.3);
     }
     .stat-item-benef small {
       display: block;
@@ -181,7 +340,7 @@
       font-weight: 400;
     }
 
-    /* SERVICIOS - GRID MODERNO */
+    /* SERVICIOS - GRID MODERNO CON ACENTOS AMARILLOS */
     .servicios-container {
       padding: 60px 0;
     }
@@ -196,11 +355,25 @@
       color: var(--azul-frio);
       font-weight: 700;
       margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    .servicios-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--amarillo);
+      border-radius: 2px;
     }
     .servicios-header p {
       color: #64748b;
       font-size: 1.1rem;
       line-height: 1.6;
+      margin-top: 20px;
     }
     .services-grid {
       display: grid;
@@ -218,6 +391,20 @@
       position: relative;
       overflow: hidden;
     }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--azul-frio), var(--celeste));
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
     .service-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(0, 77, 111, 0.08);
@@ -233,10 +420,30 @@
       justify-content: center;
       border-radius: 14px;
       margin-bottom: 25px;
-      transition: background 0.3s;
+      transition: all 0.3s;
+      position: relative;
     }
     .service-card:hover .service-icon {
-      background: var(--gris-claro);
+      background: var(--amarillo);
+      transform: rotate(5deg) scale(1.1);
+      box-shadow: 0 8px 20px rgba(249, 178, 51, 0.3);
+    }
+    /* BRILLO EN ICONO */
+    .service-icon::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 12px;
+      height: 12px;
+      background: var(--amarillo);
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    .service-card:hover .service-icon::after {
+      opacity: 1;
+      animation: pulse-amarillo 1.5s infinite;
     }
     .service-card h3 {
       font-size: 20px;
@@ -258,9 +465,14 @@
       color: var(--celeste);
       margin-bottom: 10px;
       display: block;
+      transition: all 0.3s;
+    }
+    .service-card:hover .category-tag {
+      color: var(--amarillo);
+      transform: translateX(5px);
     }
     
-    /* BOTÓN VER PORTAFOLIO COMPLETO */
+    /* BOTÓN VER PORTAFOLIO COMPLETO CON AMARILLO */
     .ver-portafolio-container {
       text-align: center;
       margin-top: 50px;
@@ -279,16 +491,31 @@
       box-shadow: 0 10px 30px rgba(0, 77, 111, 0.2);
       transition: all 0.3s ease;
       border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
     }
     .btn-portafolio-completo:hover {
       background: #fff;
       color: var(--azul-frio);
-      border-color: var(--azul-frio);
+      border-color: var(--amarillo);
       transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(0, 77, 111, 0.15);
+      box-shadow: 0 15px 40px rgba(249, 178, 51, 0.2);
+    }
+    .btn-portafolio-completo::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(249,178,51,0.2), transparent);
+      transition: left 0.5s;
+    }
+    .btn-portafolio-completo:hover::before {
+      left: 100%;
     }
 
-    /* CONVENIOS - GRILLA FIJA */
+    /* CONVENIOS - GRILLA FIJA CON ACENTOS */
     .aliados-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -304,21 +531,39 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: transform 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .aliado-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--amarillo);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+    .aliado-card:hover::after {
+      transform: scaleX(1);
     }
     .aliado-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 77, 111, 0.05);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 77, 111, 0.1);
+      border-color: var(--amarillo);
     }
     .aliado-card img {
       height: 80px;
       width: auto;
       margin-bottom: 25px;
       filter: grayscale(20%);
-      transition: filter 0.3s;
+      transition: all 0.3s;
     }
     .aliado-card:hover img {
       filter: grayscale(0%);
+      transform: scale(1.05);
     }
     .aliado-card h4 {
       font-size: 22px;
@@ -341,6 +586,8 @@
       font-size: 15px;
       transition: all 0.3s;
       width: 100%;
+      position: relative;
+      overflow: hidden;
     }
     .btn-negociar {
       background: var(--azul-frio);
@@ -349,6 +596,7 @@
     .btn-negociar:hover {
       background: var(--azul-suave);
       transform: scale(1.02);
+      box-shadow: 0 5px 20px rgba(249, 178, 51, 0.3);
     }
     .btn-beneficio {
       border: 2px solid var(--celeste);
@@ -357,6 +605,7 @@
     .btn-beneficio:hover {
       background: var(--celeste);
       color: #fff;
+      border-color: var(--amarillo);
     }
 
     /* CONTACTO MINIMALISTA */
@@ -376,6 +625,18 @@
       font-size: 32px;
       color: var(--azul-frio);
       margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    .contact-info h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: var(--amarillo);
+      border-radius: 2px;
     }
     .contact-details {
       margin-top: 30px;
@@ -387,6 +648,15 @@
       margin-bottom: 20px;
       font-size: 16px;
       color: #4a5568;
+      padding: 15px;
+      border-radius: 12px;
+      transition: all 0.3s;
+      border: 1px solid transparent;
+    }
+    .detail-item:hover {
+      background: #f8fafc;
+      border-color: var(--amarillo);
+      transform: translateX(10px);
     }
     .detail-item span {
       background: var(--gris-claro);
@@ -398,12 +668,24 @@
       border-radius: 50%;
       color: var(--celeste);
       font-size: 18px;
+      transition: all 0.3s;
+    }
+    .detail-item:hover span {
+      background: var(--amarillo);
+      color: var(--azul-frio);
+      transform: rotate(10deg);
     }
     .form-container {
       background: #f8fafc;
       padding: 40px;
       border-radius: 24px;
       box-shadow: 0 4px 20px rgba(0, 77, 111, 0.03);
+      border: 2px solid transparent;
+      transition: all 0.3s;
+    }
+    .form-container:hover {
+      border-color: var(--amarillo);
+      box-shadow: 0 8px 30px rgba(249, 178, 51, 0.1);
     }
     .form-group { margin-bottom: 20px; }
     .form-group label {
@@ -423,8 +705,8 @@
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
       outline: none;
-      border-color: var(--celeste);
-      box-shadow: 0 0 0 3px rgba(0, 153, 204, 0.1);
+      border-color: var(--amarillo);
+      box-shadow: 0 0 0 3px rgba(249, 178, 51, 0.1);
     }
     .btn-enviar {
       width: 100%;
@@ -435,24 +717,66 @@
       border-radius: 12px;
       font-weight: 700;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
     }
-    .btn-enviar:hover { background: var(--azul-suave); }
+    .btn-enviar:hover { 
+      background: var(--azul-suave);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(249, 178, 51, 0.2);
+    }
+    .btn-enviar::after {
+      content: '→';
+      position: absolute;
+      right: 20px;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    .btn-enviar:hover::after {
+      opacity: 1;
+      right: 15px;
+    }
     .map-container {
       height: 350px;
       border-radius: 24px;
       overflow: hidden;
       margin-top: 50px;
       border: 1px solid #edf2f7;
+      position: relative;
+    }
+    .map-container::before {
+      content: '📍';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      z-index: 10;
+      animation: float 2s ease-in-out infinite;
+      pointer-events: none;
     }
 
-    /* FOOTER PREMIUM CORREGIDO */
+    /* FOOTER PREMIUM CORREGIDO CON AMARILLO */
     footer {
         background-color: #001a2c !important;
         color: #ffffff !important;
         padding: 60px 5% 30px;
         font-family: 'Outfit', sans-serif;
         clear: both;
+        position: relative;
+    }
+    /* LÍNEA DECORATIVA AMARILLA SUPERIOR */
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--amarillo), var(--celeste), var(--amarillo));
+      background-size: 200% 100%;
+      animation: shimmer 3s linear infinite;
     }
     .footer-grid {
         max-width: 1200px;
@@ -468,20 +792,49 @@
         opacity: 1 !important;
         display: block;
         margin-bottom: 20px;
+        transition: all 0.3s;
+    }
+    .footer-logo-img:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 10px rgba(249, 178, 51, 0.3)) !important;
     }
     .footer-col h4 {
-        color: #00ccff !important;
+        color: var(--amarillo) !important;
         font-size: 17px;
         margin-bottom: 20px;
         text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+    }
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--amarillo);
     }
     .footer-links a {
         color: #ffffff !important;
         text-decoration: none;
         transition: 0.3s;
+        display: inline-block;
+        padding: 3px 0;
     }
-    .footer-links a:hover { color: #00ccff !important; }
-    .footer-contact-item { color: #ffffff; margin-bottom: 10px; font-size: 14px; }
+    .footer-links a:hover { 
+      color: var(--amarillo) !important; 
+      transform: translateX(5px);
+    }
+    .footer-contact-item { 
+      color: #ffffff; 
+      margin-bottom: 10px; 
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .footer-contact-item:hover {
+      color: var(--amarillo);
+    }
     .footer-bottom {
         margin-top: 40px;
         padding-top: 20px;
@@ -489,14 +842,20 @@
         display: flex;
         justify-content: space-between;
         font-size: 12px;
-        color: #00ccff;
+        color: var(--amarillo);
     }
 
-    /* ANIMACIÓN WHATSAPP */
+    /* ANIMACIÓN WHATSAPP MEJORADA */
     @keyframes pulse-wpp {
       0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
       100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    @keyframes rotate-icon {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(-10deg); }
+      75% { transform: rotate(10deg); }
+      100% { transform: rotate(0deg); }
     }
     .btn-wpp {
       position: fixed;
@@ -513,6 +872,81 @@
       align-items: center;
       justify-content: center;
       animation: pulse-wpp 2s infinite;
+      transition: all 0.3s;
+      border: 3px solid transparent;
+    }
+    .btn-wpp:hover {
+      background: var(--amarillo);
+      color: var(--azul-frio);
+      border-color: white;
+      transform: scale(1.1);
+    }
+    .btn-wpp:hover span {
+      animation: rotate-icon 0.5s ease;
+    }
+
+    /* SECCIÓN ESPECIALIDADES CON ACENTOS AMARILLOS */
+    #especialidades-ips {
+      position: relative;
+    }
+    #especialidades-ips h2 {
+      position: relative;
+      display: inline-block;
+    }
+    #especialidades-ips h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--amarillo);
+      border-radius: 2px;
+    }
+    #especialidades-ips h3 {
+      position: relative;
+      padding-left: 15px;
+    }
+    #especialidades-ips h3::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 20px;
+      background: var(--amarillo);
+      border-radius: 2px;
+    }
+    #especialidades-ips a {
+      position: relative;
+      transition: all 0.3s;
+    }
+    #especialidades-ips a:hover {
+      color: var(--amarillo) !important;
+      padding-left: 10px;
+    }
+    #especialidades-ips a::before {
+      content: '→';
+      position: absolute;
+      left: -15px;
+      opacity: 0;
+      transition: all 0.3s;
+      color: var(--amarillo);
+    }
+    #especialidades-ips a:hover::before {
+      opacity: 1;
+      left: -10px;
+    }
+    /* CAJA DE GUÍAS CON BORDE AMARILLO */
+    #especialidades-ips div[style*="background: #f6fbff"] {
+      border: 2px solid transparent;
+      transition: all 0.3s;
+    }
+    #especialidades-ips div[style*="background: #f6fbff"]:hover {
+      border-color: var(--amarillo);
+      box-shadow: 0 10px 30px rgba(249, 178, 51, 0.1);
     }
 
     /* ============================================
@@ -650,6 +1084,10 @@
       .nos-fig {
         flex: 1;
       }
+      
+      .nos-fig::before {
+        display: none;
+      }
 
       /* Stats */
       .stats-beneficios {
@@ -724,6 +1162,11 @@
         font-size: 16px;
         padding: 16px 24px;
       }
+      
+      .badge-destacado {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
     }
 
     /* Mobile Extra Pequeño (≤375px) */
@@ -753,17 +1196,17 @@
   <!-- SCHEMAS JSON-LD -->
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
+  "@context": "https://schema.org  ",
   "@type": ["MedicalOrganization","LocalBusiness"],
   "name": "LABCCO – Laboratorio Clínico Colombiano de Oriente",
-  "image": "https://labccosas.com/hero1.webp",
+  "image": "https://labccosas.com/hero1.webp  ",
   "telephone": "+5745311354",
   "email": "calidad@labccosas.com",
-  "url": "https://labccosas.com/",
+  "url": "https://labccosas.com/  ",
   "sameAs": [
-  "https://www.facebook.com/labccosas",
-  "https://www.instagram.com/labccosas",
-  "https://maps.app.goo.gl/1XBnR9hSvuqZ2U9y8"
+  "https://www.facebook.com/labccosas  ",
+  "https://www.instagram.com/labccosas  ",
+  "https://maps.app.goo.gl/1XBnR9hSvuqZ2U9y8  "
   ],
   "address": {
   "@type": "PostalAddress",
@@ -804,17 +1247,17 @@
   ],
   "mainEntityOfPage": {
   "@type":"WebPage",
-  "@id":"https://labccosas.com/"
+  "@id":"https://labccosas.com/  "
   }
   }
   </script>
 
   <script type="application/ld+json">
   {
-  "@context":"https://schema.org",
+  "@context":"https://schema.org  ",
   "@type":"MedicalOrganization",
   "name":"LABCCO – Laboratorio Clínico Colombiano de Oriente",
-  "url":"https://labccosas.com/",
+  "url":"https://labccosas.com/  ",
   "contactPoint":[
   {
   "@type":"ContactPoint",
@@ -836,18 +1279,18 @@
 
   <script type="application/ld+json">
   {
-  "@context":"https://schema.org",
+  "@context":"https://schema.org  ",
   "@type":"BreadcrumbList",
   "itemListElement":[
-  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://labccosas.com/"},
-  {"@type":"ListItem","position":2,"name":"Servicios","item":"https://labccosas.com/servicios.html"}
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://labccosas.com/  "},
+  {"@type":"ListItem","position":2,"name":"Servicios","item":"https://labccosas.com/servicios.html  "}
   ]
   }
   </script>
 
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
+  "@context": "https://schema.org  ",
   "@type": "FAQPage",
   "mainEntity": [
   {
@@ -880,7 +1323,7 @@
 
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
+  "@context": "https://schema.org  ",
   "@type": "ItemList",
   "itemListElement": [
     {
@@ -910,7 +1353,7 @@
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFW5WLWP"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFW5WLWP  "
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
@@ -918,7 +1361,7 @@
     <div class="top-col top-left"><div class="horario">⏰ Horario: Lun - Vie 7am - 12m / 2pm - 5pm | Sáb 8am - 11am</div></div>
     <div class="top-col top-center">
       <a href="tel:+5745311354" class="contact-small">📞 531 13 54</a>
-      <a href="https://wa.me/573128274796" class="contact-small" target="_blank" rel="noopener noreferrer">📱 312 827 4796</a>
+      <a href="https://wa.me/573128274796  " class="contact-small" target="_blank" rel="noopener noreferrer">📱 312 827 4796</a>
       <a href="mailto:calidad@labccosas.com" class="contact-small">✉ calidad@labccosas.com</a>
     </div>
     <div class="top-col top-right"><div class="brand-extra">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div></div>
@@ -956,6 +1399,11 @@
       <div class="banner-overlay" aria-hidden="true"></div>
       <div class="banner-inner">
         <div class="banner-text">
+          <!-- BADGE AMARILLO DESTACADO -->
+          <div class="badge-destacado">
+            <span>⚡</span> Resultados el Mismo Día
+          </div>
+          
           <h1 id="hero-title">Salud Ocupacional y <br> Laboratorio Clínico en Rionegro</h1>
           
           <p class="banner-sub">
@@ -963,11 +1411,11 @@
           </p>
           
           <p class="banner-tag">
-            ✅ Resultados el mismo día | ✅ Cumplimos Res. 3100 | ✅ Más de 300 empresas aliadas
+            ✅ Cumplimos Res. 3100 | ✅ Más de 300 empresas aliadas | ✅ Tecnología de punta
           </p>
           
           <div style="margin-top: 30px;">
-            <a id="btn-ws-hero" class="cta-banner" href="https://wa.me/573128274796?text=Hola,%20quisiera%20agendar%20una%20cita">
+            <a id="btn-ws-hero" class="cta-banner" href="https://wa.me/573128274796?text=Hola  ,%20quisiera%20agendar%20una%20cita">
               Agendar mi Cita
             </a>
             <a id="btn-ws-empresas" class="cta-secundario" href="empresas.html">
@@ -979,14 +1427,14 @@
     </section>
 
     <!-- NOSOTROS -->
-    <section id="nosotros" class="section-box">
+    <section id="nosotros" class="section-box reveal">
       <div class="nos-hero">
         <div class="nos-texto">
           <p style="font-size:14px;color:#555;margin-bottom:4px;">Laboratorio clínico habilitado en Rionegro – 33 años de experiencia</p>
           <h3>Laboratorio habilitado por el Ministerio de Salud (Resolución 3100)</h3>
           <p>Desde 1992 trabajamos por la salud y el bienestar de Colombia. Nos especializamos en laboratorio clínico general, salud ocupacional y diagnóstico especializado para empresas y particulares.</p>
           <p>Nuestro equipo humano está altamente calificado y usa tecnología de punta para garantizar resultados precisos y oportunos.</p>
-          <a id="btn-ws-nosotros" class="cta-inline" href="https://wa.me/573128274796?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20agendar%20una%20cita">Agendar cita</a>
+          <a id="btn-ws-nosotros" class="cta-inline" href="https://wa.me/573128274796?text=Hola  ,%20vengo%20de%20la%20web%20y%20quiero%20agendar%20una%20cita">Agendar cita</a>
         </div>
         <div class="nos-fig">
           <img src="nosotrosimg.webp" alt="Instalaciones LABCCO Rionegro" loading="lazy">
@@ -1018,7 +1466,7 @@
     </section>
 
     <!-- SERVICIOS -->
-    <section id="servicios" class="section-box servicios-container">
+    <section id="servicios" class="section-box servicios-container reveal">
       <div class="servicios-header">
         <h2>Portafolio de Servicios Médicos</h2>
         <p>Más de tres décadas liderando el diagnóstico integral con precisión técnica y calidez humana.</p>
@@ -1119,7 +1567,7 @@
     </section>
 
     <!-- CONVENIOS -->
-    <section id="convenios" class="section-box">
+    <section id="convenios" class="section-box reveal">
       <div style="text-align: center; margin-bottom: 40px;">
         <h2 style="font-size: 32px; color: var(--azul-frio); margin-bottom: 10px;">Aliados y Convenios</h2>
         <p style="color: #64748b;">Trabajamos en conjunto con las instituciones más importantes para su beneficio.</p>
@@ -1130,7 +1578,7 @@
           <img src="cerrandonegocio.webp" alt="Atención Corporativa LABCCO" loading="lazy">
           <h4>Convenios Empresariales</h4>
           <p>Optimice sus costos de contratación. Ofrecemos tarifas preferenciales escalables y facturación mensual consolidada para empresas del Oriente Antioqueño.</p>
-          <a id="btn-ws-convenio-empresas" class="btn-convenio btn-negociar" href="https://wa.me/573128274796?text=Deseo%20solicitar%20una%20cotizacion%20corporativa%20y%20negociar%20tarifas%20para%20mi%20empresa">
+          <a id="btn-ws-convenio-empresas" class="btn-convenio btn-negociar" href="https://wa.me/573128274796?text=Deseo%20solicitar%20una%20cotizacion%20corporativa%20y%20negociar%20tarifas%20para%20mi%20empresa  ">
             Negociar Tarifas Especiales
           </a>
         </div>
@@ -1139,7 +1587,7 @@
           <img src="comfenalco.webp" alt="Logo Comfenalco" loading="lazy">
           <h4>Comfenalco Antioquia</h4>
           <p>Si es afiliado a Comfenalco, usted y su familia pueden acceder a descuentos exclusivos en todo nuestro portafolio de exámenes clínicos y salud ocupacional.</p>
-          <a id="btn-ws-comfenalco" class="btn-convenio btn-beneficio" href="https://wa.me/573128274796?text=Soy%20afiliado%20a%20Comfenalco%20y%20quiero%20conocer%20mis%20descuentos">
+          <a id="btn-ws-comfenalco" class="btn-convenio btn-beneficio" href="https://wa.me/573128274796?text=Soy%20afiliado%20a%20Comfenalco%20y%20quiero%20conocer%20mis%20descuentos  ">
             Consultar Descuentos
           </a>
         </div>
@@ -1148,7 +1596,7 @@
           <img src="udea.webp" alt="Logo Universidad de Antioquia" loading="lazy">
           <h4>Respaldo UdeA</h4>
           <p>Punto de toma de muestras autorizado para pruebas de ADN y genética, procesadas con el rigor científico y la tecnología de la Universidad de Antioquia.</p>
-          <a id="btn-ws-udea" class="btn-convenio btn-beneficio" href="https://wa.me/573128274796?text=Deseo%20informacion%20sobre%20las%20pruebas%20de%20ADN%20con%20la%20UdeA">
+          <a id="btn-ws-udea" class="btn-convenio btn-beneficio" href="https://wa.me/573128274796?text=Deseo%20informacion%20sobre%20las%20pruebas%20de%20ADN%20con%20la%20UdeA  ">
             Solicitar Información
           </a>
         </div>
@@ -1156,7 +1604,7 @@
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto">
+    <section id="contacto" class="reveal">
       <div class="contact-grid">
         <div class="contact-info">
           <h2>Hablemos de su Salud</h2>
@@ -1195,7 +1643,7 @@
 
           <div class="map-container">
             <iframe 
-              src="https://maps.google.com/maps?q=Laboratorio%20Cl%C3%ADnico%20LABCCO%20Rionegro&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              src="https://maps.google.com/maps?q=Laboratorio%20Cl%C3%ADnico%20LABCCO%20Rionegro&t=&z=16&ie=UTF8&iwloc=&output=embed  " 
               width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
             </iframe>
           </div>
@@ -1203,7 +1651,7 @@
 
         <div class="form-container">
           <h3 style="margin-bottom: 25px; color: var(--azul-frio);">Envíenos un mensaje</h3>
-          <form id="form-contacto" action="https://formsubmit.co/calidad@labccosas.com" method="POST">
+          <form id="form-contacto" action="https://formsubmit.co/calidad@labccosas.com  " method="POST">
             <div class="form-group">
               <label>Nombre o Empresa</label>
               <input type="text" name="name" placeholder="Ej: Juan Pérez / Empresa S.A.S" required>
@@ -1233,7 +1681,7 @@
     </section>
 
     <!-- ESPECIALIDADES Y FOOTER SEMÁNTICO (SEO AVANZADO) -->
-    <section id="especialidades-ips" style="padding: 60px 20px; background: #fff;">
+    <section id="especialidades-ips" style="padding: 60px 20px; background: #fff;" class="reveal">
       <div style="max-width: 1100px; margin: auto;">
         <h2 style="text-align: center; color: #10324a; font-size: 32px; margin-bottom: 40px;">Especialidades en Salud y Laboratorio</h2>
         
@@ -1318,7 +1766,7 @@
     </div>
   </footer>
 
-  <a id="btn-ws-sticky" class="btn-wpp" href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp LABCCO">📱</a>
+  <a id="btn-ws-sticky" class="btn-wpp" href="https://wa.me/573128274796  " target="_blank" rel="noopener noreferrer" aria-label="WhatsApp LABCCO"><span>📱</span></a>
 
   <script>
     // Navbar Scroll Effect
@@ -1368,6 +1816,21 @@
           }
         });
       }
+      
+      // SCROLL REVEAL ANIMATION
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealOnScroll = () => {
+        revealElements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          if (elementTop < windowHeight - 100) {
+            element.classList.add('active');
+          }
+        });
+      };
+      
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll(); // Trigger once on load
     });
   </script>
 </body>
