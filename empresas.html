@@ -35,36 +35,23 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   
-  <!-- Schema.org Product Optimizado -->
+  <!-- Schema.org MedicalOrganization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Examen Médico de Ingreso / Retiro LABCCO",
+    "@type": "MedicalOrganization",
+    "name": "LABCCO - Laboratorio Clínico Colombiano de Oriente",
     "image": "https://labccosas.com/LABCCO-Photoroom.png",
-    "description": "Evaluación médica ocupacional con énfasis osteomuscular. Incluye Visiometría tamiz sin costo adicional. Resultados el mismo día en Rionegro.",
-    "sku": "EMP-ING-2026",
-    "brand": {
-      "@type": "Brand",
-      "name": "LABCCO"
+    "description": "Servicios de salud ocupacional y SST para empresas en Rionegro y Oriente Antioqueño",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrera 48 # 52-54, Edificio Santa Bárbara",
+      "addressLocality": "Rionegro",
+      "addressRegion": "Antioquia",
+      "addressCountry": "CO"
     },
-    "offers": {
-      "@type": "AggregateOffer",
-      "url": "https://labccosas.com/empresas.html",
-      "priceCurrency": "COP",
-      "lowPrice": "47000",
-      "highPrice": "194000",
-      "priceValidUntil": "2026-12-31",
-      "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": "24"
-    }
+    "telephone": "+57-312-827-4796",
+    "priceRange": "$$"
   }
   </script>
 
@@ -158,9 +145,63 @@
     .nav-links a:hover{color:var(--celeste-2)}
     .nav-links a:hover::after{width:100%}
     
+    /* BANNER STICKY DE PRECIO - NUEVO */
+    .price-banner{
+      position:sticky;
+      top:116px;
+      background:linear-gradient(135deg, var(--naranja) 0%, #ff8533 100%);
+      color:#fff;
+      padding:16px var(--margen);
+      z-index:3500;
+      box-shadow:0 4px 20px rgba(255,106,0,.3);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+    .price-banner-text{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      font-size:18px;
+      font-weight:600;
+    }
+    .price-banner-badge{
+      background:#fff;
+      color:var(--naranja);
+      padding:8px 20px;
+      border-radius:50px;
+      font-weight:800;
+      font-size:24px;
+      box-shadow:0 4px 15px rgba(0,0,0,.2);
+      animation:pulse-badge 2s infinite;
+    }
+    @keyframes pulse-badge{
+      0%,100%{transform:scale(1);box-shadow:0 4px 15px rgba(0,0,0,.2)}
+      50%{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,.3)}
+    }
+    .price-banner-cta{
+      background:#fff;
+      color:var(--naranja);
+      padding:12px 28px;
+      border-radius:50px;
+      font-weight:700;
+      font-size:15px;
+      box-shadow:0 4px 15px rgba(0,0,0,.2);
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .price-banner-cta:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 20px rgba(0,0,0,.3);
+      background:var(--gris-medio);
+    }
+    
     .hero-biz{
       text-align:center;
-      padding:140px 20px 100px;
+      padding:140px 20px 80px;
       background:linear-gradient(135deg, var(--gris-medio) 0%, var(--gris) 100%);
       position:relative;
       overflow:hidden
@@ -180,19 +221,14 @@
       display:inline-flex;
       align-items:center;
       gap:8px;
-      background:var(--naranja);
+      background:var(--celeste-2);
       color:#fff;
       padding:10px 24px;
       border-radius:50px;
       font-weight:700;
       font-size:15px;
       margin-bottom:24px;
-      box-shadow:0 6px 20px rgba(255,106,0,.3);
-      animation:pulse 2s infinite
-    }
-    @keyframes pulse{
-      0%,100%{transform:scale(1)}
-      50%{transform:scale(1.02)}
+      box-shadow:0 6px 20px rgba(0,119,204,.3);
     }
     
     .hero-subtitle{
@@ -205,10 +241,10 @@
     .hero-subtitle strong{color:var(--azul-b);font-weight:600}
     
     .hero-note{
-      background:rgba(255,255,255,.8);
+      background:rgba(255,255,255,.9);
       padding:20px 30px;
       border-radius:12px;
-      border-left:5px solid var(--naranja);
+      border-left:5px solid var(--celeste);
       max-width:700px;
       margin:30px auto 0;
       text-align:left;
@@ -220,7 +256,7 @@
       color:var(--azul);
       font-weight:500
     }
-    .hero-note strong{color:var(--naranja)}
+    .hero-note strong{color:var(--celeste-2)}
     
     .cta{
       display:inline-flex;
@@ -269,6 +305,7 @@
       align-items:center
     }
     
+    /* NUEVO: Tarjetas sin precios, enfocadas en valor */
     .card{
       background:#fff;
       padding:32px;
@@ -300,10 +337,17 @@
     }
     .card:hover::before{opacity:1}
     
+    .card-icon{
+      font-size:48px;
+      margin-bottom:16px;
+      text-align:center;
+    }
+    
     .card h3{
-      font-size:24px;
+      font-size:22px;
       margin-bottom:12px;
-      color:var(--azul-b)
+      color:var(--azul-b);
+      text-align:center;
     }
     .card .tag-riesgo{
       display:inline-block;
@@ -311,88 +355,71 @@
       color:var(--celeste-2);
       padding:6px 14px;
       border-radius:20px;
-      font-size:13px;
+      font-size:12px;
       font-weight:600;
       margin-bottom:16px;
       text-transform:uppercase;
-      letter-spacing:.5px
+      letter-spacing:.5px;
+      text-align:center;
+      align-self:center;
+    }
+    .card > p{
+      font-size:15px;
+      color:#666;
+      margin-bottom:20px;
+      text-align:center;
+      line-height:1.6;
     }
     .card ul{
       list-style:none;
-      margin:20px 0;
-      padding:0
+      margin:0 0 24px 0;
+      padding:0;
+      background:var(--gris-medio);
+      border-radius:10px;
+      padding:20px;
     }
     .card ul li{
-      padding:10px 0;
-      border-bottom:1px solid #f0f0f0;
+      padding:8px 0;
+      border-bottom:1px solid rgba(0,0,0,.05);
       display:flex;
       align-items:flex-start;
       gap:10px;
-      font-size:15px;
+      font-size:14px;
       color:#555
     }
     .card ul li::before{
       content:'✓';
       color:var(--exito);
       font-weight:800;
-      font-size:18px;
+      font-size:16px;
       flex-shrink:0
     }
     .card ul li:last-child{border-bottom:none}
     
-    /* NUEVO: Estilos para "Desde" en lugar de precio fijo */
-    .precio-desde{
-      background:linear-gradient(135deg, var(--gris-medio) 0%, #fff 100%);
-      padding:24px;
-      border-radius:12px;
-      margin:20px 0;
+    /* NUEVO: Botón de cotización destacado en tarjeta */
+    .card-cta{
+      background:linear-gradient(135deg, var(--celeste-2) 0%, var(--azul-b) 100%);
+      color:#fff;
+      padding:16px;
+      border-radius:10px;
       text-align:center;
-      border:2px solid transparent;
-      transition:all .3s;
-      position:relative;
-      overflow:hidden
-    }
-    .card:hover .precio-desde{
-      border-color:var(--celeste);
-      transform:scale(1.02)
-    }
-    .precio-desde::before{
-      content:'💼';
-      position:absolute;
-      top:10px;
-      right:15px;
-      font-size:24px;
-      opacity:.2
-    }
-    .precio-label{
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:2px;
-      color:#666;
       font-weight:700;
-      margin-bottom:8px
+      font-size:15px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      margin-top:auto;
+      box-shadow:0 4px 15px rgba(0,119,204,.2);
+      border:2px solid transparent;
     }
-    .precio-monto{
-      font-size:36px;
-      font-weight:800;
-      color:var(--azul);
-      line-height:1;
-      margin:8px 0
+    .card-cta:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 25px rgba(0,119,204,.3);
+      border-color:#fff;
     }
-    .precio-monto span{
-      font-size:14px;
-      font-weight:600;
-      color:var(--celeste-2);
-      display:block;
-      margin-top:4px
-    }
-    .precio-nota{
-      font-size:13px;
-      color:#888;
-      margin-top:12px;
-      font-style:italic;
-      border-top:1px dashed #ddd;
-      padding-top:10px
+    .card:hover .card-cta{
+      background:linear-gradient(135deg, var(--naranja) 0%, var(--naranja-hover) 100%);
     }
     
     .alerta-precios{
@@ -870,7 +897,23 @@
       }
       .nav-links{display:none}
       #siteLogo{height:45px}
-      .hero-biz{padding:100px 20px 60px}
+      .price-banner{
+        top:70px;
+        flex-direction:column;
+        gap:12px;
+        padding:12px 20px;
+        text-align:center;
+      }
+      .price-banner-text{
+        font-size:16px;
+        flex-direction:column;
+        gap:8px;
+      }
+      .price-banner-badge{
+        font-size:20px;
+        padding:6px 16px;
+      }
+      .hero-biz{padding:160px 20px 60px}
       .grid-2{grid-template-columns:1fr}
       .section-box{padding:40px 20px}
       .alerta-precios{flex-direction:column;text-align:center}
@@ -935,9 +978,21 @@
     </nav>
   </header>
 
+  <!-- NUEVO: Banner sticky de precio único -->
+  <div class="price-banner">
+    <div class="price-banner-text">
+      <span>💼 Inversión empresarial desde</span>
+      <span class="price-banner-badge">$47.000</span>
+    </div>
+    <a href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vi%20su%20precio%20desde%20$47.000%20y%20quiero%20cotizar%20para%20mi%20empresa" target="_blank" class="price-banner-cta">
+      <span>📋 Solicitar Cotización</span>
+      <span>→</span>
+    </a>
+  </div>
+
   <section class="hero-biz">
     <div class="urgency-badge">
-      🔥 Tarifas Empresariales 2026 Vigentes
+      🏆 +33 años de experiencia en Salud Ocupacional
     </div>
     <h1>Aliado Estratégico en<br><span class="highlight">Salud Ocupacional y SST</span></h1>
     <p class="hero-subtitle">
@@ -945,297 +1000,188 @@
       Resultados de conceptos médicos ocupacionales el <strong>mismo día</strong> en Rionegro y el Oriente Antioqueño.
     </p>
     <a id="btn-ws-hero" class="cta cta-naranja" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20una%20propuesta" target="_blank">
-      🚀 Solicitar Cotización Empresarial
+      🚀 Hablar con un Asesor SST
     </a>
     
     <div class="hero-note">
       <p>
-        <strong>💡 Cotización Personalizada:</strong> Cada empresa tiene necesidades diferentes. 
-        <strong>Solicite su propuesta ajustada a volumen y frecuencia.</strong> 
-        Precios desde $47.000 según perfil.
+        <strong>✅ Tranquilidad garantizada:</strong> Todos nuestros paquetes incluyen 
+        <strong>visiometría tamiz sin costo adicional</strong> y certificados válidos ante el Ministerio de Trabajo.
       </p>
     </div>
   </section>
 
   <section id="paquetes" class="zona-blue">
     <div style="max-width:1200px;margin:0 auto;padding:0 var(--margen)">
-      <h2>Portafolio Empresarial 2026</h2>
+      <h2>Soluciones SST por Perfil de Riesgo</h2>
       <p style="text-align:center;color:rgba(255,255,255,.85);max-width:700px;margin:-30px auto 50px;font-size:18px">
-        Paquetes de salud ocupacional con <strong>precios empresariales competitivos</strong>. 
-        Visiometría tamiz incluida en evaluaciones médicas.
+        Paquetes especializados según el cargo y la normativa aplicable. 
+        <strong>Cotice el suyo según volumen y frecuencia.</strong>
       </p>
       
       <div class="alerta-precios">
-        <div class="alerta-icon">💼</div>
+        <div class="alerta-icon">🎯</div>
         <div class="alerta-content">
-          <h4>Cotización Personalizada por Volumen</h4>
+          <h4>Cotización Personalizada para su Empresa</h4>
           <p>
-            Los valores mostrados son <strong>precios base de referencia</strong>. 
-            <strong>Descuentos especiales por volumen y frecuencia.</strong> Para cotizaciones exactas, 
-            brigadas en sitio o convenios anuales, nuestro equipo comercial evaluará su caso particular.
+            Cada organización tiene necesidades diferentes. <strong>Contáctenos</strong> para recibir una 
+            propuesta ajustada a su número de colaboradores, sector industrial y frecuencia de evaluaciones.
           </p>
         </div>
       </div>
       
       <div class="grid-3">
+        <!-- Paquete 1: Ingreso -->
         <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
           <meta itemprop="name" content="Paquete Ingreso Sencillo Empresarial LABCCO">
-          <meta itemprop="description" content="Evaluación médica ocupacional con énfasis osteomuscular y visiometría tamiz incluida">
-          <div>
-            <span class="tag-riesgo" style="background:var(--naranja);color:#fff">MÁS SOLICITADO</span>
-            <h3>Ingreso / Retiro Sencillo</h3>
-            <p style="font-size:15px;color:#666;margin-bottom:20px">
-              Evaluación médica ocupacional con énfasis osteomuscular. 
-              <strong>Visiometría tamiz ¡INCLUIDA sin costo adicional!</strong>
-            </p>
-            <ul>
-              <li>Evaluación médica completa (ingreso, periódico o retiro)</li>
-              <li>Énfasis osteomuscular especializado</li>
-              <li>Visiometría tamiz computarizada</li>
-              <li>Concepto de aptitud física</li>
-              <li>Certificado válido ante el Ministerio</li>
-            </ul>
-            <!-- NUEVO: Precio "Desde" -->
-            <div class="precio-desde">
-              <div class="precio-label">Inversión desde</div>
-              <div class="precio-monto">
-                $47.000<span> COP por colaborador</span>
-              </div>
-              <div class="precio-nota">Precio base. Descuentos por volumen disponibles</div>
-            </div>
-          </div>
-          <a id="btn-ws-ingreso" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Ingreso%20Sencillo%20-%20convenio%20empresarial" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <meta itemprop="price" content="47000">
-            <meta itemprop="priceCurrency" content="COP">
-            <span>Solicitar Cotización Exacta</span>
-            <span>→</span>
+          <div class="card-icon">👤</div>
+          <span class="tag-riesgo" style="background:var(--naranja);color:#fff">MÁS SOLICITADO</span>
+          <h3>Ingreso / Retiro Sencillo</h3>
+          <p>Evaluación médica ocupacional con énfasis osteomuscular. Ideal para contratación masiva.</p>
+          <ul>
+            <li>Evaluación médica completa</li>
+            <li>Énfasis osteomuscular especializado</li>
+            <li>Visiometría tamiz ¡INCLUIDA!</li>
+            <li>Concepto de aptitud física</li>
+            <li>Certificado Ministerio de Trabajo</li>
+          </ul>
+          <a href="https://wa.me/573128274796?text=Cotizar%20Paquete%20Ingreso%20Sencillo%20-%20evaluacion%20medica%20ocupacional" target="_blank" class="card-cta">
+            <span>💬 Cotizar este paquete</span>
           </a>
         </article>
 
+        <!-- Paquete 2: Alturas <40 -->
         <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
           <meta itemprop="name" content="Paquete Trabajo en Alturas Menores 40 Años LABCCO">
-          <meta itemprop="description" content="Evaluación completa para trabajo en alturas según Resolución 4272 de 2021">
-          <div>
-            <span class="tag-riesgo">Riesgo II - Alturas</span>
-            <h3>Alturas &lt; 40 Años</h3>
-            <p style="font-size:15px;color:#666;margin-bottom:20px">
-              Cumplimiento total <strong>Resolución 4272 de 2021</strong> para trabajadores menores de 40 años en alturas.
-            </p>
-            <ul>
-              <li>Evaluación médica ocupacional completa</li>
-              <li>Visiometría tamiz + Audiometría tamiz</li>
-              <li>Glicemia en ayunas</li>
-              <li>Hemograma completo</li>
-              <li>Concepto de aptitud para alturas</li>
-            </ul>
-            <div class="precio-desde">
-              <div class="precio-label">Inversión desde</div>
-              <div class="precio-monto">
-                $119.000<span> COP por persona</span>
-              </div>
-              <div class="precio-nota">Precio base. Cotice su brigada especial</div>
-            </div>
-          </div>
-          <a id="btn-ws-alturas-menor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Menores%2040%20-%20Res%204272" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <meta itemprop="price" content="119000">
-            <meta itemprop="priceCurrency" content="COP">
-            <span>Cotizar para Brigada</span>
-            <span>→</span>
+          <div class="card-icon">🏗️</div>
+          <span class="tag-riesgo">Riesgo II - Alturas</span>
+          <h3>Alturas &lt; 40 Años</h3>
+          <p>Cumplimiento Res. 4272/2021 para trabajadores menores de 40 años en alturas.</p>
+          <ul>
+            <li>Evaluación médica ocupacional</li>
+            <li>Visiometría + Audiometría tamiz</li>
+            <li>Glicemia en ayunas</li>
+            <li>Hemograma completo</li>
+            <li>Concepto aptitud para alturas</li>
+          </ul>
+          <a href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Menores%2040%20-%20Res%204272%20trabajo%20altura" target="_blank" class="card-cta">
+            <span>💬 Cotizar este paquete</span>
           </a>
         </article>
 
+        <!-- Paquete 3: Alturas >40 -->
         <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
           <meta itemprop="name" content="Paquete Trabajo en Alturas Mayores 40 Años LABCCO">
-          <meta itemprop="description" content="Perfil lipídico completo para trabajadores mayores de 40 años en alturas">
-          <div>
-            <span class="tag-riesgo">Riesgo II - Alturas +40</span>
-            <h3>Alturas &gt; 40 Años</h3>
-            <p style="font-size:15px;color:#666;margin-bottom:20px">
-              Perfil cardiovascular completo para trabajadores mayores de 40 años en alturas.
-            </p>
-            <ul>
-              <li>Evaluación médica ocupacional completa</li>
-              <li>Visiometría tamiz + Audiometría tamiz</li>
-              <li>Glicemia en ayunas</li>
-              <li><strong>Colesterol total + Triglicéridos</strong></li>
-              <li>Hemograma completo</li>
-              <li>Concepto de aptitud para alturas</li>
-            </ul>
-            <div class="precio-desde">
-              <div class="precio-label">Inversión desde</div>
-              <div class="precio-monto">
-                $161.000<span> COP por persona</span>
-              </div>
-              <div class="precio-nota">Precio base. Brigadas con tarifa especial</div>
-            </div>
-          </div>
-          <a id="btn-ws-alturas-mayor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Mayores%2040%20-%20perfil%20lipidico" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <meta itemprop="price" content="161000">
-            <meta itemprop="priceCurrency" content="COP">
-            <span>Cotizar para Brigada</span>
-            <span>→</span>
+          <div class="card-icon">🏔️</div>
+          <span class="tag-riesgo">Riesgo II - Alturas +40</span>
+          <h3>Alturas &gt; 40 Años</h3>
+          <p>Perfil cardiovascular completo para trabajadores mayores de 40 en alturas.</p>
+          <ul>
+            <li>Todo el paquete anterior</li>
+            <li>Colesterol total</li>
+            <li>Triglicéridos</li>
+            <li>Evaluación cardiovascular adicional</li>
+            <li>Concepto de aptitud específico</li>
+          </ul>
+          <a href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Mayores%2040%20-%20perfil%20cardiovascular" target="_blank" class="card-cta">
+            <span>💬 Cotizar este paquete</span>
           </a>
         </article>
 
+        <!-- Paquete 4: Manipuladores -->
         <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
           <meta itemprop="name" content="Paquete Manipuladores de Alimentos LABCCO">
-          <meta itemprop="description" content="Perfil higiénico-sanitario completo para manipuladores de alimentos">
-          <div>
-            <span class="tag-riesgo">Riesgo V - Alimentos</span>
-            <h3>Manipuladores de Alimentos</h3>
-            <p style="font-size:15px;color:#666;margin-bottom:20px">
-              Certificación sanitaria completa para restaurantes, cafeterías y plantas de procesamiento.
-            </p>
-            <ul>
-              <li>Evaluación médica ocupacional</li>
-              <li>Visiometría tamiz incluida</li>
-              <li>KOH (uñas - detección de hongos)</li>
-              <li>Coprológico (parasitología)</li>
-              <li>Frotis faríngeo (cultivo streptococo)</li>
-              <li>Certificado sanitario vigente</li>
-            </ul>
-            <div class="precio-desde">
-              <div class="precio-label">Inversión desde</div>
-              <div class="precio-monto">
-                $107.000<span> COP por persona</span>
-              </div>
-              <div class="precio-nota">Descuentos por cantidad de personal</div>
-            </div>
-          </div>
-          <a id="btn-ws-alimentos" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Manipuladores%20Alimentos%20-%20certificado%20sanitario" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <meta itemprop="price" content="107000">
-            <meta itemprop="priceCurrency" content="COP">
-            <span>Cotizar Certificación</span>
-            <span>→</span>
+          <div class="card-icon">🍽️</div>
+          <span class="tag-riesgo">Riesgo V - Alimentos</span>
+          <h3>Manipuladores de Alimentos</h3>
+          <p>Certificación sanitaria completa para restaurantes y plantas de procesamiento.</p>
+          <ul>
+            <li>Evaluación médica ocupacional</li>
+            <li>Visiometría tamiz incluida</li>
+            <li>KOH (uñas - hongos)</li>
+            <li>Coprológico (parasitología)</li>
+            <li>Frotis faríngeo (streptococo)</li>
+            <li>Certificado sanitario vigente</li>
+          </ul>
+          <a href="https://wa.me/573128274796?text=Cotizar%20Manipuladores%20Alimentos%20-%20certificado%20sanitario%20restaurante" target="_blank" class="card-cta">
+            <span>💬 Cotizar este paquete</span>
           </a>
         </article>
 
+        <!-- Paquete 5: Conductores -->
         <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
           <meta itemprop="name" content="Paquete Conductores y Seguridad Vial LABCCO">
-          <meta itemprop="description" content="Evaluación completa para conductores con psicotécnicos y prueba de drogas">
-          <div>
-            <span class="tag-riesgo">Riesgo IV - Vial</span>
-            <h3>Conductores / Seguridad Vial</h3>
-            <p style="font-size:15px;color:#666;margin-bottom:20px">
-              Evaluación completa para conductores de vehículos livianos, pesados y maquinaria amarilla.
-            </p>
-            <ul>
-              <li>Evaluación médica ocupacional</li>
-              <li>Visiometría tamiz + Audiometría tamiz</li>
-              <li>Prueba psicotécnica y psicosensométrica</li>
-              <li>Prueba de drogas COC-THC</li>
-              <li>Concepto aptitud para conducción</li>
-            </ul>
-            <div class="precio-desde">
-              <div class="precio-label">Inversión desde</div>
-              <div class="precio-monto">
-                $188.000<span> COP por persona</span>
-              </div>
-              <div class="precio-nota">Tarifas especiales para flotas empresariales</div>
-            </div>
-          </div>
-          <a id="btn-ws-conductores" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Conductores%20-%20psicotecnica%20drogas" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <meta itemprop="price" content="188000">
-            <meta itemprop="priceCurrency" content="COP">
-            <span>Cotizar para Flotas</span>
-            <span>→</span>
+          <div class="card-icon">🚛</div>
+          <span class="tag-riesgo">Riesgo IV - Vial</span>
+          <h3>Conductores / Seguridad Vial</h3>
+          <p>Evaluación completa para conductores de vehículos livianos, pesados y maquinaria.</p>
+          <ul>
+            <li>Evaluación médica ocupacional</li>
+            <li>Visiometría + Audiometría tamiz</li>
+            <li>Prueba psicotécnica completa</li>
+            <li>Prueba de drogas COC-THC</li>
+            <li>Concepto aptitud para conducción</li>
+          </ul>
+          <a href="https://wa.me/573128274796?text=Cotizar%20Conductores%20-%20psicotecnica%20drogas%20licencia%20conduccion" target="_blank" class="card-cta">
+            <span>💬 Cotizar este paquete</span>
           </a>
         </article>
 
+        <!-- Paquete 6: Químico -->
         <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
           <meta itemprop="name" content="Paquete Riesgo Químico y Toxicológico LABCCO">
-          <meta itemprop="description" content="Evaluación toxicológica para trabajadores expuestos a agroquímicos y plaguicidas">
-          <div>
-            <span class="tag-riesgo" style="background:#fff3e0;color:#e65100">Riesgo III - Químico</span>
-            <h3>Riesgo Químico / Toxicológico</h3>
-            <p style="font-size:15px;color:#666;margin-bottom:20px">
-              Especial para sector agrícola, floricultores y trabajadores expuestos a plaguicidas del Oriente Antioqueño.
-            </p>
-            <ul>
-              <li>Evaluación médica especializada</li>
-              <li>Visiometría tamiz incluida</li>
-              <li>Colinesterasa eritrocitaria (plaguicidas)</li>
-              <li>AST + ALT (función hepática)</li>
-              <li>Hemograma completo</li>
-              <li>Citoquímico de orina</li>
-            </ul>
-            <div class="precio-desde">
-              <div class="precio-label">Inversión desde</div>
-              <div class="precio-monto">
-                $194.000<span> COP por persona</span>
-              </div>
-              <div class="precio-nota">Convenios especiales sector agrícola</div>
-            </div>
-          </div>
-          <a id="btn-ws-quimico" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Riesgo%20Quimico%20-%20colinesterasa%20sector%20agricola" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <meta itemprop="price" content="194000">
-            <meta itemprop="priceCurrency" content="COP">
-            <span>Cotizar Sector Agrícola</span>
-            <span>→</span>
+          <div class="card-icon">🧪</div>
+          <span class="tag-riesgo" style="background:#fff3e0;color:#e65100">Riesgo III - Químico</span>
+          <h3>Riesgo Químico / Toxicológico</h3>
+          <p>Especial para sector agrícola, floricultores y exposición a plaguicidas.</p>
+          <ul>
+            <li>Evaluación médica especializada</li>
+            <li>Visiometría tamiz incluida</li>
+            <li>Colinesterasa eritrocitaria</li>
+            <li>AST + ALT (función hepática)</li>
+            <li>Hemograma completo</li>
+            <li>Citoquímico de orina</li>
+          </ul>
+          <a href="https://wa.me/573128274796?text=Cotizar%20Riesgo%20Quimico%20-%20colinesterasa%20sector%20agricola%20floricultura" target="_blank" class="card-cta">
+            <span>💬 Cotizar este paquete</span>
           </a>
         </article>
 
+        <!-- Paquete 7: Confinados <40 -->
         <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
           <meta itemprop="name" content="Paquete Espacios Confinados Menores 40 Años LABCCO">
-          <meta itemprop="description" content="Evaluación respiratoria para trabajo en tanques, silos y espacios reducidos">
-          <div>
-            <span class="tag-riesgo">Riesgo Especial</span>
-            <h3>Espacios Confinados &lt; 40</h3>
-            <p style="font-size:15px;color:#666;margin-bottom:20px">
-              Evaluación respiratoria especializada para trabajo en tanques, silos, tuberías y espacios reducidos.
-            </p>
-            <ul>
-              <li>Evaluación médica ocupacional</li>
-              <li>Visiometría tamiz + Audiometría tamiz</li>
-              <li><strong>Espirometría (función pulmonar)</strong></li>
-              <li>Glicemia en ayunas</li>
-              <li>Hemograma completo</li>
-            </ul>
-            <div class="precio-desde">
-              <div class="precio-label">Inversión desde</div>
-              <div class="precio-monto">
-                $146.000<span> COP por persona</span>
-              </div>
-              <div class="precio-nota">Menores 40 años. Cotice su caso</div>
-            </div>
-          </div>
-          <a id="btn-ws-confinados-menor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20-%20espirometria" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <meta itemprop="price" content="146000">
-            <meta itemprop="priceCurrency" content="COP">
-            <span>Cotizar Evaluación</span>
-            <span>→</span>
+          <div class="card-icon">⚙️</div>
+          <span class="tag-riesgo">Riesgo Especial</span>
+          <h3>Espacios Confinados &lt; 40</h3>
+          <p>Evaluación respiratoria para tanques, silos, tuberías y espacios reducidos.</p>
+          <ul>
+            <li>Evaluación médica ocupacional</li>
+            <li>Visiometría + Audiometría tamiz</li>
+            <li>Espirometría (función pulmonar)</li>
+            <li>Glicemia en ayunas</li>
+            <li>Hemograma completo</li>
+          </ul>
+          <a href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20-%20espirometria%20tanques%20silos" target="_blank" class="card-cta">
+            <span>💬 Cotizar este paquete</span>
           </a>
         </article>
 
+        <!-- Paquete 8: Confinados >40 -->
         <article class="card" itemscope itemtype="https://schema.org/MedicalTest">
           <meta itemprop="name" content="Paquete Espacios Confinados Mayores 40 Años LABCCO">
-          <meta itemprop="description" content="Evaluación respiratoria con perfil lipídico para mayores de 40 años">
-          <div>
-            <span class="tag-riesgo">Riesgo Especial +40</span>
-            <h3>Espacios Confinados &gt; 40</h3>
-            <p style="font-size:15px;color:#666;margin-bottom:20px">
-              Incluye perfil lipídico completo para trabajadores mayores de 40 años en espacios confinados.
-            </p>
-            <ul>
-              <li>Todo el paquete anterior +</li>
-              <li><strong>Colesterol total</strong></li>
-              <li><strong>Triglicéridos</strong></li>
-              <li>Evaluación cardiovascular adicional</li>
-              <li>Concepto de aptitud específico</li>
-            </ul>
-            <div class="precio-desde">
-              <div class="precio-label">Inversión desde</div>
-              <div class="precio-monto">
-                $188.000<span> COP por persona</span>
-              </div>
-              <div class="precio-nota">Mayores 40 años. Solicite cotización</div>
-            </div>
-          </div>
-          <a id="btn-ws-confinados-mayor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20Mayores%2040" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <meta itemprop="price" content="188000">
-            <meta itemprop="priceCurrency" content="COP">
-            <span>Cotizar Evaluación</span>
-            <span>→</span>
+          <div class="card-icon">🔧</div>
+          <span class="tag-riesgo">Riesgo Especial +40</span>
+          <h3>Espacios Confinados &gt; 40</h3>
+          <p>Incluye perfil lipídico completo para mayores de 40 años en espacios confinados.</p>
+          <ul>
+            <li>Todo el paquete anterior</li>
+            <li>Colesterol total</li>
+            <li>Triglicéridos</li>
+            <li>Evaluación cardiovascular adicional</li>
+            <li>Concepto de aptitud específico</li>
+          </ul>
+          <a href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20Mayores%2040%20-%20perfil%20lipidico" target="_blank" class="card-cta">
+            <span>💬 Cotizar este paquete</span>
           </a>
         </article>
 
@@ -1243,12 +1189,8 @@
       
       <div style="background:rgba(255,255,255,.1);padding:30px;border-radius:12px;margin-top:50px;text-align:center">
         <p style="color:#fff;margin:0;font-size:16px">
-          <strong>💼 Política de Cotización Transparente:</strong> Los valores mostrados son precios base de referencia 
-          y pueden variar según volumen, frecuencia y ubicación. 
-          <strong>Contáctenos para una propuesta personalizada</strong> que se ajuste a sus necesidades específicas.
-        </p>
-        <p style="color:rgba(255,255,255,.7);margin:15px 0 0;font-size:14px">
-          Precios en pesos colombianos (COP) - Vigentes desde Enero 2026
+          <strong>🎯 ¿No encuentra su paquete?</strong> Diseñamos evaluaciones personalizadas según el perfil de riesgo de su sector. 
+          <a href="https://wa.me/573128274796?text=Necesito%20cotizar%20un%20paquete%20personalizado%20para%20mi%20sector" target="_blank" style="color:var(--celeste);text-decoration:underline;font-weight:700">Solicite asesoría especializada</a>
         </p>
       </div>
     </div>
@@ -1410,7 +1352,7 @@
         <div class="testimonio-card">
           <p>
             La velocidad de respuesta de LABCCO es clave para nuestras contrataciones masivas en temporada alta. 
-            El año pasado hicimos 200 exámenes en 2 días sin detener la operación. Los precios empresariales son justos y transparentes.
+            El año pasado hicimos 200 exámenes en 2 días sin detener la operación. La relación costo-beneficio es excelente.
           </p>
           <div class="testimonio-meta">
             <strong>Carlos Martínez</strong>
