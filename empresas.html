@@ -14,7 +14,7 @@
   
   <!-- SEO Core -->
   <title>Salud Ocupacional Rionegro | Exámenes Empresariales 2026 | LABCCO</title>
-  <meta name="description" content="Paquetes de salud ocupacional para empresas en Rionegro y Oriente Antioqueño. Precios empresariales desde $47.000. Brigadas, resultados el mismo día.">
+  <meta name="description" content="Paquetes de salud ocupacional para empresas en Rionegro y Oriente Antioqueño. Precios desde $47.000. Brigadas, resultados el mismo día.">
   <meta name="keywords" content="salud ocupacional rionegro, examenes medicos ingreso empresas, sst oriente antioqueño, brigadas salud ocupacional, resolucion 3100, laboratorio empresarial rionegro">
   <link rel="canonical" href="https://labccosas.com/empresas.html"/>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
@@ -49,10 +49,11 @@
       "name": "LABCCO"
     },
     "offers": {
-      "@type": "Offer",
+      "@type": "AggregateOffer",
       "url": "https://labccosas.com/empresas.html",
       "priceCurrency": "COP",
-      "price": "47000",
+      "lowPrice": "47000",
+      "highPrice": "194000",
       "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition"
@@ -339,43 +340,59 @@
     }
     .card ul li:last-child{border-bottom:none}
     
-    .precio-empresa{
-      background:var(--gris-medio);
-      padding:20px;
+    /* NUEVO: Estilos para "Desde" en lugar de precio fijo */
+    .precio-desde{
+      background:linear-gradient(135deg, var(--gris-medio) 0%, #fff 100%);
+      padding:24px;
       border-radius:12px;
       margin:20px 0;
       text-align:center;
       border:2px solid transparent;
-      transition:all .3s
+      transition:all .3s;
+      position:relative;
+      overflow:hidden
     }
-    .card:hover .precio-empresa{
+    .card:hover .precio-desde{
       border-color:var(--celeste);
-      background:#fff
+      transform:scale(1.02)
+    }
+    .precio-desde::before{
+      content:'💼';
+      position:absolute;
+      top:10px;
+      right:15px;
+      font-size:24px;
+      opacity:.2
     }
     .precio-label{
-      font-size:12px;
+      font-size:11px;
       text-transform:uppercase;
-      letter-spacing:1.5px;
+      letter-spacing:2px;
       color:#666;
-      font-weight:600;
+      font-weight:700;
       margin-bottom:8px
     }
     .precio-monto{
-      font-size:42px;
+      font-size:36px;
       font-weight:800;
       color:var(--azul);
-      line-height:1
+      line-height:1;
+      margin:8px 0
     }
     .precio-monto span{
-      font-size:16px;
+      font-size:14px;
       font-weight:600;
-      color:var(--celeste-2)
+      color:var(--celeste-2);
+      display:block;
+      margin-top:4px
     }
     .precio-nota{
       font-size:13px;
       color:#888;
-      margin-top:8px;
-      font-style:italic
+      margin-top:12px;
+      font-style:italic;
+      border-top:1px dashed #ddd;
+      padding-top:10px
     }
     
     .alerta-precios{
@@ -933,9 +950,9 @@
     
     <div class="hero-note">
       <p>
-        <strong>⚠️ IMPORTANTE:</strong> Los precios mostrados son <strong>tarifas empresariales base</strong>. 
-        Aplican para convenios directos <strong>sin descuento por volumen</strong>. 
-        Para brigadas extramurales o negociaciones especiales, contáctenos directamente.
+        <strong>💡 Cotización Personalizada:</strong> Cada empresa tiene necesidades diferentes. 
+        <strong>Solicite su propuesta ajustada a volumen y frecuencia.</strong> 
+        Precios desde $47.000 según perfil.
       </p>
     </div>
   </section>
@@ -944,18 +961,18 @@
     <div style="max-width:1200px;margin:0 auto;padding:0 var(--margen)">
       <h2>Portafolio Empresarial 2026</h2>
       <p style="text-align:center;color:rgba(255,255,255,.85);max-width:700px;margin:-30px auto 50px;font-size:18px">
-        Paquetes de salud ocupacional con <strong>precios empresariales transparentes</strong>. 
+        Paquetes de salud ocupacional con <strong>precios empresariales competitivos</strong>. 
         Visiometría tamiz incluida en evaluaciones médicas.
       </p>
       
       <div class="alerta-precios">
         <div class="alerta-icon">💼</div>
         <div class="alerta-content">
-          <h4>Política de Precios Empresariales</h4>
+          <h4>Cotización Personalizada por Volumen</h4>
           <p>
-            Los valores mostrados son <strong>precios de lista para empresas</strong> y aplican para convenios directos. 
-            <strong>No incluyen descuento por volumen.</strong> Para cotizaciones especiales por cantidad o brigadas en sitio, 
-            nuestro equipo comercial evaluará cada caso particular.
+            Los valores mostrados son <strong>precios base de referencia</strong>. 
+            <strong>Descuentos especiales por volumen y frecuencia.</strong> Para cotizaciones exactas, 
+            brigadas en sitio o convenios anuales, nuestro equipo comercial evaluará su caso particular.
           </p>
         </div>
       </div>
@@ -978,18 +995,19 @@
               <li>Concepto de aptitud física</li>
               <li>Certificado válido ante el Ministerio</li>
             </ul>
-            <div class="precio-empresa">
-              <div class="precio-label">Inversión por colaborador</div>
+            <!-- NUEVO: Precio "Desde" -->
+            <div class="precio-desde">
+              <div class="precio-label">Inversión desde</div>
               <div class="precio-monto">
-                $47.000<span> COP</span>
+                $47.000<span> COP por colaborador</span>
               </div>
-              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+              <div class="precio-nota">Precio base. Descuentos por volumen disponibles</div>
             </div>
           </div>
-          <a id="btn-ws-ingreso" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Ingreso%20Sencillo%20$47.000%20-%20convenio%20empresarial" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-ingreso" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Ingreso%20Sencillo%20-%20convenio%20empresarial" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="47000">
             <meta itemprop="priceCurrency" content="COP">
-            <span>Activar Convenio</span>
+            <span>Solicitar Cotización Exacta</span>
             <span>→</span>
           </a>
         </article>
@@ -1010,15 +1028,15 @@
               <li>Hemograma completo</li>
               <li>Concepto de aptitud para alturas</li>
             </ul>
-            <div class="precio-empresa">
-              <div class="precio-label">Paquete completo por persona</div>
+            <div class="precio-desde">
+              <div class="precio-label">Inversión desde</div>
               <div class="precio-monto">
-                $119.000<span> COP</span>
+                $119.000<span> COP por persona</span>
               </div>
-              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+              <div class="precio-nota">Precio base. Cotice su brigada especial</div>
             </div>
           </div>
-          <a id="btn-ws-alturas-menor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Menores%2040%20$119.000%20-%20Res%204272" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-alturas-menor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Menores%2040%20-%20Res%204272" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="119000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar para Brigada</span>
@@ -1043,15 +1061,15 @@
               <li>Hemograma completo</li>
               <li>Concepto de aptitud para alturas</li>
             </ul>
-            <div class="precio-empresa">
-              <div class="precio-label">Paquete completo por persona</div>
+            <div class="precio-desde">
+              <div class="precio-label">Inversión desde</div>
               <div class="precio-monto">
-                $161.000<span> COP</span>
+                $161.000<span> COP por persona</span>
               </div>
-              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+              <div class="precio-nota">Precio base. Brigadas con tarifa especial</div>
             </div>
           </div>
-          <a id="btn-ws-alturas-mayor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Mayores%2040%20$161.000%20-%20perfil%20lipidico" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-alturas-mayor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Alturas%20Mayores%2040%20-%20perfil%20lipidico" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="161000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar para Brigada</span>
@@ -1076,15 +1094,15 @@
               <li>Frotis faríngeo (cultivo streptococo)</li>
               <li>Certificado sanitario vigente</li>
             </ul>
-            <div class="precio-empresa">
-              <div class="precio-label">Paquete sanitario por persona</div>
+            <div class="precio-desde">
+              <div class="precio-label">Inversión desde</div>
               <div class="precio-monto">
-                $107.000<span> COP</span>
+                $107.000<span> COP por persona</span>
               </div>
-              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+              <div class="precio-nota">Descuentos por cantidad de personal</div>
             </div>
           </div>
-          <a id="btn-ws-alimentos" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Manipuladores%20Alimentos%20$107.000%20-%20certificado%20sanitario" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-alimentos" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Manipuladores%20Alimentos%20-%20certificado%20sanitario" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="107000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar Certificación</span>
@@ -1108,15 +1126,15 @@
               <li>Prueba de drogas COC-THC</li>
               <li>Concepto aptitud para conducción</li>
             </ul>
-            <div class="precio-empresa">
-              <div class="precio-label">Paquete vial completo por persona</div>
+            <div class="precio-desde">
+              <div class="precio-label">Inversión desde</div>
               <div class="precio-monto">
-                $188.000<span> COP</span>
+                $188.000<span> COP por persona</span>
               </div>
-              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+              <div class="precio-nota">Tarifas especiales para flotas empresariales</div>
             </div>
           </div>
-          <a id="btn-ws-conductores" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Conductores%20$188.000%20-%20psicotecnica%20drogas" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-conductores" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Conductores%20-%20psicotecnica%20drogas" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="188000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar para Flotas</span>
@@ -1141,15 +1159,15 @@
               <li>Hemograma completo</li>
               <li>Citoquímico de orina</li>
             </ul>
-            <div class="precio-empresa">
-              <div class="precio-label">Perfil toxicológico por persona</div>
+            <div class="precio-desde">
+              <div class="precio-label">Inversión desde</div>
               <div class="precio-monto">
-                $194.000<span> COP</span>
+                $194.000<span> COP por persona</span>
               </div>
-              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+              <div class="precio-nota">Convenios especiales sector agrícola</div>
             </div>
           </div>
-          <a id="btn-ws-quimico" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Riesgo%20Quimico%20$194.000%20-%20colinesterasa%20sector%20agricola" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-quimico" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Riesgo%20Quimico%20-%20colinesterasa%20sector%20agricola" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="194000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar Sector Agrícola</span>
@@ -1173,15 +1191,15 @@
               <li>Glicemia en ayunas</li>
               <li>Hemograma completo</li>
             </ul>
-            <div class="precio-empresa">
-              <div class="precio-label">Menores 40 años por persona</div>
+            <div class="precio-desde">
+              <div class="precio-label">Inversión desde</div>
               <div class="precio-monto">
-                $146.000<span> COP</span>
+                $146.000<span> COP por persona</span>
               </div>
-              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+              <div class="precio-nota">Menores 40 años. Cotice su caso</div>
             </div>
           </div>
-          <a id="btn-ws-confinados-menor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20$146.000%20-%20espirometria" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-confinados-menor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20-%20espirometria" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="146000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar Evaluación</span>
@@ -1205,15 +1223,15 @@
               <li>Evaluación cardiovascular adicional</li>
               <li>Concepto de aptitud específico</li>
             </ul>
-            <div class="precio-empresa">
-              <div class="precio-label">Mayores 40 años por persona</div>
+            <div class="precio-desde">
+              <div class="precio-label">Inversión desde</div>
               <div class="precio-monto">
-                $188.000<span> COP</span>
+                $188.000<span> COP por persona</span>
               </div>
-              <div class="precio-nota">Precio empresa sin descuento por volumen</div>
+              <div class="precio-nota">Mayores 40 años. Solicite cotización</div>
             </div>
           </div>
-          <a id="btn-ws-confinados-mayor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20Mayores%2040%20$188.000" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a id="btn-ws-confinados-mayor" class="cta" href="https://wa.me/573128274796?text=Cotizar%20Espacios%20Confinados%20Mayores%2040" target="_blank" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="price" content="188000">
             <meta itemprop="priceCurrency" content="COP">
             <span>Cotizar Evaluación</span>
@@ -1225,10 +1243,9 @@
       
       <div style="background:rgba(255,255,255,.1);padding:30px;border-radius:12px;margin-top:50px;text-align:center">
         <p style="color:#fff;margin:0;font-size:16px">
-          <strong>💼 Política de Precios Transparente:</strong> Los valores mostrados son precios de lista para empresas 
-          y aplican para convenios directos. No incluyen descuento por volumen. 
-          Para cotizaciones especiales, brigadas extramurales o negociaciones por cantidad, 
-          nuestro equipo comercial evaluará cada caso particular.
+          <strong>💼 Política de Cotización Transparente:</strong> Los valores mostrados son precios base de referencia 
+          y pueden variar según volumen, frecuencia y ubicación. 
+          <strong>Contáctenos para una propuesta personalizada</strong> que se ajuste a sus necesidades específicas.
         </p>
         <p style="color:rgba(255,255,255,.7);margin:15px 0 0;font-size:14px">
           Precios en pesos colombianos (COP) - Vigentes desde Enero 2026
@@ -1346,12 +1363,12 @@
             Brigada en su empresa + resultados el mismo día + soporte legal incluido + cero tiempo productivo perdido
           </p>
           <div class="calculadora-monto">
-            $2.350.000
+            Desde $2.350.000
             <span>Costo real mensual</span>
           </div>
           <div class="calculadora-detalle">
             <ul>
-              <li>50 empleados × $47.000 (ingreso sencillo)</li>
+              <li>50 empleados × precio convenio especial</li>
               <li>+ Brigada sin costo de desplazamiento</li>
               <li>+ Cero horas productivas perdidas</li>
               <li>+ Resultados el mismo día</li>
@@ -1365,7 +1382,7 @@
       <div class="calculadora-ahorro">
         <h4>💡 Ahorro Total Mensual Estimado</h4>
         <div class="ahorro-total">
-          $4.100.000
+          Hasta $4.100.000
           <span>+ 100 horas productivas recuperadas + tranquilidad legal</span>
         </div>
       </div>
@@ -1375,8 +1392,8 @@
           📊 Solicitar Cálculo Personalizado para mi Empresa
         </a>
         <p style="margin-top:20px;color:#666;font-size:14px">
-          <em>* La calculadora muestra una estimación basada en paquete de ingreso sencillo. 
-          Los ahorros reales varían según el tipo de examen y volumen.</em>
+          <em>* La calculadora muestra una estimación basada en paquetes promedio. 
+          Los ahorros reales varían según el tipo de examen y volumen. Solicite su cotización exacta.</em>
         </p>
       </div>
     </div>
@@ -1393,7 +1410,7 @@
         <div class="testimonio-card">
           <p>
             La velocidad de respuesta de LABCCO es clave para nuestras contrataciones masivas en temporada alta. 
-            El año pasado hicimos 200 exámenes en 2 días sin detener la operación. Los precios empresariales son transparentes.
+            El año pasado hicimos 200 exámenes en 2 días sin detener la operación. Los precios empresariales son justos y transparentes.
           </p>
           <div class="testimonio-meta">
             <strong>Carlos Martínez</strong>
@@ -1433,7 +1450,7 @@
     <div class="cta-final-content">
       <h2>¿Listo para cumplir sin complicaciones?</h2>
       <p>
-        Obtenga su cotización personalizada en menos de 2 horas. Precios empresariales transparentes, 
+        Obtenga su cotización personalizada en menos de 2 horas. Precios empresariales competitivos, 
         facturación inmediata y soporte legal incluido.
       </p>
       <a id="btn-ws-final" class="cta" href="https://wa.me/573128274796?text=Hola%20LABCCO,%20vengo%20de%20la%20web%20empresarial%20y%20necesito%20cotizar%20paquetes" target="_blank">
