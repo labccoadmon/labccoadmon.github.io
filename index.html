@@ -9,9 +9,9 @@
   <meta name="keywords" content="laboratorio clinico rionegro, salud ocupacional rionegro, pruebas de paternidad, examenes de ingreso, labcco">
   <link rel="canonical" href="https://labccosas.com/">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#004d6f">
+  <meta name="theme-color" content="#004a99">
   <meta property="og:title" content="Laboratorio Clínico Rionegro | Resultados HOY | LABCCO">
-  <meta property="og:description" content="✅ Resultados el mismo día en Rionegro. Especialistas en Salud Ocupacional, Pruebas de Paternidad e ITS. IPS habilitada – LABCCO.">
+  <meta property="og:description" content="✅ ¿Necesitas resultados YA? Resultados el mismo día en Rionegro. Especialistas en Salud Ocupacional y Pruebas de Paternidad. ¡Atención inmediata por WhatsApp! 📱">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://labccosas.com/">
   <meta property="og:image" content="https://labccosas.com/hero1.webp">
@@ -202,7 +202,7 @@
       .navbar{height:65px;padding:8px 20px}.navbar.top{margin-top:0}
       #siteLogo{height:50px}#distintivo{height:45px}
       .menu-toggle{display:flex}
-      .nav-links{position:fixed;top:65px;right:-100%;width:280px;height:calc(100vh - 65px);background:rgba(0,77,111,.98);backdrop-filter:blur(10px);flex-direction:column;padding:30px 20px;gap:0;transition:right .3s ease;overflow-y:auto}
+      .nav-links{position:fixed;top:65px;right:-100%;width:280px;height:calc(100vh - 65px);background:rgba(0,74,153,.98);backdrop-filter:blur(10px);flex-direction:column;padding:30px 20px;gap:0;transition:right .3s ease;overflow-y:auto}
       .nav-links.active{right:0}
       .nav-links a{padding:18px 0;font-size:20px;border-bottom:1px solid rgba(255,255,255,.1);width:100%;min-height:48px;display:flex;align-items:center}
       .banner-video{height:100vh;min-height:600px}
@@ -265,7 +265,7 @@
     <div class="top-col top-center">
       <a href="tel:+5745311354" class="contact-small">📞 531 13 54</a>
       <a href="https://wa.me/573128274796" class="contact-small" target="_blank" rel="noopener noreferrer">📱 312 827 4796</a>
-      <a href="/cdn-cgi/l/email-protection#5d3e3c3134393c391d313c3f3e3e322e3c2e733e3230" class="contact-small">✉ <span class="__cf_email__" data-cfemail="4b282a27222f2a2f0b272a29282824382a3865282426">[email&#160;protected]</span></a>
+      <a href="mailto:calidad@labccosas.com" class="contact-small">✉ calidad@labccosas.com</a>
     </div>
     <div class="top-col top-right"><span class="brand-extra">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</span></div>
   </div>
@@ -299,7 +299,7 @@
         <div class="banner-text">
           <div class="badge-destacado"><span>⚡</span> Resultados el Mismo Día</div>
           <h1 id="hero-title">La precisión que necesitas,<br><span style="color:var(--am);">el día que la necesitas.</span></h1>
-          <p class="banner-sub"><b>33 años</b> liderando la salud en Rionegro.<br>Resultados el <b>mismo día</b>, sin filas y con total discreción.</p>
+          <p class="banner-sub"><b>33 años</b> liderando la salud en Rionegro.<br>Resultados el <b>mismo día</b>, sin filas y con total discreción. Especialistas en Salud Ocupacional y Pruebas de Paternidad.</p>
           <p class="banner-tag">✅ Cumplimos Res. 3100 | ✅ Más de 300 empresas aliadas | ✅ Tecnología de punta</p>
           <div style="margin-top:30px">
             <a class="cta-banner" href="https://wa.me/573128274796?text=Hola,%20quisiera%20agendar%20una%20cita" onclick="dataLayer.push({'event':'whatsapp_hero_click'});">Agendar mi cita por WhatsApp 📱</a>
@@ -493,7 +493,7 @@
         <div class="footer-contact-item">📍 Cra 48 # 52 - 54, Rionegro</div>
         <div class="footer-contact-item">📱 312 827 4796</div>
         <div class="footer-contact-item">📞 (604) 531 13 54</div>
-        <div class="footer-contact-item">✉ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e083818c89848184a08c818283838f938193ce838f8d">[email&#160;protected]</a></div>
+        <div class="footer-contact-item">✉ calidad@labccosas.com</div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -504,19 +504,15 @@
 
   <a class="btn-wpp" href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp LABCCO" onclick="dataLayer.push({'event':'whatsapp_float_click'});"><span>📱</span></a>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Navbar scroll
+  <script>
     window.addEventListener('scroll',function(){
       var n=document.getElementById('navbar');
       n.classList.toggle('scrolled',window.scrollY>50);
       n.classList.toggle('top',window.scrollY<=50);
     });
-
-    // Menú hamburguesa + scroll reveal
     document.addEventListener('DOMContentLoaded',function(){
       var toggle=document.querySelector('.menu-toggle'),
           nav=document.querySelector('.nav-links');
-
       if(toggle){
         toggle.addEventListener('click',function(){
           this.classList.toggle('active');
@@ -536,8 +532,6 @@
           }
         });
       }
-
-      // Scroll reveal
       var els=document.querySelectorAll('.reveal');
       function reveal(){els.forEach(function(el){if(el.getBoundingClientRect().top<window.innerHeight-100)el.classList.add('active')});}
       window.addEventListener('scroll',reveal);
