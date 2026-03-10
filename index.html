@@ -203,9 +203,10 @@
       .navbar{height:65px;padding:8px 20px}.navbar.top{margin-top:0}
       #siteLogo{height:50px}#distintivo{height:45px}
       .menu-toggle{display:flex}
-      .nav-links{position:fixed;top:65px;right:-100%;width:280px;height:calc(100vh - 65px);background:rgba(0,74,153,.98);backdrop-filter:blur(10px);flex-direction:column;padding:30px 20px;gap:0;transition:right .3s ease;overflow-y:auto}
+      .nav-links{position:fixed;top:65px;right:-100%;width:280px;height:calc(100vh - 65px);background:var(--ce);backdrop-filter:blur(10px);flex-direction:column;padding:30px 20px;gap:0;transition:right .3s ease;overflow-y:auto}
       .nav-links.active{right:0}
-      .nav-links a{padding:18px 0;font-size:20px;border-bottom:1px solid rgba(255,255,255,.1);width:100%;min-height:48px;display:flex;align-items:center}
+      .nav-links a{padding:18px 0;font-size:20px;border-bottom:1px solid rgba(255,255,255,.3);width:100%;min-height:48px;display:flex;align-items:center;color:var(--az)}
+      .nav-links a::after{display:none}
       .banner-video{height:100vh;min-height:600px}
       .cta-banner,.cta-secundario{display:block;width:100%;max-width:320px;margin:10px auto;text-align:center}
       .nos-hero{flex-direction:column;text-align:center}.nos-fig{flex:1}.nos-fig::before{display:none}
@@ -266,7 +267,7 @@
     <div class="top-col top-center">
       <a href="tel:+5745311354" class="contact-small">📞 531 13 54</a>
       <a href="https://wa.me/573128274796" class="contact-small" target="_blank" rel="noopener noreferrer">📱 312 827 4796</a>
-      <a href="/cdn-cgi/l/email-protection#f695979a9f929792b69a9794959599859785d895999b" class="contact-small">✉ <span class="__cf_email__" data-cfemail="482b2924212c292c0824292a2b2b273b293b662b2725">[email&#160;protected]</span></a>
+      <a href="mailto:calidad@labccosas.com" class="contact-small">✉ calidad@labccosas.com</a>
     </div>
     <div class="top-col top-right"><span class="brand-extra">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</span></div>
   </div>
@@ -497,7 +498,7 @@
         <div class="footer-contact-item">📍 Cra 48 # 52 - 54, Rionegro</div>
         <div class="footer-contact-item">📱 312 827 4796</div>
         <div class="footer-contact-item">📞 (604) 531 13 54</div>
-        <div class="footer-contact-item">✉ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ceadafa2a7aaafaa8ea2afacadada1bdafbde0ada1a3">[email&#160;protected]</a></div>
+        <div class="footer-contact-item">✉ <a href="mailto:calidad@labccosas.com" style="color:inherit">calidad@labccosas.com</a></div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -508,7 +509,7 @@
 
   <a class="btn-wpp" href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp LABCCO" onclick="dataLayer.push({'event':'whatsapp_float_click'});"><span>📱</span></a>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     window.addEventListener('scroll',function(){
       var n=document.getElementById('navbar');
       n.classList.toggle('scrolled',window.scrollY>50);
