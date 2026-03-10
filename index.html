@@ -77,7 +77,7 @@
     .banner-tag{font-size:clamp(.9rem,2vw,1.1rem);color:#fff;margin-bottom:25px;font-weight:600}
     .badge-destacado{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--am),#ffcc00);color:var(--az);padding:10px 24px;border-radius:50px;font-weight:700;font-size:14px;margin-bottom:20px;box-shadow:0 4px 15px rgba(249,178,51,.3);animation:pulse-am 2s infinite;position:relative;overflow:hidden}
     .badge-destacado::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);animation:shimmer 3s infinite}
-    .cta-banner{display:inline-flex;align-items:center;background:var(--ce);color:#fff;padding:16px 32px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .2s;margin-right:15px;min-height:48px}
+    .cta-banner{display:inline-flex;align-items:center;background:var(--as);color:#fff;padding:16px 32px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .2s;margin-right:15px;min-height:48px}
     .cta-banner:hover{transform:scale(1.05)}
     .cta-secundario{display:inline-flex;align-items:center;background:var(--az);color:#fff;padding:16px 32px;border-radius:10px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:all .3s;min-height:48px;border:2px solid transparent}
     .cta-secundario:hover{transform:scale(1.05);border-color:var(--am)}
@@ -203,9 +203,9 @@
       .navbar{height:65px;padding:8px 20px}.navbar.top{margin-top:0}
       #siteLogo{height:50px}#distintivo{height:45px}
       .menu-toggle{display:flex}
-      .nav-links{position:fixed;top:65px;right:-100%;width:280px;height:calc(100vh - 65px);background:var(--ce);backdrop-filter:blur(10px);flex-direction:column;padding:30px 20px;gap:0;transition:right .3s ease;overflow-y:auto}
+      .nav-links{position:fixed;top:65px;right:-100%;width:280px;height:calc(100vh - 65px);background:var(--as);backdrop-filter:blur(10px);flex-direction:column;padding:30px 20px;gap:0;transition:right .3s ease;overflow-y:auto}
       .nav-links.active{right:0}
-      .nav-links a{padding:18px 0;font-size:20px;border-bottom:1px solid rgba(255,255,255,.3);width:100%;min-height:48px;display:flex;align-items:center;color:var(--az)}
+      .nav-links a{padding:18px 0;font-size:20px;border-bottom:1px solid rgba(255,255,255,.2);width:100%;min-height:48px;display:flex;align-items:center;color:#fff}
       .nav-links a::after{display:none}
       .banner-video{height:100vh;min-height:600px}
       .cta-banner,.cta-secundario{display:block;width:100%;max-width:320px;margin:10px auto;text-align:center}
@@ -345,7 +345,7 @@
         <a href="servicios/laboratorio-trabajo-en-alturas.html" class="service-card"><small class="category-tag">Salud Ocupacional</small><div class="service-icon">🏗️</div><h3>Trabajo en Alturas</h3><p>Certificación médica bajo normativa legal vigente para garantizar seguridad en tareas de alto riesgo.</p></a>
         <a href="servicios/audiometria-ocupacional.html" class="service-card"><small class="category-tag">Salud Ocupacional</small><div class="service-icon">👂</div><h3>Visiometría y Audiometría</h3><p>Tamizaje sensorial completo en cabina certificada para conductores y personal operativo.</p></a>
         <a href="servicios/prueba-colinesterasa-riesgo-quimico.html" class="service-card" style="border-bottom:3px solid var(--ce)"><small class="category-tag">Especialidad Agrícola</small><div class="service-icon">🧪</div><h3>Colinesterasa Eritrocitaria</h3><p>Prueba crítica para el monitoreo de exposición a plaguicidas, con alta precisión para el sector del agro.</p></a>
-        <a href="servicios/espirometria.html" class="service-card"><small class="category-tag">Salud Ocupacional</small><div class="service-icon">💨</div><h3>Espirometría</h3><p>Pruebas de función pulmonar para trabajadores expuestos a polvos, humos o químicos.</p></a>
+        <a href="servicios/espirometria-ocupacional.html" class="service-card"><small class="category-tag">Salud Ocupacional</small><div class="service-icon">💨</div><h3>Espirometría</h3><p>Pruebas de función pulmonar para trabajadores expuestos a polvos, humos o químicos.</p></a>
         <a href="servicios/pruebas-ets-rionegro.html" class="service-card" onclick="dataLayer.push({'event':'service_card_click','service':'pruebas-its'});"><small class="category-tag">Laboratorio Clínico</small><div class="service-icon">🛡️</div><h3>Perfil de Salud Sexual</h3><p>Detección profesional de ITS con absoluta reserva, confidencialidad y acompañamiento.</p><span style="display:inline-block;margin-top:15px;font-size:13px;font-weight:700;color:var(--ce)">Ver Pruebas de ITS →</span></a>
         <a href="servicios/prueba-embarazo-rionegro.html" class="service-card" onclick="dataLayer.push({'event':'service_card_click','service':'prueba-embarazo'});"><small class="category-tag">Especializado</small><div class="service-icon">👶</div><h3>Prueba de Embarazo</h3><p>Análisis cuantitativo de alta sensibilidad que permite determinar las semanas exactas de gestación.</p><span style="display:inline-block;margin-top:15px;font-size:13px;font-weight:700;color:var(--ce)">Ver Prueba de Sangre →</span></a>
         <a href="servicios/pruebas-paternidad-adn-rionegro.html" class="service-card" onclick="dataLayer.push({'event':'service_card_click','service':'prueba-paternidad'});"><small class="category-tag">Especializado</small><div class="service-icon">🧬</div><h3>Pruebas de ADN</h3><p>Estudios de paternidad y parentesco con el rigor científico de la Universidad de Antioquia.</p><span style="display:inline-block;margin-top:15px;font-size:13px;font-weight:700;color:var(--ce)">Ver Prueba de Paternidad →</span></a>
