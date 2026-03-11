@@ -1,0 +1,10 @@
+# Instrucciones para todos los robots (Google, Bing, etc.)
+User-agent: *
+Allow: /
+
+# Evitar que indexen archivos internos de GitHub o carpetas vacías (si las tienes)
+Disallow: /README.md
+Disallow: /LICENSE
+
+# Dirección oficial del mapa del sitio para LABCCO
+Sitemap: https://labccosas.com/sitemap.xml
