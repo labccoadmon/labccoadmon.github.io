@@ -1,34 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://labccosas.com/index.html</loc><priority>1.0</priority></url>
-  <url><loc>https://labccosas.com/servicios.html</loc><priority>0.9</priority></url>
-  <url><loc>https://labccosas.com/empresas.html</loc><priority>0.9</priority></url>
-  <url><loc>https://labccosas.com/particulares.html</loc><priority>0.9</priority></url>
-  <url><loc>https://labccosas.com/clinico.html</loc><priority>0.9</priority></url>
+  <url>
+    <loc>https://labccosas.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://labccosas.com/salud-ocupacional-rionegro.html</loc>
+    <priority>0.9</priority>
+  </url>
 
-  <url><loc>https://labccosas.com/servicios/audiometria-ocupacional.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/colinesterasa-empresas.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/colinesterasa-info.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/espermograma-laboratorio-rionegro.html</loc><priority>0.8</priority></url>
+  <url><loc>https://labccosas.com/servicios/espermograma-laboratorio-rionegro.html</loc><priority>0.9</priority></url>
+  <url><loc>https://labccosas.com/servicios/examen-medico-ingreso-laboral.html</loc><priority>0.9</priority></url>
+  <url><loc>https://labccosas.com/servicios/examen-trabajo-en-alturas.html</loc><priority>0.9</priority></url>
+  <url><loc>https://labccosas.com/servicios/manipuladores-de-alimentos-rionegro.html</loc><priority>0.9</priority></url>
   <url><loc>https://labccosas.com/servicios/espirometria-ocupacional.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/examen-aptitud-brigadistas.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/examen-medico-ingreso-laboral.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/examen-medico-para-conductores-rionegro.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/examen-medico-para-soldadores-rionegro.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/examen-medico-para-vigilantes-rionegro.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/examen-ocupacional-conductores.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/examen-para-fumigadores.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/examen-para-operador-de-retroexcavadora-rionegro.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/examen-para-tecnico-de-mantenimiento-industrial-rionegro.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/examen-trabajadores-agricolas.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/examen-trabajo-en-alturas.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/examenes-ocupacionales.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/laboratorio-trabajo-en-alturas.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/manipuladores-de-alimentos-rionegro.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/manipuladores-de-alimentos.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/medicina-preventiva-del-trabajo.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/prueba-colinesterasa-riesgo-quimico.html</loc><priority>0.8</priority></url>
   <url><loc>https://labccosas.com/servicios/pruebas-paternidad-adn-rionegro.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/riesgo-quimico-examen.html</loc><priority>0.8</priority></url>
-  <url><loc>https://labccosas.com/servicios/visiometria-ocupacional.html</loc><priority>0.8</priority></url>
+  <url><loc>https://labccosas.com/servicios/audiometria-ocupacional.html</loc><priority>0.8</priority></url>
+  <url><loc>https://labccosas.com/servicios/prueba-colinesterasa-riesgo-quimico.html</loc><priority>0.8</priority></url>
+  <url><loc>https://labccosas.com/servicios/prueba-embarazo-rionegro.html</loc><priority>0.8</priority></url>
+  <url><loc>https://labccosas.com/servicios/pruebas-ets-rionegro.html</loc><priority>0.8</priority></url>
+  <url><loc>https://labccosas.com/servicios/vacunacion-rionegro.html</loc><priority>0.8</priority></url>
+  <url><loc>https://labccosas.com/servicios/examenes-de-laboratorio.html</loc><priority>0.8</priority></url>
+
+  <url><loc>https://labccosas.com/servicios/examen-medico-para-conductores-rionegro.html</loc><priority>0.7</priority></url>
+  <url><loc>https://labccosas.com/servicios/examen-medico-para-soldadores-rionegro.html</loc><priority>0.7</priority></url>
+  <url><loc>https://labccosas.com/servicios/examen-medico-para-vigilantes-rionegro.html</loc><priority>0.7</priority></url>
+  <url><loc>https://labccosas.com/servicios/examen-para-operador-de-retroexcavadora-rionegro.html</loc><priority>0.7</priority></url>
+  <url><loc>https://labccosas.com/servicios/examen-para-tecnico-de-mantenimiento-industrial-rionegro.html</loc><priority>0.7</priority></url>
+  <url><loc>https://labccosas.com/servicios/examen-para-fumigadores.html</loc><priority>0.6</priority></url>
+  <url><loc>https://labccosas.com/servicios/examen-trabajadores-agricolas.html</loc><priority>0.6</priority></url>
+  <url><loc>https://labccosas.com/servicios/examen-aptitud-brigadistas.html</loc><priority>0.6</priority></url>
+  <url><loc>https://labccosas.com/servicios/medicina-preventiva-del-trabajo.html</loc><priority>0.6</priority></url>
+  <url><loc>https://labccosas.com/servicios/visiometria-ocupacional.html</loc><priority>0.6</priority></url>
+  <url><loc>https://labccosas.com/servicios/examenes-ocupacionales.html</loc><priority>0.6</priority></url>
+  <url><loc>https://labccosas.com/servicios/riesgo-quimico-examen.html</loc><priority>0.6</priority></url>
 </urlset>
