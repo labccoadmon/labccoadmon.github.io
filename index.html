@@ -70,38 +70,23 @@
     .banner-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
     .banner-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,50,90,.78) 0%,rgba(0,74,153,.65) 55%,rgba(0,119,170,.50) 100%);z-index:2}
     .banner-inner{position:relative;z-index:3;width:100%;max-width:860px;margin:0 auto;padding:20px 30px;text-align:center}
- 
-    /* Badge sobrio — sin amarillo */
     .banner-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.11);color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:9px 22px;border-radius:50px;font-weight:600;font-size:13px;letter-spacing:.4px;margin-bottom:28px;backdrop-filter:blur(6px)}
     .banner-badge-dot{width:8px;height:8px;background:#4ade80;border-radius:50%;flex-shrink:0;animation:pulse-dot 2s ease infinite;box-shadow:0 0 0 3px rgba(74,222,128,.2)}
     @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 3px rgba(74,222,128,.2)}50%{box-shadow:0 0 0 6px rgba(74,222,128,0)}}
- 
-    /* Titular */
     .banner-text h1{font-size:clamp(2rem,5vw,3.4rem);color:#fff;margin-bottom:14px;font-weight:700;letter-spacing:-.5px;line-height:1.18}
     .banner-text h1 em{font-style:normal;color:rgba(255,255,255,.68);font-weight:400;font-size:.72em;display:block;margin-top:8px;letter-spacing:.2px}
- 
-    /* Divisor dorado */
     .banner-divider{width:44px;height:3px;background:var(--am);border-radius:2px;margin:0 auto 26px;opacity:.85}
- 
-    /* Subtítulo */
     .banner-sub{font-size:clamp(.95rem,2.2vw,1.18rem);color:rgba(255,255,255,.86);margin-bottom:8px;font-weight:400;max-width:680px;margin-inline:auto;line-height:1.68}
- 
-    /* Tags de confianza */
     .banner-tag{font-size:clamp(.8rem,1.6vw,.9rem);color:rgba(255,255,255,.58);margin-bottom:32px;letter-spacing:.3px}
     .banner-tag span{color:rgba(255,255,255,.85);font-weight:600}
- 
-    /* CTAs */
     .banner-ctas{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
     .cta-banner{display:inline-flex;align-items:center;gap:9px;background:var(--as);color:#fff;padding:15px 30px;border-radius:10px;font-weight:700;font-size:16px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:all .3s;min-height:48px;border:2px solid transparent}
     .cta-banner:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.3);border-color:rgba(255,255,255,.25)}
     .cta-secundario{display:inline-flex;align-items:center;gap:9px;background:transparent;color:#fff;padding:15px 30px;border-radius:10px;font-weight:600;font-size:16px;border:2px solid rgba(255,255,255,.4);transition:all .3s;min-height:48px}
     .cta-secundario:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-3px)}
- 
-    /* Indicadores de confianza */
     .banner-trust{display:flex;justify-content:center;gap:26px;margin-top:26px;flex-wrap:wrap}
     .trust-item{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.65);font-size:13px;font-weight:500}
     .trust-item::before{content:'✓';color:#4ade80;font-weight:700;font-size:13px}
- 
     @media(prefers-reduced-motion:reduce),(max-width:768px){#bannerVid{display:none}.banner-video{background:url('hero1.webp')center/cover}}
  
     /* SECCIONES */
@@ -211,13 +196,10 @@
     .footer-contact-item{color:#fff;margin-bottom:10px;font-size:14px;transition:.3s}
     .footer-contact-item a{color:inherit}
     .footer-contact-item:hover{color:var(--am)}
- 
-    /* BOTÓN ESTADOS FINANCIEROS */
     .btn-estados{display:inline-flex;align-items:center;gap:9px;background:transparent;color:rgba(255,255,255,.85);padding:10px 18px;border-radius:8px;font-weight:600;font-size:14px;border:1.5px solid rgba(255,255,255,.3);transition:all .3s;margin-top:18px;width:100%;justify-content:center}
     .btn-estados:hover{background:rgba(255,255,255,.08);border-color:var(--am);color:#fff;transform:translateY(-2px)}
     .btn-estados i{color:#e74c3c;font-size:16px;flex-shrink:0;transition:transform .3s}
     .btn-estados:hover i{transform:scale(1.15)}
- 
     .footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;font-size:12px;color:var(--am)}
  
     /* WHATSAPP */
@@ -294,36 +276,30 @@
  
   <main id="main">
  
-    <!-- ══ HERO ══ -->
+    <!-- HERO -->
     <section class="banner-video" id="inicio" aria-labelledby="hero-title">
       <video id="bannerVid" autoplay muted loop playsinline preload="auto" poster="hero1.webp">
         <source src="banner-lab.mp4" type="video/mp4">
       </video>
       <div class="banner-overlay" aria-hidden="true"></div>
       <div class="banner-inner">
- 
         <div class="banner-badge">
           <span class="banner-badge-dot" aria-hidden="true"></span>
           IPS Habilitada &nbsp;&middot;&nbsp; Res. 3100 &nbsp;&middot;&nbsp; Resultados el mismo d&#237;a
         </div>
- 
         <div class="banner-text">
           <h1 id="hero-title">
             Salud Ocupacional y Laboratorio Cl&#237;nico en Rionegro
             <em>M&#225;s de 33 a&#241;os de confianza en el Oriente Antioque&#241;o</em>
           </h1>
         </div>
- 
         <div class="banner-divider" aria-hidden="true"></div>
- 
         <p class="banner-sub">L&#237;deres en Ex&#225;menes de Ingreso Laboral, Pruebas de Paternidad y Chequeos Especializados. M&#225;s de 300 empresas aliadas conf&#237;an en nuestra precisi&#243;n.</p>
- 
         <p class="banner-tag">
           <span>Cumplimos Res. 3100</span> &nbsp;&middot;&nbsp;
           <span>+300 empresas aliadas</span> &nbsp;&middot;&nbsp;
           <span>Tecnolog&#237;a de punta</span>
         </p>
- 
         <div class="banner-ctas">
           <a class="cta-banner" href="https://wa.me/573128274796?text=Hola+LABCCO+quiero+cotizar+examenes+ocupacionales+para+mi+empresa" onclick="dataLayer.push({'event':'whatsapp_hero_click'});">
             &#128241; Cotizar para Empresas
@@ -332,16 +308,13 @@
             Agendar Cita Particular
           </a>
         </div>
- 
         <div class="banner-trust">
           <span class="trust-item">Resultados el mismo d&#237;a</span>
           <span class="trust-item">Respaldo Universidad de Antioquia</span>
           <span class="trust-item">100&#37; confidencial</span>
         </div>
- 
       </div>
     </section>
-    <!-- ══ /HERO ══ -->
  
     <!-- NOSOTROS -->
     <section id="nosotros" class="section-box reveal">
@@ -383,7 +356,6 @@
         <a href="servicios/espermograma-laboratorio-rionegro.html" class="service-card"><small class="category-tag">Salud Masculina</small><div class="service-icon">&#128300;</div><h3>Espermograma</h3><p>An&#225;lisis detallados de fertilidad y control de efectividad para pacientes post-vasectom&#237;a.</p></a>
         <a href="servicios/examenes-de-laboratorio.html" class="service-card" onclick="dataLayer.push({'event':'service_card_click','service':'laboratorio-clinico'});"><small class="category-tag">Laboratorio Cl&#237;nico</small><div class="service-icon">&#128137;</div><h3>Laboratorio Cl&#237;nico</h3><p>Procesamiento automatizado de muestras nivel I, II y III con resultados el mismo d&#237;a.</p><span style="display:inline-block;margin-top:15px;font-size:13px;font-weight:700;color:var(--ce)">Ver Ex&#225;menes Cl&#237;nicos &#8594;</span></a>
         <a href="servicios/manipuladores-de-alimentos-rionegro.html" class="service-card"><small class="category-tag">Salud Ocupacional</small><div class="service-icon">&#127829;</div><h3>Manipulaci&#243;n Alimentos</h3><p>Perfiles microbiol&#243;gicos completos con certificaci&#243;n de aptitud para el sector alimentos.</p></a>
-        <a href="servicios/vacunacion-rionegro.html" class="service-card" onclick="dataLayer.push({'event':'service_card_click','service':'vacunacion'});"><small class="category-tag">Salud Ocupacional</small><div class="service-icon">&#128137;</div><h3>Vacunaci&#243;n</h3><p>Esquemas de protecci&#243;n (T&#233;tano, Influenza) para prevenir riesgos biol&#243;gicos en la empresa.</p><span style="display:inline-block;margin-top:15px;font-size:13px;font-weight:700;color:var(--ce)">Ver Esquemas de Vacunaci&#243;n &#8594;</span></a>
       </div>
       <div style="text-align:center;margin-top:50px">
         <a href="servicios.html" class="btn-portafolio">&#128269; Ver los 24 servicios disponibles</a>
@@ -504,12 +476,10 @@
   <!-- FOOTER -->
   <footer role="contentinfo">
     <div class="footer-grid">
- 
       <div class="footer-col">
         <img src="LABCCO-Photoroom.png" alt="LABCCO Logo" class="footer-logo-img">
         <p style="font-size:14px;line-height:1.6"><strong>LABCCO</strong> (tambi&#233;n buscado como <strong>Labco</strong>) es la IPS l&#237;der en el Oriente Antioque&#241;o con m&#225;s de 33 a&#241;os de precisi&#243;n m&#233;dica en Rionegro.</p>
       </div>
- 
       <div class="footer-col">
         <h4>Servicios Destacados</h4>
         <ul class="footer-links">
@@ -521,8 +491,6 @@
           <li><a href="servicios/audiometria-ocupacional.html">Audiometr&#237;a y Espirometr&#237;a</a></li>
         </ul>
       </div>
- 
-      <!-- Institucional + botón PDF -->
       <div class="footer-col">
         <h4>Institucional</h4>
         <ul class="footer-links">
@@ -540,7 +508,6 @@
           Estados Financieros 2025
         </a>
       </div>
- 
       <div class="footer-col">
         <h4>Contacto</h4>
         <div class="footer-contact-item">&#128205; Cra 48 # 52-54, Rionegro</div>
@@ -548,7 +515,6 @@
         <div class="footer-contact-item">&#128222; <a href="tel:+5745311354">(604) 531 13 54</a></div>
         <div class="footer-contact-item">&#9993; <a href="mailto:calidad@labccosas.com">calidad@labccosas.com</a></div>
       </div>
- 
     </div>
     <div class="footer-bottom">
       <div>&#169; 2026 IPS LABCCO S.A.S. | Vigilado por la DSSA</div>
@@ -599,4 +565,3 @@
   </script>
 </body>
 </html>
- 
