@@ -1,0 +1,15 @@
+{
+  "empresas.html": "salud-ocupacional-rionegro.html",
+  "clinico.html": "servicios/examenes-de-laboratorio.html",
+  "servicios/brigadas-empresariales.html": "salud-ocupacional-rionegro.html#brigadas",
+  "servicios/colinesterasa-eritrocitaria.html": "servicios/prueba-colinesterasa-riesgo-quimico.html",
+  "servicios/espirometria-laboral.html": "servicios/espirometria-ocupacional.html",
+  "servicios/examen-medico-periodico.html": "servicios/examenes-ocupacionales.html",
+  "servicios/laboratorio-clinico-general.html": "servicios/examenes-de-laboratorio.html",
+  "servicios/laboratorio-clinico-rionegro.html": "servicios/examenes-de-laboratorio.html",
+  "servicios/perfil-salud-sexual.html": "servicios/pruebas-ets-rionegro.html",
+  "servicios/prueba-embarazo.html": "servicios/prueba-embarazo-rionegro.html",
+  "servicios/prueba-hepatitis-rionegro.html": "servicios/pruebas-ets-rionegro.html",
+  "servicios/vacunacion-hepatitis-tetanos-rionegro.html": "servicios/vacunacion-rionegro.html",
+  "servicios/pruebas-paternidad-rionegro.html": "servicios/pruebas-paternidad-adn-rionegro.html"
+}

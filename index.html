@@ -23,14 +23,14 @@
   <link rel="manifest" href="site.webmanifest">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
- 
+
   <style>
     :root{--az:#004a99;--as:#0077aa;--ce:#0099cc;--bl:#fff;--gc:#fcfaf5;--sh:rgba(0,119,170,.08);--wpp:#25d366;--am:#0077aa;--mg:60px}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Outfit',system-ui,sans-serif;color:var(--az);background:var(--gc);-webkit-font-smoothing:antialiased;line-height:1.5}
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%;height:auto}
- 
+
     @keyframes shimmer{0%{background-position:-1000px 0}100%{background-position:1000px 0}}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
     @keyframes pulse-wpp{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,.7)}70%{transform:scale(1.1);box-shadow:0 0 0 20px rgba(37,211,102,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0)}}
@@ -38,7 +38,7 @@
     .reveal.active{opacity:1;transform:translateY(0)}
     /* La información principal permanece visible aunque el navegador no ejecute JavaScript. */
     .reveal{opacity:1;transform:none}
- 
+
     /* TOP BAR */
     .top-bar{background:var(--ce);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px var(--mg);height:34px;font-size:14px}
     .top-col{display:flex;gap:8px;align-items:center}
@@ -49,7 +49,7 @@
     .contact-small{display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,.08);padding:3px 8px;border-radius:16px;font-weight:500;font-size:13px;transition:all .3s}
     .contact-small:hover{background:var(--am);color:var(--az);transform:translateY(-2px)}
     .brand-extra{font-weight:600;font-size:12px;white-space:nowrap}
- 
+
     /* NAVBAR */
     .navbar{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:6px var(--mg);height:80px;background:transparent;z-index:1500;transition:margin-top .3s,background .3s,box-shadow .3s}
     .navbar.top{margin-top:34px}
@@ -66,7 +66,7 @@
     .menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
     .menu-toggle.active span:nth-child(2){opacity:0}
     .menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
- 
+
     /* ── HERO ── */
     .banner-video{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
     .banner-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
@@ -90,12 +90,12 @@
     .trust-item{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.65);font-size:13px;font-weight:500}
     .trust-item::before{content:'✓';color:#4ade80;font-weight:700;font-size:13px}
     @media(prefers-reduced-motion:reduce),(max-width:768px){#bannerVid{display:none}.banner-video{background:url('hero1.webp')center/cover}}
- 
+
     /* SECCIONES */
     .section-box{max-width:1200px;margin:0 auto 30px;padding:40px var(--mg);background:#fff;border-radius:12px;box-shadow:0 4px 18px var(--sh)}
     .section-title{text-align:center;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--az);font-weight:700;margin-bottom:15px;position:relative;display:inline-block}
     .section-title::after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:60px;height:4px;background:var(--am);border-radius:2px}
- 
+
     /* NOSOTROS */
     .nos-hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:40px}
     .nos-texto{flex:1;min-width:280px}
@@ -108,7 +108,7 @@
     .nos-fig img{border-radius:10px;box-shadow:0 8px 24px var(--sh);width:100%;transition:transform .5s}
     .nos-fig:hover img{transform:scale(1.02)}
     .nos-fig::before{content:'';position:absolute;top:-10px;right:-10px;width:80px;height:80px;border-top:4px solid var(--am);border-right:4px solid var(--am);border-radius:0 20px 0 0;animation:float 3s ease-in-out infinite}
- 
+
     /* STATS */
     .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:40px;margin-top:50px;padding-top:30px;border-top:1px solid #edf2f7;text-align:center}
     .stat-item{padding:10px;position:relative;transition:all .3s}
@@ -118,7 +118,7 @@
     .stat-item:hover span{color:var(--am);text-shadow:0 0 20px rgba(0,119,170,.3)}
     .stat-item small{display:block;font-size:13px;color:var(--ce);font-weight:600;text-transform:uppercase;letter-spacing:1.2px}
     .stat-item p{font-size:14px;color:#718096;margin-top:8px}
- 
+
     /* SERVICIOS */
     .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
     .service-card{background:#fff;padding:35px;border-radius:20px;border:1px solid #f1f5f9;transition:all .4s cubic-bezier(.165,.84,.44,1);display:flex;flex-direction:column;position:relative;overflow:hidden}
@@ -133,7 +133,7 @@
     .service-card:hover .category-tag{color:var(--am);transform:translateX(5px)}
     .btn-portafolio{display:inline-flex;align-items:center;gap:10px;background:var(--az);color:#fff;padding:18px 40px;border-radius:12px;font-weight:700;font-size:18px;box-shadow:0 10px 30px rgba(0,77,111,.2);transition:all .3s;border:2px solid transparent}
     .btn-portafolio:hover{background:#fff;color:var(--az);border-color:var(--am);transform:translateY(-3px)}
- 
+
     /* ALIADOS */
     .aliados-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
     .aliado-card{background:#fff;padding:40px 30px;border-radius:20px;border:1px solid #f1f5f9;text-align:center;display:flex;flex-direction:column;align-items:center;transition:all .4s cubic-bezier(.165,.84,.44,1);position:relative;overflow:hidden}
@@ -149,7 +149,7 @@
     .btn-conv.dark:hover{background:var(--as);transform:scale(1.02)}
     .btn-conv.outline{border:2px solid var(--ce);color:var(--ce)}
     .btn-conv.outline:hover{background:var(--ce);color:#fff}
- 
+
     /* CONTACTO */
     #contacto{background:#fff;padding:80px var(--mg)}
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1200px;margin:0 auto;align-items:start}
@@ -169,7 +169,7 @@
     .btn-enviar{width:100%;background:var(--az);color:#fff;padding:16px;border:none;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer;transition:all .3s}
     .btn-enviar:hover{background:var(--as);transform:translateY(-2px)}
     .map-container{height:350px;border-radius:24px;overflow:hidden;margin-top:50px;border:1px solid #edf2f7}
- 
+
     /* ESPECIALIDADES */
     #especialidades-ips{padding:60px 20px;background:#fff}
     #especialidades-ips h2{text-align:center;color:#10324a;font-size:32px;margin-bottom:40px;position:relative;display:block}
@@ -183,7 +183,7 @@
     .guias-box:hover{border-color:var(--am)}
     .guias-box h4{margin-bottom:15px;color:#10324a}
     .guias-box a{margin:0 10px;color:#0077cc;font-size:14px}
- 
+
     /* FOOTER */
     footer{background:#004d6f;color:#fff;padding:60px 5% 30px;position:relative}
     footer::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--am),var(--ce),var(--am));background-size:200% 100%;animation:shimmer 3s linear infinite}
@@ -203,11 +203,11 @@
     .btn-estados i{color:#e74c3c;font-size:16px;flex-shrink:0;transition:transform .3s}
     .btn-estados:hover i{transform:scale(1.15)}
     .footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;font-size:12px;color:var(--am)}
- 
+
     /* WHATSAPP */
     .btn-wpp{position:fixed;right:18px;bottom:18px;background:var(--wpp);color:#fff;padding:14px;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,.18);font-size:20px;z-index:2000;display:flex;align-items:center;justify-content:center;animation:pulse-wpp 2s infinite;transition:all .3s;border:3px solid transparent}
     .btn-wpp:hover{background:var(--am);color:var(--az);border-color:#fff;transform:scale(1.1)}
- 
+
     /* RESPONSIVE */
     @media(max-width:900px){:root{--mg:30px}.footer-grid{grid-template-columns:1fr}}
     @media(max-width:768px){
@@ -252,16 +252,16 @@
   #cifras .stats-grid{margin-top:0;padding-top:0;border-top:0}
 #nosotros .nos-hero{margin-bottom:0}
 </style>
- 
+
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalClinic","name":"LABCCO - Laboratorio Clínico y Salud Ocupacional","alternateName":["Laboratorio Labco","LABCCO IPS","Laboratorio Clínico Colombiano de Oriente"],"image":"https://labccosas.com/hero1.webp","address":{"@type":"PostalAddress","streetAddress":"Carrera 48 #52-54, Edificio Santa Bárbara, Local 102","addressLocality":"Rionegro","addressRegion":"Antioquia","postalCode":"054040","addressCountry":"CO"},"geo":{"@type":"GeoCoordinates","latitude":6.1536009,"longitude":-75.4286754},"telephone":["+576045311354","+573128274796"],"email":"calidad@labccosas.com","url":"https://labccosas.com","sameAs":["https://www.facebook.com/labccosas","https://www.instagram.com/labccosas","https://maps.app.goo.gl/1XBnR9hSvuqZ2U9y8"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"14:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"11:00"}],"availableService":[{"@type":"MedicalTest","name":"Examenes de Ingreso Laboral Rionegro"},{"@type":"MedicalTest","name":"Salud Ocupacional Res. 3100"},{"@type":"MedicalTest","name":"Pruebas de Paternidad ADN"},{"@type":"MedicalTest","name":"Visiometría y Audiometría"}],"hasMap":"https://maps.app.goo.gl/1XBnR9hSvuqZ2U9y8","mainEntityOfPage":{"@type":"WebPage","@id":"https://labccosas.com/"}}</script>
-  
-  
+
+
   <meta name="twitter:card" content="summary_large_image">
 </head>
- 
+
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFW5WLWP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
- 
+
   <!-- TOP BAR -->
   <div class="top-bar" role="banner">
     <div class="top-col top-left"><div class="horario">&#9200; Lun - Vie 7am - 12m / 2pm - 5pm | S&#225;b 8am - 11am</div></div>
@@ -272,7 +272,7 @@
     </div>
     <div class="top-col top-right"><span class="brand-extra">IPS LABORATORIO CL&#205;NICO COLOMBIANO DE ORIENTE S.A.S</span></div>
   </div>
- 
+
   <!-- NAVBAR -->
   <header class="navbar top" id="navbar" role="navigation" aria-label="Navegaci&#243;n principal">
     <div class="brand">
@@ -290,9 +290,9 @@
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
- 
+
   <main id="main">
- 
+
     <!-- HERO -->
     <section class="banner-video" id="inicio" aria-labelledby="hero-title">
       <video id="bannerVid" autoplay muted loop playsinline preload="none" poster="hero1.webp">
@@ -332,7 +332,7 @@
         </div>
       </div>
     </section>
- 
+
     <!-- SERVICIOS -->
     <section id="servicios" class="section-box reveal" style="padding-top:60px;padding-bottom:60px">
       <div style="text-align:center;max-width:800px;margin:0 auto 50px;padding:0 20px">
@@ -340,7 +340,7 @@
         <p style="color:#64748b;font-size:1.1rem;line-height:1.6;margin-top:20px">M&#225;s de tres d&#233;cadas liderando el diagn&#243;stico integral con precisi&#243;n t&#233;cnica y calidez humana.</p>
       </div>
       <nav class="service-shortcuts" aria-label="Accesos a servicios">
-        <a href="#servicio-empresas">Para empresas</a>
+        <a href="salud-ocupacional-rionegro.html">Para empresas</a>
         <a href="#servicio-laboratorio">Laboratorio cl&#237;nico</a>
         <a href="#servicio-adn">Paternidad</a>
         <a href="#servicio-espermograma">Espermograma</a>
@@ -363,7 +363,7 @@
         <a href="servicios.html" class="btn-portafolio">&#128269; Ver el portafolio completo</a>
       </div>
     </section>
- 
+
     <!-- CIFRAS -->
     <section id="cifras" class="section-box reveal" aria-label="LABCCO en cifras">
       <div class="stats-grid">
@@ -417,7 +417,7 @@
         </div>
       </div>
     </section>
- 
+
     <!-- CONTACTO -->
     <section id="contacto" class="reveal">
       <div class="contact-grid">
@@ -456,7 +456,7 @@
         </div>
       </div>
     </section>
- 
+
     <!-- ESPECIALIDADES SEO -->
     <section id="especialidades-ips" class="reveal">
       <div style="max-width:1100px;margin:auto">
@@ -492,15 +492,15 @@
         </div>
         <div class="guias-box">
           <h4>Gu&#237;as y Actualidad M&#233;dica 2026</h4>
-          <a href="blog/cuanto-cuesta-examen-medico-ocupacional-rionegro-2025.html">Precios 2026</a> |
+          <a href="blog/cuanto-cuesta-examen-medico-ocupacional-rionegro-2025.html">Cómo cotizar</a> |
           <a href="blog/donde-hacerte-examen-medico-ocupacional-rionegro.html">IPS L&#237;der en Rionegro</a> |
           <a href="blog/vigencia-examen-medico-ocupacional-colombia-2025.html">Vigencia de exámenes</a>
         </div>
       </div>
     </section>
- 
+
   </main>
- 
+
   <!-- FOOTER -->
   <footer role="contentinfo">
     <div class="footer-grid">
@@ -549,9 +549,9 @@
       <div>Tratamiento de datos personales conforme a la <strong>Ley 1581 de 2012</strong> &middot; <span>Pol&#237;tica de Privacidad</span></div>
     </div>
   </footer>
- 
+
   <a class="btn-wpp" href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp LABCCO" onclick="dataLayer.push({'event':'whatsapp_float_click'});">&#128241;</a>
- 
+
   <script>
     window.addEventListener('scroll', function(){
       var n = document.getElementById('navbar');
