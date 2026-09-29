@@ -1,0 +1,148 @@
+/* LABCCO: base visual de landings. Acento oscuro en superficies claras;
+       celeste y blanco en superficies oscuras. Modelo: espermograma. */
+    :root{--acento-claro:#c4edff;--borde:#d7e6f1;--radio:16px}
+    .hero-landing,footer{--acento:var(--acento-claro)}
+    .hero-landing::before{background:rgba(196,237,255,.08)}
+    .badge-destacado{background:rgba(255,255,255,.08);border-color:rgba(196,237,255,.45)}
+    .badge-destacado::before,footer::before{animation:none}
+    .nav-links a:hover{color:#c4edff}
+    .nav-links a::after{background:#c4edff}
+    .section-box{border:1px solid #e6eef5}
+    .diferencial-item,.tipo-card,.dx-item{border-radius:var(--radio)}
+    .tipo-card{border:1px solid var(--borde)}
+    .tipo-card.destacado{border-color:#89c9e7}
+    .tipo-card.destacado::before{transform:scaleX(1)}
+    .sinonimos-box{box-shadow:none;border-left-width:3px}
+    .requisitos-box{border:1px solid #a8d5e9;border-top:4px solid var(--ce)}
+    .cta-main{background:var(--az);box-shadow:0 6px 18px rgba(0,74,153,.16)}
+    .cta-main:hover{background:#003d80}
+    .cta-destacado-box{border-bottom:4px solid var(--ce)}
+    .cta-destacado-box h3,.cta-destacado-box p{color:#fff}
+    .cta-contraste{background:#fff;color:var(--az);box-shadow:0 8px 22px rgba(0,0,0,.15)}
+    .cta-contraste:hover{background:#e8f4fb;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+    .interlinking-box li a:hover{background:#dceffa;color:var(--az)}
+    .contact-small:hover{background:#e8f4fb;color:var(--az)}
+    .btn-wpp{animation:none}
+    .btn-wpp:hover{background:#168443;color:#fff}
+    a:focus-visible,button:focus-visible{outline:3px solid #0099cc;outline-offset:4px}
+    .hero-landing a:focus-visible,footer a:focus-visible,.navbar a:focus-visible{outline-color:#c4edff}
+    .tabla-scroll{overflow-x:auto;overscroll-behavior-x:contain;margin:28px 0;border-radius:14px}
+    .tabla-scroll .tabla-oms{margin:0}
+    @media(max-width:768px){
+      .hero-landing{padding-top:100px}
+      .hero-landing h1{font-size:clamp(1.85rem,7.4vw,2.5rem)}
+      .requisitos-box{padding:24px 16px}
+      .requisitos-label{position:static;display:inline-block;margin-bottom:12px;padding:8px 12px}
+      .tipo-card{padding:24px}
+      .interlinking-box{padding:22px 16px}
+      .interlinking-box ul{margin-left:0}
+      .interlinking-box li{padding-left:0}
+      .interlinking-box li::before{content:none}
+      .cta-main,.cta-contraste{display:flex;justify-content:center;text-align:center;width:100%;padding:16px 18px;font-size:16px;min-height:48px}
+      .tabla-oms{min-width:560px}
+      .tabla-scroll:focus-visible{outline:3px solid var(--ce);outline-offset:3px}
+      .sinonimos-box{padding:20px}
+      .hero-tag{line-height:1.8}
+      .dx-item h4{overflow-wrap:anywhere}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+      .reveal{opacity:1;transform:none}
+    }
+
+/* Base común para páginas que aún usan la estructura sencilla (.hero/.section).
+   No sustituye los componentes propios de cada servicio; solo alinea la capa
+   visual, el contraste y la experiencia móvil. */
+html{scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+img{max-width:100%;height:auto}
+body{background:#f5f8fc;color:#1f2937;overflow-x:clip}
+body:not(:has(.hero-landing))>header,
+body:not(:has(.hero-landing)) header.navbar{background:linear-gradient(135deg,#004a99,#0077aa);color:#fff;min-height:72px;padding:8px clamp(20px,5vw,60px);box-shadow:0 4px 18px rgba(0,74,153,.18)}
+body:not(:has(.hero-landing)) header a{color:#fff}
+body:not(:has(.hero-landing)) header img{max-height:58px;width:auto}
+body:not(:has(.landing-content)) .hero{background:linear-gradient(135deg,#004a99 0%,#0077aa 100%);color:#fff;padding:clamp(70px,10vw,130px) 20px 70px;position:relative;overflow:hidden}
+body:not(:has(.landing-content)) .hero::after{content:'';position:absolute;right:-10%;top:-30%;width:420px;height:420px;border-radius:50%;background:rgba(196,237,255,.08);pointer-events:none}
+body:not(:has(.landing-content)) .hero h1{color:#fff;font-size:clamp(2rem,5vw,3.25rem);line-height:1.15;max-width:900px;margin:0 auto 18px;position:relative;z-index:1}
+body:not(:has(.landing-content)) .hero p{color:rgba(255,255,255,.92);max-width:760px;position:relative;z-index:1}
+body:not(:has(.landing-content)) .section,
+body:not(:has(.landing-content)) .section-box{max-width:1200px;margin:30px auto;padding:clamp(28px,5vw,60px) clamp(20px,5vw,60px);background:#fff;border:1px solid #e6eef5;border-radius:16px;box-shadow:0 4px 18px rgba(0,119,170,.08)}
+body:not(:has(.landing-content)) h2{color:var(--az,#004a99);font-size:clamp(1.45rem,3vw,2.1rem);line-height:1.25}
+body:not(:has(.landing-content)) h2::after{content:'';display:block;width:48px;height:4px;background:var(--ce,#0099cc);border-radius:2px;margin-top:9px}
+body:not(:has(.landing-content)) .cta,
+body:not(:has(.landing-content)) .whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;background:#004a99;color:#fff;padding:14px 24px;border:2px solid transparent;border-radius:10px;font-weight:700;box-shadow:0 8px 22px rgba(0,74,153,.16);transition:transform .2s,background .2s}
+body:not(:has(.landing-content)) .cta:hover,
+body:not(:has(.landing-content)) .whatsapp:hover{background:#003d80;transform:translateY(-2px)}
+body:not(:has(.landing-content)) .beneficio{background:#edf7fc;border:1px solid #d7e6f1;color:#334155;border-radius:16px;box-shadow:none}
+body:not(:has(.landing-content)) .footer-grid{width:100%;max-width:1200px;margin-inline:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:28px}
+body:not(:has(.landing-content)) .footer-col{min-width:0;overflow-wrap:anywhere}
+body:not(:has(.landing-content)) footer{background:#004d6f;color:#fff;border-top:4px solid #0099cc;padding:48px 20px 28px}
+body:not(:has(.landing-content)) footer a{color:#fff}
+body:not(:has(.landing-content)) ul{padding-left:1.2rem}
+body:not(:has(.landing-content)) :focus-visible{outline:3px solid #0099cc;outline-offset:4px}
+@media(max-width:768px){
+ body:not(:has(.landing-content))>header,
+ body:not(:has(.landing-content)) header.navbar{min-height:64px;padding:8px 16px}
+ body:not(:has(.landing-content)) header img{max-height:48px}
+ body:not(:has(.landing-content)) .nav-links{display:none}
+ body:not(:has(.landing-content)) .hero{padding:96px 18px 50px}
+ body:not(:has(.landing-content)) .hero h1{font-size:clamp(1.8rem,8vw,2.5rem)}
+ body:not(:has(.landing-content)) .hero p{font-size:1rem}
+ body:not(:has(.landing-content)) .section,
+ body:not(:has(.landing-content)) .section-box{margin:18px 10px;padding:28px 18px}
+ body:not(:has(.landing-content)) .cta,
+ body:not(:has(.landing-content)) .whatsapp{width:100%;text-align:center}
+ body:not(:has(.landing-content)) .footer-grid{grid-template-columns:1fr;gap:22px}
+}
+
+/* Componentes rescatados de ADN: respaldo, modalidades y proceso. */
+.udea-box{--acento:var(--acento-claro);border-bottom:4px solid var(--ce)}
+.landing-content .udea-texto p{color:#eef7ff}
+.udea-sello{border-color:rgba(196,237,255,.45)}
+.udea-texto{flex:1 1 380px;min-width:0}
+.modalidad-card{border-radius:var(--radio)}
+.modalidad-card.legal{border-color:#89c9e7}
+.modalidad-card.legal::before{background:linear-gradient(90deg,var(--az),var(--ce))}
+.landing-content .modalidad-card ul{margin:0}
+.landing-content .modalidad-card li{font-size:14px;line-height:1.9;padding-left:22px}
+.paso:hover .paso-num{background:var(--as);color:#fff}
+.proceso-steps{grid-template-columns:repeat(5,minmax(0,1fr))}
+/* Accesos internos: encontrar lo útil sin recorrer toda la landing. */
+.landing-jump{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 28px;padding:0 0 22px;border-bottom:1px solid var(--borde)}
+.landing-jump span{font-size:14px;font-weight:600;color:#475569;margin-right:4px}
+.landing-jump a{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;background:#edf7fc;border:1px solid #d7e6f1;border-radius:24px;color:var(--az);font-size:14px;font-weight:600}
+.landing-jump a:hover{background:#dceffa;border-color:#89c9e7}
+[id]{scroll-margin-top:95px}
+/* El contenido sigue visible si no hay JS o si falla IntersectionObserver. */
+.reveal{opacity:1;transform:none}
+@media(min-width:901px) and (max-width:1200px){
+ .top-bar{height:auto;min-height:34px;padding-inline:20px}
+ .top-left{flex:1}.top-center{flex:1;flex-wrap:wrap}.top-right{display:none}
+ .navbar{padding-inline:20px}.nav-links{gap:12px}.nav-links a{font-size:15px}
+ .navbar .brand{gap:8px}#siteLogo{height:60px}#distintivo{height:48px}
+}
+@media(max-width:900px){
+ .top-bar{display:none}
+ .navbar{height:65px;padding:8px 20px;background:rgba(0,74,153,.97)!important}
+ .navbar.top{margin-top:0}
+ #siteLogo{height:50px}#distintivo{height:45px}
+ .menu-toggle{display:flex}
+ .nav-links{position:fixed;top:65px;right:-100%;width:min(280px,100vw);height:calc(100dvh - 65px);background:rgba(0,74,153,.98);backdrop-filter:blur(10px);flex-direction:column;padding:30px 20px;gap:0;transition:right .3s ease;overflow-y:auto;visibility:hidden}
+ .nav-links.active{right:0;visibility:visible}
+ .nav-links a{padding:18px 0;font-size:20px;border-bottom:1px solid rgba(255,255,255,.2);width:100%;min-height:48px;display:flex;align-items:center;color:#fff}
+ .nav-links a::after{display:none}
+ .proceso-steps{grid-template-columns:1fr;gap:12px}
+ .proceso-steps::before{display:none}
+ .paso{display:grid;grid-template-columns:54px minmax(0,1fr);gap:4px 16px;text-align:left;align-items:start;padding:18px;background:#f5faff;border:1px solid var(--borde);border-radius:var(--radio)}
+ .paso-num{grid-row:1 / 3;width:48px;height:48px;margin:0;font-size:22px;box-shadow:none}
+ .paso h4{margin:0}.paso p{grid-column:2}
+}
+@media(max-width:768px){
+ .udea-texto{flex:initial}.udea-inner{gap:20px}
+ .modalidad-card{padding:24px}
+ .grid-modalidades{grid-template-columns:minmax(0,1fr)}
+ .landing-jump{gap:8px}.landing-jump span{width:100%}
+ .landing-jump a{padding:10px 12px;font-size:13px}
+ .landing-content h2{overflow-wrap:anywhere}
+ .footer-bottom{padding-bottom:48px}
+}

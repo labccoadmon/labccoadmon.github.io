@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">LABCCO desde 1992</title>
+  <desc id="desc">Distintivo de trayectoria de LABCCO desde 1992</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#004a99"/>
+      <stop offset="1" stop-color="#0077aa"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="76" fill="url(#g)" stroke="#c4edff" stroke-width="4"/>
+  <circle cx="80" cy="80" r="63" fill="none" stroke="#c4edff" stroke-opacity=".75" stroke-width="2"/>
+  <path d="M42 46h76M42 114h76" stroke="#c4edff" stroke-width="2" stroke-linecap="round" opacity=".75"/>
+  <text x="80" y="66" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2" fill="#fff">DESDE</text>
+  <text x="80" y="101" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="800" letter-spacing="1" fill="#fff">1992</text>
+</svg>
