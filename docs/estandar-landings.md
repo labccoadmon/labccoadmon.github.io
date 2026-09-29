@@ -1,10 +1,10 @@
-# Estándar visual LABCCO — versión 1
+# Estándar visual LABCCO — versión 2
 
-Fecha: 28 de septiembre de 2026. Modelo visual de espermograma aprobado por el usuario; adaptación ADN preparada para revisión. No equivale a auditoría clínica, legal o SEO terminada.
+Actualizado: 29 de septiembre de 2026. Modelo visual de espermograma y ADN aprobado por el usuario. No equivale a auditoría clínica, legal o SEO terminada.
 
 ## Implementación
 
-`assets/css/labcco-landings.css` concentra los componentes y ajustes compartidos. Se carga después del CSS de cada landing. Aplicado en las propuestas de espermograma y paternidad ADN; inicio y las demás páginas conservan su implementación actual.
+`assets/css/labcco-landings.css` concentra los componentes y ajustes compartidos. Se carga después del CSS de cada landing. Aplicado a las landings comerciales. `assets/css/labcco-mobile.css` y `assets/js/labcco-mobile.js` añaden ajustes compartidos de navegación, foco, menús y ancho a las páginas de contenido, incluidos inicio y portafolio. No reemplazan las mediciones ni los enlaces existentes.
 
 - Azul principal #004a99; azul secundario #0077aa; celeste #0099cc.
 - Fondo #f5f8fc; superficies blancas; destacados claros #edf7fc.

@@ -1,0 +1,40 @@
+/* Shared responsive safeguards; preserve each service's content and design. */
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #0099cc;outline-offset:4px}
+#menuToggle{min-width:44px;min-height:44px}
+.mobile-menu-button{display:none;background:transparent;color:#fff;border:1px solid currentColor;border-radius:8px;padding:8px 12px;font:inherit;cursor:pointer}
+body>header:not(.navbar){background:linear-gradient(135deg,#004a99,#0077aa)!important}
+@media(min-width:901px) and (max-width:1200px){
+ .navbar{padding-left:20px;padding-right:20px}.navbar .nav-links{gap:12px}.navbar .nav-links a{font-size:15px}.navbar .logo{height:60px}.navbar .distintivo{height:48px}
+}
+@media(max-width:900px){
+ .top-bar{display:none}
+ header.navbar{height:65px;min-height:65px;padding:8px 20px;background:rgba(0,74,153,.98)!important}
+ header.navbar.top{margin-top:0}
+ .navbar .brand{min-width:0;gap:10px}.navbar .brand img{max-height:48px;width:auto;max-width:150px}
+ .navbar .logo{height:50px}.navbar .distintivo{height:45px}
+ #menuToggle{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+ body #navLinks.nav-links{display:flex;position:fixed;top:65px;right:-100%;width:min(280px,100vw);height:calc(100dvh - 65px);box-sizing:border-box;background:#004a99;flex-direction:column;align-items:stretch;padding:24px 20px;gap:0;overflow-y:auto;visibility:hidden;z-index:1600;transition:right .3s ease}
+ body #navLinks.nav-links.active{right:0;visibility:visible}
+ body #navLinks.nav-links a{display:flex;align-items:center;min-height:48px;padding:14px 0;margin:0!important;font-size:20px;color:#fff;border-bottom:1px solid #ffffff33}
+ body #navLinks.nav-links a::after{display:none}
+ .grid-3,.calculadora-grid{grid-template-columns:minmax(0,1fr)}
+ .grid-2>* ,.grid-3>*,.calculadora-grid>*{min-width:0}
+}
+@media(max-width:480px){
+ body>header:not(.navbar){padding:8px 16px!important;height:auto!important;min-height:64px}
+ body>header:not(.navbar) img{max-width:190px;max-height:48px;object-fit:contain}
+ body>header:not(.navbar) nav a{display:inline-flex;align-items:center;min-height:44px;margin-left:12px!important}
+ .section-box h1{font-size:clamp(1.7rem,8vw,2.25rem);overflow-wrap:break-word}
+ .calculadora-card{padding:24px 18px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#navLinks.nav-links{transition:none}}
+.service-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:24px 0}
+.service-steps>div{background:#f5f8fc;border:1px solid #dce9f3;border-radius:14px;padding:20px;min-width:0}
+.service-steps h3{color:#004a99;margin-top:0;font-size:1.15rem}
+.service-faq details{border-bottom:1px solid #dce9f3;padding:12px 0}
+.service-faq summary{cursor:pointer;font-weight:600;min-height:44px;padding:10px 0;color:#004a99}
+.service-contact-links{display:flex;flex-wrap:wrap;gap:12px}
+.service-contact-links a{display:flex;align-items:center;min-height:44px;padding:10px 14px;border:1px solid #b8d7eb;border-radius:10px;color:#004a99;text-decoration:none}
+.service-guide .cta{white-space:normal;overflow-wrap:anywhere;text-align:center}
+@media(max-width:900px){.service-steps{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:480px){.service-contact-links{flex-direction:column}.service-guide .cta{max-width:100%}}
