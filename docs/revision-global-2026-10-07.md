@@ -47,3 +47,13 @@ RPR ya está confirmado. Falta confirmar el panel realmente ofrecido y qué se p
 - CDC, diagnóstico de sífilis: https://www.cdc.gov/std/treatment-guidelines/syphilis.htm
 
 Estas fuentes informan las explicaciones generales; la oferta y la operación de LABCCO se basan en lo confirmado por el usuario.
+
+
+## Actualización confirmada — 7 de octubre de 2026
+
+- Imágenes diagnósticas en inglés: página principal ampliada con el diseño aprobado en español, cinco tarjetas y enlaces a ultrasound, X-rays, mammography, CT y MRI. Las cinco páginas individuales tienen retorno visible al directorio y su jerarquía de navegación actualizada.
+- ITS en español e inglés: oferta habitual confirmada por el usuario: VIH, serología de sífilis (RPR ya confirmado), hepatitis B, herpes bucal/genital, flujo vaginal y secreción uretral. Estas dos últimas incluyen solicitudes ante sospecha de gonorrea. No se afirma descarte definitivo con una prueba aislada ni se inventa PCR/cultivo o antibiograma.
+- Entrega el mismo día confirmada para VIH, sífilis, flujo vaginal y secreción uretral. No se asigna ese plazo a hepatitis B o herpes; se consulta al coordinar.
+- Los precios proporcionados por el usuario no se incorporan a la web ni a este documento público; se mantiene la cotización por WhatsApp.
+- La información anterior permite cerrar la publicación de la oferta general de ITS. No es necesario bloquearla esperando marcas o métodos; se omiten los detalles no confirmados. No se establece un panel fijo con todas las pruebas.
+- Validación enfocada: ocho páginas, once vistas; JSON-LD y JavaScript válidos, un H1 por página, anclas y cinco enlaces del directorio comprobados, sin desbordamientos ni errores JavaScript. Se conservaron URLs, barras de contacto y enlaces ES/EN.
