@@ -235,17 +235,14 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué ecografías puedo solicitar?","acceptedAnswer":{"@type":"Answer","text":"Puede consultar por ecografías de abdomen total, abdomen superior, vías urinarias, ginecológicas transvaginales o transabdominales, obstétricas y otras modalidades disponibles con IMEDI."}},{"@type":"Question","name":"¿Cómo debo prepararme?","acceptedAnswer":{"@type":"Answer","text":"La preparación cambia según el estudio. Algunas ecografías requieren ayuno o vejiga llena; LABCCO confirma la indicación exacta al coordinar la cita."}},{"@type":"Question","name":"¿Dónde se realiza el estudio?","acceptedAnswer":{"@type":"Answer","text":"La ecografía se coordina con IMEDI en el Centro Comercial Rionegro Plaza, piso 2. La solicitud y coordinación se hacen directamente con LABCCO."}},{"@type":"Question","name":"¿Cuándo recibo el resultado?","acceptedAnswer":{"@type":"Answer","text":"El resultado se envía el mismo día o máximo el siguiente día hábil, según el estudio y la confirmación al agendar."}}]}
   </script>
+<link rel="stylesheet" href="../assets/css/labcco-contact-bar.css?v=20261007">
 </head>
-<body>
-  <div class="top-bar">
-    <div class="top-col top-left"><span class="horario">Lun–Vie 7am–12m y 2pm–5pm | Sáb 8am–11am</span></div>
-    <div class="top-col top-center">
-      <a href="tel:+576045311354" class="contact-small">☎ 531 13 54</a>
-      <a href="https://wa.me/573128274796" class="contact-small" target="_blank" rel="noopener noreferrer">📱 312 827 4796</a>
-      <a href="mailto:calidad@labccosas.com" class="contact-small">✉ calidad@labccosas.com</a>
-    </div>
-    <div class="top-col top-right"><span class="brand-extra">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</span></div>
-  </div>
+<body class="labcco-contact-enabled">
+<div class="labcco-contact-bar" role="region" aria-label="Contacto y horarios">
+ <div class="labcco-contact-hours"><span aria-hidden="true">◷</span> Lun–vie 7am–12m / 2pm–5pm · Sáb 8am–11am</div>
+ <div class="labcco-contact-links"><a href="tel:+576045311354" aria-label="Llamar a LABCCO"><span aria-hidden="true">☎</span> (604) 531 13 54</a><a href="https://wa.me/573128274796" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp LABCCO"><span aria-hidden="true">📱</span> 312 827 4796</a><a class="labcco-contact-email" href="mailto:calidad@labccosas.com"><span aria-hidden="true">✉</span> calidad@labccosas.com</a></div>
+ <div class="labcco-contact-brand">IPS LABORATORIO CLÍNICO COLOMBIANO DE ORIENTE S.A.S</div></div>
+  
 
   <header class="navbar top" id="navbar" role="navigation" aria-label="Navegación principal">
     <div class="brand">
@@ -365,5 +362,6 @@
     var revealEls=document.querySelectorAll('.reveal');var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('active');observer.unobserve(entry.target)}})},{threshold:.1});revealEls.forEach(function(el){observer.observe(el)});
   </script>
   <script src="../assets/js/labcco-mobile.js"></script>
+<script src="../assets/js/labcco-contact-bar.js?v=20261007"></script>
 </body>
 </html>

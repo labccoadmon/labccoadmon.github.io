@@ -1,0 +1,29 @@
+/* Shared LABCCO contact strip. Loaded after page styles. */
+:root{--labcco-contact-height:38px;--labcco-nav-height:80px}
+body.labcco-contact-enabled{padding-top:var(--labcco-contact-height)!important}
+.labcco-contact-bar{position:fixed;inset:0 0 auto;z-index:1900;box-sizing:border-box;display:grid!important;grid-template-columns:auto auto minmax(0,1fr);align-items:center;gap:8px 18px;padding:5px 24px;background:#0099cc;color:#fff;font-family:'Outfit',system-ui,sans-serif;font-size:14px;line-height:1.35;box-shadow:0 1px 0 #ffffff24}
+.labcco-contact-bar *{box-sizing:border-box}
+.labcco-contact-hours{white-space:nowrap;font-size:13px}
+.labcco-contact-links{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0}
+.labcco-contact-bar a{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:4px 8px;min-height:28px;border-radius:16px;background:#007bad;color:#fff!important;text-decoration:none!important;font-size:13px;font-weight:500;white-space:nowrap}
+.labcco-contact-bar a:hover{background:#004a99}
+.labcco-contact-bar a:focus-visible{outline:2px solid white;outline-offset:2px}
+.labcco-contact-brand{font-size:11px;line-height:1.3;text-align:right;min-width:0}
+body.labcco-contact-enabled header.navbar{top:var(--labcco-contact-height)!important;margin-top:0!important}
+body.labcco-contact-enabled .navbar.top{margin-top:0!important}
+html:has(body.labcco-contact-enabled){scroll-padding-top:calc(var(--labcco-contact-height) + var(--labcco-nav-height) + 16px)}
+@media(max-width:1350px){.labcco-contact-bar{grid-template-columns:auto auto;justify-content:space-between;padding-inline:18px}.labcco-contact-brand{display:none}}
+@media(max-width:900px){
+ :root{--labcco-contact-height:72px;--labcco-nav-height:76px}
+ .labcco-contact-bar{grid-template-columns:1fr;justify-content:center;gap:3px;padding:4px 12px;text-align:center}
+ .labcco-contact-hours{white-space:normal;font-size:12px}
+ .labcco-contact-links{flex-wrap:wrap;gap:3px 6px}
+ body.labcco-contact-enabled header.navbar .nav-links{top:calc(var(--labcco-contact-height) + var(--labcco-nav-height))!important;height:calc(100dvh - var(--labcco-contact-height) - var(--labcco-nav-height))!important;bottom:auto!important}
+}
+@media(max-width:420px){
+ :root{--labcco-contact-height:96px}
+ .labcco-contact-bar{padding:4px 8px}
+ .labcco-contact-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 8px;max-width:340px;width:100%;margin:auto}
+ .labcco-contact-links .labcco-contact-email{grid-column:1/-1;justify-self:center}
+ .labcco-contact-bar a{font-size:12px;padding:3px 7px}
+}
