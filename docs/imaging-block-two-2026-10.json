@@ -1,0 +1,114 @@
+{
+  "published_in_this_block": [
+    {
+      "es": "servicios/doppler-arterial-rionegro.html",
+      "en": "en/arterial-doppler-ultrasound-rionegro.html",
+      "group": "doppler",
+      "source": "https://medlineplus.gov/lab-tests/doppler-ultrasound/"
+    },
+    {
+      "es": "servicios/radiografia-torax-rionegro.html",
+      "en": "en/chest-x-ray-rionegro.html",
+      "group": "xr",
+      "source": "https://www.radiologyinfo.org/en/info/chestrad"
+    },
+    {
+      "es": "servicios/radiografia-columna-rionegro.html",
+      "en": "en/spine-x-ray-rionegro.html",
+      "group": "xr",
+      "source": "https://www.radiologyinfo.org/en/info/bonerad"
+    },
+    {
+      "es": "servicios/radiografia-extremidades-articulaciones-rionegro.html",
+      "en": "en/limb-joint-x-rays-rionegro.html",
+      "group": "xr",
+      "source": "https://www.radiologyinfo.org/en/info/bonerad"
+    },
+    {
+      "es": "servicios/tomografia-craneo-rionegro.html",
+      "en": "en/head-ct-scan-rionegro.html",
+      "group": "ct",
+      "source": "https://www.radiologyinfo.org/en/info/headct"
+    },
+    {
+      "es": "servicios/tomografia-abdomen-pelvis-rionegro.html",
+      "en": "en/abdominal-pelvic-ct-rionegro.html",
+      "group": "ct",
+      "source": "https://www.radiologyinfo.org/en/info/abdominct"
+    },
+    {
+      "es": "servicios/urotac-rionegro.html",
+      "en": "en/urinary-tract-ct-urography-rionegro.html",
+      "group": "ct",
+      "source": "https://www.radiologyinfo.org/en/info/urography"
+    },
+    {
+      "es": "servicios/resonancia-rodilla-rionegro.html",
+      "en": "en/knee-mri-rionegro.html",
+      "group": "mr",
+      "source": "https://www.radiologyinfo.org/en/info/kneemr"
+    },
+    {
+      "es": "servicios/resonancia-columna-rionegro.html",
+      "en": "en/spine-mri-rionegro.html",
+      "group": "mr",
+      "source": "https://www.radiologyinfo.org/en/info/spinemr"
+    }
+  ],
+  "previous_block": [
+    {
+      "es": "servicios/ecografia-doppler-rionegro.html",
+      "en": "en/doppler-ultrasound-rionegro.html",
+      "group": "doppler",
+      "source": "https://medlineplus.gov/lab-tests/doppler-ultrasound/"
+    },
+    {
+      "es": "servicios/ecografia-abdominal-rionegro.html",
+      "en": "en/abdominal-ultrasound-rionegro.html",
+      "group": "us",
+      "source": "https://www.radiologyinfo.org/en/info/abdominus"
+    },
+    {
+      "es": "servicios/ecografia-vias-urinarias-rionegro.html",
+      "en": "en/urinary-tract-ultrasound-rionegro.html",
+      "group": "us",
+      "source": "https://www.radiologyinfo.org/en/info/pelvus"
+    },
+    {
+      "es": "servicios/ecografia-ginecologica-rionegro.html",
+      "en": "en/gynecological-ultrasound-rionegro.html",
+      "group": "us",
+      "source": "https://www.radiologyinfo.org/en/info/pelvus"
+    },
+    {
+      "es": "servicios/ecografia-obstetrica-rionegro.html",
+      "en": "en/obstetric-ultrasound-rionegro.html",
+      "group": "us",
+      "source": "https://www.radiologyinfo.org/en/info/obstetricus"
+    },
+    {
+      "es": "servicios/ecografia-tiroides-cuello-rionegro.html",
+      "en": "en/thyroid-neck-ultrasound-rionegro.html",
+      "group": "us",
+      "source": "https://www.radiologyinfo.org/en/info/thyroidus"
+    },
+    {
+      "es": "servicios/ecografia-mamaria-rionegro.html",
+      "en": "en/breast-ultrasound-rionegro.html",
+      "group": "us",
+      "source": "https://www.radiologyinfo.org/en/info/breastus"
+    },
+    {
+      "es": "servicios/ecografia-musculoesqueletica-tejidos-blandos-rionegro.html",
+      "en": "en/musculoskeletal-soft-tissue-ultrasound-rionegro.html",
+      "group": "us",
+      "source": "https://www.radiologyinfo.org/en/info/musculous"
+    },
+    {
+      "es": "servicios/doppler-venoso-rionegro.html",
+      "en": "en/venous-doppler-ultrasound-rionegro.html",
+      "group": "doppler",
+      "source": "https://www.radiologyinfo.org/en/info/venousus"
+    }
+  ]
+}
